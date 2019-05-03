@@ -8,5 +8,5 @@ export const languages = [
   { identifier: 'French', code: 'fr', name: 'Français' },
   { identifier: 'Japanese', code: 'ja', name: '日本語' },
   { identifier: 'Russian', code: 'ru', name: 'Pусский' },
-  { identifier: 'German', code: 'en', name: 'Deutsch' }
+  { identifier: 'German', code: 'de', name: 'Deutsch' }
 ];

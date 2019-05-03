@@ -11,7 +11,7 @@ import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const mapStateToProps = state => ({
   open: state.sideBarState.open,
@@ -37,10 +37,11 @@ const NavDropdown = ({ language, toggleSidebar, open }) => {
             <ClickAwayListener onClickAway={toggleSidebar}>
               <MenuList>
                 {navOptions.map(option => (
-                  // Can combine MenuItem and Link into a NavLink component?
-                  <MenuItem key={option} onClick={toggleSidebar}>
-                    {option.title}
-                  </MenuItem>
+                  <Link to={option.location}>
+                    <MenuItem key={option.title} onClick={toggleSidebar}>
+                      {option.title}
+                    </MenuItem>
+                  </Link>
                 ))}
               </MenuList>
             </ClickAwayListener>
