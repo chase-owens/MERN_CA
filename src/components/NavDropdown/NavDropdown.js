@@ -14,8 +14,7 @@ import Grow from '@material-ui/core/Grow';
 import { Link } from 'react-router-dom';
 
 const mapStateToProps = state => ({
-  open: state.sideBarState.open,
-  language: state.language
+  open: state.sideBarState.open
 });
 
 const mapDispatchToProps = dispatch =>

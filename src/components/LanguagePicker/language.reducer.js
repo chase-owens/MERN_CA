@@ -1,13 +1,10 @@
 import { CHANGE_LANGUAGE } from './language.actions';
+import { defaultState } from '../../server/defaultState.js';
 
-const defaultState = {
-  language: 'en'
-};
-
-export const changeLanguage = (state = defaultState, action) => {
+export const changeLanguage = (state = defaultState.language, action) => {
   switch (action.type) {
     case CHANGE_LANGUAGE:
-      return { ...state, language: action.language };
+      return { language: action.language };
     default:
       return state;
   }
