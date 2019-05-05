@@ -6,13 +6,30 @@ import { connectDB } from './connect-db';
 let port = 1221;
 let app = express();
 
+//API
+
 app.listen(port, console.log('Server listening on port ', port));
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World');
-// });
-
 app.use(cors(), bodyParser.urlencoded({ extended: true }), bodyParser.json());
+
+app.get('/data', async (req, res) => {
+  let db = await connectDB();
+  let collection = await db.collection('content');
+  let content = await collection.findOne({ title: 'Constructional Affection' });
+  res.send(content);
+});
+
+export const getDataFromDB = async () => {
+  let db = await connectDB();
+  let collection = db.collection('content');
+  let data = {};
+  try {
+    data = await collection.find({});
+  } catch {
+    console.log('ERR');
+  }
+  console.log('DATA: ', data);
+};
 
 export const changeLanguageNode = async (currentLanguage, newLanguage) => {
   let db = await connectDB();
@@ -27,16 +44,6 @@ export const changeLanguageNode = async (currentLanguage, newLanguage) => {
   }
 };
 
-export const getAllData = async () => {
-  let db = await connectDB();
-  try {
-    let data = await db.getCollection('content').find({});
-    console.log('content: ', data);
-  } catch {
-    console.log('ERR');
-  }
-};
-
 export const toggleNavigationOptions = async isOpen => {
   let db = await connectDB();
   let collection = db.collection('open');
@@ -46,8 +53,3 @@ export const toggleNavigationOptions = async isOpen => {
     console.log('Err');
   }
 };
-
-app.post('language', async (req, res) => {
-  await changeLanguageNode(language);
-  res.status(200).send();
-});
