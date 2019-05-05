@@ -4,8 +4,9 @@
   "description": "Constructional Affection web app full-stack-react",
   "main": "src/app/index.js",
   "scripts": {
+    "build": "webpack -p",
     "test": "test",
-    "start": "webpack",
+    "start": "webpack", // change to "npm run server" for production
     "dev": "webpack-dev-server --open",
     "testDBConnection": "babel-node src/server/connect-db",
     "initialize": "babel-node src/server/initialize-db",
