@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "test": "test",
-    "start": "webpack", // change to "npm run server" for production
+    "start": "npm run server",
     "dev": "webpack-dev-server --open",
     "testDBConnection": "babel-node src/server/connect-db",
     "initialize": "babel-node src/server/initialize-db",

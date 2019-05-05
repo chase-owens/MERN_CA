@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const url = (process.env.NODE_ENV = 'production'
-  ? ``
-  : 'http://localhost:1221/');
+const url =
+  process.env.NODE_ENV == 'production' ? `` : 'http://localhost:1221/';
 
 export const getDataFromServer = async () => {
   let endpoint = `${url}data`;
