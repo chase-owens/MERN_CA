@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { toggleSidebar } from './nav.actions';
@@ -11,20 +11,16 @@ import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMe
 
 const title = 'Constructional Affection';
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ toggleSidebar }, dispatch);
-};
-
 const mapStateToProps = state => {
-  return state;
+  language: state.languageState.language;
 };
 
 const Nav = ({ theme, toggleSidebar, language }) => {
   return (
-    <AppBar>
+    <div style={{ background: 'transparent' }}>
       <Grid container justify='space-between' alignItems='center'>
         <Grid item>
-          <p>{title}</p>
+          <h1>{title}</h1>
         </Grid>
         <Grid item>
           <Grid container justify='flex-end'>
@@ -38,13 +34,8 @@ const Nav = ({ theme, toggleSidebar, language }) => {
           </Grid>
         </Grid>
       </Grid>
-    </AppBar>
+    </div>
   );
 };
 
-export default withWidth({ withTheme: true })(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Nav)
-);
+export default withWidth({ withTheme: true })(connect(mapStateToProps)(Nav));

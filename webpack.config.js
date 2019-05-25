@@ -12,6 +12,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.css'],
     alias: {
       images: path.resolve(__dirname, './src/images'),
+      videos: path.resolve(__dirname, './src/videos'),
       store: path.resolve(__dirname, './src/app/store')
     }
   },
@@ -22,6 +23,20 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.mp4/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            mimtetype: 'video/mp4'
+          }
+        }
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader?attrs[]=video:src'
+      },
       {
         test: /\.jsx?/,
         loader: 'babel-loader'

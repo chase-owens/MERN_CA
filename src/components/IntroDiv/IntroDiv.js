@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-
+import IntroVideo from '../IntroVideo/IntroVideo';
 const mapStateToProps = state => {
   return state;
 };
@@ -12,10 +12,7 @@ const IntroDiv = props => {
   return (
     <Grid container>
       <Grid item>
-        <Typography>Becoming Best Friends</Typography>
-      </Grid>
-      <Grid item>
-        <Typography>Affection. Love. Praise</Typography>
+        <IntroVideo />
       </Grid>
       <Grid item>
         <Typography>

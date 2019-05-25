@@ -6,23 +6,23 @@ import { bindActionCreators } from 'redux';
 import { withTheme } from '@material-ui/core/styles';
 
 import Popper from '@material-ui/core/Popper';
-import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
 import { Link } from 'react-router-dom';
 
 const mapStateToProps = state => ({
-  open: state.sideBarState.open
+  language: state.languageState.language
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleSidebar }, dispatch);
+// const mapDispatchToProps = dispatch =>
+//   bindActionCreators({ toggleSidebar }, dispatch);
 
-const NavDropdown = ({ language, toggleSidebar, open }) => {
+const NavDropdown = ({ open, toggleSidebar, languge }) => {
+  const height = open ? 0 : 60;
   return (
-    <Popper open={open} transition disablePortal>
+    <Popper style={{ width: '100%' }} open={open} transition disablePortal>
       {({ TransitionProps, placement }) => (
         <Grow
           {...TransitionProps}
@@ -32,28 +32,23 @@ const NavDropdown = ({ language, toggleSidebar, open }) => {
               placement === 'bottom' ? 'center top' : 'center bottom'
           }}
         >
-          <Paper>
-            <ClickAwayListener onClickAway={toggleSidebar}>
-              <MenuList>
-                {navOptions.map(option => (
-                  <Link to={option.location}>
-                    <MenuItem key={option.title} onClick={toggleSidebar}>
+          <MenuList>
+            <Grid container direction='row' justify='space-around'>
+              {navOptions.map(option => (
+                <Grid item key={option.title}>
+                  <Link style={{ textDecoration: 'none' }} to={option.location}>
+                    <MenuItem item onClick={toggleSidebar}>
                       {option.title}
                     </MenuItem>
                   </Link>
-                ))}
-              </MenuList>
-            </ClickAwayListener>
-          </Paper>
+                </Grid>
+              ))}
+            </Grid>
+          </MenuList>
         </Grow>
       )}
     </Popper>
   );
 };
 
-export default withTheme()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(NavDropdown)
-);
+export default withTheme()(NavDropdown);

@@ -8,7 +8,7 @@ const NavButtons = () => {
   return (
     <Fragment>
       {navButtons.map(button => (
-        <Link to={button.location}>
+        <Link key={button.title} to={button.location}>
           <Button>{button.title}</Button>
         </Link>
       ))}
