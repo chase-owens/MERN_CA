@@ -12,24 +12,23 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Grow from '@material-ui/core/Grow';
 import { Link } from 'react-router-dom';
 
-const mapStateToProps = state => ({
-  language: state.languageState.language
-});
+const mapStateToProps = state => {
+  return {
+    language: state.languageState.language,
+    open: state.sideBarState.open
+  };
+};
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleSidebar }, dispatch);
-
-const NavDropdown = ({ open, toggleSidebar, language }) => {
-  console.log(language);
+const NavDropdown = ({ language, open }) => {
+  console.log(language, open);
   return (
     <Popper style={{ width: '100%' }} open={open} transition disablePortal>
-      {({ TransitionProps, placement }) => (
+      {({ TransitionProps }) => (
         <Grow
           {...TransitionProps}
           id='menu-list-grow'
           style={{
-            transformOrigin:
-              placement === 'bottom' ? 'center top' : 'center bottom'
+            transformOrigin: 'center top'
           }}
         >
           <MenuList>
@@ -37,8 +36,8 @@ const NavDropdown = ({ open, toggleSidebar, language }) => {
               {navOptions.map(option => (
                 <Grid item key={option.title}>
                   <Link style={{ textDecoration: 'none' }} to={option.location}>
-                    <MenuItem item onClick={toggleSidebar}>
-                      {option.title}
+                    <MenuItem item>
+                      <h4>{option.title}</h4>
                     </MenuItem>
                   </Link>
                 </Grid>
@@ -51,9 +50,4 @@ const NavDropdown = ({ open, toggleSidebar, language }) => {
   );
 };
 
-export default withTheme()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(NavDropdown)
-);
+export default withTheme()(connect(mapStateToProps)(NavDropdown));
