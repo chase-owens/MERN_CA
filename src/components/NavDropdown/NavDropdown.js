@@ -16,11 +16,11 @@ const mapStateToProps = state => ({
   language: state.languageState.language
 });
 
-// const mapDispatchToProps = dispatch =>
-//   bindActionCreators({ toggleSidebar }, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ toggleSidebar }, dispatch);
 
-const NavDropdown = ({ open, toggleSidebar, languge }) => {
-  const height = open ? 0 : 60;
+const NavDropdown = ({ open, toggleSidebar, language }) => {
+  console.log(language);
   return (
     <Popper style={{ width: '100%' }} open={open} transition disablePortal>
       {({ TransitionProps, placement }) => (
@@ -51,4 +51,9 @@ const NavDropdown = ({ open, toggleSidebar, languge }) => {
   );
 };
 
-export default withTheme()(NavDropdown);
+export default withTheme()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(NavDropdown)
+);
