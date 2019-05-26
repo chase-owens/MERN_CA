@@ -1,6 +1,5 @@
-export const changeLanguage = language => ({
-  type: CHANGE_LANGUAGE,
-  language
+export const toggleNavMenu = () => ({
+  type: TOGGLE_NAV_MENU
 });
 
-export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
+export const TOGGLE_NAV_MENU = 'TOGGLE_NAV_MENU';

@@ -29,11 +29,11 @@ class App extends Component {
           }}
         >
           <nav>
-            <Nav toggleSidebar={this.toggleSidebar} open={this.state.open} />
+            {/* <Nav toggleSidebar={this.toggleSidebar} open={this.state.open} />
             <NavDropdown
               open={this.state.open}
               toggleSidebar={this.toggleSidebar}
-            />
+            /> */}
           </nav>
         </Fragment>
 
