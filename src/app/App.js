@@ -1,8 +1,11 @@
 import React, { Fragment, Component } from 'react';
-import Nav from '../components/Nav/Nav';
-import IntroDiv from '../components/IntroDiv/IntroDiv';
-import ConnectedNavDropdown from '../components/NavDropdown/NavDropdown';
+
+import withWidth from '@material-ui/core/withWidth';
+import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+
+import NavIntro from '../components/Layout/NavIntro';
 import LanguagePicker from '../components/LanguagePicker/LanguagePicker';
+
 import Grid from '@material-ui/core/Grid';
 
 import { Route } from 'react-router-dom';
@@ -15,16 +18,13 @@ class App extends Component {
   }
 
   render() {
+    const { theme } = this.props;
+
     return (
       <Fragment>
-        <Fragment>
-          <nav>
-            <Nav />
-          </nav>
-        </Fragment>
+        <NavIntro />
 
         <main>
-          <IntroDiv />
           <LanguagePicker />
           <Route exact path='/program' render={() => <YourProgram />} />
         </main>

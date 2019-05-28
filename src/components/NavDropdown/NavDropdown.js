@@ -1,16 +1,20 @@
 import React from 'react';
-import navOptions from '../Nav/navOptions.config';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { toggleSidebar } from '../Nav/nav.actions';
-import { bindActionCreators } from 'redux';
-import { withTheme } from '@material-ui/core/styles';
+import navOptions from '../Nav/navOptions.config';
+import NavButtons from '../NavButtons/NavButtons.js';
 
+import withWidth from '@material-ui/core/withWidth';
+import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import { withTheme } from '@material-ui/core/styles';
 import Popper from '@material-ui/core/Popper';
 import Grid from '@material-ui/core/Grid';
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 import Grow from '@material-ui/core/Grow';
-import { Link } from 'react-router-dom';
+import Typography from '@material-ui/core/Typography';
+
+import { theme } from '../../styles/theme';
 
 const mapStateToProps = state => {
   return {
@@ -19,10 +23,15 @@ const mapStateToProps = state => {
   };
 };
 
-const NavDropdown = ({ language, open }) => {
+const NavDropdown = ({ language, open, theme }) => {
   console.log(language, open);
   return (
-    <Popper style={{ width: '100%' }} open={open} transition disablePortal>
+    <Popper
+      style={{ width: '100%', background: 'translucent' }}
+      open={open}
+      transition
+      disablePortal
+    >
       {({ TransitionProps }) => (
         <Grow
           {...TransitionProps}
@@ -31,23 +40,17 @@ const NavDropdown = ({ language, open }) => {
             transformOrigin: 'center top'
           }}
         >
-          <MenuList>
-            <Grid container direction='row' justify='space-around'>
-              {navOptions.map(option => (
-                <Grid item key={option.title}>
-                  <Link style={{ textDecoration: 'none' }} to={option.location}>
-                    <MenuItem item>
-                      <h4>{option.title}</h4>
-                    </MenuItem>
-                  </Link>
-                </Grid>
-              ))}
+          <Grid container justify='center'>
+            <Grid item>
+              <NavButtons />
             </Grid>
-          </MenuList>
+          </Grid>
         </Grow>
       )}
     </Popper>
   );
 };
 
-export default withTheme()(connect(mapStateToProps)(NavDropdown));
+export default withWidth({ withTheme: true })(
+  connect(mapStateToProps)(NavDropdown)
+);

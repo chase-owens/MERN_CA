@@ -1,28 +1,90 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { withTheme } from '@material-ui/core/styles';
+
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import withWidth from '@material-ui/core/withWidth';
+import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import { withStyles } from '@material-ui/core/styles';
+
 import IntroVideo from '../IntroVideo/IntroVideo';
+
 const mapStateToProps = state => {
   return state;
 };
 
-const IntroDiv = props => {
+const styles = theme => ({
+  title: {
+    fontSize: '2.6em'
+  },
+  introDiv: {
+    [theme.breakpoints.down('sm')]: {
+      bottom: -230
+    },
+    [theme.breakpoints.up('sm')]: {
+      bottom: -180
+    }
+  }
+});
+
+const IntroDiv = ({ theme, classes }) => {
   return (
-    <Grid container>
-      <Grid item>
+    <Grid
+      container
+      direction='row'
+      style={{
+        position: 'relative',
+        marginBottom: !useMediaQuery(theme.breakpoints.up(740)) ? 280 : null
+      }}
+    >
+      <Grid
+        item
+        style={{
+          //     -webkit-transition: all 1s ease-in-out;
+          // -moz-transition: all 1s ease-in-out;
+          // -o-transition: all 1s ease-in-out;
+          transition: 'all .18s ease-in-out',
+          width: !useMediaQuery(theme.breakpoints.up(740)) ? '100%' : '55%',
+          margin: !useMediaQuery(theme.breakpoints.up(740)) ? 0 : '50px 0'
+        }}
+      >
         <IntroVideo />
       </Grid>
-      <Grid item>
-        <Typography>
-          With Constructional Affection, your dog will calmly solicit your
-          attention, politely greet other people, and patiently wait for the
-          rest of life's delights.
+      <Grid
+        item
+        style={{
+          width: !useMediaQuery(theme.breakpoints.up(740)) ? '88%' : '45%',
+          margin: 'auto',
+          padding: '50px 30px 50px 50px',
+          // paddingTop: 50,
+          // paddingBottom: 50,
+          // paddingLeft: 50,
+          // paddingRight: 30,
+          position: !useMediaQuery(theme.breakpoints.up(740))
+            ? 'absolute'
+            : 'static',
+          background: `${theme.palette.primary.main}`,
+          borderTopRightRadius: 5,
+          borderBottomRightRadius: 5
+        }}
+        className={classes.introDiv}
+      >
+        <Typography
+          variant={'h2'}
+          className={classes.title}
+          style={{ paddingBottom: 50 }}
+        >
+          Constructional Affection
+        </Typography>
+        <Typography variant='body1' style={{ paddingLeft: 0 }}>
+          Using affection to establish desired interactions between you and your
+          best friend.
         </Typography>
       </Grid>
     </Grid>
   );
 };
 
-export default withTheme()(connect(mapStateToProps)(IntroDiv));
+export default withStyles(styles)(
+  withWidth({ withTheme: true })(connect(mapStateToProps)(IntroDiv))
+);
