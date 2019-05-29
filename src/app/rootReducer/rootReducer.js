@@ -4,5 +4,5 @@ import { navReducer } from '../../components/Nav/nav.reducer';
 
 export const rootReducer = combineReducers({
   languageState: changeLanguage,
-  navState: navReducer
+  sideBarState: navReducer
 });

@@ -1,4 +1,4 @@
-export const toggleNavMenu = () => ({
+export const toggleSidebar = () => ({
   type: TOGGLE_NAV_MENU
 });
 

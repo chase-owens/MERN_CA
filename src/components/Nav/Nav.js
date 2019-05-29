@@ -15,7 +15,7 @@ import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 import { theme } from '../../styles/theme';
 
-// const title = 'Constructional Affection';
+const title = 'Constructional Affection';
 
 const mapStateToProps = state => {
   console.log(state);
