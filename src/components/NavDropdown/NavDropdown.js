@@ -1,54 +1,56 @@
-// import React from 'react';
-// import navOptions from '../Nav/navOptions.config';
-// import { connect } from 'react-redux';
-// import { toggleSidebar } from '../Nav/nav.actions';
-// import { bindActionCreators } from 'redux';
-// import { withTheme } from '@material-ui/core/styles';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import navOptions from '../Nav/navOptions.config';
+import NavButtons from '../NavButtons/NavButtons.js';
 
-// import Popper from '@material-ui/core/Popper';
-// import Grid from '@material-ui/core/Grid';
-// import MenuList from '@material-ui/core/MenuList';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import Grow from '@material-ui/core/Grow';
-// import { Link } from 'react-router-dom';
+import withWidth from '@material-ui/core/withWidth';
+import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import { withTheme } from '@material-ui/core/styles';
+import Popper from '@material-ui/core/Popper';
+import Grid from '@material-ui/core/Grid';
+import MenuList from '@material-ui/core/MenuList';
+import MenuItem from '@material-ui/core/MenuItem';
+import Grow from '@material-ui/core/Grow';
+import Typography from '@material-ui/core/Typography';
 
-// const mapStateToProps = state => ({
-//   language: state.languageState.language
-// });
+import { theme } from '../../styles/theme';
 
-// // const mapDispatchToProps = dispatch =>
-// //   bindActionCreators({ toggleSidebar }, dispatch);
+const mapStateToProps = state => {
+  return {
+    language: state.languageState.language,
+    open: state.sideBarState.open
+  };
+};
 
-// const NavDropdown = ({ open, toggleSidebar, languge }) => {
-//   const height = open ? 0 : 60;
-//   return (
-//     <Popper style={{ width: '100%' }} open={open} transition disablePortal>
-//       {({ TransitionProps, placement }) => (
-//         <Grow
-//           {...TransitionProps}
-//           id='menu-list-grow'
-//           style={{
-//             transformOrigin:
-//               placement === 'bottom' ? 'center top' : 'center bottom'
-//           }}
-//         >
-//           <MenuList>
-//             <Grid container direction='row' justify='space-around'>
-//               {navOptions.map(option => (
-//                 <Grid item key={option.title}>
-//                   <Link style={{ textDecoration: 'none' }} to={option.location}>
-//                     <MenuItem item onClick={toggleSidebar}>
-//                       {option.title}
-//                     </MenuItem>
-//                   </Link>
-//                 </Grid>
-//               ))}
-//             </Grid>
-//           </MenuList>
-//         </Grow>
-//       )}
-//     </Popper>
-//   );
-// };
+const NavDropdown = ({ language, open, theme }) => {
+  console.log(language, open);
+  return (
+    <Popper
+      style={{ width: '100%', background: 'translucent' }}
+      open={open}
+      transition
+      disablePortal
+    >
+      {({ TransitionProps }) => (
+        <Grow
+          {...TransitionProps}
+          id='menu-list-grow'
+          style={{
+            transformOrigin: 'center top'
+          }}
+        >
+          <Grid container justify='center'>
+            <Grid item>
+              <NavButtons />
+            </Grid>
+          </Grid>
+        </Grow>
+      )}
+    </Popper>
+  );
+};
 
-// export default withTheme()(NavDropdown);
+export default withWidth({ withTheme: true })(
+  connect(mapStateToProps)(NavDropdown)
+);

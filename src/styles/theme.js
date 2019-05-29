@@ -32,6 +32,10 @@ export const theme = createMuiTheme({
   spacing: {
     unit: 8
   },
+  breakpoints: {
+    smmd: 740,
+    lg: 1280
+  },
   transitions: {
     easing: {
       easeInOut: 'cubic-bezier(0.4, 0 , 0.2, 1)',

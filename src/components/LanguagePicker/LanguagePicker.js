@@ -4,6 +4,7 @@ import { languages } from '../../languages/languages';
 import { changeLanguage } from './language.actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { theme } from '../../styles/theme';
 
 const mapStateToProps = state => ({
   state
