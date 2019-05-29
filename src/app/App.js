@@ -5,6 +5,7 @@ import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMe
 
 import NavIntro from '../components/Layout/NavIntro';
 import LanguagePicker from '../components/LanguagePicker/LanguagePicker';
+import About from '../components/About/About';
 
 import Grid from '@material-ui/core/Grid';
 
@@ -25,6 +26,7 @@ class App extends Component {
         <NavIntro />
 
         <main>
+          <About />
           <LanguagePicker />
           <Route exact path='/program' render={() => <YourProgram />} />
         </main>

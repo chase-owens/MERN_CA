@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch =>
 const Nav = ({ theme, toggleSidebar, language, open }) => {
   console.log(language, open);
   return (
-    <div style={{ background: 'transparent' }}>
+    <div style={{ background: 'transparent', width: '95%', margin: 'auto' }}>
       <Grid
         container
         justify='space-between'
