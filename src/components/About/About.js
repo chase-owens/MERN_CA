@@ -7,11 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 import { theme } from '../../styles/theme';
-// const styles = theme => ({
-//   overflowContainer::webKitScrollBar {
-
-//   }
-// })
+import css from './About.css';
 
 import aboutPoints from './about.config';
 import AboutCardSmall from './AboutCardSmall';
@@ -32,6 +28,7 @@ const About = ({ theme }) => {
           </Typography>
           <Grid
             container
+            className='scrollContainer'
             wrap='nowrap'
             style={{
               overflowX: 'auto',

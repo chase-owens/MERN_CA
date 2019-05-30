@@ -41,7 +41,8 @@ module.exports = {
         test: /\.jsx?/,
         loader: 'babel-loader'
       },
-      { test: /\.json$/, loader: 'json-loader' }
+      { test: /\.json$/, loader: 'json-loader' },
+      { test: /\.css$/, use: ['style-loader', { loader: 'css-loader' }] }
     ]
   }
 };
