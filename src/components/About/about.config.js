@@ -18,3 +18,5 @@ const aboutPoints = [
     citation: ``
   }
 ];
+
+export default aboutPoints;

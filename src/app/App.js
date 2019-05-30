@@ -25,7 +25,7 @@ class App extends Component {
       <Fragment>
         <NavIntro />
 
-        <main>
+        <main style={{ overflow: 'hidden' }}>
           <About />
           <LanguagePicker />
           <Route exact path='/program' render={() => <YourProgram />} />

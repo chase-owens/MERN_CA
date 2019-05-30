@@ -3,22 +3,49 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import withWidth from '@material-ui/core/withWidth';
+import { withStyles } from '@material-ui/core/styles';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 import { theme } from '../../styles/theme';
+// const styles = theme => ({
+//   overflowContainer::webKitScrollBar {
+
+//   }
+// })
+
+import aboutPoints from './about.config';
+import AboutCardSmall from './AboutCardSmall';
 
 const About = ({ theme }) => {
+  console.log(aboutPoints);
   return (
     <div>
       {useMediaQuery(theme.breakpoints.down(740)) && (
-        <Typography
-          variant='headline'
-          style={{
-            marginLeft: 40
-          }}
-        >
-          From Hyperactive to Calm
-        </Typography>
+        <div>
+          <Typography
+            variant='headline'
+            style={{
+              marginLeft: 40
+            }}
+          >
+            From Hyperactive to Calm
+          </Typography>
+          <Grid
+            container
+            wrap='nowrap'
+            style={{
+              overflowX: 'auto',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
+            {aboutPoints !== undefined &&
+              aboutPoints.map(point => (
+                <Grid item style={{ flexShrink: 0, width: 300, height: 400 }}>
+                  <AboutCardSmall point={point} />
+                </Grid>
+              ))}
+          </Grid>
+        </div>
       )}
       {useMediaQuery(theme.breakpoints.up(740)) && (
         <Grid container direction='row'>
