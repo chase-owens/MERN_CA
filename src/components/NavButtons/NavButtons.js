@@ -6,11 +6,11 @@ import { withTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import { theme } from '../../styles/theme';
 
-const NavButtons = () => {
+const NavButtons = ({direction}) => {
   return (
     <Grid
       container
-      display='row'
+      direction='direction'
       justify='space-between'
       style={{ width: '100%' }}
     >

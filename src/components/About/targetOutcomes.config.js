@@ -1,20 +1,22 @@
 const targetOutcomes = [
   {
-    title: `Warm Welcomes`,
+    title: `Warm Welcome`,
     a: `You come home`,
     b: `Dog greets you by sitting and smiling`,
-    c: `You bend down and love them up`
+    c: `You bend down and show affection`
   },
   {
-    title: `Relaxing`,
+    title: `Pleasant Interaction`,
     a: `You sit on couch`,
     b: `Dog comes over and sits next to you`,
     c: `Y'all hang out and watch TV`
   },
   {
-    title: `Polite Greetings`,
+    title: `Polite Greeting`,
     a: `Visitor approaches`,
     b: `Dog sits patiently`,
-    c: `They pet your dog and tell you how sweet he is`
+    c: `Visitor pets your dog and comments on its good behavior`
   }
 ];
+
+export default targetOutcomes;

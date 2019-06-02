@@ -6,13 +6,20 @@ import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMe
 
 import { theme } from '../../styles/theme';
 
-const AboutCardSmall = ({ point }) => {
+const AboutCardSmall = ({ point, color }) => {
   return (
-    <div>
-      <Typography variant='body2'>{point.question}</Typography>
-      <Typography paragraph style={{ fontSize: '1.5em' }} variant='headline'>
+    <div style={{ padding: '30px 30px 0 28px' }}>
+      <Typography color={color} paragraph variant='title'>
+        {point.question}
+      </Typography>
+      <Typography color={color} paragraph variant='body2'>
         {point.answer}
       </Typography>
+      {point.citation !== undefined && (
+        <Typography color={color} paragraph variant='overline'>
+          {point.citation}
+        </Typography>
+      )}
     </div>
   );
 };

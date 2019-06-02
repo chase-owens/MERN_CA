@@ -40,12 +40,11 @@ const IntroDiv = ({ theme, classes }) => {
       <Grid
         item
         style={{
-          //     -webkit-transition: all 1s ease-in-out;
-          // -moz-transition: all 1s ease-in-out;
-          // -o-transition: all 1s ease-in-out;
           transition: 'all .18s ease-in-out',
           width: !useMediaQuery(theme.breakpoints.up(740)) ? '100%' : '55%',
-          margin: !useMediaQuery(theme.breakpoints.up(740)) ? 0 : '50px 0'
+          margin: !useMediaQuery(theme.breakpoints.up(740))
+            ? 0
+            : '70px 0 130px 0'
         }}
       >
         <IntroVideo />
@@ -55,11 +54,7 @@ const IntroDiv = ({ theme, classes }) => {
         style={{
           width: !useMediaQuery(theme.breakpoints.up(740)) ? '88%' : '45%',
           margin: 'auto',
-          padding: '50px 30px 50px 50px',
-          // paddingTop: 50,
-          // paddingBottom: 50,
-          // paddingLeft: 50,
-          // paddingRight: 30,
+          padding: '50px 30px 0 50px',
           position: !useMediaQuery(theme.breakpoints.up(740))
             ? 'absolute'
             : 'static',
@@ -76,9 +71,8 @@ const IntroDiv = ({ theme, classes }) => {
         >
           Constructional Affection
         </Typography>
-        <Typography variant='body1' style={{ paddingLeft: 0 }}>
-          Using affection to establish desired interactions between you and your
-          best friend.
+        <Typography variant='body1' style={{ paddingBottom: 60 }}>
+          Establish desired interactions using affection as a reinforcer.
         </Typography>
       </Grid>
     </Grid>
