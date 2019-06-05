@@ -9,9 +9,10 @@ import { withStyles } from '@material-ui/core/styles';
 
 import IntroVideo from '../IntroVideo/IntroVideo';
 
-const mapStateToProps = state => {
-  return state;
-};
+const mapStateToProps = state => ({
+  language: state.languageState.language,
+  open: state.sideBarState.open
+});
 
 const styles = theme => ({
   title: {
@@ -27,55 +28,60 @@ const styles = theme => ({
   }
 });
 
-const IntroDiv = ({ theme, classes }) => {
+const IntroDiv = ({ theme, classes, open }) => {
   return (
-    <Grid
-      container
-      direction='row'
-      style={{
-        position: 'relative',
-        marginBottom: !useMediaQuery(theme.breakpoints.up(740)) ? 280 : null
-      }}
-    >
+    <div>
       <Grid
-        item
+        container
+        direction='row'
         style={{
-          transition: 'all .18s ease-in-out',
-          width: !useMediaQuery(theme.breakpoints.up(740)) ? '100%' : '55%',
-          margin: !useMediaQuery(theme.breakpoints.up(740))
-            ? 0
-            : '70px 0 130px 0'
+          position: 'relative',
+          marginBottom: !useMediaQuery(theme.breakpoints.up(740)) ? 280 : null,
+          height: open ? 0 : null
         }}
       >
-        <IntroVideo />
-      </Grid>
-      <Grid
-        item
-        style={{
-          width: !useMediaQuery(theme.breakpoints.up(740)) ? '88%' : '45%',
-          margin: 'auto',
-          padding: '50px 30px 0 50px',
-          position: !useMediaQuery(theme.breakpoints.up(740))
-            ? 'absolute'
-            : 'static',
-          background: `${theme.palette.primary.main}`,
-          borderTopRightRadius: 5,
-          borderBottomRightRadius: 5
-        }}
-        className={classes.introDiv}
-      >
-        <Typography
-          variant={'h2'}
-          className={classes.title}
-          style={{ paddingBottom: 50 }}
+        <Grid
+          item
+          style={{
+            transition: 'all .18s ease-in-out',
+            width: !useMediaQuery(theme.breakpoints.up(740)) ? '100%' : '55%',
+            margin: !useMediaQuery(theme.breakpoints.up(740))
+              ? 0
+              : '70px 0 130px 0'
+          }}
         >
-          Constructional Affection
-        </Typography>
-        <Typography variant='body1' style={{ paddingBottom: 60 }}>
-          Establish desired interactions using affection as a reinforcer.
-        </Typography>
+          <IntroVideo />
+        </Grid>
+        <Grid
+          item
+          style={{
+            width: !useMediaQuery(theme.breakpoints.up(740)) ? '88%' : '45%',
+            margin: 'auto',
+            padding: '50px 30px 0 50px',
+            position: !useMediaQuery(theme.breakpoints.up(740))
+              ? 'absolute'
+              : 'static',
+            background: `${theme.palette.primary.main}`,
+            borderTopRightRadius: 5,
+            borderBottomRightRadius: 5
+          }}
+          className={classes.introDiv}
+        >
+          <Typography
+            variant={'h2'}
+            className={classes.title}
+            style={{
+              paddingBottom: 25
+            }}
+          >
+            Constructional Affection
+          </Typography>
+          <Typography variant='body1' style={{ paddingBottom: 60 }}>
+            Establish desired interactions using affection as a reinforcer.
+          </Typography>
+        </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 };
 

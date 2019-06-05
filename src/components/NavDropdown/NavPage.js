@@ -17,21 +17,33 @@ import Typography from '@material-ui/core/Typography';
 
 import { theme } from '../../styles/theme';
 
-const mapStateToProps = state => {
-  return {
-    language: state.languageState.language,
-    open: state.sideBarState.open
-  };
-};
+const mapStateToProps = state => ({
+  language: state.languageState.language,
+  open: state.sideBarState.open
+});
 
 const NavDropdown = ({ language, open, theme }) => {
+  console.log(open);
   return (
-    <div>
-      <Slide
-        style={{ width: open ? '100%' : '0', height: open ? '100%' : '0', zIndex: 500, background: theme.palette.ternary.main, color: theme.palette.text.light}}
-      ><NavButtons />
-      </Slide>
-    </div>
+    <Slide
+      in={open}
+      direction='down'
+      style={{
+        position: 'fixed',
+        top: 0,
+        width: 'calc(100vw + 20px)',
+        height: '100vh',
+        zIndex: 500,
+        background: theme.palette.ternary.main,
+        color: theme.palette.text.light,
+        marginLeft: -20,
+        transition: 'all .18s ease-in-out'
+      }}
+    >
+      <div style={{ background: theme.palette.ternary.main }}>
+        {open && <NavButtons direction='column' />}
+      </div>
+    </Slide>
   );
 };
 

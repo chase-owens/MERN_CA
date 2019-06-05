@@ -1,38 +1,49 @@
 import React, { Fragment, Component } from 'react';
-
-import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import NavIntro from '../components/Layout/NavIntro';
-import LanguagePicker from '../components/LanguagePicker/LanguagePicker';
+import NavPage from '../components/NavDropdown/NavPage';
 import About from '../components/About/About';
+import YourProgram from '../components/YourProgram/YourProgram';
+import HowTo from '../components/HowTo/HowTo';
 
 import Grid from '@material-ui/core/Grid';
 
-import { Route } from 'react-router-dom';
-import YourProgram from '../components/YourProgram/YourProgram';
 import { getDataFromServer } from '../server/httpRequests';
 
+const mapStateToProps = state => {
+  return {
+    open: state.sideBarState.open
+  };
+};
 class App extends Component {
   componentDidMount() {
     getDataFromServer();
   }
 
   render() {
-    const { theme } = this.props;
+    const { theme, open } = this.props;
 
     return (
       <Fragment>
         <NavIntro />
-
-        <main style={{ overflow: 'hidden', marginTop: 60 }}>
-          <About />
-          {/* <LanguagePicker /> */}
-          <Route exact path='/program' render={() => <YourProgram />} />
-        </main>
+        {!open && (
+          <main
+            style={{
+              overflow: 'hidden',
+              marginTop: 60
+            }}
+          >
+            <About />
+            <HowTo />
+            {/* <LanguagePicker /> */}
+            <Route exact path='/program' render={() => <YourProgram />} />
+          </main>
+        )}
       </Fragment>
     );
   }
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

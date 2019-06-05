@@ -8,20 +8,29 @@ class AboutCardBig extends Component {
     showAnswer: false
   };
   render() {
-    const { point } = this.props;
+    const { point, color } = this.props;
     return this.state.showAnswer ? (
-      <div>
-        <Typography variant='body2'>{point.title}</Typography>
-        <Typorgraphy paragraph style={{ fontSize: '1.5em' }} variant='headline'>
+      <div style={{ width: '100%', height: '100%', textAlign: 'center' }}>
+        <Typography paragraph align='center' variant='overline'>
+          {point.title}
+        </Typography>
+        <Typorgraphy
+          paragraph
+          align='center'
+          style={{ fontSize: '1.5em' }}
+          variant='headline'
+        >
           {point.question}
         </Typorgraphy>
       </div>
     ) : (
-      <div>
-        <Typography variant='body2'>{point.title}</Typography>
-        <Typorgraphy paragraph style={{ fontSize: '1.5em' }} variant='headline'>
+      <div style={{ padding: 25, margin: 'auto' }}>
+        <Typography paragraph variant='overline' style={{ color: color }}>
+          {point.title}
+        </Typography>
+        <Typography paragraph variant='body1' style={{ color: color }}>
           {point.question}
-        </Typorgraphy>
+        </Typography>
       </div>
     );
   }

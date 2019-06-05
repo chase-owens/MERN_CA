@@ -13,16 +13,18 @@ import css from './About.css';
 import aboutPoints from './about.config';
 import targetOutcomes from './targetOutcomes.config';
 import AboutCardSmall from './AboutCardSmall';
+import AboutCardBig from './AboutCardBig';
 import TargetOutcomesSmall from './TargetOutcomesSmall';
+import Sequence from '../Stepper/Sequence';
 
 const getBackground = i => {
   switch (i) {
     case 0:
-      return theme.palette.primary.main;
+      return theme.palette.ternary.main;
     case 1:
-      return theme.palette.ternary.dark;
-    case 2:
       return theme.palette.secondary.main;
+    case 2:
+      return theme.palette.ternary.main;
     default:
       return null;
   }
@@ -64,8 +66,7 @@ const About = ({ theme }) => {
             {aboutPoints !== undefined &&
               aboutPoints.map((point, i) => {
                 let background = getBackground(i);
-                let color = i % 2 == 0 ? 'textPrimary' : 'textSecondary';
-                let margin = i % 2 === 1 ? 36 : 0;
+                let color = 'textSecondary';
                 return (
                   <Grid
                     item
@@ -101,7 +102,9 @@ const About = ({ theme }) => {
             wrap='nowrap'
             style={{
               overflowX: 'auto',
-              WebkitOverflowScrolling: 'touch'
+              WebkitOverflowScrolling: 'touch',
+              marginTop: 20,
+              marginBottom: 20
             }}
             spacing={40}
           >
@@ -116,39 +119,56 @@ const About = ({ theme }) => {
                     height: '65vw',
                     minHeight: 400,
                     minWidth: 400
-                    // background: background,
-                    // marginLeft: margin,
-                    // marginRight: margin
                   }}
                 >
                   <Card
                     style={{
                       width: '100%',
                       height: '100%'
-                      // minHeight: 400,
-                      // minWidth: 400,
-                      // background: background
                     }}
                   >
-                    <TargetOutcomesSmall
-                      title={target.title}
-                      steps={[target.a, target.b, target.c]}
-                    />
+                    <TargetOutcomesSmall target={target} />
                   </Card>
                 </Grid>
               ))}
           </Grid>
           <br />
+          <Typography
+            variant='headline'
+            style={{
+              margin: '0 40px'
+            }}
+          >
+            Traditional training approaches often fail to solve the problem.
+          </Typography>
+          <div style={{ marginLeft: 75 }}>
+            <Typography
+              variant='body1'
+              style={{
+                paddingTop: 30,
+                paddingBottom: 5
+              }}
+            >
+              They can reduce problem behavior.
+            </Typography>
+            <Typography variant='body1' style={{ paddingBottom: 5 }}>
+              They can establishing target behavior.
+            </Typography>
+            <Typography variant='body1' style={{ paddingBottom: 5 }}>
+              They struggle to maintain the target behavior in the natural
+              environment.
+            </Typography>
+          </div>
         </div>
       )}
       {useMediaQuery(theme.breakpoints.up(740)) && (
-        <Grid container direction='row'>
-          <Grid item sm='9' lg='6' style={{ padding: '0 10px' }}>
+        <Grid container direction='row' wrap='wrap' justify='flex-start'>
+          <Grid item sm={8} lg={6} style={{ padding: 25 }}>
             <Typography
+              paragraph
               variant='h2'
               style={{
-                marginLeft: 30,
-                fontSize: '2.5em'
+                fontSize: '1.5em'
               }}
             >
               The plan: Create calm connections with affection, love, and praise
@@ -161,19 +181,89 @@ const About = ({ theme }) => {
               begin Constructional Affection.{' '}
             </Typography>
           </Grid>
+          {aboutPoints !== undefined &&
+            aboutPoints.map((point, i) => {
+              let background = getBackground(i);
+
+              let color = theme.palette.text.secondary;
+              return (
+                <Grid
+                  item
+                  sm={4}
+                  key={point.title}
+                  style={{
+                    height: 200,
+                    background: background,
+                    minHeight: '33.3vw'
+                  }}
+                >
+                  <AboutCardBig point={point} color={color} />
+                </Grid>
+              );
+            })}
+          {targetOutcomes !== undefined &&
+            targetOutcomes.map(
+              (target, i) =>
+                i !== 0 && (
+                  <Grid
+                    item
+                    sm={4}
+                    key={target.title}
+                    style={{
+                      minHeight: '33.3vw'
+                    }}
+                  >
+                    <TargetOutcomesSmall target={target} />
+                  </Grid>
+                )
+            )}
           <Grid
             item
-            sm='9'
-            lg='6'
-            style={{ background: theme.palette.ternary.main }}
+            sm={8}
+            lg={6}
+            style={{
+              background: theme.palette.ternary.main,
+              padding: '50px 25px 0 50px'
+            }}
           >
             <Typography
+              paragraph
               variant='h2'
               style={{
-                fontSize: '2.5em'
+                fontSize: '1.5em',
+                color: theme.palette.text.light
               }}
             >
               Traditional training approaches often fail to solve the problem.
+            </Typography>
+            <Typography
+              align='right'
+              variant='body1'
+              style={{
+                color: theme.palette.text.light,
+                paddingTop: 30
+              }}
+            >
+              They can reduce problem behavior.
+            </Typography>
+            <Typography
+              align='right'
+              variant='body1'
+              style={{
+                color: theme.palette.text.light
+              }}
+            >
+              They can establishing target behavior.
+            </Typography>
+            <Typography
+              align='right'
+              variant='body1'
+              style={{
+                color: theme.palette.text.light
+              }}
+            >
+              They struggle to maintain the target behavior in the natural
+              environment.
             </Typography>
           </Grid>
         </Grid>

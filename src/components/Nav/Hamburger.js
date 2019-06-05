@@ -6,6 +6,7 @@ import { toggleSidebar } from '../Nav/nav.actions';
 
 import withWidth from '@material-ui/core/withWidth';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Icon from '@material-ui/core/Icon';
 
 import { theme } from '../../styles/theme';
 
@@ -52,32 +53,22 @@ const Hamburger = ({ open, toggleSidebar }) => {
       )}
       {open && (
         <ClickAwayListener onClickAway={toggleSidebar}>
-          <div
+          <Icon
             onClick={toggleSidebar}
-            style={{ position: 'fixed', zIndex: 999, top: 20, right: 30 }}
+            style={{
+              color: '#fff',
+              position: 'fixed',
+              zIndex: 999,
+              top: 16,
+              right: 28,
+              paddingRight: 30,
+              paddingBottom: 26
+            }}
           >
-            <hr
-              style={{
-                width: 30,
-                marginBottom: '6px',
-                borderColor: theme.palette.ternary.main
-              }}
-            />
-            <hr
-              style={{
-                width: 30,
-                margin: '6px 0',
-                borderColor: theme.palette.ternary.main
-              }}
-            />
-            <hr
-              style={{
-                width: 30,
-                marginTop: '6px',
-                borderColor: theme.palette.ternary.main
-              }}
-            />
-          </div>
+            <i style={{ fontSize: 40 }} class='material-icons'>
+              close
+            </i>
+          </Icon>
         </ClickAwayListener>
       )}
     </div>

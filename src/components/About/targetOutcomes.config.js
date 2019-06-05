@@ -1,21 +1,30 @@
 const targetOutcomes = [
   {
     title: `Warm Welcome`,
-    a: `You come home`,
-    b: `Dog greets you by sitting and smiling`,
-    c: `You bend down and show affection`
+    steps: [
+      { icon: 'A', description: 'You come home' },
+      { icon: 'B', description: 'Dog greets you by sitting and smiling' },
+      { icon: 'C', description: 'You bend down and show affection' }
+    ]
   },
   {
     title: `Pleasant Interaction`,
-    a: `You sit on couch`,
-    b: `Dog comes over and sits next to you`,
-    c: `Y'all hang out and watch TV`
+    steps: [
+      { icon: 'A', description: 'You sit on couch' },
+      { icon: 'B', description: 'Dog comes over and sits next to you' },
+      { icon: 'C', description: `Y'all hang out and watch TV` }
+    ]
   },
   {
     title: `Polite Greeting`,
-    a: `Visitor approaches`,
-    b: `Dog sits patiently`,
-    c: `Visitor pets your dog and comments on its good behavior`
+    steps: [
+      { icon: 'A', description: 'Visitor approaches' },
+      { icon: 'B', description: 'Dog sits patiently' },
+      {
+        icon: 'C',
+        description: `Visitor pets your dog and comments on its good behavior`
+      }
+    ]
   }
 ];
 

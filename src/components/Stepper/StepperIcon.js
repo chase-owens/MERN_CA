@@ -1,17 +1,18 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
 
 const StepperIcon = ({ content }) => {
   return (
-    <p
+    <Typography
       style={{
         textAlign: 'center',
         height: '100%',
-        lineHeight: '1px',
+        lineHeight: '30px',
         color: '#fff'
       }}
     >
       {content}
-    </p>
+    </Typography>
   );
 };
 
