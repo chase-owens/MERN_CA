@@ -41,10 +41,13 @@ const About = ({ theme }) => {
               margin: '0 30px 60px 40px'
             }}
           >
+            <Typography paragraph variant='caption'>
+              <span style={{ fontWeight: 'bold' }}>CA</span> / About
+            </Typography>
             <Typography paragraph variant='headline'>
               The plan: Create calm connections with affection, love, and praise
             </Typography>
-            <Typography paragraph variant='body1'>
+            <Typography variant='body1'>
               If your dog is always jumping on you, nipping your hands, or
               biting your clothes to get your attention, don’t worry - That’s a
               good thing! That means your dog loves you, that your affection has
@@ -59,7 +62,8 @@ const About = ({ theme }) => {
             wrap='nowrap'
             style={{
               overflowX: 'auto',
-              WebkitOverflowScrolling: 'touch'
+              WebkitOverflowScrolling: 'touch',
+              flex: '0 1 auto'
             }}
             spacing={40}
           >
@@ -141,7 +145,7 @@ const About = ({ theme }) => {
           >
             Traditional training approaches often fail to solve the problem.
           </Typography>
-          <div style={{ marginLeft: 75 }}>
+          <div style={{ marginLeft: 50 }}>
             <Typography
               variant='body1'
               style={{
@@ -163,7 +167,10 @@ const About = ({ theme }) => {
       )}
       {useMediaQuery(theme.breakpoints.up(740)) && (
         <Grid container direction='row' wrap='wrap' justify='flex-start'>
-          <Grid item sm={8} lg={6} style={{ padding: 25 }}>
+          <Grid item sm={8} lg={6} style={{ padding: '25px 25px 0 25px' }}>
+            <Typography paragraph variant='caption'>
+              <span style={{ fontWeight: 'bold' }}>CA</span> / About
+            </Typography>
             <Typography
               paragraph
               variant='h2'
@@ -223,7 +230,7 @@ const About = ({ theme }) => {
             lg={6}
             style={{
               background: theme.palette.ternary.main,
-              padding: '50px 25px 0 50px'
+              padding: '40px 25px 0 50px'
             }}
           >
             <Typography
@@ -244,7 +251,7 @@ const About = ({ theme }) => {
                 paddingTop: 30
               }}
             >
-              They reduce problem behavior in the moment(while correcting).
+              They momentarily reduce problem behavior.
             </Typography>
             <Typography
               align='right'
@@ -253,8 +260,7 @@ const About = ({ theme }) => {
                 color: theme.palette.text.light
               }}
             >
-              They establish target behavior(when a clicker and food is
-              present).
+              They establish the target behavior in a training session.
             </Typography>
             <Typography
               align='right'
