@@ -244,7 +244,7 @@ const About = ({ theme }) => {
                 paddingTop: 30
               }}
             >
-              They can reduce problem behavior.
+              They reduce problem behavior in the moment(while correcting).
             </Typography>
             <Typography
               align='right'
@@ -253,7 +253,8 @@ const About = ({ theme }) => {
                 color: theme.palette.text.light
               }}
             >
-              They can establishing target behavior.
+              They establish target behavior(when a clicker and food is
+              present).
             </Typography>
             <Typography
               align='right'

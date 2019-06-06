@@ -22,7 +22,7 @@ const targetOutcomes = [
       { icon: 'B', description: 'Dog sits patiently' },
       {
         icon: 'C',
-        description: `Visitor pets your dog and comments on its good behavior`
+        description: `Visitor pets your dog and comments on their good behavior`
       }
     ]
   }
