@@ -153,13 +153,13 @@ const About = ({ theme }) => {
                 paddingBottom: 5
               }}
             >
-              They can reduce problem behavior.
+              They momentarily reduce problem behavior.
             </Typography>
             <Typography variant='body1' style={{ paddingBottom: 5 }}>
-              They can establishing target behavior.
+              They establish the target behavior in a training session.
             </Typography>
             <Typography variant='body1' style={{ paddingBottom: 5 }}>
-              They struggle to maintain the target behavior in the natural
+              They struggle to maintain target behaviors in the natural
               environment.
             </Typography>
           </div>
@@ -244,7 +244,6 @@ const About = ({ theme }) => {
               Traditional training approaches often fail to solve the problem.
             </Typography>
             <Typography
-              align='right'
               variant='body1'
               style={{
                 color: theme.palette.text.light,
@@ -254,7 +253,6 @@ const About = ({ theme }) => {
               They momentarily reduce problem behavior.
             </Typography>
             <Typography
-              align='right'
               variant='body1'
               style={{
                 color: theme.palette.text.light
@@ -263,13 +261,12 @@ const About = ({ theme }) => {
               They establish the target behavior in a training session.
             </Typography>
             <Typography
-              align='right'
               variant='body1'
               style={{
                 color: theme.palette.text.light
               }}
             >
-              They struggle to maintain the target behavior in the natural
+              They struggle to maintain target behaviors in the natural
               environment.
             </Typography>
           </Grid>
