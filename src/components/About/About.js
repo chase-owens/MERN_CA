@@ -15,7 +15,6 @@ import targetOutcomes from './targetOutcomes.config';
 import AboutCardSmall from './AboutCardSmall';
 import AboutCardBig from './AboutCardBig';
 import TargetOutcomesSmall from './TargetOutcomesSmall';
-import Sequence from '../Stepper/Sequence';
 
 const getBackground = i => {
   switch (i) {
@@ -145,7 +144,7 @@ const About = ({ theme }) => {
           >
             Traditional training approaches often fail to solve the problem.
           </Typography>
-          <div style={{ marginLeft: 50 }}>
+          <div style={{ margin: '0 40px' }}>
             <Typography
               variant='body1'
               style={{
@@ -153,13 +152,13 @@ const About = ({ theme }) => {
                 paddingBottom: 5
               }}
             >
-              They momentarily reduce problem behavior.
+              They momentarily reduce excited behavior.
             </Typography>
             <Typography variant='body1' style={{ paddingBottom: 5 }}>
-              They establish the target behavior in a training session.
+              They establish calm behaviors in training sessions.
             </Typography>
             <Typography variant='body1' style={{ paddingBottom: 5 }}>
-              They struggle to maintain target behaviors in the natural
+              They struggle to maintain calm behaviors in the natural
               environment.
             </Typography>
           </div>
@@ -229,7 +228,6 @@ const About = ({ theme }) => {
             sm={8}
             lg={6}
             style={{
-              background: theme.palette.ternary.main,
               padding: '40px 25px 0 50px'
             }}
           >
@@ -237,8 +235,7 @@ const About = ({ theme }) => {
               paragraph
               variant='h2'
               style={{
-                fontSize: '1.5em',
-                color: theme.palette.text.light
+                fontSize: '1.5em'
               }}
             >
               Traditional training approaches often fail to solve the problem.
@@ -246,27 +243,16 @@ const About = ({ theme }) => {
             <Typography
               variant='body1'
               style={{
-                color: theme.palette.text.light,
                 paddingTop: 30
               }}
             >
-              They momentarily reduce problem behavior.
+              They momentarily reduce excited behavior.
             </Typography>
-            <Typography
-              variant='body1'
-              style={{
-                color: theme.palette.text.light
-              }}
-            >
-              They establish the target behavior in a training session.
+            <Typography variant='body1'>
+              They establish calm behaviors in training sessions.
             </Typography>
-            <Typography
-              variant='body1'
-              style={{
-                color: theme.palette.text.light
-              }}
-            >
-              They struggle to maintain target behaviors in the natural
+            <Typography variant='body1'>
+              They struggle to maintain calm behaviors in the natural
               environment.
             </Typography>
           </Grid>

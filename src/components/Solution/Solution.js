@@ -4,7 +4,7 @@ import { theme } from '../../styles/theme';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-const HowTo = () => {
+const Solution = () => {
   return (
     <div
       style={{
@@ -13,11 +13,11 @@ const HowTo = () => {
     >
       <div style={{ padding: '50px 30px 60px 40px' }}>
         <Typography paragraph variant='caption'>
-          <span style={{ fontWeight: 'bold' }}>CA</span> / How To
+          <span style={{ fontWeight: 'bold' }}>CA</span> / Solution
         </Typography>
       </div>
     </div>
   );
 };
 
-export default HowTo;
+export default Solution;

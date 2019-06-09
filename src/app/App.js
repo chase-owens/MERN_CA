@@ -11,6 +11,7 @@ import HowTo from '../components/HowTo/HowTo';
 import Grid from '@material-ui/core/Grid';
 
 import { getDataFromServer } from '../server/httpRequests';
+import Solution from '../components/Solution/Solution';
 
 const mapStateToProps = state => {
   return {
@@ -36,6 +37,7 @@ class App extends Component {
             }}
           >
             <About />
+            <Solution />
             <HowTo />
             {/* <LanguagePicker /> */}
             <Route exact path='/program' render={() => <YourProgram />} />

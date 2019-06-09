@@ -1,6 +1,6 @@
 const aboutPoints = [
   {
-    title: `Key Concepts`,
+    title: `Key Concept`,
     question: `What does Constructional mean?`,
     answer: `The Traditional Approach is one that focuses on eliminating the problem. In contrast, the Constructional Approach refers to the production of a specific goal or behavior using current strengths or skills.`,
     citation: `GOLDIAMOND, 1974`

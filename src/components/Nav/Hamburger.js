@@ -7,6 +7,7 @@ import { toggleSidebar } from '../Nav/nav.actions';
 import withWidth from '@material-ui/core/withWidth';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Icon from '@material-ui/core/Icon';
+import Button from '@material-ui/core/Button';
 
 import { theme } from '../../styles/theme';
 
@@ -24,51 +25,65 @@ const Hamburger = ({ open, toggleSidebar }) => {
   return (
     <div>
       {!open && (
-        <div
+        <Button
           onClick={toggleSidebar}
-          style={{ position: 'fixed', zIndex: 999, top: 20, right: 30 }}
+          style={{
+            position: 'fixed',
+            zIndex: 999,
+            top: 15,
+            right: 15
+          }}
         >
-          <hr
-            style={{
-              width: 30,
-              marginBottom: '6px',
-              borderColor: theme.palette.ternary.main
-            }}
-          />
-          <hr
-            style={{
-              width: 30,
-              margin: '6px 0',
-              borderColor: theme.palette.ternary.main
-            }}
-          />
-          <hr
-            style={{
-              width: 30,
-              marginTop: '6px',
-              borderColor: theme.palette.ternary.main
-            }}
-          />
-        </div>
+          <div>
+            <hr
+              style={{
+                width: 30,
+                marginBottom: '6px',
+                borderColor: theme.palette.ternary.main
+              }}
+            />
+            <hr
+              style={{
+                width: 30,
+                margin: '6px 0',
+                borderColor: theme.palette.ternary.main
+              }}
+            />
+            <hr
+              style={{
+                width: 30,
+                marginTop: '6px',
+                borderColor: theme.palette.ternary.main
+              }}
+            />
+          </div>
+        </Button>
       )}
       {open && (
         <ClickAwayListener onClickAway={toggleSidebar}>
-          <Icon
-            onClick={toggleSidebar}
+          <Button
             style={{
               color: '#fff',
-              position: 'fixed',
               zIndex: 999,
-              top: 16,
-              right: 28,
-              paddingRight: 30,
-              paddingBottom: 26
+              marginRight: 24,
+              marginTop: -3
             }}
+            onClick={toggleSidebar}
           >
-            <i style={{ fontSize: 40 }} class='material-icons'>
-              close
-            </i>
-          </Icon>
+            <Icon
+              style={{
+                paddingBottom: 15,
+                paddingTop: -15,
+                paddingRight: 20,
+                marginRight: -12,
+                marginLeft: -5
+              }}
+            >
+              <i style={{ fontSize: 40 }} class='material-icons'>
+                close
+              </i>
+            </Icon>
+          </Button>
         </ClickAwayListener>
       )}
     </div>
