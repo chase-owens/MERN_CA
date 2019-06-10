@@ -18,15 +18,15 @@ import NavPage from '../NavDropdown/NavPage';
 const title = 'Constructional Affection';
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     language: state.languageState.language,
-    open: state.sideBarState.open
+    open: state.sideBarState.open,
+    audience: state.audienceState.audience
   };
 };
 
-const Nav = ({ theme, language, open }) => {
-  console.log(language, open);
+const Nav = ({ theme, language, open, audience }) => {
+  console.log(language, open, audience);
   return (
     <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
       <Grid

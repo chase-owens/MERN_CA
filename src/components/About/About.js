@@ -19,11 +19,11 @@ import TargetOutcomesSmall from './TargetOutcomesSmall';
 const getBackground = i => {
   switch (i) {
     case 0:
-      return theme.palette.ternary.main;
-    case 1:
       return theme.palette.secondary.main;
-    case 2:
+    case 1:
       return theme.palette.ternary.main;
+    case 2:
+      return theme.palette.secondary.main;
     default:
       return null;
   }
@@ -32,12 +32,12 @@ const getBackground = i => {
 const About = ({ theme }) => {
   console.log(aboutPoints);
   return (
-    <div>
+    <div style={{ paddingBottom: 70 }}>
       {useMediaQuery(theme.breakpoints.down(740)) && (
         <div>
           <div
             style={{
-              margin: '0 30px 60px 40px'
+              margin: '0 40px 60px 40px'
             }}
           >
             <Typography paragraph variant='caption'>

@@ -18,6 +18,7 @@ const Sequence = ({ steps }) => {
       >
         {steps.map((step, i) => (
           <div
+            key={i}
             style={{ width: i < steps.length - 1 ? `calc(20% + 45px)` : 30 }}
           >
             <Grid container alignItems='center' wrap='nowrap'>
@@ -27,7 +28,7 @@ const Sequence = ({ steps }) => {
                   width: 30,
                   height: 30,
                   borderRadius: '50%',
-                  background: theme.palette.secondary.main
+                  background: theme.palette.ternary.main
                 }}
                 justify='center'
               >
@@ -54,6 +55,7 @@ const Sequence = ({ steps }) => {
       >
         {steps.map((step, i) => (
           <Grid
+            key={i}
             item
             style={{
               width: '27%',

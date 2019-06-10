@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ changeLanguage }, dispatch);
 
-const LanguagePicker = ({ changeLanguage }) => {
+const LanguagePicker = ({ changeLanguage, changeAudience }) => {
   return (
     <div style={{ width: '100%', height: '100%' }}>
       {languages.map(languageObject => (

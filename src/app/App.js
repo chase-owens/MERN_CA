@@ -2,6 +2,8 @@ import React, { Fragment, Component } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import LanguagePicker from '../components/LanguagePicker/LanguagePicker';
+
 import NavIntro from '../components/Layout/NavIntro';
 import NavPage from '../components/NavDropdown/NavPage';
 import About from '../components/About/About';
@@ -39,7 +41,7 @@ class App extends Component {
             <About />
             <Solution />
             <HowTo />
-            {/* <LanguagePicker /> */}
+            <LanguagePicker />
             <Route exact path='/program' render={() => <YourProgram />} />
           </main>
         )}

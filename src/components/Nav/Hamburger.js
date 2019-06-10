@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import { toggleSidebar } from '../Nav/nav.actions';
 
 import withWidth from '@material-ui/core/withWidth';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 
@@ -39,52 +38,50 @@ const Hamburger = ({ open, toggleSidebar }) => {
               style={{
                 width: 30,
                 marginBottom: '6px',
-                borderColor: theme.palette.ternary.main
+                borderColor: theme.palette.secondary.main
               }}
             />
             <hr
               style={{
                 width: 30,
                 margin: '6px 0',
-                borderColor: theme.palette.ternary.main
+                borderColor: theme.palette.secondary.main
               }}
             />
             <hr
               style={{
                 width: 30,
                 marginTop: '6px',
-                borderColor: theme.palette.ternary.main
+                borderColor: theme.palette.secondary.main
               }}
             />
           </div>
         </Button>
       )}
       {open && (
-        <ClickAwayListener onClickAway={toggleSidebar}>
-          <Button
+        <Button
+          style={{
+            color: '#fff',
+            zIndex: 999,
+            marginRight: 24,
+            marginTop: -3
+          }}
+          onClick={toggleSidebar}
+        >
+          <Icon
             style={{
-              color: '#fff',
-              zIndex: 999,
-              marginRight: 24,
-              marginTop: -3
+              paddingBottom: 15,
+              paddingTop: -15,
+              paddingRight: 20,
+              marginRight: -12,
+              marginLeft: -5
             }}
-            onClick={toggleSidebar}
           >
-            <Icon
-              style={{
-                paddingBottom: 15,
-                paddingTop: -15,
-                paddingRight: 20,
-                marginRight: -12,
-                marginLeft: -5
-              }}
-            >
-              <i style={{ fontSize: 40 }} class='material-icons'>
-                close
-              </i>
-            </Icon>
-          </Button>
-        </ClickAwayListener>
+            <i style={{ fontSize: 40 }} class='material-icons'>
+              close
+            </i>
+          </Icon>
+        </Button>
       )}
     </div>
   );
