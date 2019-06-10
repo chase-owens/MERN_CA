@@ -5,12 +5,9 @@ import { connect } from 'react-redux';
 import LanguagePicker from '../components/LanguagePicker/LanguagePicker';
 
 import NavIntro from '../components/Layout/NavIntro';
-import NavPage from '../components/NavDropdown/NavPage';
 import About from '../components/About/About';
 import YourProgram from '../components/YourProgram/YourProgram';
 import HowTo from '../components/HowTo/HowTo';
-
-import Grid from '@material-ui/core/Grid';
 
 import { getDataFromServer } from '../server/httpRequests';
 import Solution from '../components/Solution/Solution';

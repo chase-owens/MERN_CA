@@ -1,15 +1,21 @@
 import React from 'react';
 import { theme } from '../../styles/theme';
 
+import withWidth from '@material-ui/core/withWidth';
+import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+
 import Grid from '@material-ui/core/Grid';
 
 import Typography from '@material-ui/core/Typography';
 import Chip from '../Chip/Chip';
 
 const Translation = () => {
+  const color = useMediaQuery(theme.breakpoints.down(740))
+    ? 'textSecondary'
+    : 'default';
   return (
     <div>
-      <Typography paragraph variant='subtitle2'>
+      <Typography color={color} paragraph variant='subtitle2'>
         Translation
       </Typography>
       <Grid container spacing={8} direction='row' wrap='nowrap'>
@@ -27,4 +33,4 @@ const Translation = () => {
   );
 };
 
-export default Translation;
+export default withWidth({ withTheme: true })(Translation);

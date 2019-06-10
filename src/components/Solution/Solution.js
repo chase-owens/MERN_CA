@@ -1,15 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { theme } from '../../styles/theme';
 
-import Grid from '@material-ui/core/Grid';
+import Matricies from '../Matricies/Matricies';
 import Typography from '@material-ui/core/Typography';
 import withWidth from '@material-ui/core/withWidth';
-import { withStyles } from '@material-ui/core/styles';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 import Translation from '../Translation/Translation';
 
-const Solution = () => {
+const mapStateToProps = state => ({
+  audience: state.audienceState.audience
+});
+
+const Solution = ({ audience }) => {
   const color = useMediaQuery(theme.breakpoints.down(740))
     ? 'textSecondary'
     : 'default';
@@ -44,10 +48,14 @@ const Solution = () => {
             borderColor: useMediaQuery(theme.breakpoints.down(740))
               ? theme.palette.secondary.dark
               : theme.palette.ternary.main,
-            marginBottom: 15
+            marginBottom: 10
           }}
         />
-        <Typography color={color} variant='headline'>
+        <Typography
+          style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
+          color={color}
+          variant='body1'
+        >
           We applied state-of-the-art learning science to the development of
           Constructional Affection. We identified a range of target outcomes
           that if present are solutions for the problem of canine hyperactivity.
@@ -56,10 +64,14 @@ const Solution = () => {
           maintain the calm behaviors. The result is a spoiled companion that
           now finds being calm more reinforcing than getting excited.
         </Typography>
+        {audience === 'ba' && <Matricies />}
+        <Translation />
+        <br />
       </div>
-      <Translation />
     </div>
   );
 };
 
-export default withWidth({ withTheme: true })(Solution);
+export default connect(mapStateToProps)(
+  withWidth({ withTheme: true })(Solution)
+);
