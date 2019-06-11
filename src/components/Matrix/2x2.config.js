@@ -13,7 +13,12 @@ const twoXtwo = [
       },
       {
         alternative: 'Calm Behaviors',
-        consequences: ['likely ignored', 'affection unlikely']
+        consequences: [
+          'likely ignored',
+          'scratches unlikely',
+          'possible people saying good dog',
+          'possible smiles'
+        ]
       }
     ]
   },
@@ -31,7 +36,12 @@ const twoXtwo = [
       },
       {
         alternative: 'Calm Behaviors',
-        consequences: ['certain interaction', 'affection certain']
+        consequences: [
+          'certain interaction',
+          'lots of scratches',
+          'lots of smiles',
+          'possible people saying good dog'
+        ]
       }
     ]
   }

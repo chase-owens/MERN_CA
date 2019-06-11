@@ -26,7 +26,8 @@ const CustomTableCell = withStyles(theme => ({
   },
   body: {
     fontSize: 16,
-    border: 'thin solid #000'
+    border: 'thin solid #000',
+    height: 150
   }
 }))(TableCell);
 
@@ -35,8 +36,8 @@ const Matrix = ({ matrix }) => {
     <div
       style={{
         margin: '30px 0',
-        width: '100%',
-        minWidth: 320
+        width: 420,
+        height: '100%'
       }}
     >
       <Typography
@@ -56,10 +57,14 @@ const Matrix = ({ matrix }) => {
       </Typography>
       <Paper>
         <Table>
-          <TableHead>
+          <TableHead style={{ width: '100%' }}>
             <TableRow>
               <CustomTableCell>
-                <Typography color='textPrimary' align='center'>
+                <Typography
+                  style={{ width: '100%', margin: 'auto', paddingLeft: 15 }}
+                  color='textPrimary'
+                  align='center'
+                >
                   Alternative
                 </Typography>
               </CustomTableCell>

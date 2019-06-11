@@ -38,7 +38,7 @@ class App extends Component {
             <About />
             <Solution />
             <HowTo />
-            <LanguagePicker />
+            {/* <LanguagePicker /> */}
             <Route exact path='/program' render={() => <YourProgram />} />
           </main>
         )}

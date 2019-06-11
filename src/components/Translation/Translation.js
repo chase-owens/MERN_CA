@@ -26,7 +26,7 @@ const Translation = () => {
           <Chip value='ba' label='Behavior Analysts' />
         </Grid>
         <Grid item>
-          <Chip value='robo' label='Robot' />
+          <Chip value='robo' label='Canine' />
         </Grid>
       </Grid>
     </div>

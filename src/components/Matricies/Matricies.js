@@ -13,34 +13,13 @@ const Matricies = () => {
     ? 'textSecondary'
     : 'default';
   return (
-    <div>
-      <Typography
-        style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
-        color={color}
-        variant='body1'
-      >
-        For calm behavior to be the alternative of choice it must be met with
-        more benefits or less costs than other available alternatives or must
-        have lower behavioral requirements.
-      </Typography>
-      <Grid container spacing={8} justify='space-around'>
-        {twoXtwo.map(matrix => (
-          <Grid item>
-            <Matrix matrix={matrix} />
-          </Grid>
-        ))}
-      </Grid>
-      <Typography
-        style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
-        color={color}
-        variant='body1'
-      >
-        If the dog has an extensive history of hyperactivity, simply arranging
-        the consequences to favor calm behavior might not be enough. In these
-        cases, a history of being reinforced for calm behaviors is required to
-        help the dog feel the difference between conditions.
-      </Typography>
-    </div>
+    <Grid container spacing={8} justify='space-around'>
+      {twoXtwo.map(matrix => (
+        <Grid item>
+          <Matrix matrix={matrix} />
+        </Grid>
+      ))}
+    </Grid>
   );
 };
 

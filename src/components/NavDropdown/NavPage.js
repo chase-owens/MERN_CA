@@ -37,7 +37,8 @@ const NavDropdown = ({ language, open, theme }) => {
         background: theme.palette.ternary.main,
         color: theme.palette.text.light,
         marginLeft: -20,
-        transition: 'all .18s ease-in-out'
+        transition: 'all .18s ease-in-out',
+        visibility: open ? 'visible' : 'hidden'
       }}
     >
       <div style={{ background: theme.palette.ternary.main }}>
