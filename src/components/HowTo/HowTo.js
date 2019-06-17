@@ -1,45 +1,94 @@
 import React from 'react';
 import { theme } from '../../styles/theme';
+import caSteps from './caSteps.config';
 
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import InteractionGuidelines from '../InteractionGuidelines/InteractionGuidelines';
 import AffectionLoop from '../AffectionLoop/AffectionLoop';
+import InfoGraphic from '../InfoGraphic/InfoGraphic';
+import AboutCardSmall from '../About/AboutCardSmall';
+import aboutPoints from '../About/about.config';
+const getBackground = i => {
+  switch (i) {
+    case 0:
+      return theme.palette.secondary.main;
+    case 1:
+      return theme.palette.ternary.main;
+    case 2:
+      return theme.palette.secondary.main;
+    default:
+      return null;
+  }
+};
+
+import css from '../About/About.css';
 
 const HowTo = () => {
   const color = useMediaQuery(theme.breakpoints.down(740))
     ? 'default'
     : 'textSecondary';
+
   const background = useMediaQuery(theme.breakpoints.down(740))
     ? '#fff'
     : theme.palette.ternary.main;
-  return (
-    <div style={{ background: background }}>
-      <div id='how-to' style={{ padding: '10px 30px 60px 40px' }}>
-        <Typography paragraph variant='caption'>
-          <span style={{ fontWeight: 'bold' }}>CA</span> / How To
-        </Typography>
-        <Typography
-          style={{ fontSize: '2em' }}
-          color={color}
-          paragraph
-          variant='h2'
-        >
-          Getting Started
-        </Typography>
-        <Grid container spacing={16} justify='space-around'>
-          <Grid item>
-            <InteractionGuidelines />
-          </Grid>
 
-          <Grid item>
-            <AffectionLoop />
+  const howTo = caSteps[0];
+
+  return (
+    <div style={{paddingTop: 20}}>
+      <Typography paragraph variant='caption' style={{ paddingLeft: 40 }}>
+        <span style={{ fontWeight: 'bold' }}>CA</span> / How To
+      </Typography>
+      <Grid
+        container
+        className='scrollContainer'
+        wrap='nowrap'
+        style={{
+          overflowX: 'auto',
+          WebkitOverflowScrolling: 'touch',
+          flex: '0 1 auto',
+          paddingLeft: useMediaQuery(theme.breakpoints.down('xs')) ? 100 : null,
+          // width: useMediaQuery(theme.breakpoints.down('xs')) ? 600 : null,
+          maxWidth: 800,
+          margin: 'auto',
+          marginBottom: 70,
+          marginTop: 30
+        }}
+        spacing={16}
+        justify='space-around'
+      >
+        {caSteps.map(step => (
+          <Grid item key={step.title}>
+            <InfoGraphic info={step} />
           </Grid>
+        ))}
+      </Grid>
+      <Grid container spacing={0} justify='space-between' style={{background: useMediaQuery(theme.breakpoints.up('740')) ? `linear-gradient(90deg, ${theme.palette.ternary.main} 50%, ${
+              theme.palette.secondary.main
+            } 50%)` : null}}>
+        <Grid
+          item
+          style={{
+            width: useMediaQuery(theme.breakpoints.down('740')) ? '100%' : '50%'
+          }}
+        >
+          <InteractionGuidelines />
         </Grid>
-      </div>
+
+        <Grid
+          item
+          style={{
+            width: useMediaQuery(theme.breakpoints.down('740')) ? '100%' : '50%'
+          }}
+        >
+          <AffectionLoop />
+        </Grid>
+      </Grid>
     </div>
   );
 };

@@ -34,6 +34,19 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|svg|jpe?g|gif|ico)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: 'images/[name].[hash].[ext]',
+              limit: 40000,
+              context: './images'
+            }
+          }
+        ]
+      },
+      {
         test: /\.html$/,
         use: 'html-loader?attrs[]=video:src'
       },

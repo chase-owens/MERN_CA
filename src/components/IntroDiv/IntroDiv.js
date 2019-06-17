@@ -67,16 +67,13 @@ const IntroDiv = ({ theme, classes, open }) => {
           }}
           className={classes.introDiv}
         >
-          <Typography
-            variant={'h2'}
-            className={classes.title}
-            style={{
-              paddingBottom: 25
-            }}
-          >
+          <Typography variant={'h2'} className={classes.title}>
             Constructional Affection
           </Typography>
-          <Typography variant='body1' style={{ paddingBottom: 60 }}>
+          <Typography
+            variant='body1'
+            style={{ paddingTop: 25, paddingBottom: 60 }}
+          >
             Establish desired interactions using affection as a reinforcer.
           </Typography>
         </Grid>

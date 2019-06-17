@@ -10,8 +10,9 @@ import Typography from '@material-ui/core/Typography';
 
 const AffectionLoop = () => {
   return (
-    <Paper style={{ padding: 10, width: 400 }}>
+    <div style={{ padding: 30, background: theme.palette.secondary.main }}>
       <Typography
+        color='textSecondary'
         paragraph
         variant='h3'
         style={{ fontSize: '1em' }}
@@ -41,12 +42,11 @@ const AffectionLoop = () => {
           1
         </p>
       </div>
-      <Typography paragraph align='center'>
-        The Affection Loop begins where the interactions guidelines left off,
-        with you petting your dog for sitting or lying down. Once this is
-        occurring, momentarily withdraw afection, and return provided sitting or
-        lying down is still occurring. Begin with very short intervals and
-        gradually increase the duration of the loop to 10 seconds.
+      <Typography color='textSecondary' paragraph align='center'>
+        Start by petting the dog for sitting or lying down. Then withdraw
+        afection momentarily, and return provided sitting or lying down is still
+        occurring. Begin with very short intervals and gradually increase the
+        duration of the loop to 10 seconds.
       </Typography>
       <div
         style={{
@@ -70,7 +70,7 @@ const AffectionLoop = () => {
           2
         </p>
       </div>
-      <Typography paragraph align='center'>
+      <Typography color='textSecondary' paragraph align='center'>
         Once your dog is sitting and waiting patiently for your affection, you
         can alter the environment to more closely resemble the context of your
         goal.
@@ -97,13 +97,13 @@ const AffectionLoop = () => {
           3
         </p>
       </div>
-      <Typography paragraph align='center'>
+      <Typography color='textSecondary' paragraph align='center'>
         Gradual increases reduce the liklihood that any excited outbursts will
         occur along the way. But don't be alarmed if any do occur. It's usually
         a sign that you've taken too big of a step. If this happens, just take a
         step back and proceed in smaller steps.
       </Typography>
-    </Paper>
+    </div>
   );
 };
 

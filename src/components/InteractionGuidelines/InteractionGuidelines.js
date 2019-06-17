@@ -10,8 +10,9 @@ import Typography from '@material-ui/core/Typography';
 
 const InteractionGuidelines = () => {
   return (
-    <Paper style={{ padding: 10, width: 400 }}>
+    <div style={{ padding: 30, background: theme.palette.ternary.main }}>
       <Typography
+        color='textSecondary'
         paragraph
         variant='h3'
         style={{ fontSize: '1em' }}
@@ -41,7 +42,7 @@ const InteractionGuidelines = () => {
           1
         </p>
       </div>
-      <Typography paragraph align='center'>
+      <Typography color='textSecondary' paragraph align='center'>
         When the dog approachees, pet the dog with one hand as long as all four
         feet are on the ground
       </Typography>
@@ -67,7 +68,7 @@ const InteractionGuidelines = () => {
           2
         </p>
       </div>
-      <Typography paragraph align='center'>
+      <Typography color='textSecondary' paragraph align='center'>
         If any excited behaviors occur or the dog leaves, discontinue petting
       </Typography>
       <div
@@ -92,7 +93,7 @@ const InteractionGuidelines = () => {
           3
         </p>
       </div>
-      <Typography paragraph align='center'>
+      <Typography color='textSecondary' paragraph align='center'>
         When the dog returns or the excited behaviors are no longer occurring,
         resume petting
       </Typography>
@@ -118,10 +119,10 @@ const InteractionGuidelines = () => {
           4
         </p>
       </div>
-      <Typography align='center'>
+      <Typography color='textSecondary' align='center'>
         If sitting or lying down occurs, pet with two hands
       </Typography>
-    </Paper>
+    </div>
   );
 };
 

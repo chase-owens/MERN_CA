@@ -15,6 +15,7 @@ import { theme } from '../../styles/theme';
 import Hamburger from './Hamburger';
 import NavPage from '../NavDropdown/NavPage';
 
+const logoPath = require('images/Logo.png');
 const title = 'Constructional Affection';
 
 const mapStateToProps = state => {
@@ -35,10 +36,8 @@ const Nav = ({ theme, language, open, audience }) => {
         alignItems='center'
         style={{ height: 60, lineHeight: 50 }}
       >
-        <Grid item>
-          <Typography style={{ paddingLeft: 15 }} variant='headline'>
-            {title}
-          </Typography>
+        <Grid item style={{ marginTop: 35, marginLeft: 15 }}>
+          <img height={50} src={logoPath} alt='logo' />
         </Grid>
         <Grid item>
           {useMediaQuery(theme.breakpoints.up('md')) ? (
