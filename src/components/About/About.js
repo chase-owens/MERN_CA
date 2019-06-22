@@ -31,7 +31,12 @@ const getBackground = i => {
 const About = ({ theme }) => {
   console.log(aboutPoints);
   return (
-    <div style={{ paddingBottom: 70 }}>
+    <div
+      style={{
+        paddingBottom: 70,
+        paddingTop: useMediaQuery(theme.breakpoints.down(740)) ? 0 : 20
+      }}
+    >
       {useMediaQuery(theme.breakpoints.down(740)) && (
         <div>
           <div

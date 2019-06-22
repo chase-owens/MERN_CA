@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import { toggleSidebar } from './nav.actions';
 import NavButtons from '../NavButtons/NavButtons';
@@ -36,7 +35,7 @@ const Nav = ({ theme, language, open, audience }) => {
         alignItems='center'
         style={{ height: 60, lineHeight: 50 }}
       >
-        <Grid item style={{ marginTop: 35, marginLeft: 15 }}>
+        <Grid item style={{ marginTop: 42, marginLeft: 20 }}>
           <img height={50} src={logoPath} alt='logo' />
         </Grid>
         <Grid item>

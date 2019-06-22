@@ -11,6 +11,7 @@ import HowTo from '../components/HowTo/HowTo';
 
 import { getDataFromServer } from '../server/httpRequests';
 import Solution from '../components/Solution/Solution';
+import Videos from '../components/Videos/Videos';
 
 const mapStateToProps = state => {
   return {
@@ -28,20 +29,19 @@ class App extends Component {
     return (
       <Fragment>
         <NavIntro />
-        {!open && (
-          <main
-            style={{
-              overflow: 'hidden',
-              marginTop: 60
-            }}
-          >
-            <About />
-            <Solution />
-            <HowTo />
-            {/* <LanguagePicker /> */}
-            <Route exact path='/program' render={() => <YourProgram />} />
-          </main>
-        )}
+        <main
+          style={{
+            overflow: 'hidden',
+            marginTop: 60
+          }}
+        >
+          <About />
+          <Solution />
+          <HowTo />
+          <Videos />
+          {/* <LanguagePicker /> */}
+          <Route exact path='/program' render={() => <YourProgram />} />
+        </main>
       </Fragment>
     );
   }

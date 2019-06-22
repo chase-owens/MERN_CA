@@ -29,8 +29,8 @@ const Hamburger = ({ open, toggleSidebar }) => {
           style={{
             position: 'fixed',
             zIndex: 999,
-            top: 15,
-            right: 15
+            top: 10,
+            right: 10
           }}
         >
           <div>
@@ -61,10 +61,11 @@ const Hamburger = ({ open, toggleSidebar }) => {
       {open && (
         <Button
           style={{
+            position: 'fixed',
             color: '#fff',
             zIndex: 999,
-            marginRight: 24,
-            marginTop: -3
+            top: 10,
+            right: 10
           }}
           onClick={toggleSidebar}
         >
