@@ -33,29 +33,80 @@ const styles = theme => ({
       background: theme.palette.primary.main
     },
     '& i': {
-      fontSize: 60,
-      paddingTop: theme.breakpoints.down('sm') ? 90 : 70,
+      [theme.breakpoints.down(740)]: {
+        paddingTop: 130,
+        fontSize: 80
+      },
+      [theme.breakpoints.up(740)]: {
+        paddingTop: 90,
+        fontSize: 60
+      },
+      [theme.breakpoints.up('md')]: {
+        paddingTop: 70
+      },
+      // paddingTop: theme.breakpoints.down('sm') ? 90 : 70,
       paddingLeft: 10
     },
     '&:hover i': {
-      fontSize: 80,
-      paddingTop: theme.breakpoints.down('sm') ? 80 : 60,
+      // fontSize: 80,
+      [theme.breakpoints.down(740)]: {
+        paddingTop: 120,
+        fontSize: 100
+      },
+      [theme.breakpoints.up(740)]: {
+        paddingTop: 80,
+        fontSize: 80
+      },
+      [theme.breakpoints.up('md')]: {
+        paddingTop: 60
+      },
+      // paddingTop: theme.breakpoints.down('sm') ? 80 : 60,
       paddingLeft: 0
     },
     '&:hover i span': {
       // height: 200
     }
   },
+  cardImage: {
+    position: 'absolute',
+    [theme.breakpoints.down(740)]: {
+      width: 'calc(100% - 80px)'
+    },
+    [theme.breakpoints.up(740)]: {
+      width: '42%'
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '28%'
+    }
+  },
   icon: {
-    width: 80,
+    // width: 80,
     display: 'block',
     margin: 'auto',
     color: '#fff',
-    height: theme.breakpoints.down('sm') ? 240 : 200
+    [theme.breakpoints.down(740)]: {
+      height: 350,
+      width: 100
+    },
+    [theme.breakpoints.up(740)]: {
+      height: 240,
+      width: 80
+    },
+    [theme.breakpoints.up('md')]: {
+      height: 200
+    }
   },
   image: {
     width: '100%',
-    height: theme.breakpoints.down('sm') ? 240 : 200,
+    [theme.breakpoints.down(740)]: {
+      height: 350
+    },
+    [theme.breakpoints.up(740)]: {
+      height: 240
+    },
+    [theme.breakpoints.up('md')]: {
+      height: 200
+    },
     display: 'block',
 
     backgroundSize: 'cover',
@@ -66,14 +117,32 @@ const styles = theme => ({
     position: 'relative',
     display: 'block',
     width: '100%',
-    height: theme.breakpoints.down('sm') ? 240 : 200,
-    top: theme.breakpoints.down('sm') ? -240 : -200,
+    [theme.breakpoints.down(740)]: {
+      height: 350,
+      top: -350
+    },
+    [theme.breakpoints.up(740)]: {
+      height: 240,
+      top: -240
+    },
+    [theme.breakpoints.up('md')]: {
+      height: 200,
+      top: -200
+    },
     left: 0,
     borderRadius: 5,
     opacity: 0.8
   },
   text: {
-    paddingTop: theme.breakpoints.down('sm') ? 240 : 200
+    [theme.breakpoints.down(740)]: {
+      paddingTop: 350
+    },
+    [theme.breakpoints.up(740)]: {
+      paddingTop: 240
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingTop: 200
+    }
   }
 });
 
@@ -81,12 +150,7 @@ const VideoCard = ({ video, focusedVideo, classes }) => {
   console.log(focusedVideo);
   return (
     <div className={classes.card}>
-      <div
-        style={{
-          position: 'absolute',
-          width: useMediaQuery(theme.breakpoints.down('sm')) ? '42%' : '28%'
-        }}
-      >
+      <div className={classes.cardImage}>
         <Card
           className={classes.image}
           style={{ backgroundImage: `url(${returnImage(video.imagePath)})` }}

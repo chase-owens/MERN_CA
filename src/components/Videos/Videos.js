@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import { withStyles } from '@material-ui/core/styles';
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -17,7 +18,21 @@ import VideoCard from '../VideoCard/VideoCard';
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleMovie }, dispatch);
 
-const Videos = () => {
+const styles = theme => ({
+  videoCard: {
+    [theme.breakpoints.down(740)]: {
+      width: '100%'
+    },
+    [theme.breakpoints.up(740)]: {
+      width: '50%'
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '33.3%'
+    }
+  }
+});
+
+const Videos = ({ classes }) => {
   return (
     <div style={{ padding: 40, margin: 'auto', overflow: 'hidden' }}>
       <Typography paragraph variant='caption'>
@@ -30,11 +45,13 @@ const Videos = () => {
         {videos.map(video => (
           <Grid
             item
-            style={{
-              width: useMediaQuery(theme.breakpoints.down('sm'))
-                ? '50%'
-                : '33.3%'
-            }}
+            key={video.title}
+            className={classes.videoCard}
+            // style={{
+            //   width: useMediaQuery(theme.breakpoints.down('sm'))
+            //     ? '50%'
+            //     : '33.3%'
+            // }}
           >
             <VideoCard video={video} />
           </Grid>
@@ -44,10 +61,6 @@ const Videos = () => {
   );
 };
 
-const toggleSkin = url => {
-  console.log(url);
-};
-
-export default withWidth({ withTheme: true })(
-  connect(mapDispatchToProps)(Videos)
+export default withStyles(styles)(
+  withWidth({ withTheme: true })(connect(mapDispatchToProps)(Videos))
 );

@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import { connectDB } from './connect-db';
 import './initialize-db';
 import path from 'path';
+import jwt from 'jsonwebtoken';
 
 let port = process.env.PORT || 1221;
 let app = express();
@@ -21,12 +22,50 @@ if (process.env.NODE_ENV == `production`) {
   });
 }
 
-app.get('/data', async (req, res) => {
+app.get('/data', verifyToken, async (req, res) => {
   let db = await connectDB();
   let collection = await db.collection('content');
   let content = await collection.findOne({ title: 'Constructional Affection' });
-  res.send(content);
+
+  console.log(req.token);
+
+  jwt.verify(req.token, 'secretkey', (err, authData) => {
+    if (err) {
+      res.json({ err: 'err' });
+    } else {
+      // save in local storage?
+      res.json({ content, authData });
+    }
+  });
 });
+
+app.post('/login', (req, res) => {
+  let user = {
+    username: 'chasethat',
+    password: 'password',
+    name: 'Chase Owens',
+    id: 1,
+    role: 'admin'
+  };
+
+  jwt.sign({ user }, 'secretkey', (err, token) => {
+    res.json({
+      token
+    });
+  });
+});
+
+function verifyToken(req, res, next) {
+  const bearerHeader = req.headers['authorization'];
+  if (typeof bearerHeader !== 'undefined') {
+    const bearer = bearerHeader.split(' ');
+    const bearerToken = bearer[1];
+    req.token = bearerToken;
+    next();
+  } else {
+    res.sendStatus(403);
+  }
+}
 
 export const getDataFromDB = async () => {
   let db = await connectDB();
