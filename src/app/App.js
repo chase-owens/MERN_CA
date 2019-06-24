@@ -12,6 +12,7 @@ import HowTo from '../components/HowTo/HowTo';
 import { getDataFromServer } from '../server/httpRequests';
 import Solution from '../components/Solution/Solution';
 import Videos from '../components/Videos/Videos';
+import Footer from '../components/Footer/Footer';
 
 const mapStateToProps = state => {
   return {
@@ -42,6 +43,7 @@ class App extends Component {
           {/* <LanguagePicker /> */}
           <Route exact path='/program' render={() => <YourProgram />} />
         </main>
+        <Footer />
       </Fragment>
     );
   }

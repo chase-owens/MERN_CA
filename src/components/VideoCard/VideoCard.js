@@ -24,6 +24,7 @@ const mapStateToProps = state => ({
 
 const styles = theme => ({
   card: {
+    paddingBottom: -100,
     marginBottom: 10,
     width: '100%',
     '&:hover': {
@@ -60,7 +61,6 @@ const styles = theme => ({
       [theme.breakpoints.up('md')]: {
         paddingTop: 60
       },
-      // paddingTop: theme.breakpoints.down('sm') ? 80 : 60,
       paddingLeft: 0
     },
     '&:hover i span': {
@@ -70,17 +70,19 @@ const styles = theme => ({
   cardImage: {
     position: 'absolute',
     [theme.breakpoints.down(740)]: {
-      width: 'calc(100% - 80px)'
+      width: 'calc(100% - 80px)',
+      height: 450
     },
     [theme.breakpoints.up(740)]: {
-      width: '42%'
+      width: '43%',
+      height: 360
     },
     [theme.breakpoints.up('md')]: {
-      width: '28%'
+      width: '28%',
+      height: 290
     }
   },
   icon: {
-    // width: 80,
     display: 'block',
     margin: 'auto',
     color: '#fff',
@@ -135,13 +137,16 @@ const styles = theme => ({
   },
   text: {
     [theme.breakpoints.down(740)]: {
-      paddingTop: 350
+      paddingTop: 350,
+      paddingBottom: -350
     },
     [theme.breakpoints.up(740)]: {
-      paddingTop: 240
+      paddingTop: 240,
+      paddingBottom: -240
     },
     [theme.breakpoints.up('md')]: {
-      paddingTop: 200
+      paddingTop: 200,
+      paddingBottom: -240
     }
   }
 });
@@ -153,11 +158,13 @@ const VideoCard = ({ video, focusedVideo, classes }) => {
       <div className={classes.cardImage}>
         <Card
           className={classes.image}
-          style={{ backgroundImage: `url(${returnImage(video.imagePath)})` }}
+          style={{
+            backgroundImage: `url(${returnImage(video.imagePath)})`
+          }}
         />
-        <span className={classes.skin} style={{}}>
+        <span className={classes.skin}>
           <div className={classes.iconWrapper}>
-            <Icon className={classes.icon} style={{}}>
+            <Icon className={classes.icon}>
               <i class='material-icons'>play_circle_filled</i>
             </Icon>
           </div>
