@@ -71,7 +71,7 @@ app.post('/contact', async (req, res) => {
   let data = req.body;
 
   const transporter = mailer.createTransport({
-    service: 'Gmail',
+    service: 'roundcube',
     port: 420,
     auth: {
       user: 'USERNAME',

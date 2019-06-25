@@ -80,10 +80,12 @@ const AboutCardBig = ({ point, color, classes }) => {
           direction='column'
           justify='flex-end'
           style={{
-            height: '100%',
-            padding: 40,
+            // height: '100%',
+            padding: 30,
             position: 'absolute',
-            bottom: 0
+            bottom: 0,
+            opacity: 0.8,
+            background: '#000'
           }}
         >
           <Grid item>

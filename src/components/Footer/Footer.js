@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   footer: {
-    width: '100%',
+    // width: '100%',
     minHeight: 350,
     background: theme.palette.primary.main,
     padding: 25
@@ -20,7 +20,7 @@ const styles = theme => ({
     margin: 'auto'
   },
   formHeader: {
-    paddingTop: 40,
+    paddingTop: 30,
     fontSize: '2em'
   },
   formInputs: {
@@ -29,6 +29,16 @@ const styles = theme => ({
   },
   formInput: {
     marginBottom: 13
+  },
+  buttonContainer: {
+    width: 87,
+    margin: 'auto'
+  },
+  button: {
+    margin: 'auto',
+    background: theme.palette.ternary.main,
+    color: '#fff',
+    marginTop: 15
   }
 });
 
@@ -97,15 +107,10 @@ const Footer = ({ classes }) => {
             />
           </div>
         </div>
-        <div style={{ width: 70, margin: 'auto' }}>
+        <div className={classes.buttonContainer}>
           <Button
+            className={classes.button}
             onClick={sendData}
-            style={{
-              margin: 'auto',
-              background: theme.palette.ternary.main,
-              color: '#fff',
-              marginTop: 15
-            }}
             variant='contained'
           >
             Submit
