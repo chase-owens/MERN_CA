@@ -40,6 +40,12 @@ const Footer = ({ classes }) => {
   const sendData = () => {
     const data = { name, email, message };
     console.log(data);
+    axios
+      .post('/contact', data)
+      .then(res => {
+        resetForm();
+      })
+      .catch(err => console.log('Message not send', err));
     resetForm();
   };
 

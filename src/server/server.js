@@ -5,14 +5,12 @@ import { connectDB } from './connect-db';
 import './initialize-db';
 import path from 'path';
 import jwt from 'jsonwebtoken';
+import mailer from 'nodemailer';
 
 let port = process.env.PORT || 1221;
 let app = express();
 
-//API
-
 app.listen(port, console.log('Server listening on port ', port));
-
 app.use(cors(), bodyParser.urlencoded({ extended: true }), bodyParser.json());
 
 if (process.env.NODE_ENV == `production`) {
@@ -22,12 +20,14 @@ if (process.env.NODE_ENV == `production`) {
   });
 }
 
+app.get('/', (req, res) => {
+  res.send('We in this bitch');
+});
+
 app.get('/data', verifyToken, async (req, res) => {
   let db = await connectDB();
   let collection = await db.collection('content');
   let content = await collection.findOne({ title: 'Constructional Affection' });
-
-  console.log(req.token);
 
   jwt.verify(req.token, 'secretkey', (err, authData) => {
     if (err) {
@@ -66,6 +66,41 @@ function verifyToken(req, res, next) {
     res.sendStatus(403);
   }
 }
+
+app.post('/contact', async (req, res) => {
+  let data = req.body;
+
+  const transporter = mailer.createTransport({
+    service: 'Gmail',
+    port: 420,
+    auth: {
+      user: 'USERNAME',
+      password: 'PASSWORD'
+    }
+  });
+
+  const mailOptions = {
+    from: data.email,
+    to: [
+      'chasejonathanowens@gmail.com',
+      'seanmichaelwill@gmail.com',
+      'chase.owens@bankofamerica.com'
+    ],
+    subject: 'CA_CONTACT',
+    html: `<p>${data.name}</p><p>${data.email}</p><p>${data.message}</p>`
+  };
+
+  await transporter.sendMail(mailOptions, (err, res) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(res);
+    }
+    transporter.close();
+  });
+
+  res.send('Success');
+});
 
 export const getDataFromDB = async () => {
   let db = await connectDB();

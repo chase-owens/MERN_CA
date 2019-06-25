@@ -91,7 +91,7 @@ const AboutCardBig = ({ point, color, classes }) => {
               style={{
                 fontWeight: 'bold',
                 fontSize: '1.4em',
-                textShadow: '1px 1px black'
+                textShadow: '0 1px black'
               }}
               color='textSecondary'
               variant='h3'
@@ -105,7 +105,7 @@ const AboutCardBig = ({ point, color, classes }) => {
               style={{
                 fontSize: '1em',
                 fontWeight: 'bold',
-                textShadow: '1px 1px black'
+                textShadow: '0 1px black'
               }}
               variant='headline'
             >
