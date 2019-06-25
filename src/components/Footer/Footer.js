@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { theme } from '../../styles/theme';
 import { withStyles } from '@material-ui/core/styles';
+import axios from 'axios';
 
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -32,6 +33,22 @@ const styles = theme => ({
 });
 
 const Footer = ({ classes }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const sendData = () => {
+    const data = { name, email, message };
+    console.log(data);
+    resetForm();
+  };
+
+  const resetForm = () => {
+    setName('');
+    setEmail('');
+    setMessage('');
+  };
+
   return (
     <footer className={classes.footer}>
       <div className={classes.formContainer}>
@@ -49,6 +66,8 @@ const Footer = ({ classes }) => {
               style={{ width: '100%' }}
               label='Name'
               placeholder='Name'
+              onChange={e => setName(e.target.value)}
+              value={name}
             />
           </div>
           <div className={classes.formInput}>
@@ -56,6 +75,8 @@ const Footer = ({ classes }) => {
               style={{ width: '100%' }}
               label='Email'
               placeholder='Email'
+              onChange={e => setEmail(e.target.value)}
+              value={email}
             />
           </div>
           <div className={classes.formInput}>
@@ -65,11 +86,14 @@ const Footer = ({ classes }) => {
               multiline
               rowsMax='4'
               placeholder='Comment'
+              onChange={e => setMessage(e.target.value)}
+              value={message}
             />
           </div>
         </div>
         <div style={{ width: 70, margin: 'auto' }}>
           <Button
+            onClick={sendData}
             style={{
               margin: 'auto',
               background: theme.palette.ternary.main,

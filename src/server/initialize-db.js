@@ -5,7 +5,10 @@ const initializeDB = async () => {
   let db = await connectDB();
   for (let collectionName in defaultState) {
     let collection = db.collection(collectionName);
-    await collection.insertMany(defaultState[collectionName]);
+    await collection
+      .insertMany(defaultState[collectionName])
+      .then(res => console.log(res))
+      .catch(err => console.log('ERR: ', err));
   }
 };
 
