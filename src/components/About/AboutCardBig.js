@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
-import Slide from '@material-ui/core/Slide';
+import Grid from '@material-ui/core/Grid';
 
 import { theme } from '../../styles/theme';
 import { withStyles } from '@material-ui/core/styles';
@@ -10,14 +10,31 @@ import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMe
 const styles = theme => ({
   card: {
     '&:hover span': {
-      background: '#ff0',
       width: '100%'
+    },
+    '&:first-child': {
+      // display: 'block'
     }
   },
   answer: {
     width: 0
   }
 });
+
+const Beach = require('images/Beach.jpg');
+const Jj = require('images/JJ.jpg');
+const Kanye = require('images/Kanye.png');
+
+const getImage = imageString => {
+  switch (imageString) {
+    case 'Beach':
+      return Beach;
+    case 'JJ':
+      return Jj;
+    case 'Kanye':
+      return Kanye;
+  }
+};
 
 const AboutCardBig = ({ point, color, classes }) => {
   return (
@@ -26,7 +43,7 @@ const AboutCardBig = ({ point, color, classes }) => {
         style={{
           padding: useMediaQuery(theme.breakpoints.down(800)) ? 15 : 25,
           position: 'absolute',
-          display: 'block'
+          overflow: 'hidden'
         }}
       >
         <Typography paragraph variant='overline' style={{ color: color }}>
@@ -44,29 +61,58 @@ const AboutCardBig = ({ point, color, classes }) => {
       <span
         className={classes.answer}
         style={{
-          textAlign: 'center',
           display: 'block',
           height: 200,
           minHeight: '33.3vw',
           position: 'relative',
           top: 0,
           left: 0,
-
+          background: `url(${getImage(point.image)})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: '50% 50%',
           overflow: 'hidden',
           transition: 'all .18s ease-in-out'
         }}
       >
-        <Typography paragraph align='center' variant='overline'>
-          {point.title}
-        </Typography>
-        <Typography
-          paragraph
-          align='center'
-          style={{ fontSize: '0.8em' }}
-          variant='headline'
+        <Grid
+          container
+          direction='column'
+          justify='flex-end'
+          style={{
+            height: '100%',
+            padding: 40,
+            position: 'absolute',
+            bottom: 0
+          }}
         >
-          {point.answer}
-        </Typography>
+          <Grid item>
+            <Typography
+              style={{
+                fontWeight: 'bold',
+                fontSize: '1.4em',
+                textShadow: '1px 1px black'
+              }}
+              color='textSecondary'
+              variant='h3'
+            >
+              {point.answerTitle}
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              color='textSecondary'
+              style={{
+                fontSize: '1em',
+                fontWeight: 'bold',
+                textShadow: '1px 1px black'
+              }}
+              variant='headline'
+            >
+              {point.answerDescription}
+            </Typography>
+          </Grid>
+        </Grid>
       </span>
     </div>
   );

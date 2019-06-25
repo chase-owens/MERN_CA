@@ -9,8 +9,9 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   footer: {
     width: '100%',
-    height: 350,
-    background: theme.palette.primary.main
+    minHeight: 350,
+    background: theme.palette.primary.main,
+    padding: 25
   },
   formContainer: {
     width: '80%',
@@ -26,7 +27,7 @@ const styles = theme => ({
     width: 300
   },
   formInput: {
-    marginBottom: 10
+    marginBottom: 13
   }
 });
 
