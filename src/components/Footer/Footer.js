@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { theme } from '../../styles/theme';
 import { withStyles } from '@material-ui/core/styles';
-import axios from 'axios';
+import API from 'utils/api';
 
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -50,12 +50,12 @@ const Footer = ({ classes }) => {
   const sendData = () => {
     const data = { name, email, message };
     console.log(data);
-    axios
-      .post('/contact', data)
+    API.post('/contact', data)
       .then(res => {
-        resetForm();
+        // resetForm();
+        console.log(res);
       })
-      .catch(err => console.log('Message not send', err));
+      .catch(err => console.log('Message not sent', err));
     resetForm();
   };
 

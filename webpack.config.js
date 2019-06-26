@@ -13,7 +13,8 @@ module.exports = {
     alias: {
       images: path.resolve(__dirname, './src/images'),
       videos: path.resolve(__dirname, './src/videos'),
-      store: path.resolve(__dirname, './src/app/store')
+      store: path.resolve(__dirname, './src/app/store'),
+      utils: path.resolve(__dirname, './src/utils')
     }
   },
   devServer: {

@@ -8,10 +8,13 @@ import jwt from 'jsonwebtoken';
 import mailer from 'nodemailer';
 
 let port = process.env.PORT || 1221;
-let app = express();
+let app = express().use(
+  cors(),
+  bodyParser.urlencoded({ extended: true }),
+  bodyParser.json()
+);
 
 app.listen(port, console.log('Server listening on port ', port));
-app.use(cors(), bodyParser.urlencoded({ extended: true }), bodyParser.json());
 
 if (process.env.NODE_ENV == `production`) {
   app.use(express.static(path.resolve(__dirname, `../../dist`)));
@@ -20,11 +23,11 @@ if (process.env.NODE_ENV == `production`) {
   });
 }
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('We in this bitch');
 });
 
-app.get('/data', verifyToken, async (req, res) => {
+app.get('/api/data', verifyToken, async (req, res) => {
   let db = await connectDB();
   let collection = await db.collection('content');
   let content = await collection.findOne({ title: 'Constructional Affection' });
@@ -39,7 +42,7 @@ app.get('/data', verifyToken, async (req, res) => {
   });
 });
 
-app.post('/login', (req, res) => {
+app.post('/api/login', (req, res) => {
   let user = {
     username: 'chasethat',
     password: 'password',
@@ -67,7 +70,7 @@ function verifyToken(req, res, next) {
   }
 }
 
-app.post('/contact', async (req, res) => {
+app.post('/api/contact', async (req, res) => {
   let data = req.body;
 
   const transporter = mailer.createTransport({
