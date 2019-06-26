@@ -36,8 +36,7 @@ const IntroDiv = ({ theme, classes, open }) => {
         direction='row'
         style={{
           position: 'relative',
-          marginBottom: !useMediaQuery(theme.breakpoints.up(740)) ? 280 : null,
-          height: open ? 0 : null
+          marginBottom: !useMediaQuery(theme.breakpoints.up(740)) ? 280 : null
         }}
       >
         <Grid

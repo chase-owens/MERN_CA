@@ -81,7 +81,7 @@ const AboutCardBig = ({ point, color, classes }) => {
           justify='flex-end'
           style={{
             // height: '100%',
-            padding: 30,
+            padding: '20px 30px',
             position: 'absolute',
             bottom: 0,
             opacity: 0.8,
@@ -92,8 +92,8 @@ const AboutCardBig = ({ point, color, classes }) => {
             <Typography
               style={{
                 fontWeight: 'bold',
-                fontSize: '1.4em',
-                textShadow: '0 1px black'
+                fontSize: '1.2em'
+                // textShadow: '0 1px black'
               }}
               color='textSecondary'
               variant='h3'
@@ -105,9 +105,9 @@ const AboutCardBig = ({ point, color, classes }) => {
             <Typography
               color='textSecondary'
               style={{
-                fontSize: '1em',
-                fontWeight: 'bold',
-                textShadow: '0 1px black'
+                fontSize: '0.8em',
+                fontWeight: 'bold'
+                // textShadow: '0 1px black'
               }}
               variant='headline'
             >

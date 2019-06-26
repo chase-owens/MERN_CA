@@ -71,20 +71,21 @@ app.post('/contact', async (req, res) => {
   let data = req.body;
 
   const transporter = mailer.createTransport({
-    service: 'roundcube',
-    port: 420,
+    service: 'Gmail',
+    port: 465,
+    secure: true,
     auth: {
-      user: 'USERNAME',
-      password: 'PASSWORD'
+      user: 'constructionalaffection@gmail.com',
+      pass: 'Layng1234'
     }
   });
 
   const mailOptions = {
     from: data.email,
     to: [
-      'chasejonathanowens@gmail.com',
-      'seanmichaelwill@gmail.com',
-      'chase.owens@bankofamerica.com'
+      'chasejonathanowens@gmail.com'
+      // 'seanmichaelwill@gmail.com',
+      // 'chase.owens@bankofamerica.com'
     ],
     subject: 'CA_CONTACT',
     html: `<p>${data.name}</p><p>${data.email}</p><p>${data.message}</p>`
