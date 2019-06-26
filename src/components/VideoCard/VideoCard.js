@@ -4,6 +4,10 @@ import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { toggleMovie } from '../Videos/videos.action';
+
+import { changeLanguage } from '../LanguagePicker/language.actions';
 
 import Icon from '@material-ui/core/Icon';
 import Card from '@material-ui/core/Card';
@@ -21,6 +25,9 @@ const Shelter = require('images/Shelter.jpg');
 const mapStateToProps = state => ({
   focusedVideo: state.videoState.video
 });
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ toggleMovie }, dispatch);
 
 const styles = theme => ({
   card: {
@@ -151,10 +158,10 @@ const styles = theme => ({
   }
 });
 
-const VideoCard = ({ video, focusedVideo, classes }) => {
-  console.log(focusedVideo);
+const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
+  console.log('Focused Video: ', focusedVideo);
   return (
-    <div className={classes.card}>
+    <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
       <div className={classes.cardImage}>
         <Card
           className={classes.image}
@@ -205,5 +212,10 @@ const returnImage = image => {
 };
 
 export default withWidth({ withTheme: true })(
-  withStyles(styles)(connect(mapStateToProps)(VideoCard))
+  withStyles(styles)(
+    connect(
+      mapStateToProps,
+      mapDispatchToProps
+    )(VideoCard)
+  )
 );

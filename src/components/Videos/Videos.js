@@ -1,7 +1,5 @@
 import React from 'react';
 import { theme } from '../../styles/theme';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
@@ -14,9 +12,6 @@ import videos from './videos.config';
 import { toggleMovie } from './videos.action';
 
 import VideoCard from '../VideoCard/VideoCard';
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleMovie }, dispatch);
 
 const styles = theme => ({
   videoCard: {
@@ -43,16 +38,7 @@ const Videos = ({ classes }) => {
       </Typography>
       <Grid container spacing={40} justify='flex-start'>
         {videos.map(video => (
-          <Grid
-            item
-            key={video.title}
-            className={classes.videoCard}
-            // style={{
-            //   width: useMediaQuery(theme.breakpoints.down('sm'))
-            //     ? '50%'
-            //     : '33.3%'
-            // }}
-          >
+          <Grid item key={video.title} className={classes.videoCard}>
             <VideoCard video={video} />
           </Grid>
         ))}
@@ -61,6 +47,4 @@ const Videos = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(
-  withWidth({ withTheme: true })(connect(mapDispatchToProps)(Videos))
-);
+export default withStyles(styles)(withWidth({ withTheme: true })(Videos));

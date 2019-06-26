@@ -13,7 +13,7 @@ const aboutPoints = [
     title: `About`,
     question: `Constructional Affection history?`,
     answer: `onstructional Affection was developed in animal shelters and tested in controlled studies.`,
-    answerTitle: `Organic & Research`,
+    answerTitle: `Shelters & Research`,
     answerDescription: `Constructional Affection was developed in animal shelters and tested in controlled studies`,
     citation: `Owens, 2017`,
     citationLink: `https://digital.library.unt.edu/ark:/67531/metadc984128/m2/1/high_res_d/OWENS-THESIS-2017.pdf`,
