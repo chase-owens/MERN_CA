@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { toggleMovie } from '../Videos/videos.action';
 
+import { theme } from 'styles/theme';
+
 const mapStateToProps = state => ({
   focusedVideo: state.videoState.video
 });
@@ -17,10 +19,12 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
     focusedVideo !== null && (
       <div
         style={{
-          width: '100%',
-          height: '100%',
-          opacity: 0.7,
-          background: '#000'
+          width: '100vw',
+          height: '100vh',
+          // opacity: 0.7,
+          background: theme.palette.ternary.main,
+          position: 'fixed',
+          top: 0
         }}
       >
         <div
@@ -28,15 +32,14 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
             width: '90%',
             height: '90%',
             margin: 'auto',
-            marginTop: '5%'
+            marginTop: '5vh'
+            // paddingTop: '2.5%'
           }}
         >
           <ReactPlayer
             style={{
               marginTop: 0,
-              padding: 0,
-              minWidth: 740,
-              marginLeft: !useMediaQuery(theme.breakpoints.up(740)) ? 0 : -80
+              padding: 0
             }}
             url={focusedVideo}
             playing

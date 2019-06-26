@@ -13,6 +13,7 @@ import { getDataFromServer } from '../server/httpRequests';
 import Solution from '../components/Solution/Solution';
 import Videos from '../components/Videos/Videos';
 import Footer from '../components/Footer/Footer';
+import MovieModal from '../components/MovieModal/MovieModal';
 
 const mapStateToProps = state => {
   return {
@@ -40,7 +41,8 @@ class App extends Component {
           <Solution />
           <HowTo />
           <Videos />
-          <LanguagePicker />
+          <MovieModal />
+          {/* <LanguagePicker /> */}
           <Route exact path='/program' render={() => <YourProgram />} />
         </main>
         <Footer />

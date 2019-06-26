@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { toggleSidebar } from '../Nav/nav.actions';
+import { toggleMovie } from '../Videos/videos.action';
 
 import withWidth from '@material-ui/core/withWidth';
 import Icon from '@material-ui/core/Icon';
@@ -13,17 +14,18 @@ import { theme } from '../../styles/theme';
 const mapStateToProps = state => {
   console.log(state);
   return {
-    open: state.sideBarState.open
+    open: state.sideBarState.open,
+    focusedVideo: state.videoState.video
   };
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleSidebar }, dispatch);
+  bindActionCreators({ toggleSidebar, toggleMovie }, dispatch);
 
-const Hamburger = ({ open, toggleSidebar }) => {
+const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
   return (
     <div>
-      {!open && (
+      {!open && focusedVideo == null && (
         <Button
           onClick={toggleSidebar}
           style={{
@@ -56,6 +58,32 @@ const Hamburger = ({ open, toggleSidebar }) => {
               }}
             />
           </div>
+        </Button>
+      )}
+      {!open && focusedVideo !== null && (
+        <Button
+          style={{
+            position: 'fixed',
+            color: '#fff',
+            zIndex: 999,
+            top: 3,
+            right: 3
+          }}
+          onClick={() => toggleMovie(null)}
+        >
+          <Icon
+            style={{
+              paddingBottom: 15,
+              paddingTop: -15,
+              paddingRight: 20,
+              marginRight: -12,
+              marginLeft: -5
+            }}
+          >
+            <i style={{ fontSize: 40 }} class='material-icons'>
+              close
+            </i>
+          </Icon>
         </Button>
       )}
       {open && (

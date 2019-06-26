@@ -21,11 +21,12 @@ const mapStateToProps = state => {
   return {
     language: state.languageState.language,
     open: state.sideBarState.open,
-    audience: state.audienceState.audience
+    audience: state.audienceState.audience,
+    focusedVideo: state.videoState.video
   };
 };
 
-const Nav = ({ theme, language, open, audience }) => {
+const Nav = ({ theme, language, open, audience, focusedVideo }) => {
   console.log(language, open, audience);
   return (
     <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>

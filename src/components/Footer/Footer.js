@@ -38,7 +38,10 @@ const styles = theme => ({
     margin: 'auto',
     background: theme.palette.ternary.main,
     color: '#fff',
-    marginTop: 15
+    marginTop: 15,
+    '&:hover': {
+      background: theme.palette.ternary.main
+    }
   }
 });
 

@@ -14,7 +14,8 @@ module.exports = {
       images: path.resolve(__dirname, './src/images'),
       videos: path.resolve(__dirname, './src/videos'),
       store: path.resolve(__dirname, './src/app/store'),
-      utils: path.resolve(__dirname, './src/utils')
+      utils: path.resolve(__dirname, './src/utils'),
+      styles: path.resolve(__dirname, './src/styles')
     }
   },
   devServer: {
