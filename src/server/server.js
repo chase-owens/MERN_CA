@@ -6,13 +6,28 @@ import './initialize-db';
 import path from 'path';
 import jwt from 'jsonwebtoken';
 import mailer from 'nodemailer';
+import dotenv from 'dotenv';
+import AWS from 'aws-sdk';
 
+dotenv.config();
+console.log(process.env);
+
+// Declare PORT and setup Express server using CORS
 let port = process.env.PORT || 1221;
 let app = express().use(
   cors(),
   bodyParser.urlencoded({ extended: true }),
   bodyParser.json()
 );
+
+// Configure AWS
+AWS.config.update({
+  accessKeyId: process.env.ACCESS_KEY_ID,
+  secretAccessKey: process.env.SECRET_ACCESS_KEY,
+  region: process.env.REGION
+});
+let s3 = new AWS.S3();
+let globalBucket = 'constructionalaffection';
 
 app.listen(port, console.log('Server listening on port ', port));
 
@@ -26,6 +41,8 @@ if (process.env.NODE_ENV == `production`) {
 app.get('/api', (req, res) => {
   res.send('We in this bitch');
 });
+
+app.get('/api/movie', (req, res) => {});
 
 app.get('/api/data', verifyToken, async (req, res) => {
   let db = await connectDB();
