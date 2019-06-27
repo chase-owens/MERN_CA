@@ -14,6 +14,7 @@ import Solution from '../components/Solution/Solution';
 import Videos from '../components/Videos/Videos';
 import Footer from '../components/Footer/Footer';
 import MovieModal from '../components/MovieModal/MovieModal';
+import Main from '../components/Layout/Main';
 
 const mapStateToProps = state => {
   return {
@@ -30,21 +31,10 @@ class App extends Component {
 
     return (
       <Fragment>
-        <NavIntro />
-        <main
-          style={{
-            overflow: 'hidden',
-            marginTop: 60
-          }}
-        >
-          <About />
-          <Solution />
-          <HowTo />
-          <Videos />
-          <MovieModal />
-          {/* <LanguagePicker /> */}
-          <Route exact path='/program' render={() => <YourProgram />} />
-        </main>
+        <Route exact path='/' render={() => <Main />} />
+        <Route exact path='/contact' render={() => <div />} />
+
+        <Route exact path='/program' render={() => <YourProgram />} />
         <Footer />
       </Fragment>
     );
