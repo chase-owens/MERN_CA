@@ -15,6 +15,7 @@ import Videos from '../components/Videos/Videos';
 import Footer from '../components/Footer/Footer';
 import MovieModal from '../components/MovieModal/MovieModal';
 import Main from '../components/Layout/Main';
+import Contact from '../components/Layout/Contact';
 
 const mapStateToProps = state => {
   return {
@@ -32,7 +33,7 @@ class App extends Component {
     return (
       <Fragment>
         <Route exact path='/' render={() => <Main />} />
-        <Route exact path='/contact' render={() => <div />} />
+        <Route exact path='/contact' render={() => <Contact />} />
 
         <Route exact path='/program' render={() => <YourProgram />} />
         <Footer />
