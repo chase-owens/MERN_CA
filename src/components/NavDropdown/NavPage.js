@@ -18,7 +18,7 @@ const NavDropdown = ({ language, open, theme }) => {
   return (
     <Slide
       in={open}
-      direction='down'
+      direction='left'
       style={{
         position: 'fixed',
         top: 0,
