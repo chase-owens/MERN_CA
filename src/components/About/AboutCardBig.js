@@ -22,7 +22,7 @@ const styles = theme => ({
 });
 
 const Beach = require('images/Beach.jpg');
-const Jj = require('images/JJ.jpg');
+const Jj = require('images/Jj.jpg');
 const Kanye = require('images/Kanye.png');
 
 const getImage = imageString => {
