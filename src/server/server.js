@@ -42,7 +42,20 @@ app.get('/api', (req, res) => {
   res.send('We in this bitch');
 });
 
-app.get('/api/movie', (req, res) => {});
+app.get('/api/movie', (req, res) => {
+  let params = {
+    Bucket: globalBucket,
+    Key: '',
+    Range: 'butes=0-9'
+  };
+  s3.getObject(params, (err, data) => {
+    if (err) {
+      console.log(err, err.stack);
+    } else {
+      res.send(data);
+    }
+  });
+});
 
 app.get('/api/data', verifyToken, async (req, res) => {
   let db = await connectDB();
