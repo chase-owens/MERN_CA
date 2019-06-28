@@ -22,15 +22,15 @@ const styles = theme => ({
 });
 
 const Beach = require('images/Beach.jpg');
-const Jj = require('images/Jj.jpg');
+const JerryJase = require('images/JerryJase.jpg');
 const Kanye = require('images/Kanye.png');
 
 const getImage = imageString => {
   switch (imageString) {
     case 'Beach':
       return Beach;
-    case 'Jj':
-      return Jj;
+    case 'JerryJase':
+      return JerryJase;
     case 'Kanye':
       return Kanye;
   }
