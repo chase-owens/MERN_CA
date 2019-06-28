@@ -45,13 +45,14 @@ app.get('/api', (req, res) => {
 app.get('/api/movie', (req, res) => {
   let params = {
     Bucket: globalBucket,
-    Key: '',
-    Range: 'butes=0-9'
+    Key: 'intro.mp4',
+    Range: 'bytes=0-9'
   };
   s3.getObject(params, (err, data) => {
     if (err) {
       console.log(err, err.stack);
     } else {
+      let cloudfile = data.Body.toString('base64');
       res.send(data);
     }
   });
