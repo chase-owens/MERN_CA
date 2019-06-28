@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { theme } from '../../styles/theme';
 import { withStyles } from '@material-ui/core/styles';
-import API from 'utils/api';
 
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
