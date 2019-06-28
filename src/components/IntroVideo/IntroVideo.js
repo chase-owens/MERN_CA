@@ -22,8 +22,8 @@ const IntroVideo = ({ theme }) => {
           marginLeft: !useMediaQuery(theme.breakpoints.up(740)) ? 0 : -80
         }}
         // url={introVideo}
-        url='http://s3.amazonaws.com/constructionalaffection/intro.mp4'
-        // url='https://constructionalaffection.s3.ca-central-1.amazonaws.com/intro.mp4'
+        // url='http://s3.amazonaws.com/constructionalaffection/intro.mp4'
+        url='https://constructionalaffection.s3.ca-central-1.amazonaws.com/intro.mp4'
         playing
         volume={0}
         muted
