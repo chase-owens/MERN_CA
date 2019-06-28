@@ -17,7 +17,7 @@ const aboutPoints = [
     answerDescription: `Constructional Affection was developed in animal shelters and tested in controlled studies`,
     citation: `Owens, 2017`,
     citationLink: `https://digital.library.unt.edu/ark:/67531/metadc984128/m2/1/high_res_d/OWENS-THESIS-2017.pdf`,
-    image: `JJ`
+    image: `Jj`
   },
   {
     title: `Assessment`,

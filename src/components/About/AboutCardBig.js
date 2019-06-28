@@ -29,7 +29,7 @@ const getImage = imageString => {
   switch (imageString) {
     case 'Beach':
       return Beach;
-    case 'JJ':
+    case 'Jj':
       return Jj;
     case 'Kanye':
       return Kanye;
