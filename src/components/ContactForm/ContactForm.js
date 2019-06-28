@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import theme from 'styles/theme';
 
 import { withStyles } from '@material-ui/core/styles';
-import api from 'utils/api';
+import API from 'utils/Api';
 
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -54,8 +54,7 @@ const ContactForm = ({ classes }) => {
   const sendData = () => {
     const data = { name, email, message };
     console.log(data);
-    api
-      .post('/contact', data)
+    API.post('/contact', data)
       .then(res => {
         // resetForm();
         console.log(res);
