@@ -40,7 +40,7 @@ const HowTo = () => {
   const howTo = caSteps[0];
 
   return (
-    <div style={{paddingTop: 20}}>
+    <div style={{ paddingTop: 20 }}>
       <Typography paragraph variant='caption' style={{ paddingLeft: 40 }}>
         <span style={{ fontWeight: 'bold' }}>CA</span> / How To
       </Typography>
@@ -68,13 +68,25 @@ const HowTo = () => {
           </Grid>
         ))}
       </Grid>
-      <Grid container spacing={0} justify='space-between' style={{background: useMediaQuery(theme.breakpoints.up('740')) ? `linear-gradient(90deg, ${theme.palette.ternary.main} 50%, ${
-              theme.palette.secondary.main
-            } 50%)` : null}}>
+      <Grid
+        container
+        spacing={0}
+        justify='space-between'
+        style={{
+          background: useMediaQuery(theme.breakpoints.up('740'))
+            ? `linear-gradient(90deg, ${theme.palette.ternary.main} 50%, ${
+                theme.palette.secondary.main
+              } 50%)`
+            : null,
+          width: '100vw'
+        }}
+      >
         <Grid
           item
           style={{
-            width: useMediaQuery(theme.breakpoints.down('740')) ? '100%' : '50%'
+            width: useMediaQuery(theme.breakpoints.down('740'))
+              ? '100vw'
+              : '50vw'
           }}
         >
           <InteractionGuidelines />
@@ -83,7 +95,9 @@ const HowTo = () => {
         <Grid
           item
           style={{
-            width: useMediaQuery(theme.breakpoints.down('740')) ? '100%' : '50%'
+            width: useMediaQuery(theme.breakpoints.down('740'))
+              ? '100vw'
+              : '50vw'
           }}
         >
           <AffectionLoop />

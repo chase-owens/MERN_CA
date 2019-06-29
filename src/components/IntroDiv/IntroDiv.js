@@ -32,7 +32,7 @@ const styles = theme => ({
 
 const IntroDiv = ({ theme, classes, open }) => {
   return isMobile ? (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100vw' }}>
       <Grid
         container
         direction='row'
