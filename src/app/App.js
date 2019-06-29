@@ -27,11 +27,7 @@ class App extends Component {
         <Route exact path='/' render={() => <Main />} />
         <Route exact path='/contact' render={() => <Contact />} />
 
-        <Route
-          exact
-          path='/program'
-          render={() => (isMobile ? <YourProgram /> : <Main />)}
-        />
+        <Route exact path='/program' render={() => <Main />} />
         <Footer />
       </Fragment>
     );

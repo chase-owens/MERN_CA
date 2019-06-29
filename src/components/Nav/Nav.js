@@ -30,46 +30,24 @@ const mapStateToProps = state => {
 
 const Nav = ({ theme, language, open, audience, focusedVideo }) => {
   console.log(language, open, audience);
-  // return isMobile ? (
-  //   <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
-  //     <Grid
-  //       container
-  //       justify='space-between'
-  //       alignItems='center'
-  //       style={{ height: 140, lineHeight: 1 }}
-  //     >
-  //       <Grid item style={{ marginTop: 10, marginLeft: 20 }}>
-  //         <img height={100} src={logoPath} alt='logo' />
-  //       </Grid>
-  //       <Grid item>
-  //         <Hamburger />
-  //       </Grid>
-  //     </Grid>
-  //     <NavPage />
-  //   </div>
-  // ) : (
-  //   <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
-  //     <Grid
-  //       container
-  //       justify='space-between'
-  //       alignItems='center'
-  //       style={{ height: 60, lineHeight: 1 }}
-  //     >
-  //       <Grid item style={{ marginTop: 5, marginLeft: 20 }}>
-  //         <img height={50} src={logoPath} alt='logo' />
-  //       </Grid>
-  //       <Grid item>
-  //         {useMediaQuery(theme.breakpoints.up('md')) ? (
-  //           <NavButtons direction='row' />
-  //         ) : (
-  //           <Hamburger />
-  //         )}
-  //       </Grid>
-  //     </Grid>
-  //     <NavPage />
-  //   </div>
-  // );
-  return (
+  return isMobile ? (
+    <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
+      <Grid
+        container
+        justify='space-between'
+        alignItems='center'
+        style={{ height: 140, lineHeight: 1 }}
+      >
+        <Grid item style={{ marginTop: 10, marginLeft: 20 }}>
+          <img height={100} src={logoPath} alt='logo' />
+        </Grid>
+        <Grid item>
+          <Hamburger />
+        </Grid>
+      </Grid>
+      <NavPage />
+    </div>
+  ) : (
     <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
       <Grid
         container

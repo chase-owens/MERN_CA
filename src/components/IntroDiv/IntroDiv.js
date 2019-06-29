@@ -60,8 +60,8 @@ const IntroDiv = ({ theme, classes, open }) => {
             padding: '80px 40px 20px 50px',
             position: 'absolute',
             background: `${theme.palette.primary.main}`,
-            borderTopRightRadius: 5,
-            borderBottomRightRadius: 5,
+            borderTopRightRadius: 10,
+            borderBottomRightRadius: 10,
             bottom: -220
           }}
         >
