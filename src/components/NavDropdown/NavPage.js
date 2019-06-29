@@ -8,6 +8,8 @@ import Slide from '@material-ui/core/Slide';
 
 import { theme } from '../../styles/theme';
 
+import { isMobile } from 'react-device-detect';
+
 const mapStateToProps = state => ({
   language: state.languageState.language,
   open: state.sideBarState.open
@@ -30,7 +32,11 @@ const NavDropdown = ({ language, open, theme }) => {
     >
       <div
         style={{
-          background: theme.palette.ternary.main
+          background: { isMobile }
+            ? `linear-gradient(90deg, 'translucent' 2%, ${
+                theme.palette.ternary.main
+              } 2%)`
+            : theme.palette.ternary.main
         }}
       >
         {open && <NavButtons direction='column' />}

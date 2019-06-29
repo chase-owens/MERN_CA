@@ -9,18 +9,7 @@ import MovieModal from '../MovieModal/MovieModal';
 import { isMobile } from 'react-device-detect';
 
 const Main = () => {
-  return isMobile ? (
-    <div style={{ margin: 0, paddingRight: -20 }}>
-      <NavIntro />
-      <main>
-        <About /> {/* Too Wide On Desktop*/}
-        <Solution />
-        <HowTo /> {/* Too Wide On Desktop*/}
-        <Videos />
-        <MovieModal />
-      </main>
-    </div>
-  ) : (
+  return (
     <div style={{ margin: 0, padding: 0 }}>
       <NavIntro />
       <main>
