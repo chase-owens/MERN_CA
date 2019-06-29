@@ -25,6 +25,7 @@ const NavDropdown = ({ language, open, theme }) => {
         width: '100%',
         height: '100%',
         zIndex: open ? 500 : 5,
+        marginLeft: open ? 40 : 0,
         transition: 'all .18s ease-in-out'
       }}
     >
