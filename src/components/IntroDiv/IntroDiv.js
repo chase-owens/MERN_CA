@@ -38,7 +38,7 @@ const IntroDiv = ({ theme, classes, open }) => {
         direction='row'
         style={{
           position: 'relative',
-          marginBottom: 280,
+          marginBottom: 400,
           width: '100%'
         }}
       >
@@ -62,7 +62,7 @@ const IntroDiv = ({ theme, classes, open }) => {
             background: `${theme.palette.primary.main}`,
             borderTopRightRadius: 10,
             borderBottomRightRadius: 10,
-            bottom: -320
+            bottom: -400
           }}
         >
           <Typography variant={'h1'}>Constructional Affection</Typography>
