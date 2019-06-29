@@ -47,9 +47,8 @@ const About = ({ theme }) => {
           }}
         >
           <Typography paragraph variant='caption'>
-            {' '}
-            style={{ fontSize: '1.8em' }}
-            <span style={{ fontWeight: 'bold' }}>CA</span> / About
+            <span style={{ fontWeight: 'bold', fontSize: '1.8em' }}>CA</span> /
+            About
           </Typography>
           <Typography
             style={{ fontSize: '2.5em' }}
