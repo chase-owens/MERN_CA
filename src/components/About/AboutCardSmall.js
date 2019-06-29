@@ -6,8 +6,24 @@ import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMe
 
 import { theme } from '../../styles/theme';
 
+import { isMobile } from 'react-device-detect';
+
 const AboutCardSmall = ({ point, color }) => {
-  return (
+  return isMobile ? (
+    <div style={{ padding: '30px 30px 0 28px' }}>
+      <Typography color={color} paragraph variant='display4'>
+        {point.question}
+      </Typography>
+      <Typography color={color} paragraph variant='body1'>
+        {point.answer}
+      </Typography>
+      {point.citation !== undefined && (
+        <Typography color={color} paragraph variant='overline'>
+          {point.citation}
+        </Typography>
+      )}
+    </div>
+  ) : (
     <div style={{ padding: '30px 30px 0 28px' }}>
       <Typography color={color} paragraph variant='title'>
         {point.question}
