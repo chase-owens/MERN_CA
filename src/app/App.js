@@ -9,8 +9,6 @@ import Footer from '../components/Footer/Footer';
 import Main from '../components/Layout/Main';
 import Contact from '../components/Layout/Contact';
 
-import { isMobile } from 'react-device-detect';
-
 const mapStateToProps = state => {
   return {
     open: state.sideBarState.open
