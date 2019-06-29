@@ -61,13 +61,11 @@ const IntroDiv = ({ theme, classes, open }) => {
             position: 'absolute',
             background: `${theme.palette.primary.main}`,
             borderTopRightRadius: 5,
-            borderBottomRightRadius: 5
+            borderBottomRightRadius: 5,
+            bottom: 220
           }}
-          className={classes.introDiv}
         >
-          <Typography variant={'h2'} className={classes.title}>
-            Constructional Affection
-          </Typography>
+          <Typography variant={'h2'}>Constructional Affection</Typography>
           <Typography
             variant='body1'
             style={{ paddingTop: 25, paddingBottom: 60 }}

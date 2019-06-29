@@ -41,21 +41,21 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
             <hr
               style={{
                 width: 90,
-                marginBottom: '33px',
+                marginBottom: '20px',
                 borderColor: theme.palette.secondary.main
               }}
             />
             <hr
               style={{
                 width: 90,
-                margin: '33px 0',
+                margin: '20px 0',
                 borderColor: theme.palette.secondary.main
               }}
             />
             <hr
               style={{
                 width: 90,
-                marginTop: '33px',
+                marginTop: '20px',
                 borderColor: theme.palette.secondary.main
               }}
             />
