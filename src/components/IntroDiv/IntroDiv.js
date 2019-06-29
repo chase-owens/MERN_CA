@@ -68,7 +68,7 @@ const IntroDiv = ({ theme, classes, open }) => {
           <Typography variant={'h1'}>Constructional Affection</Typography>
           <Typography
             variant='body1'
-            style={{ paddingTop: 25, paddingBottom: 60, fontSize: '1.5em' }}
+            style={{ paddingTop: 25, paddingBottom: 60, fontSize: '2.5em' }}
           >
             Establish desired interactions using affection as a reinforcer.
           </Typography>

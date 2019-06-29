@@ -283,10 +283,14 @@ const About = ({ theme }) => {
           <Typography paragraph variant='caption'>
             <span style={{ fontWeight: 'bold' }}>CA</span> / About
           </Typography>
-          <Typography paragraph variant='headline'>
+          <Typography
+            style={{ fontSize: '2.5em' }}
+            paragraph
+            variant='headline'
+          >
             The plan: Create calm connections with affection, love, and praise
           </Typography>
-          <Typography variant='body1'>
+          <Typography style={{ fontSize: '2.5em' }} variant='body1'>
             If your dog is always jumping on you, nipping your hands, or biting
             your clothes to get your attention, don’t worry - That’s a good
             thing! That means your dog loves you, that your affection has
@@ -379,7 +383,8 @@ const About = ({ theme }) => {
         <Typography
           variant='headline'
           style={{
-            margin: '0 40px'
+            margin: '0 40px',
+            fontSize: '2.5em'
           }}
         >
           Traditional training approaches often fail to solve the problem.
@@ -389,15 +394,22 @@ const About = ({ theme }) => {
             variant='body1'
             style={{
               paddingTop: 30,
-              paddingBottom: 5
+              paddingBottom: 5,
+              fontSize: '2.5em'
             }}
           >
             They momentarily reduce excited behavior.
           </Typography>
-          <Typography variant='body1' style={{ paddingBottom: 5 }}>
+          <Typography
+            variant='body1'
+            style={{ paddingBottom: 5, fontSize: '2.5em' }}
+          >
             They establish calm behaviors in training sessions.
           </Typography>
-          <Typography variant='body1' style={{ paddingBottom: 5 }}>
+          <Typography
+            variant='body1'
+            style={{ paddingBottom: 5, fontSize: '2.5em' }}
+          >
             They struggle to maintain calm behaviors in the natural environment.
           </Typography>
         </div>
