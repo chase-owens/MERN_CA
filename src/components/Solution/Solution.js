@@ -29,13 +29,12 @@ const Solution = ({ audience }) => {
       <div style={{ padding: '20px 0 60px 0' }}>
         <div style={{ padding: '0 100px' }}>
           <Typography
-            style={{ paddingBottom: 10 }}
+            style={{ paddingBottom: 10, fontSize: '2.1em' }}
             color={color}
             paragraph
             variant='caption'
           >
-            <span style={{ fontWeight: 'bold', fontSize: '2.1em' }}>CA</span> /
-            Solution
+            <span style={{ fontWeight: 'bold' }}>CA</span> / Solution
           </Typography>
           <Typography
             style={{ fontSize: '3em' }}

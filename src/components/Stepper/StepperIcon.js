@@ -1,5 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import { isMobile } from 'react-device-detect';
 
 const StepperIcon = ({ content }) => {
   return (
@@ -7,7 +8,7 @@ const StepperIcon = ({ content }) => {
       style={{
         textAlign: 'center',
         height: '100%',
-        lineHeight: '30px',
+        lineHeight: isMobile ? 70 : 30,
         color: '#fff'
       }}
     >

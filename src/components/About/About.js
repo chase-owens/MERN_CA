@@ -46,9 +46,8 @@ const About = ({ theme }) => {
             margin: '0 100px 60px 100px'
           }}
         >
-          <Typography paragraph variant='caption'>
-            <span style={{ fontWeight: 'bold', fontSize: '2.1em' }}>CA</span> /
-            About
+          <Typography paragraph style={{ fontSize: '2.1em' }} variant='caption'>
+            <span style={{ fontWeight: 'bold' }}>CA</span> / About
           </Typography>
           <Typography style={{ fontSize: '3em' }} paragraph variant='headline'>
             The plan: Create calm connections with affection, love, and praise

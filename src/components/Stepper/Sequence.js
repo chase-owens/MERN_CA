@@ -26,8 +26,8 @@ const Sequence = ({ steps }) => {
               <Grid
                 item
                 style={{
-                  width: 30,
-                  height: 30,
+                  width: isMobile ? 70 : 30,
+                  height: isMobile ? 70 : 30,
                   borderRadius: '50%',
                   background: theme.palette.ternary.main
                 }}
@@ -66,7 +66,7 @@ const Sequence = ({ steps }) => {
             <Typography
               variant='body2'
               align='center'
-              style={{ fontSize: isMobile ? '2.1em' : null }}
+              style={{ fontSize: isMobile ? '2em' : null }}
             >
               {step.description}
             </Typography>
