@@ -62,7 +62,7 @@ const IntroDiv = ({ theme, classes, open }) => {
             background: `${theme.palette.primary.main}`,
             borderTopRightRadius: 5,
             borderBottomRightRadius: 5,
-            bottom: 40
+            bottom: -217
           }}
         >
           <Typography variant={'h2'}>Constructional Affection</Typography>

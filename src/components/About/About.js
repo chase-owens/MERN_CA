@@ -15,6 +15,8 @@ import AboutCardSmall from './AboutCardSmall';
 import AboutCardBig from './AboutCardBig';
 import TargetOutcomesSmall from './TargetOutcomesSmall';
 
+import { isMobile } from 'react-device-detect';
+
 const getBackground = i => {
   switch (i) {
     case 0:
@@ -30,7 +32,144 @@ const getBackground = i => {
 
 const About = ({ theme }) => {
   console.log(aboutPoints);
-  return (
+  return isMobile ? (
+    <div
+      style={{
+        paddingBottom: 70,
+        paddingTop: 0
+      }}
+    >
+      <div>
+        <div
+          style={{
+            margin: '0 40px 60px 40px'
+          }}
+        >
+          <Typography paragraph variant='caption'>
+            <span style={{ fontWeight: 'bold' }}>CA</span> / About
+          </Typography>
+          <Typography paragraph variant='headline'>
+            The plan: Create calm connections with affection, love, and praise
+          </Typography>
+          <Typography variant='body1'>
+            If your dog is always jumping on you, nipping your hands, or biting
+            your clothes to get your attention, don’t worry - That’s a good
+            thing! That means your dog loves you, that your affection has
+            already been established as a reinforcer, and that you’re ready to
+            begin Constructional Affection.{' '}
+          </Typography>
+        </div>
+        <br />
+        <Grid
+          container
+          className='scrollContainer'
+          wrap='nowrap'
+          style={{
+            overflowX: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            flex: '0 1 auto'
+          }}
+          spacing={40}
+        >
+          {aboutPoints !== undefined &&
+            aboutPoints.map((point, i) => {
+              let background = getBackground(i);
+              let color = 'textSecondary';
+              return (
+                <Grid
+                  item
+                  key={point.title}
+                  style={{
+                    flexShrink: 0,
+                    width: '65%',
+                    height: '65vw',
+                    minHeight: 450,
+                    minWidth: 400
+                    // background: background,
+                  }}
+                >
+                  <Card
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      // minHeight: 400,
+                      // minWidth: 400,
+                      background: background
+                    }}
+                  >
+                    <AboutCardSmall point={point} color={color} />
+                  </Card>
+                </Grid>
+              );
+            })}
+        </Grid>
+        <br />
+        <Grid
+          container
+          className='scrollContainer'
+          wrap='nowrap'
+          style={{
+            overflowX: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            marginTop: 20,
+            marginBottom: 20
+          }}
+          spacing={40}
+        >
+          {targetOutcomes !== undefined &&
+            targetOutcomes.map(target => (
+              <Grid
+                item
+                key={target.title}
+                style={{
+                  flexShrink: 0,
+                  width: '65%',
+                  height: '65vw',
+                  minHeight: 400,
+                  minWidth: 400
+                }}
+              >
+                <Card
+                  style={{
+                    width: '100%',
+                    height: '100%'
+                  }}
+                >
+                  <TargetOutcomesSmall target={target} />
+                </Card>
+              </Grid>
+            ))}
+        </Grid>
+        <br />
+        <Typography
+          variant='headline'
+          style={{
+            margin: '0 40px'
+          }}
+        >
+          Traditional training approaches often fail to solve the problem.
+        </Typography>
+        <div style={{ margin: '0 40px' }}>
+          <Typography
+            variant='body1'
+            style={{
+              paddingTop: 30,
+              paddingBottom: 5
+            }}
+          >
+            They momentarily reduce excited behavior.
+          </Typography>
+          <Typography variant='body1' style={{ paddingBottom: 5 }}>
+            They establish calm behaviors in training sessions.
+          </Typography>
+          <Typography variant='body1' style={{ paddingBottom: 5 }}>
+            They struggle to maintain calm behaviors in the natural environment.
+          </Typography>
+        </div>
+      </div>
+      )}
+    </div>
+  ) : (
     <div
       style={{
         paddingBottom: 70,
