@@ -36,10 +36,10 @@ const Nav = ({ theme, language, open, audience, focusedVideo }) => {
         container
         justify='space-between'
         alignItems='center'
-        style={{ height: 60, lineHeight: 1 }}
+        style={{ height: 140, lineHeight: 1 }}
       >
-        <Grid item style={{ marginTop: 5, marginLeft: 20 }}>
-          <img height={50} src={logoPath} alt='logo' />
+        <Grid item style={{ marginTop: 20, marginLeft: 20 }}>
+          <img height={100} src={logoPath} alt='logo' />
         </Grid>
         <Grid item>
           <Hamburger />

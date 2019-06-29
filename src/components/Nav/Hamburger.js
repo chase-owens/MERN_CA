@@ -11,6 +11,8 @@ import Button from '@material-ui/core/Button';
 
 import { theme } from '../../styles/theme';
 
+import { isMobile } from 'react-device-detect';
+
 const mapStateToProps = state => {
   console.log(state);
   return {
@@ -23,7 +25,97 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleSidebar, toggleMovie }, dispatch);
 
 const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
-  return (
+  return isMobile ? (
+    <div>
+      {!open && focusedVideo == null && (
+        <Button
+          onClick={toggleSidebar}
+          style={{
+            position: 'fixed',
+            zIndex: 999,
+            top: 30,
+            right: 30
+          }}
+        >
+          <div>
+            <hr
+              style={{
+                width: 90,
+                marginBottom: '6px',
+                borderColor: theme.palette.secondary.main
+              }}
+            />
+            <hr
+              style={{
+                width: 90,
+                margin: '6px 0',
+                borderColor: theme.palette.secondary.main
+              }}
+            />
+            <hr
+              style={{
+                width: 90,
+                marginTop: '6px',
+                borderColor: theme.palette.secondary.main
+              }}
+            />
+          </div>
+        </Button>
+      )}
+      {!open && focusedVideo !== null && (
+        <Button
+          style={{
+            position: 'fixed',
+            color: '#fff',
+            zIndex: 999,
+            top: 3,
+            right: 3
+          }}
+          onClick={() => toggleMovie(null)}
+        >
+          <Icon
+            style={{
+              paddingBottom: 15,
+              paddingTop: -15,
+              paddingRight: 20,
+              marginRight: -12,
+              marginLeft: -5
+            }}
+          >
+            <i style={{ fontSize: 40 }} class='material-icons'>
+              close
+            </i>
+          </Icon>
+        </Button>
+      )}
+      {open && (
+        <Button
+          style={{
+            position: 'fixed',
+            color: '#fff',
+            zIndex: 999,
+            top: 10,
+            right: 10
+          }}
+          onClick={toggleSidebar}
+        >
+          <Icon
+            style={{
+              paddingBottom: 15,
+              paddingTop: -15,
+              paddingRight: 20,
+              marginRight: -12,
+              marginLeft: -5
+            }}
+          >
+            <i style={{ fontSize: 40 }} class='material-icons'>
+              close
+            </i>
+          </Icon>
+        </Button>
+      )}
+    </div>
+  ) : (
     <div>
       {!open && focusedVideo == null && (
         <Button
