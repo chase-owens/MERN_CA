@@ -49,7 +49,7 @@ const About = ({ theme }) => {
           <Typography paragraph style={{ fontSize: '2.1em' }} variant='caption'>
             <span style={{ fontWeight: 'bold' }}>CA</span> / About
           </Typography>
-          <Typography style={{ fontSize: '3em' }} paragraph variant='headline'>
+          <Typography style={{ fontSize: '3em' }} paragraph variant='h4'>
             The plan: Create calm connections with affection, love, and praise
           </Typography>
           <Typography style={{ fontSize: '2.5em' }} variant='body1'>
@@ -143,7 +143,7 @@ const About = ({ theme }) => {
         </Grid>
         <br />
         <Typography
-          variant='headline'
+          variant='h4'
           style={{
             margin: '0 100px',
             fontSize: '3em'

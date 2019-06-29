@@ -9,7 +9,7 @@ const StepperIcon = ({ content }) => {
         textAlign: 'center',
         height: '100%',
         lineHeight: isMobile ? '70px' : '30px',
-        fontSize: isMobile ? '50' : null,
+        fontSize: isMobile ? 50 : null,
         color: '#fff'
       }}
     >
