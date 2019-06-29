@@ -32,7 +32,7 @@ const NavDropdown = ({ language, open, theme }) => {
     >
       <div
         style={{
-          background: { isMobile }
+          background: { open }
             ? `linear-gradient(90deg, 'translucent' 2%, ${
                 theme.palette.ternary.main
               } 2%)`
