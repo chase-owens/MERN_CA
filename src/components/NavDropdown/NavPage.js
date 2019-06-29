@@ -22,8 +22,8 @@ const NavDropdown = ({ language, open, theme }) => {
       style={{
         position: 'fixed',
         top: 0,
-        width: '100vw',
-        height: '100vh',
+        width: '100%',
+        height: '100%',
         zIndex: open ? 500 : 5,
         transition: 'all .18s ease-in-out'
       }}

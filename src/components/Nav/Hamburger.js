@@ -33,7 +33,7 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
           style={{
             position: 'fixed',
             zIndex: 999,
-            top: 40,
+            top: 35,
             right: 30
           }}
         >

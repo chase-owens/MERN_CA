@@ -32,7 +32,6 @@ const Nav = ({ theme, language, open, audience, focusedVideo }) => {
   console.log(language, open, audience);
   return isMobile ? (
     <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
-      <NavPage />
       <Grid
         container
         justify='space-between'
@@ -46,6 +45,7 @@ const Nav = ({ theme, language, open, audience, focusedVideo }) => {
           <Hamburger />
         </Grid>
       </Grid>
+      <NavPage />
     </div>
   ) : (
     <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
