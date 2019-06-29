@@ -8,6 +8,8 @@ import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMe
 
 import { theme } from '../../styles/theme';
 
+import { isMobile } from 'react-device-detect';
+
 const mapStateToProps = state => {
   return {
     language: state.languageState.language,
@@ -16,7 +18,14 @@ const mapStateToProps = state => {
 };
 
 const NavIntro = ({ theme }) => {
-  return (
+  return isMobile ? (
+    <div>
+      <nav>
+        <Nav />
+      </nav>
+      <IntroDiv />
+    </div>
+  ) : (
     <div
       style={{
         marginLeft: 0,

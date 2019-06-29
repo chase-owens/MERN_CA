@@ -17,6 +17,8 @@ import NavPage from '../NavDropdown/NavPage';
 const logoPath = require('images/Logo.png');
 const title = 'Constructional Affection';
 
+import { isMobile } from 'react-device-detect';
+
 const mapStateToProps = state => {
   return {
     language: state.languageState.language,
@@ -28,7 +30,24 @@ const mapStateToProps = state => {
 
 const Nav = ({ theme, language, open, audience, focusedVideo }) => {
   console.log(language, open, audience);
-  return (
+  return isMobile ? (
+    <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
+      <Grid
+        container
+        justify='space-between'
+        alignItems='center'
+        style={{ height: 60, lineHeight: 1 }}
+      >
+        <Grid item style={{ marginTop: 5, marginLeft: 20 }}>
+          <img height={50} src={logoPath} alt='logo' />
+        </Grid>
+        <Grid item>
+          <Hamburger />
+        </Grid>
+      </Grid>
+      <NavPage />
+    </div>
+  ) : (
     <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
       <Grid
         container

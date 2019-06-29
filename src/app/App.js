@@ -17,6 +17,8 @@ import MovieModal from '../components/MovieModal/MovieModal';
 import Main from '../components/Layout/Main';
 import Contact from '../components/Layout/Contact';
 
+import { isMobile } from 'react-device-detect';
+
 const mapStateToProps = state => {
   return {
     open: state.sideBarState.open
@@ -35,7 +37,11 @@ class App extends Component {
         <Route exact path='/' render={() => <Main />} />
         <Route exact path='/contact' render={() => <Contact />} />
 
-        <Route exact path='/program' render={() => <YourProgram />} />
+        <Route
+          exact
+          path='/program'
+          render={() => (isMobile ? <YourProgram /> : <Main />)}
+        />
         <Footer />
       </Fragment>
     );
