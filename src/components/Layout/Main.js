@@ -13,9 +13,9 @@ const Main = () => {
     <div style={{ margin: 0, padding: 0, marginRight: isMobile ? 20 : 0 }}>
       <NavIntro />
       <main style={{ margin: 0, padding: 0 }}>
-        <About /> {/* Too Wide On Desktop*/}
+        <About />
         <Solution />
-        <HowTo /> {/* Too Wide On Desktop*/}
+        <HowTo /> Too Wide On Desktop
         <Videos />
         <MovieModal />
       </main>

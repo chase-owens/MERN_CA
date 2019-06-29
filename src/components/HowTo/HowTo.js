@@ -78,15 +78,13 @@ const HowTo = () => {
                 theme.palette.secondary.main
               } 50%)`
             : null,
-          width: '100vw'
+          width: '100%'
         }}
       >
         <Grid
           item
           style={{
-            width: useMediaQuery(theme.breakpoints.down('740'))
-              ? '100vw'
-              : '50vw'
+            width: useMediaQuery(theme.breakpoints.down('740')) ? '100%' : '50%'
           }}
         >
           <InteractionGuidelines />
@@ -95,9 +93,7 @@ const HowTo = () => {
         <Grid
           item
           style={{
-            width: useMediaQuery(theme.breakpoints.down('740'))
-              ? '100vw'
-              : '50vw'
+            width: useMediaQuery(theme.breakpoints.down('740')) ? '100%' : '50%'
           }}
         >
           <AffectionLoop />

@@ -11,10 +11,20 @@ import { isMobile } from 'react-device-detect';
 const AboutCardSmall = ({ point, color }) => {
   return isMobile ? (
     <div style={{ padding: '30px 30px 0 28px' }}>
-      <Typography color={color} paragraph variant='h2'>
+      <Typography
+        style={{ fontSize: '1.3em' }}
+        color={color}
+        paragraph
+        variant='h5'
+      >
         {point.question}
       </Typography>
-      <Typography color={color} paragraph variant='subtitle1'>
+      <Typography
+        style={{ fontSize: '1.3em' }}
+        color={color}
+        paragraph
+        variant='subtitle1'
+      >
         {point.answer}
       </Typography>
       {point.citation !== undefined && (
