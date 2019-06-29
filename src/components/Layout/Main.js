@@ -10,9 +10,9 @@ import { isMobile } from 'react-device-detect';
 
 const Main = () => {
   return (
-    <div style={{ margin: 0, padding: 0, marginRight: 20 }}>
+    <div style={{ margin: 0, padding: 0, marginRight: isMobile ? 20 : 0 }}>
       <NavIntro />
-      <main style={{ margin: 0, padding: 0, paddingRight: -20 }}>
+      <main style={{ margin: 0, padding: 0 }}>
         <About /> {/* Too Wide On Desktop*/}
         <Solution />
         <HowTo /> {/* Too Wide On Desktop*/}
