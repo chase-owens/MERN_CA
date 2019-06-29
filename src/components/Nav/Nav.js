@@ -38,7 +38,7 @@ const Nav = ({ theme, language, open, audience, focusedVideo }) => {
         alignItems='center'
         style={{ height: 140, lineHeight: 1 }}
       >
-        <Grid item style={{ marginTop: 20, marginLeft: 20 }}>
+        <Grid item style={{ marginLeft: 20 }}>
           <img height={100} src={logoPath} alt='logo' />
         </Grid>
         <Grid item>
