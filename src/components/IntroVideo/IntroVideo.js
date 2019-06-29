@@ -4,8 +4,35 @@ import ReactPlayer from 'react-player';
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
+import { isMobile } from 'react-device-detect';
+
 const IntroVideo = ({ theme }) => {
-  return (
+  return isMobile ? (
+    <article
+      style={{
+        width: '100%',
+        height: '100%',
+
+        overflow: 'hidden'
+      }}
+    >
+      <ReactPlayer
+        style={{
+          marginTop: 0,
+          padding: 0
+        }}
+        // url={introVideo}
+        // url='http://s3.amazonaws.com/constructionalaffection/intro.mp4'
+        url='https://constructionalaffection.s3.ca-central-1.amazonaws.com/intro.mp4'
+        playing
+        volume={0}
+        muted
+        loop
+        width='100%'
+        height='100%'
+      />
+    </article>
+  ) : (
     <article
       style={{
         width: '100%',
