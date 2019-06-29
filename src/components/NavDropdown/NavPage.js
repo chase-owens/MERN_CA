@@ -32,11 +32,7 @@ const NavDropdown = ({ language, open, theme }) => {
     >
       <div
         style={{
-          background: { open }
-            ? `linear-gradient(90deg, 'translucent' 2%, ${
-                theme.palette.ternary.main
-              } 2%)`
-            : theme.palette.ternary.main
+          background: theme.palette.ternary.main
         }}
       >
         {open && <NavButtons direction='column' />}
