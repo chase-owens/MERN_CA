@@ -12,7 +12,7 @@ const Main = () => {
   return (
     <div style={{ margin: 0, padding: 0, marginRight: 20 }}>
       <NavIntro />
-      <main style={{ margin: 0, padding: 0, marginRight: 20 }}>
+      <main style={{ margin: 0, padding: 0, marginRight: -20 }}>
         <About /> {/* Too Wide On Desktop*/}
         <Solution />
         <HowTo /> {/* Too Wide On Desktop*/}
