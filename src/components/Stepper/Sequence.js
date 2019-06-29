@@ -20,7 +20,16 @@ const Sequence = ({ steps }) => {
         {steps.map((step, i) => (
           <div
             key={i}
-            style={{ width: i < steps.length - 1 ? `calc(20% + 45px)` : 30 }}
+            style={{
+              width:
+                i < steps.length - 1
+                  ? isMobile
+                    ? `calc(20% + 60px)`
+                    : `calc(20% + 45px)`
+                  : isMobile
+                  ? 70
+                  : 30
+            }}
           >
             <Grid container alignItems='center' wrap='nowrap'>
               <Grid
