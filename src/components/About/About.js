@@ -47,14 +47,10 @@ const About = ({ theme }) => {
           }}
         >
           <Typography paragraph variant='caption'>
-            <span style={{ fontWeight: 'bold', fontSize: '1.8em' }}>CA</span> /
+            <span style={{ fontWeight: 'bold', fontSize: '2.1em' }}>CA</span> /
             About
           </Typography>
-          <Typography
-            style={{ fontSize: '2.5em' }}
-            paragraph
-            variant='headline'
-          >
+          <Typography style={{ fontSize: '3em' }} paragraph variant='headline'>
             The plan: Create calm connections with affection, love, and praise
           </Typography>
           <Typography style={{ fontSize: '2.5em' }} variant='body1'>
@@ -156,7 +152,7 @@ const About = ({ theme }) => {
         >
           Traditional training approaches often fail to solve the problem.
         </Typography>
-        <div style={{ margin: '0 40px' }}>
+        <div style={{ margin: '0 100px' }}>
           <Typography
             variant='body1'
             style={{
@@ -181,7 +177,6 @@ const About = ({ theme }) => {
           </Typography>
         </div>
       </div>
-      )}
     </div>
   ) : (
     <div

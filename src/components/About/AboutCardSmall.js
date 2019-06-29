@@ -12,7 +12,7 @@ const AboutCardSmall = ({ point, color }) => {
   return isMobile ? (
     <div style={{ padding: '30px 30px 0 28px' }}>
       <Typography
-        style={{ fontSize: '2.5em' }}
+        style={{ fontSize: '2.5em', paddingBotton: 25 }}
         color={color}
         paragraph
         variant='h5'
@@ -20,7 +20,7 @@ const AboutCardSmall = ({ point, color }) => {
         {point.question}
       </Typography>
       <Typography
-        style={{ fontSize: '2.5em' }}
+        style={{ fontSize: '2.0em' }}
         color={color}
         paragraph
         variant='subtitle1'
@@ -30,7 +30,7 @@ const AboutCardSmall = ({ point, color }) => {
       {point.citation !== undefined && (
         <Typography
           color={color}
-          style={{ fontSize: '2.5em' }}
+          style={{ fontSize: '1.5em' }}
           paragraph
           variant='overline'
         >
