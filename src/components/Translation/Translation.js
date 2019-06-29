@@ -1,5 +1,6 @@
 import React from 'react';
 import { theme } from '../../styles/theme';
+import { isMobile } from 'react-device-detect';
 
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
@@ -15,7 +16,12 @@ const Translation = () => {
     : 'default';
   return (
     <div>
-      <Typography color={color} paragraph variant='subtitle2'>
+      <Typography
+        style={{ fontSize: '2.1em' }}
+        color={color}
+        paragraph
+        variant='subtitle2'
+      >
         Translation
       </Typography>
       <Grid container spacing={8} direction='row' wrap='nowrap'>
@@ -26,7 +32,7 @@ const Translation = () => {
           <Chip value='ba' label='Behavior Analysts' />
         </Grid>
         <Grid item>
-          <Chip value='robo' label='Canine' />
+          <Chip style={{ fontSize: '2.1em' }} value='robo' label='Canine' />
         </Grid>
       </Grid>
     </div>

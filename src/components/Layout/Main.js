@@ -15,7 +15,7 @@ const Main = () => {
       <main style={{ margin: 0, padding: 0 }}>
         <About />
         <Solution />
-        <HowTo /> Too Wide On Desktop
+        <HowTo />
         <Videos />
         <MovieModal />
       </main>

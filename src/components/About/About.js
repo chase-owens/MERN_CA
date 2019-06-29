@@ -147,7 +147,7 @@ const About = ({ theme }) => {
           variant='headline'
           style={{
             margin: '0 100px',
-            fontSize: '2.5em'
+            fontSize: '3em'
           }}
         >
           Traditional training approaches often fail to solve the problem.

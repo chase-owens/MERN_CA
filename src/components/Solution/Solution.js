@@ -34,13 +34,14 @@ const Solution = ({ audience }) => {
             paragraph
             variant='caption'
           >
-            <span style={{ fontWeight: 'bold' }}>CA</span> / Solution
+            <span style={{ fontWeight: 'bold', fontSize: '2.1em' }}>CA</span> /
+            Solution
           </Typography>
           <Typography
-            style={{ fontSize: '2em' }}
+            style={{ fontSize: '3em' }}
             color={color}
             paragraph
-            variant='h2'
+            variant='headline'
           >
             Scientific approach to establishing calm behaviors
           </Typography>
@@ -56,7 +57,7 @@ const Solution = ({ audience }) => {
         {audience === 'gen' ? (
           <div style={{ padding: '0 100px' }}>
             <Typography
-              style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
+              style={{ padding: '20px 0 40px 0', fontSize: '2.1em' }}
               color={color}
               variant='body1'
             >
@@ -74,7 +75,7 @@ const Solution = ({ audience }) => {
           <div>
             <div style={{ padding: '0 100px' }}>
               <Typography
-                style={{ padding: '20px 40px 40px 40px', fontSize: '1.2em' }}
+                style={{ padding: '20px 40px 40px 40px', fontSize: '2.1em' }}
                 color={color}
                 variant='body1'
               >
@@ -99,7 +100,7 @@ const Solution = ({ audience }) => {
             <Typography
               style={{
                 padding: '20px 0 40px 0',
-                fontSize: '1.2em',
+                fontSize: '2.1em',
                 overflow: 'hidden'
               }}
               color={color}
