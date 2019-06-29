@@ -52,13 +52,13 @@ const About = ({ theme }) => {
           <Typography style={{ fontSize: '3em' }} paragraph variant='h4'>
             The plan: Create calm connections with affection, love, and praise
           </Typography>
-          <Typography style={{ fontSize: '2.5em' }} variant='body1'>
+          {/* <Typography style={{ fontSize: '2.5em' }} variant='body1'>
             If your dog is always jumping on you, nipping your hands, or biting
             your clothes to get your attention, don’t worry - That’s a good
             thing! That means your dog loves you, that your affection has
             already been established as a reinforcer, and that you’re ready to
             begin Constructional Affection.{' '}
-          </Typography>
+          </Typography> */}
         </div>
         <br />
         <Grid

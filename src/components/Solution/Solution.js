@@ -30,18 +30,12 @@ const Solution = ({ audience }) => {
         <div style={{ padding: '0 100px' }}>
           <Typography
             style={{ paddingBottom: 10, fontSize: '2.1em' }}
-            color={color}
             paragraph
             variant='caption'
           >
             <span style={{ fontWeight: 'bold' }}>CA</span> / Solution
           </Typography>
-          <Typography
-            style={{ fontSize: '3em' }}
-            color={color}
-            paragraph
-            variant='headline'
-          >
+          <Typography style={{ fontSize: '3em' }} paragraph variant='headline'>
             Scientific approach to establishing calm behaviors
           </Typography>
           <hr
@@ -56,8 +50,7 @@ const Solution = ({ audience }) => {
         {audience === 'gen' ? (
           <div style={{ padding: '0 100px' }}>
             <Typography
-              style={{ padding: '20px 0 40px 0', fontSize: '2.1em' }}
-              color={color}
+              style={{ padding: '20px 0 40px 0', fontSize: '2.5em' }}
               variant='body1'
             >
               We applied state-of-the-art learning science to the development of
