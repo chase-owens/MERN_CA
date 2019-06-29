@@ -22,7 +22,7 @@ const TargetOutcomesSmall = ({ target }) => {
       >
         {target.title}
       </Typography>
-      <Sequence style={{ fontSize: '2.1em' }} steps={target.steps} />
+      <Sequence steps={target.steps} />
     </div>
   ) : (
     <div

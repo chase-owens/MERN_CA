@@ -27,6 +27,7 @@ const AboutCardSmall = ({ point, color }) => {
       >
         {point.answer}
       </Typography>
+      <br />
       {point.citation !== undefined && (
         <Typography
           color={color}

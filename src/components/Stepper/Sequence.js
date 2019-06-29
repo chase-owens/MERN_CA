@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import StepperIcon from '../Stepper/StepperIcon';
 
 import { theme } from '../../styles/theme';
+import { isMobile } from 'react-device-detect';
 
 const Sequence = ({ steps }) => {
   return (
@@ -62,7 +63,11 @@ const Sequence = ({ steps }) => {
               margin: i === 1 ? '0 15px' : 0
             }}
           >
-            <Typography variant='body2' align='center'>
+            <Typography
+              variant='body2'
+              align='center'
+              style={{ fontSize: isMobile ? '2.1em' : null }}
+            >
               {step.description}
             </Typography>
           </Grid>
