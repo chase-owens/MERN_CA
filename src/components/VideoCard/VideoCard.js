@@ -1,7 +1,7 @@
 import React from 'react';
 import { theme } from '../../styles/theme';
 import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import { isMobile } from 'react-device-detect';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -160,7 +160,34 @@ const styles = theme => ({
 
 const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
   console.log('Focused Video: ', focusedVideo);
-  return (
+  return isMobile ? (
+    <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
+      <div style={{ width: 'calc(100% - 80px)', height: 450 }}>
+        <Card
+          className={classes.image}
+          style={{
+            backgroundImage: `url(${returnImage(video.imagePath)})`
+          }}
+        />
+        <span className={classes.skin}>
+          <div className={classes.iconWrapper}>
+            <Icon className={classes.icon}>
+              <i class='material-icons'>play_circle_filled</i>
+            </Icon>
+          </div>
+        </span>
+      </div>
+
+      <br />
+      <div className={classes.text}>
+        <Typography paragraph variant='headline'>
+          {video.title}
+        </Typography>
+
+        <Typography variant='body2'>{video.description}</Typography>
+      </div>
+    </div>
+  ) : (
     <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
       <div className={classes.cardImage}>
         <Card
