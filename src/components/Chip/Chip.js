@@ -36,6 +36,7 @@ const Chip = ({ label, value, audience, changeAudience }) => {
       <Button
         value={value}
         onClick={() => changeAudience(value)}
+        size={isMobile ? 'large' : null}
         style={{
           border: useMediaQuery(theme.breakpoints.down(740))
             ? `thin solid ${theme.palette.text.secondary}`
@@ -48,7 +49,7 @@ const Chip = ({ label, value, audience, changeAudience }) => {
       >
         <Typography
           variant='caption'
-          style={{ padding: '0 5px', color: `${color}`, fontSize: '2.1em' }}
+          style={{ padding: '0 5px', color: `${color}`, fontSize: '2em' }}
         >
           {label}
         </Typography>
