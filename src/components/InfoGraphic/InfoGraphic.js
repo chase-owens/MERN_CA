@@ -10,11 +10,11 @@ const logoPath = require('images/Logo.png');
 
 const InfoGraphic = ({ info }) => {
   const color = theme.palette.primary.main;
-  return !isMobile ? (
+  return isMobile ? (
     <Paper
       style={{
         width: 400,
-        height: 900,
+        height: 500,
         border: `10px solid ${color}`,
         borderRadius: 8,
         background: '#fff'
