@@ -41,12 +41,12 @@ const Videos = ({ classes }) => {
       </Typography>
       <Grid
         container
-        direction='column'
+        justify='space-around'
         spacing={24}
         style={{ width: '100vw' }}
       >
         {videos.map(video => (
-          <Grid item key={video.title} style={{ width: '100%' }}>
+          <Grid item key={video.title} style={{ width: '95%' }}>
             <VideoCard video={video} />
           </Grid>
         ))}
