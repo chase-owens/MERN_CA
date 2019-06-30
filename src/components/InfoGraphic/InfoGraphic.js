@@ -24,10 +24,10 @@ const InfoGraphic = ({ info }) => {
         style={{
           margin: 'auto',
           width: 280,
-          height: 180
+          height: 130
         }}
       >
-        <div style={{ height: 160, width: '100%', background: color }}>
+        <div style={{ height: 100, width: '100%', background: color }}>
           <Typography
             align='center'
             variant='body1'

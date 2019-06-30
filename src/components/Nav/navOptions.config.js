@@ -1,7 +1,7 @@
 const navButtons = [
   { title: 'How To', location: '/' },
   { title: 'Videos', location: '/' },
-  { title: 'Your Plan', location: '/program' },
+  { title: 'Languages', location: '/program' },
   { title: 'Contact', location: '/contact' }
 ];
 

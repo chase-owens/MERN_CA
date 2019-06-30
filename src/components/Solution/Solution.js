@@ -67,7 +67,7 @@ const Solution = ({ audience }) => {
           <div>
             <div style={{ padding: '0 100px' }}>
               <Typography
-                style={{ padding: '20px 40px 40px 40px', fontSize: '2.1em' }}
+                style={{ padding: '20px 40px 40px 40px', fontSize: '2.5em' }}
                 color={color}
                 variant='body1'
               >
@@ -92,7 +92,7 @@ const Solution = ({ audience }) => {
             <Typography
               style={{
                 padding: '20px 0 40px 0',
-                fontSize: '2.1em',
+                fontSize: '2.5em',
                 overflow: 'hidden'
               }}
               color={color}
