@@ -4,12 +4,79 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import { isMobile } from 'react-device-detect';
 
 const logoPath = require('images/Logo.png');
 
 const InfoGraphic = ({ info }) => {
   const color = theme.palette.primary.main;
-  return (
+  return !isMobile ? (
+    <Paper
+      style={{
+        width: 400,
+        height: 500,
+        border: `10px solid ${color}`,
+        borderRadius: 8,
+        background: '#fff'
+      }}
+    >
+      <div
+        style={{
+          margin: 'auto',
+          width: 300,
+          height: 120
+        }}
+      >
+        <div style={{ height: 70, width: '100%', background: color }}>
+          <Typography
+            align='center'
+            variant='body1'
+            style={{ lineHeight: 3.1, fontSize: '2em' }}
+          >
+            {info.ribbonTitle}
+          </Typography>
+        </div>
+        <div
+          style={{
+            width: 0,
+            borderLeft: `150px solid ${color}`,
+            borderRight: `150px solid ${color}`,
+            borderBottom: `30px solid transparent`
+          }}
+        />
+      </div>
+      <div
+        style={{
+          width: 120,
+          height: 120,
+          borderRadius: '50%',
+          background: color,
+          margin: 'auto'
+        }}
+      >
+        <img
+          src={logoPath}
+          alt=''
+          style={{
+            height: 80,
+            marginLeft: 26,
+            marginTop: 19
+          }}
+        />
+      </div>
+      <Typography
+        paragraph
+        align='center'
+        variant='h1'
+        style={{ marginTop: 40, fontSize: '1.2em', fontWeight: 'bold' }}
+      >
+        {info.title}
+      </Typography>
+      <Typography paragraph align='center' style={{ margin: '0 30px' }}>
+        {info.description}
+      </Typography>
+    </Paper>
+  ) : (
     <Paper
       style={{
         width: 250,

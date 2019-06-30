@@ -52,7 +52,7 @@ const Chip = ({ label, value, audience, changeAudience }) => {
           style={{
             padding: '0 5px',
             color: `${color}`,
-            fontSize: { isMobile } ? '2em' : null
+            fontSize: isMobile ? '2em' : null
           }}
         >
           {label}
