@@ -37,13 +37,13 @@ const About = ({ theme }) => {
     <div
       style={{
         paddingBottom: 70,
-        paddingTop: 0
+        paddingTop: isMobile ? 70 : 0
       }}
     >
       <div>
         <div
           style={{
-            margin: '0 100px 60px 100px'
+            margin: '0 100px 80px 100px'
           }}
         >
           <Typography paragraph style={{ fontSize: '2.1em' }} variant='caption'>
