@@ -44,7 +44,7 @@ const HowTo = () => {
       <Typography
         paragraph
         variant='caption'
-        style={{ paddingLeft: 40, fontSize: '2.1em', marginBottom: 45 }}
+        style={{ marginLeft: 40, fontSize: '2.1em', marginBottom: 45 }}
       >
         <span style={{ fontWeight: 'bold' }}>CA</span> / How To
       </Typography>
