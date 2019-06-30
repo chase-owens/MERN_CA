@@ -28,7 +28,7 @@ const styles = theme => ({
 
 const Videos = ({ classes }) => {
   return isMobile ? (
-    <div style={{}}>
+    <div style={{ marginTop: 50 }}>
       <Typography
         paragraph
         variant='caption'
@@ -36,7 +36,11 @@ const Videos = ({ classes }) => {
       >
         <span style={{ fontWeight: 'bold' }}>CA</span> / Videos
       </Typography>
-      <Typography style={{ fontSize: '3em' }} paragraph variant='headline'>
+      <Typography
+        style={{ marginLeft: 100, fontSize: '3em' }}
+        paragraph
+        variant='headline'
+      >
         Videos
       </Typography>
       <Grid
@@ -51,7 +55,7 @@ const Videos = ({ classes }) => {
           <Grid
             item
             key={video.title}
-            style={{ width: '90vw', margin: 'auto' }}
+            style={{ width: 'calc(100vw - 200px)', margin: 'auto' }}
           >
             <VideoCard video={video} />
           </Grid>
