@@ -28,7 +28,7 @@ const styles = theme => ({
 
 const Videos = ({ classes }) => {
   return isMobile ? (
-    <div style={{}}>
+    <div style={{ width: '100vw' }}>
       <Typography
         paragraph
         variant='caption'
