@@ -162,7 +162,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
   console.log('Focused Video: ', focusedVideo);
   return isMobile ? (
     <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', height: 600 }}>
         <Card
           style={{
             backgroundImage: `url(${returnImage(video.imagePath)})`,
@@ -171,7 +171,8 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: '50% 50%',
-            width: '100%'
+            width: '100%',
+            height: 600
           }}
         />
         <span
@@ -181,7 +182,9 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
             opacity: 0.8,
             position: 'relative',
             display: 'block',
-            width: '100%'
+            width: '100%',
+            height: 600,
+            top: -600
           }}
         >
           <div className={classes.iconWrapper}>
@@ -193,7 +196,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
       </div>
 
       <br />
-      <div className={classes.text}>
+      <div>
         <Typography
           paragraph
           style={{ fontSize: '2em', fontWeight: 'bold' }}
