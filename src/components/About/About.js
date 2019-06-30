@@ -37,18 +37,18 @@ const About = ({ theme }) => {
     <div
       style={{
         paddingBottom: 70,
-        paddingTop: isMobile ? 100 : 0
+        paddingTop: 100
       }}
     >
       <div>
         <div
           style={{
-            margin: isMobile ? '0 100px 100px 100px' : '0 100px 80px 100px'
+            margin: '0 100px 100px 100px'
           }}
         >
           <Typography
             paragraph
-            style={{ fontSize: '2.1em', marginBottom: isMobile ? 45 : null }}
+            style={{ fontSize: '2.1em', marginBottom: 45 }}
             variant='caption'
           >
             <span style={{ fontWeight: 'bold' }}>CA</span> / About
@@ -56,13 +56,6 @@ const About = ({ theme }) => {
           <Typography style={{ fontSize: '3em' }} paragraph variant='h4'>
             The plan: Create calm connections with affection, love, and praise
           </Typography>
-          {/* <Typography style={{ fontSize: '2.5em' }} variant='body1'>
-            If your dog is always jumping on you, nipping your hands, or biting
-            your clothes to get your attention, don’t worry - That’s a good
-            thing! That means your dog loves you, that your affection has
-            already been established as a reinforcer, and that you’re ready to
-            begin Constructional Affection.{' '}
-          </Typography> */}
         </div>
         <br />
         <Grid
@@ -97,8 +90,6 @@ const About = ({ theme }) => {
                     style={{
                       width: '100%',
                       height: '100%',
-                      // minHeight: 400,
-                      // minWidth: 400,
                       background: background
                     }}
                   >
@@ -149,7 +140,7 @@ const About = ({ theme }) => {
         <Typography
           variant='h4'
           style={{
-            margin: '0 100px',
+            margin: '70px 100px 20px 100px',
             fontSize: '3em'
           }}
         >
@@ -157,6 +148,7 @@ const About = ({ theme }) => {
         </Typography>
         <div style={{ margin: '0 100px' }}>
           <Typography
+            paragraph
             variant='body1'
             style={{
               paddingTop: 30,
@@ -167,12 +159,14 @@ const About = ({ theme }) => {
             They momentarily reduce excited behavior.
           </Typography>
           <Typography
+            paragraph
             variant='body1'
             style={{ paddingBottom: 5, fontSize: '2.5em' }}
           >
             They establish calm behaviors in training sessions.
           </Typography>
           <Typography
+            paragraph
             variant='body1'
             style={{ paddingBottom: 5, fontSize: '2.5em' }}
           >

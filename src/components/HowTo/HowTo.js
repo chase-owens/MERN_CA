@@ -1,7 +1,7 @@
 import React from 'react';
 import { theme } from '../../styles/theme';
 import caSteps from './caSteps.config';
-
+import { isMobile } from 'react-device-detect';
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
@@ -39,7 +39,66 @@ const HowTo = () => {
 
   const howTo = caSteps[0];
 
-  return (
+  return isMobile ? (
+    <div style={{ paddingTop: 20 }}>
+      <Typography
+        paragraph
+        variant='caption'
+        style={{ paddingLeft: 40, fontSize: '2.1em', marginBottom: 45 }}
+      >
+        <span style={{ fontWeight: 'bold' }}>CA</span> / How To
+      </Typography>
+      <Grid
+        container
+        className='scrollContainer'
+        wrap='nowrap'
+        style={{
+          overflowX: 'auto',
+          WebkitOverflowScrolling: 'touch',
+          flex: '0 1 auto',
+          paddingLeft: useMediaQuery(theme.breakpoints.down('xs')) ? 100 : null,
+          maxWidth: 800,
+          margin: 'auto',
+          marginBottom: 70,
+          marginTop: 30
+        }}
+        spacing={16}
+        justify='space-around'
+      >
+        {caSteps.map(step => (
+          <Grid item key={step.title}>
+            <InfoGraphic info={step} />
+          </Grid>
+        ))}
+      </Grid>
+      <Grid
+        container
+        spacing={0}
+        justify='space-between'
+        style={{
+          width: '100vw'
+        }}
+      >
+        <Grid
+          item
+          style={{
+            width: '100vw'
+          }}
+        >
+          <InteractionGuidelines />
+        </Grid>
+
+        <Grid
+          item
+          style={{
+            width: '100vw'
+          }}
+        >
+          <AffectionLoop />
+        </Grid>
+      </Grid>
+    </div>
+  ) : (
     <div style={{ paddingTop: 20 }}>
       <Typography paragraph variant='caption' style={{ paddingLeft: 40 }}>
         <span style={{ fontWeight: 'bold' }}>CA</span> / How To

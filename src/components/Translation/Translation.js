@@ -33,7 +33,7 @@ const Translation = ({ classes }) => {
       >
         Translation
       </Typography>
-      <Grid container spacing={isMobile ? 32 : 8} direction='row' wrap='nowrap'>
+      <Grid container spacing={isMobile ? 24 : 8} direction='row' wrap='nowrap'>
         <Grid item>
           <Chip value='gen' label='General' />
         </Grid>
