@@ -164,9 +164,15 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
     <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
       <div style={{ width: 'calc(100% - 80px)', height: 450 }}>
         <Card
-          className={classes.image}
           style={{
-            backgroundImage: `url(${returnImage(video.imagePath)})`
+            backgroundImage: `url(${returnImage(video.imagePath)})`,
+            display: 'block',
+
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '50% 50%',
+            width: '100%',
+            height: 450
           }}
         />
         <span className={classes.skin}>
