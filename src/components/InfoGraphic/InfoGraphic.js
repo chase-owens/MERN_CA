@@ -23,11 +23,11 @@ const InfoGraphic = ({ info }) => {
       <div
         style={{
           margin: 'auto',
-          width: 300,
+          width: 280,
           height: 260
         }}
       >
-        <div style={{ height: 70, width: '100%', background: color }}>
+        <div style={{ height: 200, width: '100%', background: color }}>
           <Typography
             align='center'
             variant='body1'
