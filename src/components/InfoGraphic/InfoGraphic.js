@@ -14,7 +14,7 @@ const InfoGraphic = ({ info }) => {
     <Paper
       style={{
         width: 400,
-        height: 500,
+        height: 600,
         border: `10px solid ${color}`,
         borderRadius: 8,
         background: '#fff'
@@ -24,7 +24,7 @@ const InfoGraphic = ({ info }) => {
         style={{
           margin: 'auto',
           width: 300,
-          height: 180
+          height: 260
         }}
       >
         <div style={{ height: 70, width: '100%', background: color }}>
