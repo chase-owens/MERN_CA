@@ -28,11 +28,11 @@ const styles = theme => ({
 
 const Videos = ({ classes }) => {
   return isMobile ? (
-    <div style={{ padding: 40, margin: 'auto', overflow: 'hidden' }}>
+    <div style={{}}>
       <Typography
         paragraph
         variant='caption'
-        style={{ fontSize: '2.1em', marginBottom: 45 }}
+        style={{ marginLeft: 100, fontSize: '2.1em', marginBottom: 45 }}
       >
         <span style={{ fontWeight: 'bold' }}>CA</span> / Videos
       </Typography>
