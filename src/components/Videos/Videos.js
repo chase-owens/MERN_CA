@@ -39,9 +39,14 @@ const Videos = ({ classes }) => {
       <Typography style={{ fontSize: '3em' }} paragraph variant='headline'>
         Videos
       </Typography>
-      <Grid container direction='column' style={{ width: '100vw' }}>
+      <Grid
+        container
+        direction='column'
+        spacing={24}
+        style={{ width: '100vw' }}
+      >
         {videos.map(video => (
-          <Grid item key={video.title} style={{ width: '90%', margin: 'auto' }}>
+          <Grid item key={video.title} style={{ width: '100%' }}>
             <VideoCard video={video} />
           </Grid>
         ))}
