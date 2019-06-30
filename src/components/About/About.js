@@ -37,16 +37,20 @@ const About = ({ theme }) => {
     <div
       style={{
         paddingBottom: 70,
-        paddingTop: isMobile ? 70 : 0
+        paddingTop: isMobile ? 100 : 0
       }}
     >
       <div>
         <div
           style={{
-            margin: '0 100px 80px 100px'
+            margin: isMobile ? '0 100px 100px 100px' : '0 100px 80px 100px'
           }}
         >
-          <Typography paragraph style={{ fontSize: '2.1em' }} variant='caption'>
+          <Typography
+            paragraph
+            style={{ fontSize: '2.1em', marginBottom: isMobile ? 45 : null }}
+            variant='caption'
+          >
             <span style={{ fontWeight: 'bold' }}>CA</span> / About
           </Typography>
           <Typography style={{ fontSize: '3em' }} paragraph variant='h4'>
