@@ -24,7 +24,7 @@ const InfoGraphic = ({ info }) => {
         style={{
           margin: 'auto',
           width: 300,
-          height: 120
+          height: 180
         }}
       >
         <div style={{ height: 70, width: '100%', background: color }}>
@@ -68,11 +68,15 @@ const InfoGraphic = ({ info }) => {
         paragraph
         align='center'
         variant='h1'
-        style={{ marginTop: 40, fontSize: '1.2em', fontWeight: 'bold' }}
+        style={{ marginTop: 40, fontSize: '2em', fontWeight: 'bold' }}
       >
         {info.title}
       </Typography>
-      <Typography paragraph align='center' style={{ margin: '0 30px' }}>
+      <Typography
+        paragraph
+        align='center'
+        style={{ margin: '0 30px', fontSize: '2em' }}
+      >
         {info.description}
       </Typography>
     </Paper>

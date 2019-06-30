@@ -56,8 +56,7 @@ const HowTo = () => {
           overflowX: 'auto',
           WebkitOverflowScrolling: 'touch',
           flex: '0 1 auto',
-          paddingLeft: useMediaQuery(theme.breakpoints.down('xs')) ? 100 : null,
-          maxWidth: 800,
+          maxWidth: 1000,
           margin: 'auto',
           marginBottom: 70,
           marginTop: 30
