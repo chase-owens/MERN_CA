@@ -48,7 +48,11 @@ const Videos = ({ classes }) => {
         }}
       >
         {videos.map(video => (
-          <Grid item key={video.title} style={{ width: '100vw' }}>
+          <Grid
+            item
+            key={video.title}
+            style={{ width: '90vw', margin: 'auto' }}
+          >
             <VideoCard video={video} />
           </Grid>
         ))}
