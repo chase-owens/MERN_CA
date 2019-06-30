@@ -28,7 +28,7 @@ const styles = theme => ({
 
 const Videos = ({ classes }) => {
   return isMobile ? (
-    <div style={{ width: '100vw' }}>
+    <div style={{}}>
       <Typography
         paragraph
         variant='caption'
@@ -41,12 +41,14 @@ const Videos = ({ classes }) => {
       </Typography>
       <Grid
         container
-        justify='space-around'
-        spacing={24}
-        style={{ width: '100vw', background: '#f00' }}
+        spacing={0}
+        justify='space-between'
+        style={{
+          width: '100vw'
+        }}
       >
         {videos.map(video => (
-          <Grid item key={video.title} style={{ width: '95vw' }}>
+          <Grid item key={video.title} style={{ width: '100vw' }}>
             <VideoCard video={video} />
           </Grid>
         ))}
