@@ -164,13 +164,13 @@ const styles = theme => ({
     },
     '& i': {
       paddingTop: 250,
-      fontSize: 150,
+      fontSize: 100,
 
       paddingLeft: 10
     },
     '&:hover i': {
       paddingTop: 225,
-      fontSize: 200,
+      fontSize: 150,
       paddingLeft: 0
     },
     '&:hover i span': {
@@ -218,7 +218,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
                 margin: 'auto',
                 color: '#fff',
                 height: 350,
-                width: 100
+                width: 150
               }}
             >
               <i class='material-icons'>play_circle_filled</i>
