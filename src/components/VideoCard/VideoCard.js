@@ -217,7 +217,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
                 display: 'block',
                 margin: 'auto',
                 color: '#fff',
-                height: 350,
+                height: 450,
                 width: 150
               }}
             >
