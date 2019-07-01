@@ -31,8 +31,6 @@ const mapDispatchToProps = dispatch =>
 
 const styles = theme => ({
   card: {
-    paddingBottom: -100,
-    marginBottom: 10,
     width: '100%',
     '&:hover': {
       cursor: 'pointer'
@@ -196,7 +194,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
       </div>
 
       <br />
-      <div>
+      <div style={{ paddingTop: 20 }}>
         <Typography
           paragraph
           style={{ fontSize: '2em', fontWeight: 'bold' }}
