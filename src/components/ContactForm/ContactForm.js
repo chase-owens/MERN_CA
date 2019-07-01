@@ -17,7 +17,7 @@ const styles = theme => ({
   },
   formContainer: {
     width: '80%',
-    maxWidth: 400,
+    maxWidth: isMobile ? null : 400,
     margin: 'auto'
   },
   formHeader: {
@@ -26,7 +26,7 @@ const styles = theme => ({
   },
   formInputs: {
     margin: 'auto',
-    width: 300,
+    width: isMobile ? '100%' : 300,
     color: '#000'
   },
   formInput: {
