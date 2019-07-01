@@ -105,11 +105,11 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
         >
           <Icon
             style={{
-              paddingBottom: 15,
-              paddingTop: -15,
-              paddingRight: 20,
-              marginRight: -12,
-              marginLeft: -5
+              paddingBottom: 150,
+              paddingTop: -150,
+              paddingRight: 120,
+              marginRight: -120,
+              marginLeft: -50
             }}
           >
             <i style={{ fontSize: 90 }} class='material-icons'>

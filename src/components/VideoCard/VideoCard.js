@@ -163,14 +163,14 @@ const styles = theme => ({
       background: theme.palette.primary.main
     },
     '& i': {
-      paddingTop: 130,
-      fontSize: 80,
+      paddingTop: 250,
+      fontSize: 150,
 
       paddingLeft: 10
     },
     '&:hover i': {
-      paddingTop: 120,
-      fontSize: 100,
+      paddingTop: 225,
+      fontSize: 200,
       paddingLeft: 0
     },
     '&:hover i span': {
