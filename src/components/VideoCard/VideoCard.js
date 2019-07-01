@@ -197,13 +197,13 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
       <div style={{ paddingTop: 20 }}>
         <Typography
           paragraph
-          style={{ fontSize: '2em', fontWeight: 'bold' }}
+          style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 5 }}
           variant='headline'
         >
           {video.title}
         </Typography>
 
-        <Typography style={{ fontSize: '2em' }} variant='body2'>
+        <Typography style={{ fontSize: '2.3em' }} variant='body2'>
           {video.description}
         </Typography>
       </div>

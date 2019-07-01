@@ -55,7 +55,11 @@ const Videos = ({ classes }) => {
           <Grid
             item
             key={video.title}
-            style={{ width: 'calc(100vw - 200px)', margin: 'auto' }}
+            style={{
+              width: 'calc(100vw - 200px)',
+              margin: 'auto',
+              marginBottom: 20
+            }}
           >
             <VideoCard video={video} />
           </Grid>
