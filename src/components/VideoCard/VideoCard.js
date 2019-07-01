@@ -153,13 +153,39 @@ const styles = theme => ({
       paddingTop: 200,
       paddingBottom: -240
     }
+  },
+  mobileCard: {
+    width: '100%',
+    '&:hover': {
+      cursor: 'pointer'
+    },
+    '&:hover span': {
+      background: theme.palette.primary.main
+    },
+    '& i': {
+      paddingTop: 130,
+      fontSize: 80,
+
+      paddingLeft: 10
+    },
+    '&:hover i': {
+      paddingTop: 120,
+      fontSize: 100,
+      paddingLeft: 0
+    },
+    '&:hover i span': {
+      // height: 200
+    }
   }
 });
 
 const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
   console.log('Focused Video: ', focusedVideo);
   return isMobile ? (
-    <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
+    <div
+      className={classes.mobileCard}
+      onClick={() => toggleMovie(video.videoPath)}
+    >
       <div style={{ width: '100%', height: 600 }}>
         <Card
           style={{
@@ -186,7 +212,15 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
           }}
         >
           <div className={classes.iconWrapper}>
-            <Icon className={classes.icon}>
+            <Icon
+              style={{
+                display: 'block',
+                margin: 'auto',
+                color: '#fff',
+                height: 350,
+                width: 100
+              }}
+            >
               <i class='material-icons'>play_circle_filled</i>
             </Icon>
           </div>
@@ -197,7 +231,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
       <div style={{ paddingTop: 20 }}>
         <Typography
           paragraph
-          style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 5 }}
+          style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 15 }}
           variant='headline'
         >
           {video.title}

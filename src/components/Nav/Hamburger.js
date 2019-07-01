@@ -69,7 +69,9 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
             color: '#fff',
             zIndex: 999,
             top: 3,
-            right: 3
+            right: 3,
+            height: 100,
+            width: 100
           }}
           onClick={() => toggleMovie(null)}
         >
@@ -96,7 +98,8 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
             zIndex: 999,
             top: 10,
             right: 10,
-            width: 100
+            width: 100,
+            height: 100
           }}
           onClick={toggleSidebar}
         >

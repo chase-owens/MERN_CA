@@ -58,7 +58,7 @@ const Videos = ({ classes }) => {
             style={{
               width: 'calc(100vw - 200px)',
               margin: 'auto',
-              marginBottom: 20
+              marginBottom: 50
             }}
           >
             <VideoCard video={video} />
