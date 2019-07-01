@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleMovie }, dispatch);
 
 const MovieModal = ({ focusedVideo, toggleMovie }) => {
-  return isMobile ? (
+  return isMobile && focusedVideo !== null ? (
     <div
       style={{
         width: '100vw',
@@ -68,7 +68,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
       </div>
     </div>
   ) : (
-    focusedVideo !== null && (
+    !isMobile && focusedVideo !== null && (
       <div
         style={{
           width: '100vw',
