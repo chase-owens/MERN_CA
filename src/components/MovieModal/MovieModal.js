@@ -13,6 +13,7 @@ import { bindActionCreators } from 'redux';
 import { toggleMovie } from '../Videos/videos.action';
 
 import { theme } from 'styles/theme';
+import { isMobile } from 'react-device-detect';
 
 const mapStateToProps = state => ({
   focusedVideo: state.videoState.video
@@ -22,7 +23,51 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleMovie }, dispatch);
 
 const MovieModal = ({ focusedVideo, toggleMovie }) => {
-  return (
+  return isMobile ? (
+    <div
+      style={{
+        width: '100vw',
+        height: '100vh',
+        position: 'fixed',
+        top: 0
+      }}
+    >
+      <div
+        style={{
+          width: '100vw',
+          height: '100vh',
+          opacity: 0.7,
+          background: theme.palette.ternary.main,
+          position: 'relative',
+          top: 0
+        }}
+      />
+      <div
+        style={{
+          width: '90vw',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+
+          marginTop: '25vh',
+          marginLeft: '5vw'
+        }}
+      >
+        <ReactPlayer
+          style={{
+            marginTop: 0,
+            padding: 0,
+            zIndex: 1800
+          }}
+          url={focusedVideo}
+          playing
+          loop
+          width='100%'
+          height='100%'
+        />
+      </div>
+    </div>
+  ) : (
     focusedVideo !== null && (
       <div
         style={{
