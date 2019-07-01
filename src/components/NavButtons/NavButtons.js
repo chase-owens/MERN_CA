@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { withTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import { theme } from '../../styles/theme';
+import { isMobile } from 'react-device-detect';
 
 const NavButtons = ({ direction }) => {
   return (
@@ -22,7 +23,8 @@ const NavButtons = ({ direction }) => {
           >
             <Button
               style={{
-                color: direction === 'column' ? theme.palette.text.light : null
+                color: direction === 'column' ? theme.palette.text.light : null,
+                fontSize: isMobile ? '2.5em' : null
               }}
             >
               {button.title}

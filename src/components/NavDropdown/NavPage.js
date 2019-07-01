@@ -8,8 +8,6 @@ import Slide from '@material-ui/core/Slide';
 
 import { theme } from '../../styles/theme';
 
-import { isMobile } from 'react-device-detect';
-
 const mapStateToProps = state => ({
   language: state.languageState.language,
   open: state.sideBarState.open

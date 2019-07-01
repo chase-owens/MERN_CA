@@ -82,7 +82,7 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
               marginLeft: -5
             }}
           >
-            <i style={{ fontSize: 40 }} class='material-icons'>
+            <i style={{ fontSize: 90 }} class='material-icons'>
               close
             </i>
           </Icon>
@@ -108,7 +108,7 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
               marginLeft: -5
             }}
           >
-            <i style={{ fontSize: 40 }} class='material-icons'>
+            <i style={{ fontSize: 90 }} class='material-icons'>
               close
             </i>
           </Icon>

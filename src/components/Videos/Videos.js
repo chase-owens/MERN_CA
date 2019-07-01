@@ -32,12 +32,12 @@ const Videos = ({ classes }) => {
       <Typography
         paragraph
         variant='caption'
-        style={{ marginLeft: 100, fontSize: '2.1em', marginBottom: 45 }}
+        style={{ marginLeft: 50, fontSize: '2.1em', marginBottom: 45 }}
       >
         <span style={{ fontWeight: 'bold' }}>CA</span> / Videos
       </Typography>
       <Typography
-        style={{ marginLeft: 100, fontSize: '3em' }}
+        style={{ marginLeft: 50, fontSize: '3em' }}
         paragraph
         variant='headline'
       >
@@ -55,7 +55,7 @@ const Videos = ({ classes }) => {
           <Grid
             item
             key={video.title}
-            style={{ width: 'calc(100vw - 200px)', margin: 'auto' }}
+            style={{ width: 'calc(100vw - 100px)', margin: 'auto' }}
           >
             <VideoCard video={video} />
           </Grid>
