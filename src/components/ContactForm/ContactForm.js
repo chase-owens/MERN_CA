@@ -31,14 +31,18 @@ const styles = theme => ({
   },
   formInput: {
     marginBottom: 13,
-    color: theme.palette.text.main
+    color: theme.palette.text.main,
+    '& label': {
+      fontSize: isMobile ? '3.1em' : null
+    }
   },
   buttonContainer: {
-    width: 87,
-    margin: 'auto'
+    // width: 87,
+    // margin: 'auto'
   },
   button: {
     margin: 'auto',
+    display: 'block',
     background: theme.palette.ternary.main,
     color: '#fff',
     marginTop: 15,
@@ -105,7 +109,7 @@ const ContactForm = ({ classes }) => {
           </div>
           <div className={classes.formInput}>
             <TextField
-              style={{ width: '100%', fontSize: isMobile ? '3.4em' : null }}
+              style={{ width: '100%' }}
               label='Comment'
               multiline
               rowsMax='4'
@@ -120,8 +124,7 @@ const ContactForm = ({ classes }) => {
             className={classes.button}
             onClick={sendData}
             variant='contained'
-            size={isMobile ? 'large' : null}
-            style={{ fontSize: isMobile ? '3.4em' : null }}
+            style={{ fontSize: isMobile ? '3.4em' : '1em' }}
           >
             Submit
           </Button>

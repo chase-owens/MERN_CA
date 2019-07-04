@@ -16,7 +16,7 @@ const ContactNav = () => {
         </Grid>
         <Grid item style={{ margin: '10px 15px' }}>
           <Link style={{ textDecoration: 'none' }} to='/'>
-            <Button size={isMobile ? 'large' : null}>Home</Button>
+            <Button size={isMobile ? 'large' : 'md'}>Home</Button>
           </Link>
         </Grid>
       </Grid>
