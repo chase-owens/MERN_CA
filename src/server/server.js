@@ -8,6 +8,7 @@ import jwt from 'jsonwebtoken';
 import mailer from 'nodemailer';
 import dotenv from 'dotenv';
 import AWS from 'aws-sdk';
+import s3stream from 's3-streams';
 
 dotenv.config();
 console.log(process.env);
@@ -48,14 +49,16 @@ app.get('/api/movie', (req, res) => {
     Key: 'intro.mp4',
     Range: 'bytes=0-9'
   };
-  s3.getObject(params, (err, data) => {
-    if (err) {
-      console.log(err, err.stack);
-    } else {
-      let cloudfile = data.Body.toString('base64');
-      res.send(data);
-    }
-  });
+  // s3.getObject(params, (err, data) => {
+  //   if (err) {
+  //     console.log(err, err.stack);
+  //   } else {
+  //     let cloudfile = data.Body.toString('base64');
+  //     res.send(cloudfile);
+  //   }
+  // });
+  let src = s3stream.ReadStream(s3, params);
+  src.pipe(res);
 });
 
 app.get('/api/data', verifyToken, async (req, res) => {
@@ -67,7 +70,7 @@ app.get('/api/data', verifyToken, async (req, res) => {
     if (err) {
       res.json({ err: 'err' });
     } else {
-      // save in local storage?
+      // save in local storage
       res.json({ content, authData });
     }
   });

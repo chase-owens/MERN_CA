@@ -1,0 +1,14 @@
+{
+    "camernenv": {
+        "awscloudformation": {
+            "AuthRoleName": "camern-camernenv-20190702212409-authRole",
+            "UnauthRoleArn": "arn:aws:iam::165141442371:role/camern-camernenv-20190702212409-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::165141442371:role/camern-camernenv-20190702212409-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "camern-camernenv-20190702212409-deployment",
+            "UnauthRoleName": "camern-camernenv-20190702212409-unauthRole",
+            "StackName": "camern-camernenv-20190702212409",
+            "StackId": "arn:aws:cloudformation:us-east-1:165141442371:stack/camern-camernenv-20190702212409/a3a09e60-9d39-11e9-bc13-0aaa9d7b8aca"
+        }
+    }
+}
