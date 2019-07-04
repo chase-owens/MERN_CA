@@ -60,8 +60,6 @@ const IntroDiv = ({ theme, classes, open }) => {
             padding: '120px 40px 100px 50px',
             position: 'absolute',
             background: `${theme.palette.primary.main}`,
-            borderTopRightRadius: 10,
-            borderBottomRightRadius: 10,
             bottom: -500
           }}
         >
@@ -106,9 +104,7 @@ const IntroDiv = ({ theme, classes, open }) => {
             position: !useMediaQuery(theme.breakpoints.up(740))
               ? 'absolute'
               : 'static',
-            background: `${theme.palette.primary.main}`,
-            borderTopRightRadius: 5,
-            borderBottomRightRadius: 5
+            background: `${theme.palette.primary.main}`
           }}
           className={classes.introDiv}
         >
