@@ -93,7 +93,7 @@ const ContactForm = ({ classes }) => {
         <div className={classes.formInputs}>
           <div className={classes.formInput}>
             <TextField
-              style={{ width: '100%', fontSize: isMobile ? '1.4em' : null }}
+              style={{ width: '100%', fontSize: isMobile ? '2em' : null }}
               label='Name'
               placeholder='Name'
               onChange={e => setName(e.target.value)}
@@ -102,7 +102,7 @@ const ContactForm = ({ classes }) => {
           </div>
           <div className={classes.formInput}>
             <TextField
-              style={{ width: '100%', fontSize: isMobile ? '1.4em' : null }}
+              style={{ width: '100%', fontSize: isMobile ? '2em' : null }}
               label='Email'
               placeholder='Email'
               onChange={e => setEmail(e.target.value)}
@@ -112,7 +112,7 @@ const ContactForm = ({ classes }) => {
           </div>
           <div className={classes.formInput}>
             <TextField
-              style={{ width: '100%', fontSize: isMobile ? '1.4em' : null }}
+              style={{ width: '100%', fontSize: isMobile ? '2em' : null }}
               label='Comment'
               multiline
               rowsMax='4'
@@ -127,7 +127,7 @@ const ContactForm = ({ classes }) => {
             className={classes.button}
             onClick={sendData}
             variant='contained'
-            style={{ fontSize: isMobile ? '3.4em' : '1em' }}
+            style={{ fontSize: isMobile ? '2.5em' : '1em' }}
           >
             Submit
           </Button>
