@@ -33,7 +33,8 @@ const styles = theme => ({
     marginBottom: 13,
     color: theme.palette.text.main,
     '& label': {
-      fontSize: isMobile ? '2.1em' : null
+      fontSize: isMobile ? '2.1em' : null,
+      display: isMobile ? 'block' : null
     }
   },
   buttonContainer: {
