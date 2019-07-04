@@ -7,8 +7,18 @@ import { withTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import { theme } from '../../styles/theme';
 import { isMobile } from 'react-device-detect';
+import { bindActionCreators } from 'redux';
+import { toggleSidebar } from '../Nav/nav.actions';
+import { connect } from 'react-redux';
 
-const NavButtons = ({ direction }) => {
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ toggleSidebar }, dispatch);
+
+const mapStateToProps = state => ({
+  open: state.sideBarState.open
+});
+
+const NavButtons = ({ direction, toggleSidebar }) => {
   return (
     <Grid
       container
@@ -29,6 +39,7 @@ const NavButtons = ({ direction }) => {
             to={button.location}
           >
             <Button
+              onClick={open ? toggleSidebar : null}
               style={{
                 color: direction === 'column' ? theme.palette.text.light : null,
                 fontSize: direction === 'column' ? '2.5em' : null,
@@ -46,4 +57,9 @@ const NavButtons = ({ direction }) => {
   );
 };
 
-export default withTheme()(NavButtons);
+export default withTheme()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(NavButtons)
+);
