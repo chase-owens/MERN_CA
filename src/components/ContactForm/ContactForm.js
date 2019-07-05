@@ -82,7 +82,7 @@ const ContactForm = ({ classes }) => {
     <div className={classes.contactForm}>
       <div className={classes.formContainer}>
         <Typography
-          style={{ fontSize: isMobile ? '3.4em' : null }}
+          style={{ fontSize: isMobile ? '3.8em' : null }}
           className={classes.formHeader}
           align='center'
           paragraph
@@ -93,7 +93,7 @@ const ContactForm = ({ classes }) => {
         <div className={classes.formInputs}>
           <div className={classes.formInput}>
             <TextField
-              style={{ width: '100%', fontSize: isMobile ? '2em' : null }}
+              style={{ width: '100%', fontSize: isMobile ? '2.5em' : null }}
               label='Name'
               placeholder='Name'
               onChange={e => setName(e.target.value)}
@@ -102,7 +102,7 @@ const ContactForm = ({ classes }) => {
           </div>
           <div className={classes.formInput}>
             <TextField
-              style={{ width: '100%', fontSize: isMobile ? '2em' : null }}
+              style={{ width: '100%', fontSize: isMobile ? '2.5em' : null }}
               label='Email'
               placeholder='Email'
               onChange={e => setEmail(e.target.value)}
@@ -112,7 +112,7 @@ const ContactForm = ({ classes }) => {
           </div>
           <div className={classes.formInput}>
             <TextField
-              style={{ width: '100%', fontSize: isMobile ? '2em' : null }}
+              style={{ width: '100%', fontSize: isMobile ? '2.5em' : null }}
               label='Comment'
               multiline
               rowsMax='4'
@@ -127,7 +127,10 @@ const ContactForm = ({ classes }) => {
             className={classes.button}
             onClick={sendData}
             variant='contained'
-            style={{ fontSize: isMobile ? '2.5em' : '1em' }}
+            style={{
+              fontSize: isMobile ? '2.5em' : '1em',
+              paddingTop: isMobile ? 30 : null
+            }}
           >
             Submit
           </Button>
