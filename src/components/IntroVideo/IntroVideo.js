@@ -14,8 +14,8 @@ const IntroVideo = ({ theme }) => {
       }}
       url='http://dpx1ioq3tyc5t.cloudfront.net/intro.mp4'
       playing
-      volume={0}
-      muted
+      // volume={0}
+      // muted
       loop
       width='100%'
       height='100%'
