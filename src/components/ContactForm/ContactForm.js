@@ -33,7 +33,7 @@ const styles = theme => ({
     marginBottom: 13,
     color: theme.palette.text.main,
     '& label': {
-      fontSize: isMobile ? '2.1em' : null
+      fontSize: isMobile ? '1.7em' : null
     }
     // '& span': {
     //   fontSize: isMobile ? '2.1em' : null
@@ -52,6 +52,17 @@ const styles = theme => ({
     '&:hover': {
       background: theme.palette.ternary.main
     }
+  },
+  input: {
+    fontSize: '1.8em',
+    '&:placeholder': {
+      color: '#fff',
+      fontSize: '2em'
+    }
+  },
+  label: {
+    color: '#fff',
+    fontSize: '1.5em'
   }
 });
 
@@ -91,28 +102,64 @@ const ContactForm = ({ classes }) => {
           Contact Us
         </Typography>
         <div className={classes.formInputs}>
+          {isMobile ? (
+            <div className={classes.formInput}>
+              {this.StaticRange.name !== '' && (
+                <label clsasName='label' for='name'>
+                  Name
+                </label>
+              )}
+              <input
+                className={classes.input}
+                id='name'
+                type='text'
+                placeholder='Name'
+                onChange={e => setName(e.target.value)}
+                value={name}
+              />
+            </div>
+          ) : (
+            <div className={classes.formInput}>
+              <TextField
+                style={{ width: '100%' }}
+                label='Name'
+                placeholder='Name'
+                onChange={e => setName(e.target.value)}
+                value={name}
+              />
+            </div>
+          )}
+          {isMobile ? (
+            <div className={classes.formInput}>
+              {this.StaticRange.email !== '' && (
+                <label clsasName='label' for='name'>
+                  Email
+                </label>
+              )}
+              <input
+                className={classes.input}
+                id='name'
+                type='email'
+                placeholder='Email'
+                onChange={e => setName(e.target.value)}
+                value={email}
+              />
+            </div>
+          ) : (
+            <div className={classes.formInput}>
+              <TextField
+                style={{ width: '100%' }}
+                label='Email'
+                placeholder='Email'
+                onChange={e => setEmail(e.target.value)}
+                value={email}
+                type='email'
+              />
+            </div>
+          )}
           <div className={classes.formInput}>
             <TextField
-              style={{ width: '100%', fontSize: isMobile ? '2.5em' : null }}
-              label='Name'
-              placeholder='Name'
-              onChange={e => setName(e.target.value)}
-              value={name}
-            />
-          </div>
-          <div className={classes.formInput}>
-            <TextField
-              style={{ width: '100%', fontSize: isMobile ? '2.5em' : null }}
-              label='Email'
-              placeholder='Email'
-              onChange={e => setEmail(e.target.value)}
-              value={email}
-              type='email'
-            />
-          </div>
-          <div className={classes.formInput}>
-            <TextField
-              style={{ width: '100%', fontSize: isMobile ? '2.5em' : null }}
+              style={{ width: '100%' }}
               label='Comment'
               multiline
               rowsMax='4'
