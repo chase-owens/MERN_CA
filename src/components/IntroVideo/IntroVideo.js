@@ -12,7 +12,7 @@ const IntroVideo = ({ theme }) => {
         marginTop: 0,
         padding: 0
       }}
-      url='http://dpx1ioq3tyc5t.cloudfront.net/intro.mp4'
+      url='http://dpx1ioq3tyc5t.cloudfront.net/introA.WebM'
       playing
       // volume={0}
       // muted
