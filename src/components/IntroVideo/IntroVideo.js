@@ -7,26 +7,26 @@ import { isMobile } from 'react-device-detect';
 
 const IntroVideo = ({ theme }) => {
   return isMobile ? (
-    <ReactPlayer
-      style={{
-        marginTop: 0,
-        padding: 0
-      }}
-      url='http://dpx1ioq3tyc5t.cloudfront.net/introA.WebM'
-      playing
-      // volume={0}
-      // muted
+    // <ReactPlayer
+    //   style={{
+    //     marginTop: 0,
+    //     padding: 0
+    //   }}
+    //   url='http://dpx1ioq3tyc5t.cloudfront.net/introA.WebM'
+    //   playing
+    //   // volume={0}
+    //   // muted
+    //   loop
+    //   width='100%'
+    //   height='100%'
+    // />
+    <video
+      src='http://dpx1ioq3tyc5t.cloudfront.net/intro.mp4'
+      autoplay
       loop
-      width='100%'
-      height='100%'
+      muted
     />
   ) : (
-    // <video
-    //   src='http://dpx1ioq3tyc5t.cloudfront.net/intro.mp4'
-    //   autoplay
-    //   loop
-    //   muted
-    // />
     <article
       style={{
         width: '100%',
