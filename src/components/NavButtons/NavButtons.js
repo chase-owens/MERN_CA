@@ -38,32 +38,17 @@ const NavButtons = ({ direction, toggleSidebar }) => {
             }}
             to={button.location}
           >
-            {open ? (
-              <Button
-                style={{
-                  color:
-                    direction === 'column' ? theme.palette.text.light : null,
-                  fontSize: direction === 'column' ? '2.5em' : null,
-                  display: 'block',
-                  margin: 'auto'
-                }}
-              >
-                {button.title}
-              </Button>
-            ) : (
-              <Button
-                onClick={toggleSidebar}
-                style={{
-                  color:
-                    direction === 'column' ? theme.palette.text.light : null,
-                  fontSize: direction === 'column' ? '2.5em' : null,
-                  display: 'block',
-                  margin: 'auto'
-                }}
-              >
-                {button.title}
-              </Button>
-            )}
+            <Button
+              onClick={toggleSidebar}
+              style={{
+                color: direction === 'column' ? theme.palette.text.light : null,
+                fontSize: direction === 'column' ? '2.5em' : null,
+                display: 'block',
+                margin: 'auto'
+              }}
+            >
+              {button.title}
+            </Button>
           </Link>
           {direction === 'column' && <Divider />}
         </Grid>

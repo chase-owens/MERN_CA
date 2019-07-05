@@ -31,10 +31,10 @@ const styles = theme => ({
   },
   formInput: {
     marginBottom: 13,
-    color: theme.palette.text.main
-    // '& label': {
-    //   fontSize: isMobile ? '2.1em' : null
-    // },
+    color: theme.palette.text.main,
+    '& label': {
+      fontSize: isMobile ? '2.1em' : null
+    }
     // '& span': {
     //   fontSize: isMobile ? '2.1em' : null
     // }
@@ -129,7 +129,7 @@ const ContactForm = ({ classes }) => {
             variant='contained'
             style={{
               fontSize: isMobile ? '2.5em' : '1em',
-              paddingTop: isMobile ? 30 : null
+              marginTop: isMobile ? 30 : null
             }}
           >
             Submit
