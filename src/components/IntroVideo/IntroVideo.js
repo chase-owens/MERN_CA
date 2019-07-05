@@ -7,28 +7,19 @@ import { isMobile } from 'react-device-detect';
 
 const IntroVideo = ({ theme }) => {
   return isMobile ? (
-    <article
+    <ReactPlayer
       style={{
-        width: '100%',
-        height: '100%',
-
-        overflow: 'hidden'
+        marginTop: 0,
+        padding: 0
       }}
-    >
-      <ReactPlayer
-        style={{
-          marginTop: 0,
-          padding: 0
-        }}
-        url='http://dpx1ioq3tyc5t.cloudfront.net/intro.mp4'
-        playing
-        volume={0}
-        muted
-        loop
-        width='100%'
-        height='100%'
-      />
-    </article>
+      url='http://dpx1ioq3tyc5t.cloudfront.net/intro.mp4'
+      playing
+      volume={0}
+      muted
+      loop
+      width='100%'
+      height='100%'
+    />
   ) : (
     <article
       style={{
