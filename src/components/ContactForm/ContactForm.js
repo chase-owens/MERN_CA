@@ -33,7 +33,7 @@ const styles = theme => ({
     marginBottom: 13,
     display: 'flex',
     flexDirection: 'column',
-    color: theme.palette.text.main,
+    color: 'transparent',
     '& label': {
       fontSize: isMobile ? '2.7em' : null
     }
