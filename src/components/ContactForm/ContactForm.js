@@ -31,6 +31,8 @@ const styles = theme => ({
   },
   formInput: {
     marginBottom: 13,
+    display: 'flex',
+    flexDirection: 'column',
     color: theme.palette.text.main,
     '& label': {
       fontSize: isMobile ? '1.7em' : null
@@ -116,7 +118,7 @@ const ContactForm = ({ classes }) => {
           {isMobile ? (
             <div className={classes.formInput}>
               {name !== '' && (
-                <label style={{ color: '#fff', fontSize: '1.5em' }} for='name'>
+                <label style={{ color: '#fff', fontSize: '2.7em' }} for='name'>
                   Name
                 </label>
               )}
@@ -143,7 +145,7 @@ const ContactForm = ({ classes }) => {
           {isMobile ? (
             <div className={classes.formInput}>
               {email !== '' && (
-                <label style={{ color: '#fff', fontSize: '1.5em' }} for='email'>
+                <label style={{ color: '#fff', fontSize: '2.7em' }} for='email'>
                   Email
                 </label>
               )}
@@ -172,7 +174,7 @@ const ContactForm = ({ classes }) => {
             <div className={classes.formInput}>
               {message !== '' && (
                 <label
-                  style={{ color: '#fff', fontSize: '1.5em' }}
+                  style={{ color: '#fff', fontSize: '2.7em' }}
                   for='message'
                 >
                   Message
