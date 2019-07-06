@@ -59,8 +59,8 @@ const styles = theme => ({
     borderBottom: 'thin solid #000',
     background: theme.palette.primary.main,
     '&::placeholder': {
-      color: '#fff'
-      // fontSize: '1.5em'
+      color: '#fff',
+      fontSize: '2.7em'
     },
     '&:focus input': {
       border: 'none',
@@ -118,7 +118,7 @@ const ContactForm = ({ classes }) => {
           {isMobile ? (
             <div className={classes.formInput}>
               {name !== '' && (
-                <label style={{ color: '#fff', fontSize: '2.7em' }} for='name'>
+                <label style={{ color: '#fff', fontSize: '2.1em' }} for='name'>
                   Name
                 </label>
               )}
@@ -145,7 +145,7 @@ const ContactForm = ({ classes }) => {
           {isMobile ? (
             <div className={classes.formInput}>
               {email !== '' && (
-                <label style={{ color: '#fff', fontSize: '2.7em' }} for='email'>
+                <label style={{ color: '#fff', fontSize: '2.1em' }} for='email'>
                   Email
                 </label>
               )}
@@ -174,7 +174,7 @@ const ContactForm = ({ classes }) => {
             <div className={classes.formInput}>
               {message !== '' && (
                 <label
-                  style={{ color: '#fff', fontSize: '2.7em' }}
+                  style={{ color: '#fff', fontSize: '2.1em' }}
                   for='message'
                 >
                   Message
