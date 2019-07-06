@@ -8,7 +8,6 @@ import jwt from 'jsonwebtoken';
 import mailer from 'nodemailer';
 import dotenv from 'dotenv';
 import AWS from 'aws-sdk';
-import s3stream from 's3-streams';
 
 dotenv.config();
 console.log(process.env);
