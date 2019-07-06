@@ -38,10 +38,6 @@ const styles = theme => ({
       fontSize: isMobile ? '2.7em' : null
     }
   },
-  buttonContainer: {
-    // width: 87,
-    // margin: 'auto'
-  },
   button: {
     margin: 'auto',
     display: 'block',
@@ -204,7 +200,7 @@ const ContactForm = ({ classes }) => {
             </div>
           </div>
         )}
-        <div className={classes.buttonContainer}>
+        <div>
           <Button
             className={classes.button}
             onClick={sendData}

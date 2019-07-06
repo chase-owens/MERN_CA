@@ -6,7 +6,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { toggleMovie } from '../Videos/videos.action';
-
 import { changeLanguage } from '../LanguagePicker/language.actions';
 
 import Icon from '@material-ui/core/Icon';

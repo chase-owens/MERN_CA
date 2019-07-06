@@ -38,13 +38,27 @@ const NavButtons = ({ direction, toggleSidebar }) => {
             }}
             to={button.location}
           >
-            {direction === 'column' && (
+            {!isMobile && direction === 'column' && (
               <Button
                 onClick={toggleSidebar}
                 style={{
                   color:
                     direction === 'column' ? theme.palette.text.light : null,
                   fontSize: direction === 'column' ? '2.5em' : null,
+                  display: 'block',
+                  margin: 'auto'
+                }}
+              >
+                {button.title}
+              </Button>
+            )}
+            {isMobile && direction === 'column' && (
+              <Button
+                onClick={toggleSidebar}
+                style={{
+                  color:
+                    direction === 'column' ? theme.palette.text.light : null,
+                  fontSize: direction === 'column' ? '3.5em' : null,
                   display: 'block',
                   margin: 'auto'
                 }}

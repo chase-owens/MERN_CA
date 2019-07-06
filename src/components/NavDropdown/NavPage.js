@@ -5,6 +5,7 @@ import NavButtons from '../NavButtons/NavButtons.js';
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 import Slide from '@material-ui/core/Slide';
+import { isMobile } from 'react-device-detect';
 
 import { theme } from '../../styles/theme';
 
@@ -33,7 +34,7 @@ const NavDropdown = ({ language, open, theme }) => {
           background: theme.palette.ternary.main,
           width: '80%',
           padding: '0 10%',
-          paddingTop: 80
+          paddingTop: isMobile ? 150 : 80
         }}
       >
         {open && <NavButtons direction='column' />}

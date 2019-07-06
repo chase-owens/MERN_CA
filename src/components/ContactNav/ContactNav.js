@@ -11,7 +11,14 @@ const ContactNav = () => {
   return (
     <nav>
       <Grid container justify='space-between'>
-        <Grid item style={{ marginTop: 5, marginLeft: 20 }}>
+        <Grid
+          item
+          style={{
+            marginTop: isMobile ? 25 : 5,
+            marginLeft: 20,
+            marginRight: isMobile ? 25 : 5
+          }}
+        >
           <img height={isMobile ? 100 : 50} src={logoPath} alt='logo' />
         </Grid>
         <Grid item style={{ margin: '10px 15px' }}>
