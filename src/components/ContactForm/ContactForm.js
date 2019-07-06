@@ -26,7 +26,7 @@ const styles = theme => ({
   },
   formInputs: {
     margin: 'auto',
-    width: isMobile ? '90%' : 300,
+    width: isMobile ? '70%' : 300,
     color: '#000'
   },
   formInput: {
@@ -35,7 +35,7 @@ const styles = theme => ({
     flexDirection: 'column',
     color: theme.palette.text.main,
     '& label': {
-      fontSize: isMobile ? '1.7em' : null
+      fontSize: isMobile ? '2.7em' : null
     }
   },
   buttonContainer: {
