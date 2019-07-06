@@ -58,7 +58,6 @@ const styles = theme => ({
     outline: 'none',
     borderBottom: 'thin solid #000',
     background: theme.palette.primary.main,
-    paddingBottom: 20,
     '&::placeholder': {
       color: '#fff',
       fontSize: '2.7em'
@@ -157,6 +156,7 @@ const ContactForm = ({ classes }) => {
                 placeholder='Email'
                 onChange={e => setEmail(e.target.value)}
                 value={email}
+                style={{ paddingBottom: name === '' ? 40 : 0 }}
               />
             </div>
           ) : (
@@ -188,6 +188,7 @@ const ContactForm = ({ classes }) => {
                 placeholder='Message'
                 onChange={e => setMessage(e.target.value)}
                 value={message}
+                style={{ paddingBottom: name === '' ? 50 : 0 }}
               />
             </div>
           ) : (
