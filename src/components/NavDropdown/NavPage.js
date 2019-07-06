@@ -30,7 +30,10 @@ const NavDropdown = ({ language, open, theme }) => {
     >
       <div
         style={{
-          background: theme.palette.ternary.main
+          background: theme.palette.ternary.main,
+          width: '80%',
+          padding: '0 10%',
+          paddingTop: 80
         }}
       >
         {open && <NavButtons direction='column' />}

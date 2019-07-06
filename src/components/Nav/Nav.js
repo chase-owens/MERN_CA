@@ -48,14 +48,25 @@ const Nav = ({ theme, language, open, audience, focusedVideo }) => {
       <NavPage />
     </div>
   ) : (
-    <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
+    <div
+      style={{
+        background: 'transparent',
+        width: '100%',
+        margin: 'auto'
+      }}
+    >
       <Grid
         container
         justify='space-between'
         alignItems='center'
-        style={{ height: 60, lineHeight: 1 }}
+        style={{
+          height: 60,
+          lineHeight: 1,
+          width: 'calc(100% - 40px)',
+          margin: 'auto'
+        }}
       >
-        <Grid item style={{ marginTop: 5, marginLeft: 20 }}>
+        <Grid item style={{ marginTop: 5 }}>
           <img height={50} src={logoPath} alt='logo' />
         </Grid>
         <Grid item>

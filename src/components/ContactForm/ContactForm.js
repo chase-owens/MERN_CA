@@ -58,6 +58,7 @@ const styles = theme => ({
     outline: 'none',
     borderBottom: 'thin solid #000',
     background: theme.palette.primary.main,
+    overflow: 'visible',
     '&::placeholder': {
       color: '#fff',
       fontSize: '2.7em'
@@ -114,8 +115,8 @@ const ContactForm = ({ classes }) => {
         >
           Contact Us
         </Typography>
-        <div className={classes.formInputs}>
-          {isMobile ? (
+        {isMobile && (
+          <div className={classes.formInputs}>
             <div className={classes.formInput}>
               {name !== '' && (
                 <label style={{ color: '#fff', fontSize: '1.9em' }} for='name'>
@@ -129,20 +130,9 @@ const ContactForm = ({ classes }) => {
                 placeholder='Name'
                 onChange={e => setName(e.target.value)}
                 value={name}
+                style={{ lineHeight: name == '' ? '2.7em' : '1em' }}
               />
             </div>
-          ) : (
-            <div className={classes.formInput}>
-              <TextField
-                style={{ width: '100%' }}
-                label='Name'
-                placeholder='Name'
-                onChange={e => setName(e.target.value)}
-                value={name}
-              />
-            </div>
-          )}
-          {isMobile ? (
             <div className={classes.formInput}>
               {email !== '' && (
                 <label style={{ color: '#fff', fontSize: '1.9em' }} for='email'>
@@ -156,22 +146,9 @@ const ContactForm = ({ classes }) => {
                 placeholder='Email'
                 onChange={e => setEmail(e.target.value)}
                 value={email}
-                style={{ paddingBottom: name === '' ? 40 : 0 }}
+                style={{ lineHeight: email == '' ? '2.7em' : '1em' }}
               />
             </div>
-          ) : (
-            <div className={classes.formInput}>
-              <TextField
-                style={{ width: '100%' }}
-                label='Email'
-                placeholder='Email'
-                onChange={e => setEmail(e.target.value)}
-                value={email}
-                type='email'
-              />
-            </div>
-          )}
-          {isMobile ? (
             <div className={classes.formInput}>
               {message !== '' && (
                 <label
@@ -188,10 +165,32 @@ const ContactForm = ({ classes }) => {
                 placeholder='Message'
                 onChange={e => setMessage(e.target.value)}
                 value={message}
-                style={{ paddingBottom: name === '' ? 50 : 0 }}
+                style={{ lineHeight: message == '' ? '2.7em' : '1em' }}
               />
             </div>
-          ) : (
+          </div>
+        )}
+        {!isMobile && (
+          <div className={classes.formInputs}>
+            <div className={classes.formInput}>
+              <TextField
+                style={{ width: '100%' }}
+                label='Name'
+                placeholder='Name'
+                onChange={e => setName(e.target.value)}
+                value={name}
+              />
+            </div>
+            <div className={classes.formInput}>
+              <TextField
+                style={{ width: '100%' }}
+                label='Email'
+                placeholder='Email'
+                onChange={e => setEmail(e.target.value)}
+                value={email}
+                type='email'
+              />
+            </div>
             <div className={classes.formInput}>
               <TextField
                 style={{ width: '100%' }}
@@ -203,8 +202,8 @@ const ContactForm = ({ classes }) => {
                 value={message}
               />
             </div>
-          )}
-        </div>
+          </div>
+        )}
         <div className={classes.buttonContainer}>
           <Button
             className={classes.button}

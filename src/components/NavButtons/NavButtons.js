@@ -25,9 +25,9 @@ const NavButtons = ({ direction, toggleSidebar }) => {
       direction={direction}
       justify='space-between'
       style={{
-        width: direction === 'column' ? '80%' : '100%',
-        margin: direction === 'column' ? 'auto' : null,
-        marginTop: direction === 'column' ? 125 : null
+        width: '100%'
+        // margin: direction === 'column' ? 'auto' : null,
+        // marginTop: direction === 'column' ? 125 : null
       }}
     >
       {navButtons.map(button => (
