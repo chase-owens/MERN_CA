@@ -60,10 +60,7 @@ const styles = theme => ({
     background: theme.palette.primary.main,
     '&::placeholder': {
       color: '#fff',
-      fontSize: '2.7em',
-      padding: 2,
-      margin: 2,
-      lineHeight: 2
+      fontSize: '2.7em'
     },
     '&:focus input': {
       border: 'none',
@@ -132,6 +129,7 @@ const ContactForm = ({ classes }) => {
                 placeholder='Name'
                 onChange={e => setName(e.target.value)}
                 value={name}
+                style={{ height: 30 }}
               />
             </div>
           ) : (
@@ -159,6 +157,7 @@ const ContactForm = ({ classes }) => {
                 placeholder='Email'
                 onChange={e => setEmail(e.target.value)}
                 value={email}
+                style={{ height: 40 }}
               />
             </div>
           ) : (
@@ -190,7 +189,7 @@ const ContactForm = ({ classes }) => {
                 placeholder='Message'
                 onChange={e => setMessage(e.target.value)}
                 value={message}
-                style={{ height: 'auto' }}
+                style={{ height: 50 }}
               />
             </div>
           ) : (
