@@ -16,7 +16,7 @@ const styles = theme => ({
     background: theme.palette.primary.main
   },
   formContainer: {
-    width: '80%',
+    width: isMobile ? '100%' : '80%',
     maxWidth: isMobile ? null : 400,
     margin: 'auto'
   },
@@ -35,9 +35,6 @@ const styles = theme => ({
     '& label': {
       fontSize: isMobile ? '1.7em' : null
     }
-    // '& span': {
-    //   fontSize: isMobile ? '2.1em' : null
-    // }
   },
   buttonContainer: {
     // width: 87,
@@ -55,14 +52,18 @@ const styles = theme => ({
   },
   input: {
     fontSize: '1.8em',
-    '&:placeholder': {
-      color: '#fff',
-      fontSize: '2em'
+    border: 'none',
+    outline: 'none',
+    borderBottom: 'thin solid #000',
+    background: theme.palette.primary.main,
+    '&::placeholder': {
+      color: '#fff'
+      // fontSize: '1.5em'
+    },
+    '&:focus input': {
+      border: 'none',
+      outline: 'none'
     }
-  },
-  label: {
-    color: '#fff',
-    fontSize: '1.5em'
   }
 });
 
@@ -70,6 +71,16 @@ const ContactForm = ({ classes }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  const setRows = () => {
+    let rows = Math.round(message.length / 28 + 0.5);
+
+    // let extraRows = message.match('//n').length;
+
+    console.log(rows, extraRows);
+
+    return rows + extraRows;
+  };
 
   const sendData = () => {
     const data = { name, email, message };
@@ -104,8 +115,8 @@ const ContactForm = ({ classes }) => {
         <div className={classes.formInputs}>
           {isMobile ? (
             <div className={classes.formInput}>
-              {this.StaticRange.name !== '' && (
-                <label clsasName='label' for='name'>
+              {name !== '' && (
+                <label style={{ color: '#fff', fontSize: '1.5em' }} for='name'>
                   Name
                 </label>
               )}
@@ -131,17 +142,17 @@ const ContactForm = ({ classes }) => {
           )}
           {isMobile ? (
             <div className={classes.formInput}>
-              {this.StaticRange.email !== '' && (
-                <label clsasName='label' for='name'>
+              {email !== '' && (
+                <label style={{ color: '#fff', fontSize: '1.5em' }} for='email'>
                   Email
                 </label>
               )}
               <input
                 className={classes.input}
-                id='name'
+                id='email'
                 type='email'
                 placeholder='Email'
-                onChange={e => setName(e.target.value)}
+                onChange={e => setEmail(e.target.value)}
                 value={email}
               />
             </div>
@@ -157,17 +168,39 @@ const ContactForm = ({ classes }) => {
               />
             </div>
           )}
-          <div className={classes.formInput}>
-            <TextField
-              style={{ width: '100%' }}
-              label='Comment'
-              multiline
-              rowsMax='4'
-              placeholder='Comment'
-              onChange={e => setMessage(e.target.value)}
-              value={message}
-            />
-          </div>
+          {isMobile ? (
+            <div className={classes.formInput}>
+              {message !== '' && (
+                <label
+                  style={{ color: '#fff', fontSize: '1.5em' }}
+                  for='message'
+                >
+                  Message
+                </label>
+              )}
+              <textarea
+                rows={Math.round(message.length / 28 + 0.5)}
+                className={classes.input}
+                id='message'
+                placeholder='Message'
+                onChange={e => setMessage(e.target.value)}
+                value={message}
+                style={{ height: 'auto' }}
+              />
+            </div>
+          ) : (
+            <div className={classes.formInput}>
+              <TextField
+                style={{ width: '100%' }}
+                label='Message'
+                multiline
+                rowsMax='4'
+                placeholder='Message'
+                onChange={e => setMessage(e.target.value)}
+                value={message}
+              />
+            </div>
+          )}
         </div>
         <div className={classes.buttonContainer}>
           <Button
