@@ -71,37 +71,6 @@ const styles = theme => ({
       // height: 200
     }
   },
-  cardImage: {
-    position: 'absolute',
-    [theme.breakpoints.down(740)]: {
-      width: 'calc(100% - 80px)',
-      height: 450
-    },
-    [theme.breakpoints.up(740)]: {
-      width: '43%',
-      height: 360
-    },
-    [theme.breakpoints.up('md')]: {
-      width: '28%',
-      height: 290
-    }
-  },
-  icon: {
-    display: 'block',
-    margin: 'auto',
-    color: '#fff',
-    [theme.breakpoints.down(740)]: {
-      height: 350,
-      width: 100
-    },
-    [theme.breakpoints.up(740)]: {
-      height: 240,
-      width: 80
-    },
-    [theme.breakpoints.up('md')]: {
-      height: 200
-    }
-  },
   image: {
     width: '100%',
     [theme.breakpoints.down(740)]: {
@@ -139,6 +108,22 @@ const styles = theme => ({
     borderRadius: 5,
     opacity: 0.8
   },
+  icon: {
+    display: 'block',
+    margin: 'auto',
+    color: '#fff',
+    [theme.breakpoints.down(740)]: {
+      height: 350,
+      width: 100
+    },
+    [theme.breakpoints.up(740)]: {
+      height: 240,
+      width: 80
+    },
+    [theme.breakpoints.up('md')]: {
+      height: 200
+    }
+  },
   text: {
     [theme.breakpoints.down(740)]: {
       paddingTop: 350,
@@ -175,6 +160,36 @@ const styles = theme => ({
     '&:hover i span': {
       // height: 200
     }
+  },
+  mobileSkin: {
+    position: 'relative',
+    display: 'block',
+    width: '100%',
+    height: 350,
+    top: -350,
+    left: 0,
+    borderRadius: 5,
+    opacity: 0.8
+  },
+  mobileImage: {
+    width: '100%',
+    height: 350,
+    display: 'block',
+
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: '50% 50%'
+  },
+  mobileIcon: {
+    display: 'block',
+    margin: 'auto',
+    color: '#fff',
+    height: 350,
+    width: 100
+  },
+  mobileText: {
+    paddingTop: 350,
+    paddingBottom: -350
   }
 });
 
@@ -187,6 +202,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
     >
       <div style={{ width: '100%', height: 600 }}>
         <Card
+          // className={classes.mobileImage}
           style={{
             backgroundImage: `url(${returnImage(video.imagePath)})`,
             display: 'block',
@@ -199,6 +215,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
           }}
         />
         <span
+          // className={classes.mobileSkin}
           style={{
             left: 0,
             borderRadius: 5,
@@ -210,8 +227,9 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
             top: -600
           }}
         >
-          <div className={classes.iconWrapper}>
+          <div>
             <Icon
+              // className={classes.mobileIcon}
               style={{
                 display: 'block',
                 margin: 'auto',
@@ -227,7 +245,10 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
       </div>
 
       <br />
-      <div style={{ paddingTop: 20 }}>
+      <div
+        // className={classes.mobileText}
+        style={{ paddingTop: 20 }}
+      >
         <Typography
           paragraph
           style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 15 }}
@@ -243,7 +264,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
     </div>
   ) : (
     <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
-      <div className={classes.cardImage}>
+      <div>
         <Card
           className={classes.image}
           style={{
