@@ -6,14 +6,21 @@ import { isMobile } from 'react-device-detect';
 
 import Typography from '@material-ui/core/Typography';
 
-const AffectionLoop = () => {
+import { withStyles } from '@material-ui/core/styles';
+const styles = theme => ({
+  text: {
+    fontSize: isMobile ? '2em' : '1em'
+  }
+});
+
+const AffectionLoop = ({ classes }) => {
   return (
     <div style={{ padding: 30, background: theme.palette.secondary.main }}>
       <Typography
+        className={classes.text}
         color='textSecondary'
         paragraph
         variant='h3'
-        style={{ fontSize: '1em' }}
         align='center'
       >
         Affection Loop
@@ -40,7 +47,12 @@ const AffectionLoop = () => {
           1
         </p>
       </div>
-      <Typography color='textSecondary' paragraph align='center'>
+      <Typography
+        className={classes.text}
+        color='textSecondary'
+        paragraph
+        align='center'
+      >
         Start by petting the dog for sitting or lying down. Then withdraw
         afection momentarily, and return provided sitting or lying down is still
         occurring. Begin with very short intervals and gradually increase the
@@ -68,7 +80,12 @@ const AffectionLoop = () => {
           2
         </p>
       </div>
-      <Typography color='textSecondary' paragraph align='center'>
+      <Typography
+        className={classes.text}
+        color='textSecondary'
+        paragraph
+        align='center'
+      >
         Once your dog is sitting and waiting patiently for your affection, you
         can alter the environment to more closely resemble the context of your
         goal.
@@ -95,7 +112,12 @@ const AffectionLoop = () => {
           3
         </p>
       </div>
-      <Typography color='textSecondary' paragraph align='center'>
+      <Typography
+        className={classes.text}
+        color='textSecondary'
+        paragraph
+        align='center'
+      >
         Gradual increases reduce the liklihood that any excited outbursts will
         occur along the way. But don't be alarmed if any do occur. It's usually
         a sign that you've taken too big of a step. If this happens, just take a
@@ -105,4 +127,6 @@ const AffectionLoop = () => {
   );
 };
 
-export default withWidth({ withTheme: true })(AffectionLoop);
+export default withStyles(styles)(
+  withWidth({ withTheme: true })(AffectionLoop)
+);

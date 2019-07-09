@@ -7,20 +7,26 @@ import withWidth from '@material-ui/core/withWidth';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-const InteractionGuidelines = () => {
+import { withStyles } from '@material-ui/core/styles';
+const styles = theme => ({
+  text: {
+    fontSize: isMobile ? '2em' : '1em'
+  }
+});
+
+const InteractionGuidelines = ({ classes }) => {
   return (
     <div
       style={{
         padding: 30,
-        background: theme.palette.ternary.main,
-        fontSize: isMobile ? '2em' : '1em'
+        background: theme.palette.ternary.main
       }}
     >
       <Typography
+        className={classes.text}
         color='textSecondary'
         paragraph
         variant='h3'
-        style={{ fontSize: isMobile ? '2em' : '1em' }}
         align='center'
       >
         Interaction Guidelines
@@ -47,7 +53,12 @@ const InteractionGuidelines = () => {
           1
         </p>
       </div>
-      <Typography color='textSecondary' paragraph align='center'>
+      <Typography
+        className={classes.text}
+        color='textSecondary'
+        paragraph
+        align='center'
+      >
         When the dog approachees, pet the dog with one hand as long as all four
         feet are on the ground
       </Typography>
@@ -73,7 +84,12 @@ const InteractionGuidelines = () => {
           2
         </p>
       </div>
-      <Typography color='textSecondary' paragraph align='center'>
+      <Typography
+        className={classes.text}
+        color='textSecondary'
+        paragraph
+        align='center'
+      >
         If any excited behaviors occur or the dog leaves, discontinue petting
       </Typography>
       <div
@@ -98,7 +114,12 @@ const InteractionGuidelines = () => {
           3
         </p>
       </div>
-      <Typography color='textSecondary' paragraph align='center'>
+      <Typography
+        className={classes.text}
+        color='textSecondary'
+        paragraph
+        align='center'
+      >
         When the dog returns or the excited behaviors are no longer occurring,
         resume petting
       </Typography>
@@ -124,11 +145,13 @@ const InteractionGuidelines = () => {
           4
         </p>
       </div>
-      <Typography color='textSecondary' align='center'>
+      <Typography className={classes.text} color='textSecondary' align='center'>
         If sitting or lying down occurs, pet with two hands
       </Typography>
     </div>
   );
 };
 
-export default withWidth({ withTheme: true })(InteractionGuidelines);
+export default withStyles(styles)(
+  withWidth({ withTheme: true })(InteractionGuidelines)
+);
