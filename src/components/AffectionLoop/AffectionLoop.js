@@ -1,11 +1,9 @@
 import React from 'react';
 import { theme } from '../../styles/theme';
 
-import Paper from '@material-ui/core/Paper';
 import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import { isMobile } from 'react-device-detect';
 
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 const AffectionLoop = () => {

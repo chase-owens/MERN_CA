@@ -1,21 +1,26 @@
 import React from 'react';
 import { theme } from '../../styles/theme';
 
-import Paper from '@material-ui/core/Paper';
+import { isMobile } from 'react-device-detect';
 import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 const InteractionGuidelines = () => {
   return (
-    <div style={{ padding: 30, background: theme.palette.ternary.main }}>
+    <div
+      style={{
+        padding: 30,
+        background: theme.palette.ternary.main,
+        fontSize: isMobile ? '2em' : '1em'
+      }}
+    >
       <Typography
         color='textSecondary'
         paragraph
         variant='h3'
-        style={{ fontSize: '1em' }}
+        style={{ fontSize: isMobile ? '2em' : '1em' }}
         align='center'
       >
         Interaction Guidelines
