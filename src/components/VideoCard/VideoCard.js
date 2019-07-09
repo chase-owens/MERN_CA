@@ -147,14 +147,14 @@ const styles = theme => ({
       background: theme.palette.primary.main
     },
     '& i': {
-      paddingTop: 250,
-      fontSize: 120,
+      paddingTop: 230,
+      fontSize: 180,
 
-      paddingLeft: 10
+      paddingLeft: 30
     },
     '&:hover i': {
-      paddingTop: 225,
-      fontSize: 140,
+      paddingTop: 215,
+      fontSize: 230,
       paddingLeft: 0
     },
     '&:hover i span': {
@@ -235,7 +235,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
                 margin: 'auto',
                 color: '#fff',
                 height: 450,
-                width: 150
+                width: 250
               }}
             >
               <i class='material-icons'>play_circle_filled</i>
