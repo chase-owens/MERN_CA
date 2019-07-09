@@ -148,14 +148,14 @@ const styles = theme => ({
     },
     '& i': {
       paddingTop: 250,
-      fontSize: 150,
+      fontSize: 120,
 
-      paddingLeft: 50
+      paddingLeft: 10
     },
     '&:hover i': {
       paddingTop: 225,
-      fontSize: 120,
-      paddingLeft: 25
+      fontSize: 140,
+      paddingLeft: 0
     },
     '&:hover i span': {
       // height: 200
