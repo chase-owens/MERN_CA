@@ -147,13 +147,13 @@ const styles = theme => ({
       background: theme.palette.primary.main
     },
     '& i': {
-      paddingTop: 230,
+      paddingTop: 225,
       fontSize: 180,
 
       paddingLeft: 30
     },
     '&:hover i': {
-      paddingTop: 215,
+      paddingTop: 200,
       fontSize: 230,
       paddingLeft: 0
     },
