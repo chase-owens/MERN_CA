@@ -30,6 +30,7 @@ const mapStateToProps = state => {
 
 const Nav = ({ theme, language, open, audience, focusedVideo }) => {
   console.log(language, open, audience);
+
   return isMobile ? (
     <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
       <Grid

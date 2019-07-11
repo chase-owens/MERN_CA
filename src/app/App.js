@@ -1,7 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import YourProgram from '../components/YourProgram/YourProgram';
 
 import { getDataFromServer } from '../server/httpRequests';
@@ -15,12 +14,27 @@ const mapStateToProps = state => {
   };
 };
 class App extends Component {
+  state = {
+    hasError: false
+  };
   componentDidMount() {
     getDataFromServer();
   }
 
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(err, info) {
+    logErrorToMyService(err, info);
+  }
+
   render() {
-    return (
+    return this.state.hasError ? (
+      <Fragment>
+        <Error />
+      </Fragment>
+    ) : (
       <Fragment>
         <Route exact path='/' render={() => <Main />} />
         <Route exact path='/contact' render={() => <Contact />} />
