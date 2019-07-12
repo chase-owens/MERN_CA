@@ -7,6 +7,7 @@ import { getDataFromServer } from '../server/httpRequests';
 import Footer from '../components/Footer/Footer';
 import Main from '../components/Layout/Main';
 import Contact from '../components/Layout/Contact';
+import Error from '../components/Error/Error';
 
 const mapStateToProps = state => {
   return {
@@ -26,14 +27,13 @@ class App extends Component {
   }
 
   componentDidCatch(err, info) {
-    logErrorToMyService(err, info);
+    console.log(err, info);
   }
 
   render() {
+    console.log('Error', this.state.hasError);
     return this.state.hasError ? (
-      <Fragment>
-        <Error />
-      </Fragment>
+      <Error />
     ) : (
       <Fragment>
         <Route exact path='/' render={() => <Main />} />

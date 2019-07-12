@@ -71,6 +71,17 @@ const styles = theme => ({
       // height: 200
     }
   },
+  innerCard: {
+    [theme.breakpoints.down(740)]: {
+      height: 350
+    },
+    [theme.breakpoints.up(740)]: {
+      height: 240
+    },
+    [theme.breakpoints.up('md')]: {
+      height: 200
+    }
+  },
   image: {
     width: '100%',
     [theme.breakpoints.down(740)]: {
@@ -124,20 +135,20 @@ const styles = theme => ({
       height: 200
     }
   },
-  text: {
-    [theme.breakpoints.down(740)]: {
-      paddingTop: 350,
-      paddingBottom: -350
-    },
-    [theme.breakpoints.up(740)]: {
-      paddingTop: 240,
-      paddingBottom: -240
-    },
-    [theme.breakpoints.up('md')]: {
-      paddingTop: 200,
-      paddingBottom: -240
-    }
-  },
+  // text: {
+  //   [theme.breakpoints.down(740)]: {
+  //     paddingTop: 350,
+  //     paddingBottom: -350
+  //   },
+  //   [theme.breakpoints.up(740)]: {
+  //     paddingTop: 240,
+  //     paddingBottom: -240
+  //   },
+  //   [theme.breakpoints.up('md')]: {
+  //     paddingTop: 200,
+  //     paddingBottom: -240
+  //   }
+  // },
   mobileCard: {
     width: '100%',
     '&:hover': {
@@ -202,7 +213,6 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
     >
       <div style={{ width: '100%', height: 600 }}>
         <Card
-          // className={classes.mobileImage}
           style={{
             backgroundImage: `url(${returnImage(video.imagePath)})`,
             display: 'block',
@@ -245,10 +255,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
       </div>
 
       <br />
-      <div
-        // className={classes.mobileText}
-        style={{ paddingTop: 20 }}
-      >
+      <div style={{ paddingTop: 20 }}>
         <Typography
           paragraph
           style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 15 }}
@@ -264,7 +271,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
     </div>
   ) : (
     <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
-      <div>
+      <div className={classes.innerCard}>
         <Card
           className={classes.image}
           style={{
