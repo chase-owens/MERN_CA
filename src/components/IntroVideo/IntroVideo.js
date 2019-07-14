@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 import { isMobile } from 'react-device-detect';
 
+const MEDIA_URL = 'http://dpx1ioq3tyc5t.cloudfront.net/intro.mp4';
+
 const IntroVideo = ({ theme }) => {
+  const [url, setUrl] = useState(null);
   return isMobile ? (
     <ReactPlayer
       style={{

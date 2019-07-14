@@ -3,21 +3,25 @@ const { TranslationServiceClient } = require('@google-cloud/translate').v3beta1;
 const translationClient = new TranslationServiceClient();
 async function translateText() {
   const request = {
-    parent: translationClient.locatioPath(
+    parent: translationClient.locationPath(
       process.env.PROJECTID,
       process.env.LOCATION
     ),
     contents: process.env.TEXT,
     mimeType: 'text/plain',
-    sourceLanguageCode: 'en-US',
-    targetLanguageCode: 'sr-Latn'
+    sourceLanguageCode: 'en',
+    targetLanguageCode: 'es'
   };
 
-  const [response] = await translationClient.translateText(request);
+  try {
+    const [response] = await translationClient.translateText(request);
 
-  for (const translation of response.translations) {
-    console.log(`Translation: ${translation.translatedText}`);
+    for (const translation of response.translations) {
+      console.log(`Translation: ${translation.translatedText}`);
+    }
+  } catch (err) {
+    console.log(err);
   }
 }
 
-translateText();
+translateText().catch(alert);
