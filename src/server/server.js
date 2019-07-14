@@ -174,30 +174,30 @@ export const toggleNavigationOptions = async isOpen => {
   }
 };
 
-const { TranslationServiceClient } = require('@google-cloud/translate').v3beta1;
+// const { TranslationServiceClient } = require('@google-cloud/translate').v3beta1;
 
-const translationClient = new TranslationServiceClient();
-async function translateText() {
-  const request = {
-    parent: translationClient.locationPath(
-      process.env.PROJECTID,
-      process.env.LOCATION
-    ),
-    contents: process.env.TEXT,
-    mimeType: 'text/plain',
-    sourceLanguageCode: 'en',
-    targetLanguageCode: 'es'
-  };
+// const translationClient = new TranslationServiceClient();
+// async function translateText() {
+//   const request = {
+//     parent: translationClient.locationPath(
+//       process.env.PROJECTID,
+//       process.env.LOCATION
+//     ),
+//     contents: process.env.TEXT,
+//     mimeType: 'text/plain',
+//     sourceLanguageCode: 'en',
+//     targetLanguageCode: 'es'
+//   };
 
-  try {
-    const [response] = await translationClient.translateText(request);
+//   try {
+//     const [response] = await translationClient.translateText(request);
 
-    for (const translation of response.translations) {
-      console.log(`Translation: ${translation.translatedText}`);
-    }
-  } catch (err) {
-    console.log('ERROR1: ', err);
-  }
-}
+//     for (const translation of response.translations) {
+//       console.log(`Translation: ${translation.translatedText}`);
+//     }
+//   } catch (err) {
+//     console.log('ERROR1: ', err);
+//   }
+// }
 
-translateText().catch(err => console.log('ERROR: ', err));
+// translateText().catch(err => console.log('ERROR: ', err));
