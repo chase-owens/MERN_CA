@@ -14,24 +14,27 @@ const IntroVideo = ({ theme }) => {
     // player.play();
   });
 
-  const iframe = <iframe src={url} width='100%' />;
+  const iframe = (
+    <video width='100%' playsInline muted loop autoPlay>
+      <source src={url} type='video/mp4' /> >
+    </video>
+  );
   // const player = new playerjs.Player(iframe);
 
   return isMobile ? (
-    // <ReactPlayer
-    //   style={{
-    //     marginTop: 0,
-    //     padding: 0
-    //   }}
-    //   url={url}
-    //   playing
-    //   volume={0}
-    //   muted
-    //   loop
-    //   width='100%'
-    //   height='100%'
-    // />
-    iframe
+    <ReactPlayer
+      style={{
+        marginTop: 0,
+        padding: 0
+      }}
+      url={url}
+      playing
+      volume={0}
+      muted
+      loop
+      width='100%'
+      height='100%'
+    />
   ) : (
     <article
       style={{
@@ -41,7 +44,7 @@ const IntroVideo = ({ theme }) => {
         overflow: 'hidden'
       }}
     >
-      {/* <ReactPlayer
+      <ReactPlayer
         style={{
           marginTop: 0,
           padding: 0,
@@ -55,8 +58,7 @@ const IntroVideo = ({ theme }) => {
         loop
         width='100%'
         height='100%'
-      /> */}
-      {iframe}
+      />
     </article>
   );
 };
