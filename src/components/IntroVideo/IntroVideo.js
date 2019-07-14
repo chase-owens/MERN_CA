@@ -5,33 +5,33 @@ import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMe
 
 import { isMobile } from 'react-device-detect';
 
-const iframe = document.createElement('iframe');
-iframe.src = 'https://example.com/iframe';
-const player = new playerjs.Player(iframe);
-
 const MEDIA_URL = 'http://dpx1ioq3tyc5t.cloudfront.net/intro.mp4';
 
 const IntroVideo = ({ theme }) => {
   const [url, setUrl] = useState(null);
   useEffect(() => {
     setUrl(MEDIA_URL);
-    player.play();
+    // player.play();
   });
 
+  const iframe = <iframe src={url} width='100%' />;
+  // const player = new playerjs.Player(iframe);
+
   return isMobile ? (
-    <ReactPlayer
-      style={{
-        marginTop: 0,
-        padding: 0
-      }}
-      url={url}
-      playing
-      volume={0}
-      muted
-      loop
-      width='100%'
-      height='100%'
-    />
+    // <ReactPlayer
+    //   style={{
+    //     marginTop: 0,
+    //     padding: 0
+    //   }}
+    //   url={url}
+    //   playing
+    //   volume={0}
+    //   muted
+    //   loop
+    //   width='100%'
+    //   height='100%'
+    // />
+    iframe
   ) : (
     <article
       style={{
@@ -41,7 +41,7 @@ const IntroVideo = ({ theme }) => {
         overflow: 'hidden'
       }}
     >
-      <ReactPlayer
+      {/* <ReactPlayer
         style={{
           marginTop: 0,
           padding: 0,
@@ -55,7 +55,8 @@ const IntroVideo = ({ theme }) => {
         loop
         width='100%'
         height='100%'
-      />
+      /> */}
+      {iframe}
     </article>
   );
 };
