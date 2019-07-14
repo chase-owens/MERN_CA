@@ -22,7 +22,7 @@ const aboutPoints = [
   {
     title: `Assessment`,
     question: `Who is this for?`,
-    answer: `Anyone who's dog is excited or hyper when seeking attention from people. This is not for someone who's dog is exhibiting fear or aggression.`,
+    answer: `Anyone whose dog is excited or hyper when seeking attention from people. This is not for someone who's dog is exhibiting fear or aggression.`,
     answerTitle: `Anyone`,
     answerDescription: `who's dog is excited or hyper when seeking attention from people. This is not for someone who's dog is exhibiting fear or aggression`,
     citation: `Rosales-Ruiz & Snider, 2008`,
