@@ -9,43 +9,50 @@ const MEDIA_URL = 'http://dpx1ioq3tyc5t.cloudfront.net/intro.mp4';
 
 const IntroVideo = ({ theme }) => {
   const [muted, setMuted] = useState(true);
-  const [autoplay, setAutoplay] = useState(null);
-  const [loop, setLoop] = useState(null);
+  const [autoplay, setAutoplay] = useState(true);
+  const [loop, setLoop] = useState(true);
+  const [url, setUrl] = useState(MEDIA_URL);
+
+  const videoRef = React.createRef();
 
   useEffect(() => {
     setMuted(true);
     setAutoplay(true);
     setLoop(true);
+    setUrl(MEDIA_URL);
+    videoRef.current.setAttribute('muted', true);
   }, []);
 
   const iframe = (
     <video
-      src={MEDIA_URL}
       width='100%'
       defaultMuted
       muted={muted}
       autoPlay={autoplay}
       loop={loop}
-      playsinline
-    />
+      playsInLine
+      ref={videoRef}
+    >
+      <source src={url} />
+    </video>
   );
-  // const player = new playerjs.Player(iframe);
 
   return isMobile ? (
-    <ReactPlayer
-      style={{
-        marginTop: 0,
-        padding: 0
-      }}
-      url={MEDIA_URL}
-      playing
-      volume={0}
-      muted
-      loop
-      width='100%'
-      height='100%'
-      playsinline
-    />
+    // <ReactPlayer
+    //   style={{
+    //     marginTop: 0,
+    //     padding: 0
+    //   }}
+    //   url={MEDIA_URL}
+    //   playing
+    //   volume={0}
+    //   muted
+    //   loop
+    //   width='100%'
+    //   height='100%'
+    //   playsinline
+    // />
+    { iframe }
   ) : (
     <div
       style={{
@@ -54,7 +61,7 @@ const IntroVideo = ({ theme }) => {
         overflow: 'hidden'
       }}
     >
-      <ReactPlayer
+      {/* <ReactPlayer
         style={{
           marginTop: 0,
           padding: 0,
@@ -69,8 +76,8 @@ const IntroVideo = ({ theme }) => {
         width='100%'
         height='100%'
         playsinline
-      />
-      {/* <div dangerouslySetInnerHTML={playsinline} /> */}
+      /> */}
+      {iframe}
     </div>
   );
 };
