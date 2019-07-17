@@ -13,45 +13,26 @@ const IntroVideo = ({ theme }) => {
   const [loop, setLoop] = useState(true);
   const [url, setUrl] = useState(MEDIA_URL);
 
-  const videoRef = React.createRef();
-
   useEffect(() => {
     setMuted(true);
     setAutoplay(true);
     setLoop(true);
     setUrl(MEDIA_URL);
-    videoRef.current.setAttribute('muted', 'true');
   }, []);
 
   const iframe = (
     <video
       width='100%'
-      defaultMuted
-      muted={muted}
       autoPlay={autoplay}
-      loop={loop}
+      muted={muted}
       playsInLine
-      ref={videoRef}
+      loop={loop}
     >
       <source src={url} />
     </video>
   );
 
   return isMobile ? (
-    // <ReactPlayer
-    //   style={{
-    //     marginTop: 0,
-    //     padding: 0
-    //   }}
-    //   url={MEDIA_URL}
-    //   playing
-    //   volume={0}
-    //   muted
-    //   loop
-    //   width='100%'
-    //   height='100%'
-    //   playsinline
-    // />
     <div
       style={{
         width: '100%',
@@ -69,22 +50,6 @@ const IntroVideo = ({ theme }) => {
         overflow: 'hidden'
       }}
     >
-      {/* <ReactPlayer
-        style={{
-          marginTop: 0,
-          padding: 0,
-          minWidth: 740,
-          marginLeft: !useMediaQuery(theme.breakpoints.up(740)) ? 0 : -80
-        }}
-        url={MEDIA_URL}
-        playing
-        volume={0}
-        muted={muted}
-        loop
-        width='100%'
-        height='100%'
-        playsinline
-      /> */}
       {iframe}
     </div>
   );
