@@ -20,8 +20,8 @@ const IntroVideo = ({ theme }) => {
     setAutoplay(true);
     setLoop(true);
     setUrl(MEDIA_URL);
-    videoRef.current.setAttribute('muted', 'true');
-    videoRef.current.play();
+    // videoRef.current.setAttribute('muted', 'true');
+    // videoRef.current.play();
   }, []);
 
   const iframe = (
