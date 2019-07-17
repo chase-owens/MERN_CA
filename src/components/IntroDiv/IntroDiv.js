@@ -10,6 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 import IntroVideo from '../IntroVideo/IntroVideo';
 
 import { isMobile } from 'react-device-detect';
+import HeroVideo from '../IntroVideo/heroVideo';
 
 const mapStateToProps = state => ({
   language: state.languageState.language,
