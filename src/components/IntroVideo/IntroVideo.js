@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
-import { Player } from 'video-react';
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
