@@ -13,25 +13,21 @@ const IntroVideo = ({ theme }) => {
   const [loop, setLoop] = useState(true);
   const [url, setUrl] = useState(MEDIA_URL);
 
-  const videoRef = React.createRef();
-
   useEffect(() => {
     setMuted(true);
     setAutoplay(true);
     setLoop(true);
     setUrl(MEDIA_URL);
-    // videoRef.current.setAttribute('muted', 'true');
-    // videoRef.current.play();
   }, []);
 
   const iframe = (
     <video
       width='100%'
       autoPlay={autoplay}
-      muted={muted}
+      // muted={muted}
+      muted
       playsInline
       loop={loop}
-      ref={videoRef}
     >
       <source src={url} />
     </video>
