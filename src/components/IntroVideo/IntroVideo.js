@@ -29,7 +29,7 @@ const IntroVideo = ({ theme }) => {
       width='100%'
       autoPlay={autoplay}
       muted={muted}
-      playsInLine
+      playsInline
       loop={loop}
       ref={videoRef}
     >
