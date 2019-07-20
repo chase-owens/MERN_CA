@@ -11,3 +11,7 @@ export const connectDB = async () => {
   console.info('Got DB', db);
   return db;
 };
+
+// Uncomment below to test connection
+
+// connectDB();

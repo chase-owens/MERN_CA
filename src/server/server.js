@@ -42,22 +42,16 @@ app.get('/api', (req, res) => {
   res.send('We in this bitch');
 });
 
-app.get('/api/movie', (req, res) => {
-  let params = {
-    Bucket: globalBucket,
-    Key: 'intro.mp4',
-    Range: 'bytes=0-9'
-  };
-  // s3.getObject(params, (err, data) => {
-  //   if (err) {
-  //     console.log(err, err.stack);
-  //   } else {
-  //     let cloudfile = data.Body.toString('base64');
-  //     res.send(cloudfile);
-  //   }
-  // });
-  let src = s3stream.ReadStream(s3, params);
-  src.pipe(res);
+app.get('/api/dataNoAuth', async (req, res) => {
+  let db = await connectDB();
+
+  try {
+    let collection = await db.collection('content');
+    let content = await collection.find();
+    res.send(content);
+  } catch (err) {
+    res.send(err);
+  }
 });
 
 app.get('/api/data', verifyToken, async (req, res) => {
