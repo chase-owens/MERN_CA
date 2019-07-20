@@ -115,7 +115,10 @@ const ContactForm = ({ classes }) => {
           <div className={classes.formInputs}>
             <div className={classes.formInput}>
               {name !== '' && (
-                <label style={{ color: '#fff', fontSize: '1.9em' }} for='name'>
+                <label
+                  style={{ color: '#fff', fontSize: '1.9em' }}
+                  htmlFor='name'
+                >
                   Name
                 </label>
               )}
@@ -131,7 +134,10 @@ const ContactForm = ({ classes }) => {
             </div>
             <div className={classes.formInput}>
               {email !== '' && (
-                <label style={{ color: '#fff', fontSize: '1.9em' }} for='email'>
+                <label
+                  style={{ color: '#fff', fontSize: '1.9em' }}
+                  htmlFor='email'
+                >
                   Email
                 </label>
               )}
@@ -149,7 +155,7 @@ const ContactForm = ({ classes }) => {
               {message !== '' && (
                 <label
                   style={{ color: '#fff', fontSize: '1.9em' }}
-                  for='message'
+                  htmlFor='message'
                 >
                   Message
                 </label>

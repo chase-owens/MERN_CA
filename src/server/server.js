@@ -111,8 +111,8 @@ app.post('/api/contact', async (req, res) => {
     port: 465,
     secure: true,
     auth: {
-      user: 'constructionalaffection@gmail.com',
-      pass: 'Layng1234'
+      user: process.env.USERNAME,
+      pass: process.env.PASSWORD
     }
   });
 

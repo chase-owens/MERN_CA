@@ -24,8 +24,7 @@ const IntroVideo = ({ theme }) => {
     <video
       width='100%'
       autoPlay={autoplay}
-      // muted={muted}
-      muted
+      muted={muted}
       playsInline
       loop={loop}
     >
