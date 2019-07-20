@@ -5,7 +5,7 @@ import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMe
 
 import { isMobile } from 'react-device-detect';
 
-const MEDIA_URL = 'http://dpx1ioq3tyc5t.cloudfront.net/intro.mp4';
+const MEDIA_URL = 'http://dpx1ioq3tyc5t.cloudfront.net/intro3.mp4';
 
 const IntroVideo = ({ theme }) => {
   const [muted, setMuted] = useState(true);
