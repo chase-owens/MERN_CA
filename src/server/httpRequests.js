@@ -4,7 +4,7 @@ const url =
   process.env.NODE_ENV == 'production' ? `` : 'http://localhost:1221/api/';
 
 export const getDataFromServer = async () => {
-  let endpoint = `${url}data`;
+  let endpoint = `${url}dataNoAuth`;
   try {
     let data = await axios.get(endpoint);
     console.log(data);

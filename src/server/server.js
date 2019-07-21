@@ -44,14 +44,9 @@ app.get('/api', (req, res) => {
 
 app.get('/api/dataNoAuth', async (req, res) => {
   let db = await connectDB();
-
-  try {
-    let collection = await db.collection('content');
-    let content = await collection.find();
-    res.send(content);
-  } catch (err) {
-    res.send(err);
-  }
+  let collection = await db.collection('content');
+  let content = await collection.findOne({ title: 'Constructional Affection' });
+  res.json(content);
 });
 
 app.get('/api/data', verifyToken, async (req, res) => {
@@ -115,7 +110,6 @@ app.post('/api/contact', async (req, res) => {
     to: [
       'chasejonathanowens@gmail.com'
       // 'seanmichaelwill@gmail.com',
-      // 'chase.owens@bankofamerica.com'
     ],
     subject: 'CA_CONTACT',
     html: `<p>${data.name}</p><p>${data.email}</p><p>${data.message}</p>`
