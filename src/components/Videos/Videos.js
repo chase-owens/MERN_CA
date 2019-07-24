@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { theme } from '../../styles/theme';
 
 import withWidth from '@material-ui/core/withWidth';
@@ -28,7 +28,7 @@ const styles = theme => ({
 
 const Videos = ({ classes }) => {
   return isMobile ? (
-    <div style={{ marginTop: 50 }}>
+    <div id='videos' style={{ marginTop: 50 }}>
       <Typography
         paragraph
         variant='caption'
@@ -67,7 +67,10 @@ const Videos = ({ classes }) => {
       </Grid>
     </div>
   ) : (
-    <div style={{ padding: 40, margin: 'auto', overflow: 'hidden' }}>
+    <div
+      id='videos'
+      style={{ padding: 40, margin: 'auto', overflow: 'hidden' }}
+    >
       <Typography paragraph variant='caption'>
         <span style={{ fontWeight: 'bold' }}>CA</span> / Videos
       </Typography>

@@ -9,6 +9,10 @@ import mailer from 'nodemailer';
 import dotenv from 'dotenv';
 import AWS from 'aws-sdk';
 
+// let googleTranslate = require('google-translate')(process.env.API_KEY);
+const { Translate } = require('@google-cloud/translate');
+const translate = new Translate(process.env.PROJECTID);
+
 dotenv.config();
 console.log(process.env);
 
@@ -38,8 +42,19 @@ if (process.env.NODE_ENV == `production`) {
   });
 }
 
-app.get('/api', (req, res) => {
-  res.send('We in this bitch');
+app.get('/api/dataTranslated', async (req, res) => {
+  const [translation] = await translate.translate(
+    'Constructional Affection',
+    'es'
+  );
+  res.send({ translation: translation });
+});
+
+app.get('/api/dataNoAuth', async (req, res) => {
+  let db = await connectDB();
+  let collection = await db.collection('content');
+  let content = await collection.findOne({ title: 'Constructional Affection' });
+  res.json(content);
 });
 
 app.get('/api/dataNoAuth', async (req, res) => {

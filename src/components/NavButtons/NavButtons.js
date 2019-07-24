@@ -18,6 +18,11 @@ const mapStateToProps = state => ({
   open: state.sideBarState.open
 });
 
+const scrollToRef = () => {
+  console.log(ref.current);
+  ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
 const NavButtons = ({ direction, toggleSidebar }) => {
   return (
     <Grid
@@ -26,13 +31,12 @@ const NavButtons = ({ direction, toggleSidebar }) => {
       justify='space-between'
       style={{
         width: '100%'
-        // margin: direction === 'column' ? 'auto' : null,
-        // marginTop: direction === 'column' ? 125 : null
       }}
     >
       {navButtons.map(button => (
         <Grid item key={button.title}>
           <Link
+            onClick={button.inPage ? scrollToRef : null}
             style={{
               textDecoration: 'none'
             }}

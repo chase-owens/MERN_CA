@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { theme } from '../../styles/theme';
 import caSteps from './caSteps.config';
 import { isMobile } from 'react-device-detect';
@@ -6,48 +6,25 @@ import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import InteractionGuidelines from '../InteractionGuidelines/InteractionGuidelines';
 import AffectionLoop from '../AffectionLoop/AffectionLoop';
 import InfoGraphic from '../InfoGraphic/InfoGraphic';
-import AboutCardSmall from '../About/AboutCardSmall';
-import aboutPoints from '../About/about.config';
-const getBackground = i => {
-  switch (i) {
-    case 0:
-      return theme.palette.secondary.main;
-    case 1:
-      return theme.palette.ternary.main;
-    case 2:
-      return theme.palette.secondary.main;
-    default:
-      return null;
-  }
-};
-
-import css from '../About/About.css';
 
 const HowTo = () => {
-  const color = useMediaQuery(theme.breakpoints.down(740))
-    ? 'default'
-    : 'textSecondary';
-
-  const background = useMediaQuery(theme.breakpoints.down(740))
-    ? '#fff'
-    : theme.palette.ternary.main;
-
-  const howTo = caSteps[0];
+  const howTo = useRef(null);
 
   return isMobile ? (
-    <div style={{ paddingTop: 20 }}>
+    <div id='howTo' ref={howTo} style={{ paddingTop: 20 }}>
       <Typography
+        id='howTo'
         paragraph
         variant='caption'
         style={{ marginLeft: 100, fontSize: '2em', marginBottom: 45 }}
       >
-        <span style={{ fontWeight: 'bold' }}>CA</span> / How To
+        <span style={{ fontWeight: 'bold' }}>CA</span>/ How To
       </Typography>
+
       <Grid
         container
         className='scrollContainer'
@@ -98,7 +75,7 @@ const HowTo = () => {
       </Grid>
     </div>
   ) : (
-    <div style={{ paddingTop: 20 }}>
+    <div id='howTo' ref={howTo} style={{ paddingTop: 20 }}>
       <Typography paragraph variant='caption' style={{ paddingLeft: 40 }}>
         <span style={{ fontWeight: 'bold' }}>CA</span> / How To
       </Typography>
@@ -111,7 +88,6 @@ const HowTo = () => {
           WebkitOverflowScrolling: 'touch',
           flex: '0 1 auto',
           paddingLeft: useMediaQuery(theme.breakpoints.down('xs')) ? 100 : null,
-          // width: useMediaQuery(theme.breakpoints.down('xs')) ? 600 : null,
           maxWidth: 800,
           margin: 'auto',
           marginBottom: 70,
