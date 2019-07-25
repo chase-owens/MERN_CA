@@ -86,7 +86,6 @@ const ContactForm = ({ classes }) => {
     console.log(data);
     API.post('/contact', data)
       .then(res => {
-        // resetForm();
         console.log(res);
       })
       .catch(err => console.log('Message not sent', err));
