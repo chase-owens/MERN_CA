@@ -16,11 +16,11 @@ const mapStateToProps = state => {
   };
 };
 
-const getDataFromServer = () => {
-  API.get('/dataNoAuth')
-    .then(res => console.log(res))
-    .catch(err => console.log(err));
-};
+// const getDataFromServer = () => {
+//   API.get('/dataNoAuth')
+//     .then(res => console.log(res))
+//     .catch(err => console.log(err));
+// };
 class App extends Component {
   state = {
     hasError: false
