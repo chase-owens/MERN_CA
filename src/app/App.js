@@ -8,11 +8,18 @@ import Footer from '../components/Footer/Footer';
 import Main from '../components/Layout/Main';
 import Contact from '../components/Layout/Contact';
 import Error from '../components/Error/Error';
+import API from 'utils/uiAPI';
 
 const mapStateToProps = state => {
   return {
     open: state.sideBarState.open
   };
+};
+
+const getDataFromServer = () => {
+  API.get('/dataNoAuth')
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
 };
 class App extends Component {
   state = {
