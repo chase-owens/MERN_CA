@@ -12,3 +12,13 @@ export const getDataFromServer = async () => {
     console.log('ERR: ', err);
   }
 };
+
+export const sendContactMessage = async data => {
+  let endpoint = `${url}contact`;
+  try {
+    let message = await axios.post(endpoint, data);
+    console.log(message);
+  } catch (err) {
+    console.log(err);
+  }
+};

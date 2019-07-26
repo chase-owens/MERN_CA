@@ -4,6 +4,7 @@ import { isMobile } from 'react-device-detect';
 
 import { withStyles } from '@material-ui/core/styles';
 import API from 'utils/uiAPI';
+import { sendContactMessage } from '../../server/httpRequests';
 
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -84,11 +85,12 @@ const ContactForm = ({ classes }) => {
   const sendData = () => {
     const data = { name, email, message };
     console.log(data);
-    API.post('/contact', data)
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => console.log('Message not sent', err));
+    sendContactMessage(data);
+    // API.post('/contact', data)
+    //   .then(res => {
+    //     console.log(res);
+    //   })
+    //   .catch(err => console.log('Message not sent', err));
     resetForm();
   };
 
