@@ -38,17 +38,10 @@ app.listen(port, console.log('Server listening on port ', port));
 if (process.env.NODE_ENV == `production`) {
   app.use(express.static(path.resolve(__dirname, `../../dist`)));
   app.use(cors());
-  app.get('/*', (req, res) => {
-    res.sendFile(path.resolve('index.html'));
-  });
 }
 
-app.get('/api/dataTranslated', async (req, res) => {
-  const [translation] = await translate.translate(
-    'Constructional Affection',
-    'es'
-  );
-  res.send({ translation: translation });
+app.get('/api', (req, res) => {
+  res.send('We in this bitch');
 });
 
 app.get('/api/dataNoAuth', async (req, res) => {
@@ -198,3 +191,11 @@ export const toggleNavigationOptions = async isOpen => {
 // }
 
 // translateText().catch(err => console.log('ERROR: ', err));
+
+// app.get('/api/dataTranslated', async (req, res) => {
+//   const [translation] = await translate.translate(
+//     'Constructional Affection',
+//     'es'
+//   );
+//   res.send({ translation: translation });
+// });
