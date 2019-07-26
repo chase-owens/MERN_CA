@@ -38,6 +38,9 @@ app.listen(port, console.log('Server listening on port ', port));
 if (process.env.NODE_ENV == `production`) {
   app.use(express.static(path.resolve(__dirname, `../../dist`)));
   app.use(cors());
+  app.get('/*', (req, res) => {
+    res.sendFile(path.resolve('index.html'));
+  });
 }
 
 app.get('/api', (req, res) => {
