@@ -17,7 +17,7 @@ dotenv.config();
 console.log(process.env);
 
 // Declare PORT and setup Express server using CORS
-let port = process.env.PORT || 1221;
+let port = process.env.PORT || 27017;
 let app = express().use(
   cors(),
   bodyParser.urlencoded({ extended: true }),

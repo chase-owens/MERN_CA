@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const url =
-  process.env.NODE_ENV == 'production' ? `` : 'http://localhost:1221/api/';
+  process.env.NODE_ENV == 'production' ? `` : 'http://localhost:27017/api/';
 
 export const getDataFromServer = async () => {
   let endpoint = `${url}dataNoAuth`;
