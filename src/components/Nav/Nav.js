@@ -1,13 +1,9 @@
-import React, { Fragment } from 'react';
-
+import React from 'react';
 import { connect } from 'react-redux';
 
-import { toggleSidebar } from './nav.actions';
 import NavButtons from '../NavButtons/NavButtons';
-import NavDropdown from '../NavDropdown/NavDropdown';
 
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 import { theme } from '../../styles/theme';
@@ -15,7 +11,6 @@ import Hamburger from './Hamburger';
 import NavPage from '../NavDropdown/NavPage';
 
 const logoPath = require('images/Logo.png');
-const title = 'Constructional Affection';
 
 import { isMobile } from 'react-device-detect';
 

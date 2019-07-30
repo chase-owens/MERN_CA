@@ -5,6 +5,7 @@ import Solution from '../Solution/Solution';
 import HowTo from '../HowTo/HowTo';
 import Videos from '../Videos/Videos';
 import MovieModal from '../MovieModal/MovieModal';
+import Footer from '../Footer/Footer';
 
 import { isMobile } from 'react-device-detect';
 
@@ -19,6 +20,7 @@ const Main = () => {
         <Videos />
         <MovieModal />
       </main>
+      <Footer />
     </div>
   );
 };

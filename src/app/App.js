@@ -47,7 +47,6 @@ class App extends Component {
         <Route exact path='/contact' render={() => <Contact />} />
 
         <Route exact path='/program' render={() => <Main />} />
-        <Footer />
       </Fragment>
     );
   }

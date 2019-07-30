@@ -3,23 +3,27 @@ import theme from 'styles/theme';
 import { isMobile } from 'react-device-detect';
 
 import { withStyles } from '@material-ui/core/styles';
-import API from 'utils/uiAPI';
 import { sendContactMessage } from '../../server/httpRequests';
 
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+
+import Captcha from '../Captcha/Captcha';
 
 const styles = theme => ({
   contactForm: {
     width: '100%',
-    height: '100vh',
+    minHeight: '100vh',
+    height: '100%',
     background: theme.palette.primary.main
   },
   formContainer: {
     width: isMobile ? '100%' : '80%',
     maxWidth: isMobile ? null : 400,
-    margin: 'auto'
+    margin: 'auto',
+    height: '100%'
   },
   formHeader: {
     paddingTop: 30,
@@ -67,31 +71,91 @@ const styles = theme => ({
   }
 });
 
+const relations = [
+  'above',
+  'below',
+  'on the left of',
+  'on the right of',
+  'with an edge touching'
+];
+
+// Provide feedback pass/fail Turing Test
+// arrange for protected route
+
 const ContactForm = ({ classes }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const setRows = () => {
-    let rows = Math.round(message.length / 28 + 0.5);
+  const [isAuthenticating, setAuthenticating] = useState(false);
 
-    // let extraRows = message.match('//n').length;
+  const [selected, setSelected] = useState([]);
+  const [relation, setRelation] = useState(null);
 
-    console.log(rows, extraRows);
+  const getRelation = () => Math.floor(Math.random() * relations.length);
 
-    return rows + extraRows;
+  const administerTuringTest = () => {
+    setRelation(relations[getRelation()]);
+    setAuthenticating(true);
+    selected.length !== 0 && setSelected([]);
+  };
+
+  const turingTest = () => {
+    let passed = false;
+    console.log(relation);
+    switch (relation) {
+      case 'above':
+        selected.includes(0) &&
+          selected.includes(1) &&
+          selected.includes(2) &&
+          (passed = true);
+      case 'below':
+        selected.includes(6) &&
+          selected.includes(7) &&
+          selected.includes(8) &&
+          (passed = true);
+      case 'on the left of':
+        selected.includes(0) &&
+          selected.includes(3) &&
+          selected.includes(6) &&
+          (passed = true);
+      case 'on the right of':
+        selected.includes(2) &&
+          selected.includes(5) &&
+          selected.includes(8) &&
+          (passed = true);
+      case 'with an edge touching':
+        selected.includes(1) &&
+          selected.includes(3) &&
+          selected.includes(5) &&
+          selected.includes(8) &&
+          (passed = true);
+    }
+    console.log('PASSED: ', passed);
+    if (!passed) {
+      administerTuringTest();
+    }
+    return passed;
+  };
+
+  const cancelTuringTest = () => {
+    setAuthenticating(false);
+    setSelected([]);
   };
 
   const sendData = () => {
-    const data = { name, email, message };
-    console.log(data);
-    sendContactMessage(data);
-    // API.post('/contact', data)
-    //   .then(res => {
-    //     console.log(res);
-    //   })
-    //   .catch(err => console.log('Message not sent', err));
-    resetForm();
+    !isAuthenticating && administerTuringTest();
+
+    if (isAuthenticating) {
+      if (turingTest()) {
+        const data = { name, email, message };
+        console.log(data);
+        sendContactMessage(data);
+        resetForm();
+      } else {
+        administerTuringTest();
+      }
+    }
   };
 
   const resetForm = () => {
@@ -100,8 +164,30 @@ const ContactForm = ({ classes }) => {
     setMessage('');
   };
 
+  const selectBox = i => {
+    console.log('Select: ', i);
+    let input = [i];
+    let nowSelected = selected.concat(input);
+    console.log('NowSelected: ', nowSelected);
+    setSelected(nowSelected);
+  };
+
+  const unSelectBox = i => {
+    let nowSelected = selected.filter(n => n !== i);
+    setSelected(nowSelected);
+  };
+
+  const handleChange = i => {
+    if (selected.includes(i)) {
+      unSelectBox(i);
+    } else {
+      selectBox(i);
+    }
+  };
+
+  console.log(selected);
   return (
-    <div className={classes.contactForm}>
+    <Grid className={classes.contactForm}>
       <div className={classes.formContainer}>
         <Typography
           style={{ fontSize: isMobile ? '3.8em' : null }}
@@ -207,7 +293,32 @@ const ContactForm = ({ classes }) => {
             </div>
           </div>
         )}
-        <div>
+        {isAuthenticating && (
+          <div>
+            <div>
+              <Typography>Click the boxes {relation} the logo</Typography>
+            </div>
+            <Captcha selected={selected} handleChange={handleChange} />
+          </div>
+        )}
+      </div>
+      <Grid container justify='center' spacing={40}>
+        {isAuthenticating && (
+          <Grid item>
+            <Button
+              className={classes.button}
+              onClick={cancelTuringTest}
+              variant='contained'
+              style={{
+                fontSize: isMobile ? '2.5em' : '1em',
+                marginTop: isMobile ? 30 : null
+              }}
+            >
+              Cancel
+            </Button>
+          </Grid>
+        )}
+        <Grid item>
           <Button
             className={classes.button}
             onClick={sendData}
@@ -219,9 +330,9 @@ const ContactForm = ({ classes }) => {
           >
             Submit
           </Button>
-        </div>
-      </div>
-    </div>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 
