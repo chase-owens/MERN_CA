@@ -167,6 +167,7 @@ const ContactForm = ({ classes }) => {
         console.log(data);
         sendContactMessage(data);
         resetForm();
+        setAuthenticating(false);
       } else {
         administerTuringTest();
       }
@@ -177,6 +178,14 @@ const ContactForm = ({ classes }) => {
     setName('');
     setEmail('');
     setMessage('');
+  };
+
+  const handleChange = i => {
+    if (selected.includes(i)) {
+      unSelectBox(i);
+    } else {
+      selectBox(i);
+    }
   };
 
   const selectBox = i => {
@@ -190,14 +199,6 @@ const ContactForm = ({ classes }) => {
   const unSelectBox = i => {
     let nowSelected = selected.filter(n => n !== i);
     setSelected(nowSelected);
-  };
-
-  const handleChange = i => {
-    if (selected.includes(i)) {
-      unSelectBox(i);
-    } else {
-      selectBox(i);
-    }
   };
 
   console.log(selected);
