@@ -20,7 +20,7 @@ const styles = theme => ({
     background: theme.palette.primary.main
   },
   formContainer: {
-    width: isMobile ? '100%' : '80%',
+    width: isMobile ? '100%' : '85%',
     maxWidth: isMobile ? null : 400,
     margin: 'auto',
     height: '100%'
