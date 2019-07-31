@@ -102,33 +102,48 @@ const ContactForm = ({ classes }) => {
 
   const turingTest = () => {
     let passed = false;
-    console.log(relation);
+
     switch (relation) {
       case 'above':
+        if (selected.length !== 3) {
+          return passed;
+        }
         selected.includes(0) &&
           selected.includes(1) &&
           selected.includes(2) &&
           (passed = true);
       case 'below':
+        if (selected.length !== 3) {
+          return passed;
+        }
         selected.includes(6) &&
           selected.includes(7) &&
           selected.includes(8) &&
           (passed = true);
       case 'on the left of':
+        if (selected.length !== 3) {
+          return passed;
+        }
         selected.includes(0) &&
           selected.includes(3) &&
           selected.includes(6) &&
           (passed = true);
       case 'on the right of':
+        if (selected.length !== 3) {
+          return passed;
+        }
         selected.includes(2) &&
           selected.includes(5) &&
           selected.includes(8) &&
           (passed = true);
       case 'with an edge touching':
+        if (selected.length !== 4) {
+          return passed;
+        }
         selected.includes(1) &&
           selected.includes(3) &&
           selected.includes(5) &&
-          selected.includes(8) &&
+          selected.includes(7) &&
           (passed = true);
     }
     console.log('PASSED: ', passed);
@@ -294,11 +309,24 @@ const ContactForm = ({ classes }) => {
           </div>
         )}
         {isAuthenticating && (
-          <div>
-            <div>
-              <Typography>Click the boxes {relation} the logo</Typography>
+          <div style={{ width: '100%' }}>
+            <div style={{ width: '100%', margin: 'auto' }}>
+              <Typography
+                style={{ fontSize: isMobile ? '3.8em' : null }}
+                className={classes.formHeader}
+                align='center'
+                paragraph
+              >
+                Before we send the message, please click the boxes{' '}
+                <span>{relation} </span>
+                the logo
+              </Typography>
             </div>
-            <Captcha selected={selected} handleChange={handleChange} />
+            <Grid container justify='center'>
+              <Grid item>
+                <Captcha selected={selected} handleChange={handleChange} />
+              </Grid>
+            </Grid>
           </div>
         )}
       </div>
