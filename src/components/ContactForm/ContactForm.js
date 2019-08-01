@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { authenticateUser } from '../../app/app.actions';
+import { bindActionCreators } from 'redux';
 import { theme } from 'styles/theme';
 import { isMobile } from 'react-device-detect';
 
@@ -76,10 +79,13 @@ const mapStateToProps = state => ({
   authenticated: state.authState.authenticated
 });
 
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ authenticateUser }, dispatch);
+
 // Provide feedback pass/fail Turing Test
 // arrange for protected route
 
-const ContactForm = ({ classes, authenticated }) => {
+const ContactForm = ({ classes, authenticated, authenticateUser }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -161,7 +167,7 @@ const ContactForm = ({ classes, authenticated }) => {
     if (isAuthenticating) {
       if (turingTest()) {
         const data = { name, email, message };
-        console.log(data);
+        authenticateUser();
         sendContactMessage(data);
         resetForm();
         setAuthenticating(false);
@@ -199,7 +205,7 @@ const ContactForm = ({ classes, authenticated }) => {
   };
 
   console.log('authenticated: ', authenticated);
-  return (
+  return !authenticated ? (
     <div className={classes.formContainer}>
       {isMobile && (
         <div className={classes.formInputs}>
@@ -379,9 +385,16 @@ const ContactForm = ({ classes, authenticated }) => {
         </Grid>
       </div>
     </div>
+  ) : (
+    <Redirect to='/thankyou' />
   );
 };
 
 export default withStyles(styles)(
-  withWidth({ withTheme: true })(connect(mapStateToProps)(ContactForm))
+  withWidth({ withTheme: true })(
+    connect(
+      mapStateToProps,
+      mapDispatchToProps
+    )(ContactForm)
+  )
 );
