@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import { Route, ProtectedRoute } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import YourProgram from '../components/YourProgram/YourProgram';
 
@@ -9,6 +9,8 @@ import Main from '../components/Layout/Main';
 import Contact from '../components/Layout/Contact';
 import Error from '../components/Error/Error';
 import API from 'utils/uiAPI';
+import ThankYou from '../components/ThankYou/ThankYou';
+import PrivateRoute from '../components/PrivateRoute/PrivateRoute';
 
 const mapStateToProps = state => {
   return {
@@ -16,11 +18,6 @@ const mapStateToProps = state => {
   };
 };
 
-// const getDataFromServer = () => {
-//   API.get('/dataNoAuth')
-//     .then(res => console.log(res))
-//     .catch(err => console.log(err));
-// };
 class App extends Component {
   state = {
     hasError: false
@@ -45,7 +42,7 @@ class App extends Component {
       <Fragment>
         <Route exact path='/' render={() => <Main />} />
         <Route exact path='/contact' render={() => <Contact />} />
-
+        <PrivateRoute path='/thankyou' component={<ThankYou />} />
         <Route exact path='/program' render={() => <Main />} />
       </Fragment>
     );
