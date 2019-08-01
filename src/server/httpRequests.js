@@ -13,6 +13,17 @@ export const getDataFromServer = async () => {
   }
 };
 
+export const getJWT = async () => {
+  let endpoint = `${url}login`;
+  try {
+    let jwt = await axios.get(endpoint);
+    console.log(jwt);
+    return jwt;
+  } catch (err) {
+    console.log('ERR: ', err);
+  }
+};
+
 export const sendContactMessage = async data => {
   let endpoint = `${url}contact`;
   try {

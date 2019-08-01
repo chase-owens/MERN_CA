@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { authenticateUser } from '../../app/app.actions';
@@ -20,11 +20,8 @@ import Captcha from '../Captcha/Captcha';
 
 const styles = theme => ({
   formContainer: {
-    minHeight: '100vh',
-    // width: isMobile ? '100%' : '85%',
-    // maxWidth: isMobile ? null : 400,
-    margin: 'auto',
     height: '100%',
+    margin: 'auto',
     paddingBottom: 30
   },
   formHeader: {},
@@ -92,19 +89,46 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
 
   const [isAuthenticating, setAuthenticating] = useState(false);
 
+  const [attempts, setAttempts] = useState(0);
+  const [timeBegin, setTimeBegin] = useState(null);
+
   const [selected, setSelected] = useState([]);
   const [relation, setRelation] = useState(null);
+  const [prevRelation, setPrevRelation] = useState(null);
+  const [
+    committedErrorOnlySelectOneBoxDirectlyToSide,
+    setErrorOnlySelectOneBoxDirectlyToSide
+  ] = useState(false);
+  const [unknownError, setUnknownError] = useState(false);
 
   const getRelation = () => Math.floor(Math.random() * relations.length);
 
   const administerTuringTest = () => {
+    selected.length !== 0 && setSelected([]);
     setRelation(relations[getRelation()]);
     setAuthenticating(true);
-    selected.length !== 0 && setSelected([]);
+    setTimeStarted();
+  };
+
+  const setTimeStarted = () => {
+    let now = new Date();
+    setTimeBegin(now);
+
+    while (isAuthenticating) {
+      setInterval();
+    }
+  };
+
+  const getDurationOfAttempt = () => {
+    const timeEnd = new Date();
+    const duration = timeEnd.getTime() - timeBegin.getTime();
+    console.log('DurationMiliSeconds: ', duration);
   };
 
   const turingTest = () => {
     let passed = false;
+
+    setAttempts(prevAttempts => prevAttempts + 1);
 
     switch (relation) {
       case 'above':
@@ -166,15 +190,65 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
 
     if (isAuthenticating) {
       if (turingTest()) {
-        const data = { name, email, message };
+        getDurationOfAttempt();
+        setErrorOnlySelectOneBoxDirectlyToSide(false);
+        setAttempts(0);
+        setTimeBegin(null);
+
         authenticateUser();
+
+        const data = { name, email, message };
         sendContactMessage(data);
+
         resetForm();
         setAuthenticating(false);
       } else {
+        if (checkErrorOnlySelectOneBoxDirectlyToSide()) {
+          console.log('DirectBox Error');
+          setPrevRelation(relation);
+          setErrorOnlySelectOneBoxDirectlyToSide(true);
+          setUnknownError(false);
+        } else {
+          setErrorOnlySelectOneBoxDirectlyToSide(false);
+          setUnknownError(true);
+        }
         administerTuringTest();
       }
     }
+  };
+
+  const checkErrorOnlySelectOneBoxDirectlyToSide = () => {
+    let committedError = false;
+    if (selected.length === 1 && attempts < 5) {
+      switch (relation) {
+        case 'above':
+          if (selected[0] === 1) {
+            committedError = true;
+            return committedError;
+          }
+
+        case 'below':
+          if (selected[0] === 7) {
+            committedError = true;
+            return committedError;
+          }
+
+        case 'on the left of':
+          if (selected[0] === 3) {
+            committedError = true;
+            return committedError;
+          }
+
+        case 'on the right of':
+          if (selected[0] === 5) {
+            committedError = true;
+            return committedError;
+          }
+        default:
+          return false;
+      }
+    }
+    return committedError;
   };
 
   const resetForm = () => {
@@ -204,7 +278,6 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
     setSelected(nowSelected);
   };
 
-  console.log('authenticated: ', authenticated);
   return !authenticated ? (
     <div className={classes.formContainer}>
       {isMobile && (
@@ -320,17 +393,35 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
             <Grid item sm={12} md={6}>
               <Grid container style={{ width: '100%' }} justify='center'>
                 <Grid item sm={8} md={12}>
+                  {unknownError && (
+                    <Typography
+                      style={{ fontSize: '1.2em', color: '#f00' }}
+                      align='center'
+                      variant='subheading'
+                    >
+                      Let's try that again
+                    </Typography>
+                  )}
                   <Typography
                     style={{ fontSize: '1.5em' }}
-                    className={classes.formHeader}
                     align='center'
                     paragraph
                     variant='subheading'
                   >
                     Before we send the message, please select the boxes{' '}
-                    <span>{relation} </span>
-                    the logo
+                    {relation} the logo.
                   </Typography>
+                  {committedErrorOnlySelectOneBoxDirectlyToSide && (
+                    <Typography
+                      style={{ fontSize: '1em' }}
+                      align='center'
+                      paragraph
+                      variant='subheading'
+                    >
+                      <span style={{ color: '#f00' }}>Hint:</span> On your last
+                      attempt, there were 3 boxes {prevRelation} the logo
+                    </Typography>
+                  )}
 
                   <Grid item>
                     <Grid container justify='center'>

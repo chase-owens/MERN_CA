@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import { theme } from '../../styles/theme';
 import { isMobile } from 'react-device-detect';
+import { withStyles } from '@material-ui/core/styles';
 
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
@@ -11,12 +12,15 @@ import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMe
 const boxes = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 const logoPath = require('images/Logo.png');
 
-const returnImage = () => {
-  return logoPath;
-};
+const styles = theme => ({
+  box: {
+    '&:hover': {
+      cursor: 'pointer'
+    }
+  }
+});
 
-const Captcha = ({ selected, handleChange }) => {
-  console.log('Selected: ', selected);
+const Captcha = ({ selected, handleChange, classes }) => {
   return isMobile ? (
     <div style={{ margin: 'auto', dispay: 'block' }}>
       <Card
@@ -40,6 +44,7 @@ const Captcha = ({ selected, handleChange }) => {
         >
           {boxes.map((box, i) => (
             <Grid
+              className={classes.box}
               key={box}
               value={i}
               item
@@ -121,6 +126,7 @@ const Captcha = ({ selected, handleChange }) => {
           >
             {boxes.map((box, i) => (
               <Grid
+                className={classes.box}
                 key={box}
                 value={i}
                 item
@@ -181,6 +187,7 @@ const Captcha = ({ selected, handleChange }) => {
           >
             {boxes.map((box, i) => (
               <Grid
+                className={classes.box}
                 key={box}
                 value={i}
                 item
@@ -223,4 +230,4 @@ const Captcha = ({ selected, handleChange }) => {
   );
 };
 
-export default withWidth({ withTheme: true })(Captcha);
+export default withStyles(styles)(withWidth({ withTheme: true })(Captcha));

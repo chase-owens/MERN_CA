@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 const Contact = () => {
   return (
-    <div style={{ background: theme.palette.primary.main }}>
+    <div style={{ background: theme.palette.primary.main, minHeight: '100vh' }}>
       <ContactNav />
       <Typography
         style={{
