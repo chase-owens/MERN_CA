@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, ProtectedRoute } from 'react-router-dom';
 import { connect } from 'react-redux';
 import YourProgram from '../components/YourProgram/YourProgram';
 

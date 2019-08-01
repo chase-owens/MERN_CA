@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import theme from 'styles/theme';
+import { connect } from 'react-redux';
+import { theme } from 'styles/theme';
 import { isMobile } from 'react-device-detect';
 
+import withWidth from '@material-ui/core/withWidth';
+import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 import { withStyles } from '@material-ui/core/styles';
 import { sendContactMessage } from '../../server/httpRequests';
 
@@ -13,24 +16,16 @@ import Grid from '@material-ui/core/Grid';
 import Captcha from '../Captcha/Captcha';
 
 const styles = theme => ({
-  contactForm: {
-    width: '100%',
-    minHeight: '100vh',
-    height: '100%',
-    background: theme.palette.primary.main
-  },
   formContainer: {
-    width: isMobile ? '100%' : '85%',
-    maxWidth: isMobile ? null : 400,
+    minHeight: '100vh',
+    // width: isMobile ? '100%' : '85%',
+    // maxWidth: isMobile ? null : 400,
     margin: 'auto',
-    height: '100%'
+    height: '100%',
+    paddingBottom: 30
   },
-  formHeader: {
-    paddingTop: 30,
-    fontSize: '2em'
-  },
+  formHeader: {},
   formInputs: {
-    margin: 'auto',
     width: isMobile ? '70%' : 300,
     color: '#000'
   },
@@ -44,11 +39,9 @@ const styles = theme => ({
     }
   },
   button: {
-    margin: 'auto',
-    display: 'block',
     background: theme.palette.ternary.main,
     color: '#fff',
-    marginTop: 15,
+    margin: '15px 0',
     '&:hover': {
       background: theme.palette.ternary.main
     }
@@ -79,10 +72,14 @@ const relations = [
   'with an edge touching'
 ];
 
+const mapStateToProps = state => ({
+  authenticated: state.authState.authenticated
+});
+
 // Provide feedback pass/fail Turing Test
 // arrange for protected route
 
-const ContactForm = ({ classes }) => {
+const ContactForm = ({ classes, authenticated }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -201,168 +198,190 @@ const ContactForm = ({ classes }) => {
     setSelected(nowSelected);
   };
 
-  console.log(selected);
+  console.log('authenticated: ', authenticated);
   return (
-    <Grid className={classes.contactForm}>
-      <div className={classes.formContainer}>
-        <Typography
-          style={{ fontSize: isMobile ? '3.8em' : null }}
-          className={classes.formHeader}
-          align='center'
-          paragraph
-          variant='display4'
-        >
-          Contact Us
-        </Typography>
-        {isMobile && (
-          <div className={classes.formInputs}>
-            <div className={classes.formInput}>
-              {name !== '' && (
-                <label
-                  style={{ color: '#fff', fontSize: '1.9em' }}
-                  htmlFor='name'
-                >
-                  Name
-                </label>
-              )}
-              <input
-                className={classes.input}
-                id='name'
-                type='text'
-                placeholder='Name'
-                onChange={e => setName(e.target.value)}
-                value={name}
-                style={{ lineHeight: name == '' ? '2.7em' : '1em' }}
-              />
-            </div>
-            <div className={classes.formInput}>
-              {email !== '' && (
-                <label
-                  style={{ color: '#fff', fontSize: '1.9em' }}
-                  htmlFor='email'
-                >
-                  Email
-                </label>
-              )}
-              <input
-                className={classes.input}
-                id='email'
-                type='email'
-                placeholder='Email'
-                onChange={e => setEmail(e.target.value)}
-                value={email}
-                style={{ lineHeight: email == '' ? '2.7em' : '1em' }}
-              />
-            </div>
-            <div className={classes.formInput}>
-              {message !== '' && (
-                <label
-                  style={{ color: '#fff', fontSize: '1.9em' }}
-                  htmlFor='message'
-                >
-                  Message
-                </label>
-              )}
-              <textarea
-                rows={Math.round(message.length / 28 + 0.5)}
-                className={classes.input}
-                id='message'
-                placeholder='Message'
-                onChange={e => setMessage(e.target.value)}
-                value={message}
-                style={{ lineHeight: message == '' ? '2.7em' : '1em' }}
-              />
-            </div>
-          </div>
-        )}
-        {!isMobile && (
-          <div className={classes.formInputs}>
-            <div className={classes.formInput}>
-              <TextField
-                style={{ width: '100%' }}
-                label='Name'
-                placeholder='Name'
-                onChange={e => setName(e.target.value)}
-                value={name}
-              />
-            </div>
-            <div className={classes.formInput}>
-              <TextField
-                style={{ width: '100%' }}
-                label='Email'
-                placeholder='Email'
-                onChange={e => setEmail(e.target.value)}
-                value={email}
-                type='email'
-              />
-            </div>
-            <div className={classes.formInput}>
-              <TextField
-                style={{ width: '100%' }}
-                label='Message'
-                multiline
-                rowsMax='4'
-                placeholder='Message'
-                onChange={e => setMessage(e.target.value)}
-                value={message}
-              />
-            </div>
-          </div>
-        )}
-        {isAuthenticating && (
-          <div style={{ width: '100%' }}>
-            <div style={{ width: '100%', margin: 'auto' }}>
-              <Typography
-                style={{ fontSize: isMobile ? '3.8em' : null }}
-                className={classes.formHeader}
-                align='center'
-                paragraph
+    <div className={classes.formContainer}>
+      {isMobile && (
+        <div className={classes.formInputs}>
+          <div className={classes.formInput}>
+            {name !== '' && (
+              <label
+                style={{ color: '#fff', fontSize: '1.9em' }}
+                htmlFor='name'
               >
-                Before we send the message, please click the boxes{' '}
-                <span>{relation} </span>
-                the logo
-              </Typography>
+                Name
+              </label>
+            )}
+            <input
+              className={classes.input}
+              id='name'
+              type='text'
+              placeholder='Name'
+              onChange={e => setName(e.target.value)}
+              value={name}
+              style={{ lineHeight: name == '' ? '2.7em' : '1em' }}
+            />
+          </div>
+          <div className={classes.formInput}>
+            {email !== '' && (
+              <label
+                style={{ color: '#fff', fontSize: '1.9em' }}
+                htmlFor='email'
+              >
+                Email
+              </label>
+            )}
+            <input
+              className={classes.input}
+              id='email'
+              type='email'
+              placeholder='Email'
+              onChange={e => setEmail(e.target.value)}
+              value={email}
+              style={{ lineHeight: email == '' ? '2.7em' : '1em' }}
+            />
+          </div>
+          <div className={classes.formInput}>
+            {message !== '' && (
+              <label
+                style={{ color: '#fff', fontSize: '1.9em' }}
+                htmlFor='message'
+              >
+                Message
+              </label>
+            )}
+            <textarea
+              rows={Math.round(message.length / 28 + 0.5)}
+              className={classes.input}
+              id='message'
+              placeholder='Message'
+              onChange={e => setMessage(e.target.value)}
+              value={message}
+              style={{ lineHeight: message == '' ? '2.7em' : '1em' }}
+            />
+          </div>
+        </div>
+      )}
+      {!isMobile && (
+        <Grid
+          container
+          justify='space-around'
+          alignItems='center'
+          spacing={40}
+          style={{ maxWidth: '100vw' }}
+        >
+          <Grid item sm={12} md={6}>
+            <div>
+              <Grid container justify='center'>
+                <Grid item>
+                  <div className={classes.formInputs}>
+                    <div className={classes.formInput}>
+                      <TextField
+                        style={{ width: '100%' }}
+                        label='Name'
+                        placeholder='Name'
+                        onChange={e => setName(e.target.value)}
+                        value={name}
+                      />
+                    </div>
+                    <div className={classes.formInput}>
+                      <TextField
+                        style={{ width: '100%' }}
+                        label='Email'
+                        placeholder='Email'
+                        onChange={e => setEmail(e.target.value)}
+                        value={email}
+                        type='email'
+                      />
+                    </div>
+                    <div className={classes.formInput}>
+                      <TextField
+                        style={{ width: '100%' }}
+                        label='Message'
+                        multiline
+                        rowsMax='4'
+                        placeholder='Message'
+                        onChange={e => setMessage(e.target.value)}
+                        value={message}
+                      />
+                    </div>
+                  </div>
+                </Grid>
+              </Grid>
             </div>
-            <Grid container justify='center'>
-              <Grid item>
-                <Captcha selected={selected} handleChange={handleChange} />
+          </Grid>
+          {isAuthenticating && (
+            <Grid item sm={12} md={6}>
+              <Grid container style={{ width: '100%' }} justify='center'>
+                <Grid item sm={8} md={12}>
+                  <Typography
+                    style={{ fontSize: '1.5em' }}
+                    className={classes.formHeader}
+                    align='center'
+                    paragraph
+                    variant='subheading'
+                  >
+                    Before we send the message, please select the boxes{' '}
+                    <span>{relation} </span>
+                    the logo
+                  </Typography>
+
+                  <Grid item>
+                    <Grid container justify='center'>
+                      <Grid item>
+                        <Captcha
+                          selected={selected}
+                          handleChange={handleChange}
+                        />
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
-          </div>
-        )}
-      </div>
-      <Grid container justify='center' spacing={40}>
-        {isAuthenticating && (
+          )}
+        </Grid>
+      )}
+
+      <div>
+        <Grid
+          style={{ maxWidth: '100vw' }}
+          container
+          justify='center'
+          spacing={40}
+        >
+          {isAuthenticating && (
+            <Grid item>
+              <Button
+                className={classes.button}
+                onClick={cancelTuringTest}
+                variant='contained'
+                style={{
+                  fontSize: '1em'
+                }}
+              >
+                Cancel
+              </Button>
+            </Grid>
+          )}
           <Grid item>
             <Button
               className={classes.button}
-              onClick={cancelTuringTest}
+              onClick={sendData}
               variant='contained'
               style={{
-                fontSize: isMobile ? '2.5em' : '1em',
-                marginTop: isMobile ? 30 : null
+                fontSize: '1em'
               }}
             >
-              Cancel
+              Submit
             </Button>
           </Grid>
-        )}
-        <Grid item>
-          <Button
-            className={classes.button}
-            onClick={sendData}
-            variant='contained'
-            style={{
-              fontSize: isMobile ? '2.5em' : '1em',
-              marginTop: isMobile ? 30 : null
-            }}
-          >
-            Submit
-          </Button>
         </Grid>
-      </Grid>
-    </Grid>
+      </div>
+    </div>
   );
 };
 
-export default withStyles(styles)(ContactForm);
+export default withStyles(styles)(
+  withWidth({ withTheme: true })(connect(mapStateToProps)(ContactForm))
+);
