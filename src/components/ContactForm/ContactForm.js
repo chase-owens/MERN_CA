@@ -26,7 +26,7 @@ const styles = theme => ({
   },
   formHeader: {},
   formInputs: {
-    width: isMobile ? '70%' : 300,
+    // width: isMobile ? '70%' : 300,
     color: '#000'
   },
   formInput: {
@@ -344,9 +344,9 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
             </div>
           </Grid>
           {isAuthenticating && (
-            <Grid item >
+            <Grid item>
               <Grid container style={{ width: '100%' }} justify='center'>
-                <Grid item >
+                <Grid item>
                   {unknownError && (
                     <Typography
                       style={{ fontSize: '1.2em', color: '#f00' }}
