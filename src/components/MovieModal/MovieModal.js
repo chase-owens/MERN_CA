@@ -66,7 +66,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           width='100%'
           height='100%'
         /> */}
-        <video width='100%'>
+        <video style={{ zIndex: 1800 }} width='100%'>
           <source src={focusedVideo} />
         </video>
       </div>
