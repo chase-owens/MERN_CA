@@ -50,7 +50,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           top: 0,
           left: 0,
 
-          marginTop: '10vh',
+          marginTop: '5vh',
           marginLeft: '5vw'
         }}
       >
@@ -58,12 +58,13 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           style={{
             marginTop: 0,
             padding: 0,
-            zIndex: 1800
+            zIndex: 1800,
+            overflow: 'hidden'
           }}
           url={focusedVideo}
           playing
           loop
-          width='100%'
+          // width='100%'
           height='100%'
         />
       </div>
