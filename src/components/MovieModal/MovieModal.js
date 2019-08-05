@@ -50,7 +50,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           top: 0,
           left: 0,
 
-          marginTop: '25vh',
+          marginTop: '10vh',
           marginLeft: '5vw'
         }}
       >
