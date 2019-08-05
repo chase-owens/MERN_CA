@@ -78,8 +78,8 @@ const Solution = ({ audience }) => {
                 reinforcer is the entry repertoire. Response shaping is used to
                 establish sitting or lying down. Stimulus fading is used to
                 maintain sitting or lying down under the stimulus conditions
-                defined by the target objective. Then, if the target objective
-                requires consequences other than petting and scratching, those
+                defined by the objective. Then, if the objective specifies
+                consequences other than petting and scratching, those
                 consequences are provided contingent upon the occurrence of the
                 occasion-behavior relation defined by the target outcome.
               </Typography>

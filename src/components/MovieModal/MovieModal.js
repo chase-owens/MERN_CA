@@ -45,6 +45,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
       <div
         style={{
           width: '90vw',
+          height: '80vh',
           position: 'fixed',
           top: 0,
           left: 0,
@@ -124,8 +125,6 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           style={{
             width: '90vw',
             height: '90vh',
-            // opacity: 0.7,
-            // background: theme.palette.ternary.main,
             position: 'fixed',
             top: 0,
             left: 0,

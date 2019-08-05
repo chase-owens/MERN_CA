@@ -24,9 +24,7 @@ const styles = theme => ({
     margin: 'auto',
     paddingBottom: 30
   },
-  formHeader: {},
   formInputs: {
-    // width: isMobile ? '70%' : 300,
     color: '#000'
   },
   formInput: {
@@ -59,7 +57,8 @@ const styles = theme => ({
     },
     '&:focus input': {
       border: 'none',
-      outline: 'none'
+      outline: 'none',
+      background: theme.palette.primary.main
     }
   }
 });
