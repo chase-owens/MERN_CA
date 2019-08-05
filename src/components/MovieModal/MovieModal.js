@@ -66,7 +66,14 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           width='100%'
           height='100%'
         /> */}
-        <video width='100%' autoPlay muted playsInline loop>
+        <video
+          width='100%'
+          style={{ height: '100%', width='100%' }}
+          autoPlay
+          muted
+          playsInline
+          loop
+        >
           <source src={focusedVideo} />
         </video>
       </div>
