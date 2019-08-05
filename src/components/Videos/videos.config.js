@@ -13,7 +13,7 @@ const videos = [
   },
   {
     videoPath: `https://youtu.be/D6mma4s0pEU`,
-    title: `Affection Loop Jerry`,
+    title: `Affection Loop at Home`,
     description: `Teaching Jerry how to remain calm while his Mom is exercising, talking on the phone, and bringing in the groceries`,
     imagePath: `Jerry`
   },
@@ -25,8 +25,8 @@ const videos = [
   },
   {
     videoPath: `https://youtu.be/HbWi8LVAKxU`,
-    title: `Meet Ranatta`,
-    description: `Watch her transform from an energetic puppy to a calm companion`,
+    title: `Ranatta is too Turnt`,
+    description: `Watch Ranatta transform from an energetic puppy to a calm companion`,
     imagePath: `Ranatta`
   },
   {
@@ -37,13 +37,13 @@ const videos = [
   },
   {
     videoPath: `https://youtu.be/lCvlDLLpges`,
-    title: `Meet Rocky`,
+    title: `Rocky is Really Ready`,
     description: `Rocky learns to be more reserved before going on walks helping them get off on the right foot`,
     imagePath: `Rocky`
   },
   {
     videoPath: `https://youtu.be/WKtZuMQ4cJU`,
-    title: `Teaching Peepers to Stay`,
+    title: `Stay Peepers`,
     description: `Adding a 'Stay' cue during the Affection Loop`,
     imagePath: `Peeper`
   }
