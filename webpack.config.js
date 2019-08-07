@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     new StaticSiteGeneratorPlugin({
       crawl: true,
-      entry: 'main',
+      // entry: 'main',
       globals: {
         window: {}
       }
