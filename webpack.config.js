@@ -30,7 +30,8 @@ module.exports = {
       crawl: true,
       // entry: 'main',
       globals: {
-        window: {}
+        window: {},
+        document: {}
       }
     })
   ],
