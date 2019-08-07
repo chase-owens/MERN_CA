@@ -26,7 +26,7 @@ module.exports = {
   },
   plugins: [
     new StaticSiteGeneratorPlugin({
-      paths: ['/', '/contact/']
+      crawl: true
     })
   ],
   module: {
