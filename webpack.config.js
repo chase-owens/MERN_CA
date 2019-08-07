@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     new StaticSiteGeneratorPlugin({
       crawl: true,
-      entry: 'entry',
+      entry: path.resolve(__dirname, `src`, `app`),
       globals: {
         window: {}
       }
