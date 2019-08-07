@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
     libraryTarget: 'umd',
     globalObject: 'this'
   },
@@ -29,7 +29,7 @@ module.exports = {
   plugins: [
     new StaticSiteGeneratorPlugin({
       crawl: true,
-      entry: 'main',
+      entry: 'main'
       // globals: {
       //   window: {}
       // }
