@@ -24,11 +24,11 @@ module.exports = {
     port: 8080,
     host: 'localhost'
   },
-  plugins: [
-    new StaticSiteGeneratorPlugin({
-      crawl: true
-    })
-  ],
+  // plugins: [
+  //   new StaticSiteGeneratorPlugin({
+  //     crawl: true
+  //   })
+  // ],
   module: {
     rules: [
       {
