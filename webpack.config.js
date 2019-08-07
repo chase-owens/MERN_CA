@@ -8,8 +8,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/'
-    // libraryTarget: 'umd',
-    // globalObject: 'this'
+    libraryTarget: 'umd',
+    globalObject: 'this'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.css'],
@@ -27,13 +27,13 @@ module.exports = {
     host: 'localhost'
   },
   plugins: [
-    // new StaticSiteGeneratorPlugin({
-    //   crawl: true,
-    //   entry: path.resolve(__dirname, 'dist'),
-    //   globals: {
-    //     window: {}
-    //   }
-    // })
+    new StaticSiteGeneratorPlugin({
+      crawl: true,
+      entry: 'main',
+      // globals: {
+      //   window: {}
+      // }
+    })
   ],
   module: {
     rules: [
