@@ -29,10 +29,10 @@ module.exports = {
   plugins: [
     new StaticSiteGeneratorPlugin({
       crawl: true,
-      entry: 'main'
-      // globals: {
-      //   window: {}
-      // }
+      entry: 'main',
+      globals: {
+        window: {}
+      }
     })
   ],
   module: {
