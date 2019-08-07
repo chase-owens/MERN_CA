@@ -9,7 +9,7 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/',
     libraryTarget: 'umd',
-    globalObjedt: 'this'
+    globalObject: 'this'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.css'],
