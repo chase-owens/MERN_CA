@@ -31,8 +31,7 @@ module.exports = {
       crawl: true,
       // entry: path.resolve(__dirname, `src`, `app`),
       globals: {
-        window: {},
-        document: 'bundle.js'
+        window: {}
       }
     })
   ],

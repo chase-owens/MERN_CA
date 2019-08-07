@@ -8,15 +8,20 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import { history } from './store/history';
 
-console.log(store.getState());
+if (typeof document !== 'undefined') {
+  ReactDOM.render(
+    <Router history={history}>
+      <MuiThemeProvider theme={theme}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </MuiThemeProvider>
+    </Router>,
+    document.getElementById('app')
+  );
+}
 
-ReactDOM.render(
-  <Router history={history}>
-    <MuiThemeProvider theme={theme}>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </MuiThemeProvider>
-  </Router>,
-  document.getElementById('app')
-);
+module.exports = function render(locals, callback) {
+  const html = React.renderToStaticMarkup(React.createElement(App, locals));
+  callback(null, '<!DOCTYPE html>' + html);
+};
