@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { theme } from '../../styles/theme';
 import withWidth from '@material-ui/core/withWidth';
 import { isMobile } from 'react-device-detect';
@@ -204,7 +204,14 @@ const styles = theme => ({
 });
 
 const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
-  console.log('Focused Video: ', focusedVideo);
+  const videoPlayer = useRef();
+  const [isPlaying, setPlaying] = useState(false);
+
+  const playVideo = () => {
+    setPlaying(true);
+    videoPlayer.play();
+  };
+
   return isMobile ? (
     <div
       className={classes.mobileCard}
@@ -276,7 +283,20 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
           style={{
             backgroundImage: `url(${returnImage(video.imagePath)})`
           }}
-        />
+        >
+          <video
+            // poster={returnImage(video.imagePath)}
+            ref={videoPlayer}
+            style={{
+              visibility: isPlaying ? 'visible' : 'hidden',
+              zIndex: 1800
+            }}
+            controls
+            width='100%'
+          >
+            <source src={focusedVideo} />
+          </video>
+        </Card>
         <span className={classes.skin}>
           <div className={classes.iconWrapper}>
             <Icon className={classes.icon}>
