@@ -1,7 +1,7 @@
 import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from 'static-site-generator-webpack-plugin';
+// import { render } from 'static-site-generator-webpack-plugin';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { theme } from '../styles/theme';
 import { store } from './store';
