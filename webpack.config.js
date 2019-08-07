@@ -1,4 +1,5 @@
 const path = require('path');
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
 module.exports = {
   mode: 'development', //or 'production'
@@ -23,6 +24,11 @@ module.exports = {
     port: 8080,
     host: 'localhost'
   },
+  plugins: [
+    new StaticSiteGeneratorPlugin({
+      paths: ['/', '/contact/']
+    })
+  ],
   module: {
     rules: [
       {
