@@ -21,9 +21,9 @@ const styles = theme => ({
   }
 });
 
-const Beach = require('images/Beach.jpg');
-const JerryJase = require('images/JerryJase.jpg');
-const Kanye = require('images/Kanye.png');
+import Beach from 'images/Beach.jpg';
+import JerryJase from 'images/JerryJase.jpg';
+import Kanye from 'images/Kanye.png';
 
 const getImage = imageString => {
   switch (imageString) {

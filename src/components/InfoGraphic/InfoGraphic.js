@@ -6,7 +6,7 @@ import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 import { isMobile } from 'react-device-detect';
 
-const logoPath = require('images/Logo.png');
+import logoPath from 'images/Logo.png';
 
 const InfoGraphic = ({ info }) => {
   const color = theme.palette.primary.main;

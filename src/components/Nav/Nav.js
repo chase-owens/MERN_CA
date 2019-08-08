@@ -10,7 +10,7 @@ import { theme } from '../../styles/theme';
 import Hamburger from './Hamburger';
 import NavPage from '../NavDropdown/NavPage';
 
-const logoPath = require('images/Logo.png');
+import logoPath from 'images/Logo.png';
 
 import { isMobile } from 'react-device-detect';
 

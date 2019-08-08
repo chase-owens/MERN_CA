@@ -5,13 +5,13 @@
   "main": "src/app/index.js",
   "scripts": {
     "build": "webpack -p",
-    "test": "test",
+    "test": "jest --watch",
     "start": "npm run server",
     "dev": "webpack-dev-server --open",
     "testDBConnection": "babel-node src/server/connect-db",
     "initialize": "babel-node src/server/initialize-db",
     "server": "babel-node src/server/server",
-    "server-test": "babel-node src/server/server.spec",
+    "server-test": "babel-node src/server/serverSpec",
     "start-dev": "concurrently \"npm run server\" \"npm run dev\" "
   },
   "author": "Chase Owens",

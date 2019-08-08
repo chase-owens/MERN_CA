@@ -1,14 +1,12 @@
 import React, { Fragment, Component } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import YourProgram from '../components/YourProgram/YourProgram';
 
 import { getDataFromServer } from '../server/httpRequests';
-import Footer from '../components/Footer/Footer';
+
 import Main from '../components/Layout/Main';
 import Contact from '../components/Layout/Contact';
 import Error from '../components/Error/Error';
-import API from 'utils/uiAPI';
 import ThankYou from '../components/ThankYou/ThankYou';
 import PrivateRoute from '../components/PrivateRoute/PrivateRoute';
 

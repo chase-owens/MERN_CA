@@ -11,14 +11,14 @@ import Icon from '@material-ui/core/Icon';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 
-const Nanook = require('images/Nanook.jpg');
-const Blackie = require('images/Blackie.jpg');
-const Jax = require('images/Jax.jpg');
-const Jerry = require('images/Jerry.jpg');
-const Peeper = require('images/Peeper.jpg');
-const Ranatta = require('images/Ranatta.jpg');
-const Rocky = require('images/Rocky.jpg');
-const Shelter = require('images/Shelter.jpg');
+import Nanook from 'images/Nanook.jpg';
+import Blackie from 'images/Blackie.jpg';
+import Jax from 'images/Jax.jpg';
+import Jerry from 'images/Jerry.jpg';
+import Peeper from 'images/Peeper.jpg';
+import Ranatta from 'images/Ranatta.jpg';
+import Rocky from 'images/Rocky.jpg';
+import Shelter from 'images/Shelter.jpg';
 
 const mapStateToProps = state => ({
   focusedVideo: state.videoState.video
