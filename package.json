@@ -4,7 +4,7 @@
   "description": "Constructional Affection web app full-stack-react",
   "main": "src/app/index.js",
   "scripts": {
-    "build": "webpack -p",
+    "build": "webpack --config webpack.production.config.js",
     "test": "jest --watch",
     "start": "npm run server",
     "dev": "webpack-dev-server --open",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
@@ -51,6 +52,7 @@
     "google-translate": "^2.3.0",
     "history": "^4.9.0",
     "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
     "nodemailer": "^6.2.1",
     "player.js": "^0.1.0",
     "react": "^16.8.6",
