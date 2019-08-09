@@ -1,7 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import About from './About';
+import { shallow } from 'enzyme';
 
-it('should pass', () => {
-  expect(true).toEqual(true);
+describe('About', () => {
+  it('renders without crashing', () => {
+    const about = shallow(<About />);
+    expect(about).toMatchSnapshot();
+  });
 });
