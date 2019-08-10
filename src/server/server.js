@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { connectDB } from './connect-db';
+import { closeDBConnection } from './close-db-connection';
 import './initialize-db';
 import path from 'path';
 import jwt from 'jsonwebtoken';
@@ -51,6 +52,7 @@ app.get('/api/dataNoAuth', async (req, res) => {
   let db = await connectDB();
   let collection = await db.collection('content');
   let content = await collection.findOne({ title: 'Constructional Affection' });
+  closeDBConnection();
   res.json(content);
 });
 
@@ -58,6 +60,7 @@ app.get('/api/data', verifyToken, async (req, res) => {
   let db = await connectDB();
   let collection = await db.collection('content');
   let content = await collection.findOne({ title: 'Constructional Affection' });
+  closeDBConnection();
 
   jwt.verify(req.token, 'secretkey', (err, authData) => {
     if (err) {
@@ -138,6 +141,7 @@ export const getDataFromDB = async () => {
   let data = {};
   try {
     data = await collection.find({});
+    closeDBConnection();
   } catch {
     console.log('ERR');
   }
@@ -162,6 +166,7 @@ export const toggleNavigationOptions = async isOpen => {
   let collection = db.collection('open');
   try {
     await collection.updateOne({ open: isOpen }, { $set: { open: !isOpen } });
+    closeDBConnection();
   } catch {
     console.log('Err');
   }

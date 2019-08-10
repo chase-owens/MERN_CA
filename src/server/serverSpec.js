@@ -1,5 +1,3 @@
-import { changeLanguageNode, getDataFromDB } from './server';
-
-changeLanguageNode('es', 'en');
+import { getDataFromDB } from './server';
 
 getDataFromDB();
