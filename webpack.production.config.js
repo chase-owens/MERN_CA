@@ -12,7 +12,7 @@ module.exports = {
     // globalObject: 'this'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css'],
+    extensions: ['.js', '.jsx', '.css', '.scss'],
     alias: {
       images: path.resolve(__dirname, './src/images'),
       videos: path.resolve(__dirname, './src/videos'),
@@ -69,7 +69,8 @@ module.exports = {
         loader: 'babel-loader'
       },
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.css$/, use: ['style-loader', { loader: 'css-loader' }] }
+      { test: /\.css$/, use: ['style-loader', { loader: 'css-loader' }] },
+      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] }
     ]
   }
 };
