@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { unstable_Profiler as Profiler } from 'react';
 import { Helmet } from 'react-helmet';
 import NavIntro from './NavIntro';
 import About from '../About/About';
@@ -10,6 +10,26 @@ import Footer from '../Footer/Footer';
 
 import { isMobile } from 'react-device-detect';
 
+const record = (
+  id,
+  phase,
+  actualDuration,
+  baseDuration,
+  startTime,
+  commitTime,
+  interactions
+) => {
+  console.log(
+    id,
+    phase,
+    actualDuration,
+    baseDuration,
+    startTime,
+    commitTime,
+    interactions
+  );
+};
+
 const Main = () => {
   return (
     <div style={{ margin: 0, padding: 0, marginRight: isMobile ? 20 : 0 }}>
@@ -18,15 +38,17 @@ const Main = () => {
         <title>Constructional Affection</title>
         <meta name='description' content='Constructional Affection' />
       </Helmet>
-      <NavIntro />
-      <main style={{ margin: 0, padding: 0 }}>
-        <About />
-        <Solution />
-        <HowTo />
-        <Videos />
-        <MovieModal />
-      </main>
-      <Footer />
+      <Profiler id='Main' onRender={record}>
+        <NavIntro />
+        <main style={{ margin: 0, padding: 0 }}>
+          <About />
+          <Solution />
+          <HowTo />
+          <Videos />
+          <MovieModal />
+        </main>
+        <Footer />
+      </Profiler>
     </div>
   );
 };
