@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -7,7 +7,7 @@ import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 import { theme } from '../../styles/theme';
-import css from './About.css';
+import css from './About.scss';
 
 import aboutPoints from './about.config';
 import targetOutcomes from './targetOutcomes.config';
@@ -32,6 +32,13 @@ const getBackground = i => {
 
 const About = ({ theme }) => {
   console.log(aboutPoints);
+
+  const bottomScrollContainer = useRef();
+
+  useEffect(() => {
+    console.log('scroll container');
+    // bottomScrollContainer.scrollLeft += 30;
+  }, []);
 
   return isMobile ? (
     <div
@@ -183,7 +190,7 @@ const About = ({ theme }) => {
       }}
     >
       {useMediaQuery(theme.breakpoints.down(740)) && (
-        <div>
+        <div style={{ maxWidth: 'calc(100vw - 35px)' }}>
           <div
             style={{
               margin: '0 40px 60px 40px'
@@ -249,6 +256,7 @@ const About = ({ theme }) => {
           </Grid>
           <br />
           <Grid
+            ref={bottomScrollContainer}
             container
             className='scrollContainer'
             wrap='nowrap'

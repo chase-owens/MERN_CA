@@ -2,7 +2,6 @@ node_modules
 dist
 src/videos
 .env
-__snapshots__
 
 
 #amplify

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact renders without crashing 1`] = `
+<div
+  style={
+    Object {
+      "background": "#29bbf6",
+      "minHeight": "100vh",
+    }
+  }
+>
+  <ContactNav />
+  <WithStyles(Typography)
+    align="center"
+    paragraph={true}
+    style={
+      Object {
+        "fontSize": "2em",
+        "padding": "20px 0",
+      }
+    }
+    variant="display4"
+  >
+    Contact Us
+  </WithStyles(Typography)>
+  <WithStyles(WithTheme(WithWidth(Connect(ContactForm)))) />
+</div>
+`;

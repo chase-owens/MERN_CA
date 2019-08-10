@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThankYou renders without crashing 1`] = `
+<div>
+  <ContactNav />
+  <WithStyles(Typography)
+    align="center"
+    paragraph={true}
+    style={
+      Object {
+        "fontSize": "2em",
+        "paddingTop": 20,
+      }
+    }
+    variant="display4"
+  >
+    Thank you for contacting us.
+  </WithStyles(Typography)>
+  <WithStyles(Typography)
+    align="center"
+    paragraph={true}
+    style={
+      Object {
+        "fontSize": "2em",
+      }
+    }
+    variant="display4"
+  >
+    You'll receive a reply from us within 24 hours.
+  </WithStyles(Typography)>
+</div>
+`;

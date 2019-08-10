@@ -91,7 +91,8 @@ const HowTo = () => {
           maxWidth: 800,
           margin: 'auto',
           marginBottom: 70,
-          marginTop: 30
+          marginTop: 30,
+          width: '100%'
         }}
         spacing={16}
         justify='space-around'

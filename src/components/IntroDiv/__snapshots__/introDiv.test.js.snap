@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IntroDiv renders without crashing 1`] = `
+<WithTheme(WithWidth(Connect(IntroDiv)))
+  classes={
+    Object {
+      "introDiv": "WithTheme-WithWidth-Connect-IntroDiv----introDiv-2",
+      "title": "WithTheme-WithWidth-Connect-IntroDiv----title-1",
+    }
+  }
+/>
+`;

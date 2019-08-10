@@ -48,7 +48,7 @@ const Videos = ({ classes }) => {
         spacing={0}
         justify='space-between'
         style={{
-          width: '100vw'
+          width: '100%'
         }}
       >
         {videos.map(video => (

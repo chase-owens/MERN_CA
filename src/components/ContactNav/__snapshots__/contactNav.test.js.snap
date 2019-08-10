@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactNav renders without crashing 1`] = `
+<nav>
+  <WithStyles(Grid)
+    container={true}
+    justify="space-between"
+  >
+    <WithStyles(Grid)
+      item={true}
+      style={
+        Object {
+          "marginLeft": 20,
+          "marginRight": 5,
+          "marginTop": 5,
+        }
+      }
+    >
+      <img
+        alt="logo"
+        height={50}
+        src={
+          Object {
+            "default": "",
+          }
+        }
+      />
+    </WithStyles(Grid)>
+    <WithStyles(Grid)
+      item={true}
+      style={
+        Object {
+          "margin": "10px 15px",
+        }
+      }
+    >
+      <Link
+        style={
+          Object {
+            "textDecoration": "none",
+          }
+        }
+        to="/"
+      >
+        <WithStyles(Button)
+          style={
+            Object {
+              "fontSize": null,
+            }
+          }
+        >
+          Home
+        </WithStyles(Button)>
+      </Link>
+    </WithStyles(Grid)>
+  </WithStyles(Grid)>
+</nav>
+`;

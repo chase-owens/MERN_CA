@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Captcha renders without crashing 1`] = `
+<WithTheme(WithWidth(Captcha))
+  classes={
+    Object {
+      "box": "WithTheme-WithWidth-Captcha---box-1",
+    }
+  }
+/>
+`;

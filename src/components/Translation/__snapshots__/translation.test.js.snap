@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Translation renders without crashing 1`] = `
+<WithTheme(WithWidth(Translation))
+  classes={
+    Object {
+      "chip": "WithTheme-WithWidth-Translation---chip-1",
+    }
+  }
+/>
+`;

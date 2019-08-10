@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StepperIcon renders without crashing 1`] = `
+<WithStyles(Typography)
+  style={
+    Object {
+      "color": "#fff",
+      "fontSize": null,
+      "height": "100%",
+      "lineHeight": "30px",
+      "textAlign": "center",
+    }
+  }
+/>
+`;

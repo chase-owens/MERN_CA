@@ -70,8 +70,9 @@ module.exports = {
   moduleNameMapper: {
     '\\.(jpg|jpeg|svg|mp4|webm|ico|png|gif|eot|otf|webp|ttf|woff|woff2|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/mocks/fileMock.js',
-    '\\.(css|less)$': '<rootDir>/mocks/styleMock.js',
-    '^styles(.*)$': '<rootDir>/styles/$1'
+    '\\.(css|less|scss)$': '<rootDir>/mocks/styleMock.js',
+    '^styles(.*)$': '<rootDir>/styles/$1',
+    '^store(.*)$': '<rootDir>/store/'
     // '^images(.*)$': '<rootDir>/images/$1'
   },
 
@@ -126,7 +127,7 @@ module.exports = {
   snapshotSerializers: ['enzyme-to-json/serializer'],
 
   // The test environment that will be used for testing
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},

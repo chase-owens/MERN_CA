@@ -2,7 +2,6 @@ import React from 'react';
 import { theme } from '../../styles/theme';
 
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import twoXtwo from '../Matrix/2x2.config';
 import Matrix from '../Matrix/Matrix';
 import withWidth from '@material-ui/core/withWidth';
@@ -14,8 +13,8 @@ const Matricies = () => {
     : 'default';
   return (
     <Grid container spacing={8} justify='space-around'>
-      {twoXtwo.map(matrix => (
-        <Grid item>
+      {twoXtwo.map((matrix, i) => (
+        <Grid key={i} item>
           <Matrix matrix={matrix} />
         </Grid>
       ))}

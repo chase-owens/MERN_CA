@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main it did not change visually 1`] = `
+<div
+  style={
+    Object {
+      "margin": 0,
+      "marginRight": 0,
+      "padding": 0,
+    }
+  }
+>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <meta
+      charset="UTF-8"
+    />
+    <title>
+      Constructional Affection
+    </title>
+    <meta
+      content="Constructional Affection"
+      name="description"
+    />
+  </HelmetWrapper>
+  <WithTheme(WithWidth(Connect(NavIntro))) />
+  <main
+    style={
+      Object {
+        "margin": 0,
+        "padding": 0,
+      }
+    }
+  >
+    <WithTheme(WithWidth(About)) />
+    <Connect(WithTheme(WithWidth(Solution))) />
+    <WithTheme(WithWidth(HowTo)) />
+    <WithStyles(WithTheme(WithWidth(Videos))) />
+    <WithTheme(WithWidth(Connect(MovieModal))) />
+  </main>
+  <WithStyles(Footer) />
+</div>
+`;

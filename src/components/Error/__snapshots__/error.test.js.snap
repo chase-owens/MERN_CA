@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error renders without crashing 1`] = `
+<div
+  style={
+    Object {
+      "background": "#29bbf6",
+      "height": "100vh",
+      "width": "100vw",
+    }
+  }
+>
+  <WithStyles(Typography)
+    variant="display4"
+  >
+    Sorry, An error occurred. Error: The dogs ate the code.
+  </WithStyles(Typography)>
+</div>
+`;

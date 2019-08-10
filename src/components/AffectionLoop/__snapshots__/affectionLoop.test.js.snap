@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AffectionLoop renders without crashing 1`] = `
+<WithTheme(WithWidth(AffectionLoop))
+  classes={
+    Object {
+      "text": "WithTheme-WithWidth-AffectionLoop---text-1",
+    }
+  }
+/>
+`;
