@@ -39,67 +39,67 @@ app.get('/api', (req, res) => {
   res.send('We in this bitch');
 });
 
-  // CREATE
-    // CREATE PERFORMANCE LOG
-export const createPerformanceLog = (data) => {
+// CREATE
+// CREATE PERFORMANCE LOG
+export const createPerformanceLog = async data => {
   let db = await connectDB();
   let collection = await db.collection('appPerformance');
 
   await collection
-      .insertOne(data)
-      .then(res => console.log('RES: ', res))
-      .catch(err => console.log('ERR1: ', err));
-}
+    .insertOne(data)
+    .then(res => console.log('RES: ', res))
+    .catch(err => console.log('ERR1: ', err));
+};
 
-    // CREATE USER BEHAVIOR LOG
-export const createUserBehaviorLog = (data) => {
+// CREATE USER BEHAVIOR LOG
+export const createUserBehaviorLog = async data => {
   let db = await connectDB();
   let collection = await db.collection('userBehavior');
 
   await collection
-      .insertOne(data)
-      .then(res => console.log('RES: ', res))
-      .catch(err => console.log('ERR1: ', err));
-}
+    .insertOne(data)
+    .then(res => console.log('RES: ', res))
+    .catch(err => console.log('ERR1: ', err));
+};
 
-    // CREATE CONTACT MESSAGE
-  app.post('/api/contact', async (req, res) => {
-    let data = req.body;
-  
-    const transporter = mailer.createTransport({
-      service: 'Gmail',
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.USERNAME,
-        pass: process.env.PASSWORD
-      }
-    });
-  
-    const mailOptions = {
-      from: data.email,
-      to: [
-        'chasejonathanowens@gmail.com'
-        // 'seanmichaelwill@gmail.com',
-      ],
-      subject: 'CA_CONTACT',
-      html: `<p>${data.name}</p><p>${data.email}</p><p>${data.message}</p>`
-    };
-  
-    await transporter.sendMail(mailOptions, (err, res) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(res);
-      }
-      transporter.close();
-    });
-  
-    res.send('Success');
+// CREATE CONTACT MESSAGE
+app.post('/api/contact', async (req, res) => {
+  let data = req.body;
+
+  const transporter = mailer.createTransport({
+    service: 'Gmail',
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.USERNAME,
+      pass: process.env.PASSWORD
+    }
   });
 
-  // READ
-    // GET ALL
+  const mailOptions = {
+    from: data.email,
+    to: [
+      'chasejonathanowens@gmail.com'
+      // 'seanmichaelwill@gmail.com',
+    ],
+    subject: 'CA_CONTACT',
+    html: `<p>${data.name}</p><p>${data.email}</p><p>${data.message}</p>`
+  };
+
+  await transporter.sendMail(mailOptions, (err, res) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(res);
+    }
+    transporter.close();
+  });
+
+  res.send('Success');
+});
+
+// READ
+// GET ALL
 export const getDataFromDB = async () => {
   let db = await connectDB();
   let collection = db.collection('content');
@@ -113,7 +113,7 @@ export const getDataFromDB = async () => {
   console.log('DATA: ', data);
 };
 
-    // READ TITLE NO AUTH
+// READ TITLE NO AUTH
 app.get('/api/dataNoAuth', async (req, res) => {
   let db = await connectDB();
   let collection = await db.collection('content');
@@ -121,8 +121,8 @@ app.get('/api/dataNoAuth', async (req, res) => {
   closeDBConnection();
   res.json(content);
 });
-  
-    // READ TITLE AUTH
+
+// READ TITLE AUTH
 app.get('/api/data', verifyToken, async (req, res) => {
   let db = await connectDB();
   let collection = await db.collection('content');
@@ -142,8 +142,6 @@ app.get('/api/data', verifyToken, async (req, res) => {
 // UPDATE
 
 // DELETE
-
-
 
 app.post('/api/login', (req, res) => {
   let user = {
@@ -172,7 +170,6 @@ function verifyToken(req, res, next) {
     res.sendStatus(403);
   }
 }
-
 
 // const { TranslationServiceClient } = require('@google-cloud/translate').v3beta1;
 
