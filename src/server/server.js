@@ -8,7 +8,6 @@ import path from 'path';
 import jwt from 'jsonwebtoken';
 import mailer from 'nodemailer';
 import dotenv from 'dotenv';
-import AWS from 'aws-sdk';
 
 // let googleTranslate = require('google-translate')(process.env.API_KEY);
 const { Translate } = require('@google-cloud/translate');
@@ -25,15 +24,6 @@ let app = express().use(
   bodyParser.json()
 );
 
-// Configure AWS
-AWS.config.update({
-  accessKeyId: process.env.ACCESS_KEY_ID,
-  secretAccessKey: process.env.SECRET_ACCESS_KEY,
-  region: process.env.REGION
-});
-let s3 = new AWS.S3();
-let globalBucket = 'constructionalaffection';
-
 app.listen(port, console.log('Server listening on port ', port));
 
 if (process.env.NODE_ENV == `production`) {
@@ -44,10 +34,86 @@ if (process.env.NODE_ENV == `production`) {
   });
 }
 
+// RESTful API
 app.get('/api', (req, res) => {
   res.send('We in this bitch');
 });
 
+  // CREATE
+    // CREATE PERFORMANCE LOG
+export const createPerformanceLog = (data) => {
+  let db = await connectDB();
+  let collection = await db.collection('appPerformance');
+
+  await collection
+      .insertOne(data)
+      .then(res => console.log('RES: ', res))
+      .catch(err => console.log('ERR1: ', err));
+}
+
+    // CREATE USER BEHAVIOR LOG
+export const createUserBehaviorLog = (data) => {
+  let db = await connectDB();
+  let collection = await db.collection('userBehavior');
+
+  await collection
+      .insertOne(data)
+      .then(res => console.log('RES: ', res))
+      .catch(err => console.log('ERR1: ', err));
+}
+
+    // CREATE CONTACT MESSAGE
+  app.post('/api/contact', async (req, res) => {
+    let data = req.body;
+  
+    const transporter = mailer.createTransport({
+      service: 'Gmail',
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.USERNAME,
+        pass: process.env.PASSWORD
+      }
+    });
+  
+    const mailOptions = {
+      from: data.email,
+      to: [
+        'chasejonathanowens@gmail.com'
+        // 'seanmichaelwill@gmail.com',
+      ],
+      subject: 'CA_CONTACT',
+      html: `<p>${data.name}</p><p>${data.email}</p><p>${data.message}</p>`
+    };
+  
+    await transporter.sendMail(mailOptions, (err, res) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(res);
+      }
+      transporter.close();
+    });
+  
+    res.send('Success');
+  });
+
+  // READ
+    // GET ALL
+export const getDataFromDB = async () => {
+  let db = await connectDB();
+  let collection = db.collection('content');
+  let data = {};
+  try {
+    data = await collection.find({});
+    closeDBConnection();
+  } catch {
+    console.log('ERR');
+  }
+  console.log('DATA: ', data);
+};
+
+    // READ TITLE NO AUTH
 app.get('/api/dataNoAuth', async (req, res) => {
   let db = await connectDB();
   let collection = await db.collection('content');
@@ -55,7 +121,8 @@ app.get('/api/dataNoAuth', async (req, res) => {
   closeDBConnection();
   res.json(content);
 });
-
+  
+    // READ TITLE AUTH
 app.get('/api/data', verifyToken, async (req, res) => {
   let db = await connectDB();
   let collection = await db.collection('content');
@@ -71,6 +138,12 @@ app.get('/api/data', verifyToken, async (req, res) => {
     }
   });
 });
+
+// UPDATE
+
+// DELETE
+
+
 
 app.post('/api/login', (req, res) => {
   let user = {
@@ -100,77 +173,6 @@ function verifyToken(req, res, next) {
   }
 }
 
-app.post('/api/contact', async (req, res) => {
-  let data = req.body;
-
-  const transporter = mailer.createTransport({
-    service: 'Gmail',
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.USERNAME,
-      pass: process.env.PASSWORD
-    }
-  });
-
-  const mailOptions = {
-    from: data.email,
-    to: [
-      'chasejonathanowens@gmail.com'
-      // 'seanmichaelwill@gmail.com',
-    ],
-    subject: 'CA_CONTACT',
-    html: `<p>${data.name}</p><p>${data.email}</p><p>${data.message}</p>`
-  };
-
-  await transporter.sendMail(mailOptions, (err, res) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(res);
-    }
-    transporter.close();
-  });
-
-  res.send('Success');
-});
-
-export const getDataFromDB = async () => {
-  let db = await connectDB();
-  let collection = db.collection('content');
-  let data = {};
-  try {
-    data = await collection.find({});
-    closeDBConnection();
-  } catch {
-    console.log('ERR');
-  }
-  console.log('DATA: ', data);
-};
-
-export const changeLanguageNode = async (currentLanguage, newLanguage) => {
-  let db = await connectDB();
-  let collection = db.collection('language');
-  try {
-    await collection.updateOne(
-      { language: currentLanguage },
-      { $set: { language: newLanguage } }
-    );
-  } catch {
-    console.log('Err');
-  }
-};
-
-export const toggleNavigationOptions = async isOpen => {
-  let db = await connectDB();
-  let collection = db.collection('open');
-  try {
-    await collection.updateOne({ open: isOpen }, { $set: { open: !isOpen } });
-    closeDBConnection();
-  } catch {
-    console.log('Err');
-  }
-};
 
 // const { TranslationServiceClient } = require('@google-cloud/translate').v3beta1;
 
