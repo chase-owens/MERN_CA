@@ -25,21 +25,34 @@ exports[`Main it did not change visually 1`] = `
       name="description"
     />
   </HelmetWrapper>
-  <WithTheme(WithWidth(Connect(NavIntro))) />
-  <main
-    style={
-      Object {
-        "margin": 0,
-        "padding": 0,
-      }
-    }
+  <Profiler
+    id="Main"
+    onRender={[Function]}
   >
-    <WithTheme(WithWidth(About)) />
-    <Connect(WithTheme(WithWidth(Solution))) />
-    <WithTheme(WithWidth(HowTo)) />
-    <WithStyles(WithTheme(WithWidth(Videos))) />
-    <WithTheme(WithWidth(Connect(MovieModal))) />
-  </main>
-  <WithStyles(Footer) />
+    <WithTheme(WithWidth(Connect(NavIntro))) />
+    <main
+      style={
+        Object {
+          "margin": 0,
+          "padding": 0,
+        }
+      }
+    >
+      <WithTheme(WithWidth(About)) />
+      <Connect(WithTheme(WithWidth(Solution))) />
+      <WithTheme(WithWidth(HowTo)) />
+      <Suspense
+        fallback={<div />}
+      >
+        <lazy />
+      </Suspense>
+      <Suspense
+        fallback={<div />}
+      >
+        <lazy />
+      </Suspense>
+    </main>
+    <WithStyles(Footer) />
+  </Profiler>
 </div>
 `;

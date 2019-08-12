@@ -40,7 +40,6 @@ const Sequence = ({ steps }) => {
                   borderRadius: '50%',
                   background: theme.palette.ternary.main
                 }}
-                justify='center'
               >
                 <StepperIcon content={step.icon} />
               </Grid>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import ReactPlayer from 'react-player';
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import introVideoPoster from 'images/introVideoPoster.png';
 
 import { isMobile } from 'react-device-detect';
 
@@ -12,12 +12,14 @@ const IntroVideo = ({ theme }) => {
   const [autoplay, setAutoplay] = useState(true);
   const [loop, setLoop] = useState(true);
   const [url, setUrl] = useState(MEDIA_URL);
+  const [poster, setPoster] = useState(introVideoPoster);
 
   useEffect(() => {
     setMuted(true);
     setAutoplay(true);
     setLoop(true);
     setUrl(MEDIA_URL);
+    setPoster(introVideoPoster);
   }, []);
 
   const iframe = (
@@ -27,6 +29,7 @@ const IntroVideo = ({ theme }) => {
       muted={muted}
       playsInline
       loop={loop}
+      poster={poster}
     >
       <source src={url} />
     </video>
@@ -37,7 +40,8 @@ const IntroVideo = ({ theme }) => {
       style={{
         width: '100%',
         height: '100%',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        backgroundImage: `url(${poster})`
       }}
     >
       {iframe}
