@@ -6,7 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 
 module.exports = {
-  mode: 'development', //or 'production'
+  mode: 'production',
   entry: path.resolve(__dirname, `src`, `app`),
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -25,11 +25,11 @@ module.exports = {
       styles: path.resolve(__dirname, './src/styles')
     }
   },
-  devServer: {
-    historyApiFallback: true,
-    port: 8080,
-    host: 'localhost'
-  },
+  // devServer: {
+  //   historyApiFallback: true,
+  //   port: 8080,
+  //   host: 'localhost'
+  // },
   // plugins: [
   //   new StaticSiteGeneratorPlugin({
   //     crawl: true,
