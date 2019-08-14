@@ -1,5 +1,6 @@
+'use strict';
 const path = require('path');
-const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'development', //or 'production'
@@ -71,6 +72,34 @@ module.exports = {
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.css$/, use: ['style-loader', { loader: 'css-loader' }] },
       { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] }
+    ]
+  },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          parse: {
+            ecma: 8
+          },
+          compress: {
+            ecma: 5,
+            warnings: false,
+            comparisons: false,
+            inline: 2
+          },
+          mangle: {
+            safari10: true
+          },
+          output: {
+            ecma: 5,
+            comments: false,
+            ascii_only: true
+          }
+        },
+        parallel: !isWsl,
+        cache: true,
+        sourceMap: shouldUseSourceMap
+      })
     ]
   }
 };
