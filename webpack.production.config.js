@@ -1,6 +1,9 @@
 'use strict';
 const path = require('path');
+const isWsl = require('is-wsl');
 const TerserPlugin = require('terser-webpack-plugin');
+// Source maps are resource heavy and can cause out of memory issue for large source files.
+const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 
 module.exports = {
   mode: 'development', //or 'production'
