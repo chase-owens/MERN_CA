@@ -16,8 +16,7 @@ export const getDataFromServer = async () => {
 export const getJWT = async () => {
   let endpoint = `${url}login`;
   try {
-    let jwt = await axios.get(endpoint);
-    console.log(jwt);
+    let jwt = await axios.post(endpoint);
     return jwt;
   } catch (err) {
     console.log('ERR: ', err);
@@ -25,9 +24,12 @@ export const getJWT = async () => {
 };
 
 export const sendContactMessage = async data => {
+  let jwt = await getJWT();
+  let headers = { headers: { Authorization: `Bearer ${jwt.data.token}` } };
+
   let endpoint = `${url}contact`;
   try {
-    let message = await axios.post(endpoint, data);
+    let message = await axios.post(endpoint, data, headers);
     console.log(message);
   } catch (err) {
     console.log(err);

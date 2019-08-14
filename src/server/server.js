@@ -63,8 +63,10 @@ export const createUserBehaviorLog = async data => {
 };
 
 // CREATE CONTACT MESSAGE
-app.post('/api/contact', async (req, res) => {
+app.post('/api/contact', verifyToken, async (req, res) => {
   let data = req.body;
+  let headers = req.headers;
+  console.log('DATA ', data, 'HEADERS: ', headers);
 
   const transporter = mailer.createTransport({
     service: 'Gmail',
@@ -86,16 +88,22 @@ app.post('/api/contact', async (req, res) => {
     html: `<p>${data.name}</p><p>${data.email}</p><p>${data.message}</p>`
   };
 
-  await transporter.sendMail(mailOptions, (err, res) => {
+  jwt.verify(req.token, 'secretkey', async (err, authData) => {
     if (err) {
-      console.log(err);
+      res.json({ err: 'err' });
     } else {
-      console.log(res);
-    }
-    transporter.close();
-  });
+      await transporter.sendMail(mailOptions, (err, res) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(res);
+        }
+        transporter.close();
+      });
 
-  res.send('Success');
+      res.send('Success');
+    }
+  });
 });
 
 // READ
@@ -165,8 +173,10 @@ function verifyToken(req, res, next) {
     const bearer = bearerHeader.split(' ');
     const bearerToken = bearer[1];
     req.token = bearerToken;
+    console.log('Token Checked');
     next();
   } else {
+    console.log('Token Missing');
     res.sendStatus(403);
   }
 }
