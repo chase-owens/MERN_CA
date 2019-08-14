@@ -2,12 +2,23 @@ import React from 'react';
 const logoPath = require('images/Logo.png');
 import { isMobile } from 'react-device-detect';
 import theme from 'styles/theme';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { authenticateUser } from '../../app/app.actions';
 
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
-const ContactNav = () => {
+const mapStateToProps = state => ({
+  authorized: state.authState.authenticated
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ authenticateUser }, dispatch);
+
+const ContactNav = ({ authorized }) => {
+  console.log('Auth:', authorized);
   return (
     <nav>
       <Grid container justify='space-between'>
@@ -23,7 +34,10 @@ const ContactNav = () => {
         </Grid>
         <Grid item style={{ margin: '10px 15px' }}>
           <Link style={{ textDecoration: 'none' }} to='/'>
-            <Button style={{ fontSize: isMobile ? '2.1em' : null }}>
+            <Button
+              onClick={authorized ? authenticateUser() : null}
+              style={{ fontSize: isMobile ? '2.1em' : null }}
+            >
               Home
             </Button>
           </Link>
@@ -33,4 +47,7 @@ const ContactNav = () => {
   );
 };
 
-export default ContactNav;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContactNav);
