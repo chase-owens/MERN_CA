@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { theme } from '../../styles/theme';
 import withWidth from '@material-ui/core/withWidth';
-import { isMobile } from 'react-device-detect';
+import { isMobile, isIOS } from 'react-device-detect';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -19,7 +19,6 @@ import Peeper from 'images/Peeper.jpg';
 import Ranatta from 'images/Ranatta.jpg';
 import Rocky from 'images/Rocky.jpg';
 import Shelter from 'images/Shelter.jpg';
-import VideoCardMobile from './VideoCardMobile';
 
 const mapStateToProps = state => ({
   focusedVideo: state.videoState.video
@@ -213,8 +212,132 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
     videoPlayer.play();
   };
 
-  return isMobile ? (
-    <VideoCardMobile />
+  return isMobile && isIOS ? (
+    <div
+      className={classes.mobileCard}
+      onClick={() => toggleMovie(video.videoPath)}
+    >
+      <div style={{ width: '100%', height: 600 }}>
+        <Card
+          style={{
+            backgroundImage: `url(${returnImage(video.imagePath)})`,
+            display: 'block',
+
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '50% 50%',
+            width: '100%',
+            height: 600
+          }}
+        />
+        <span
+          // className={classes.mobileSkin}
+          style={{
+            left: 0,
+            borderRadius: 5,
+            opacity: 0.8,
+            position: 'relative',
+            display: 'block',
+            width: '100%',
+            height: 600,
+            top: -600
+          }}
+        >
+          <div>
+            <Icon
+              // className={classes.mobileIcon}
+              style={{
+                display: 'block',
+                margin: 'auto',
+                color: '#fff',
+                height: 450,
+                width: 250
+              }}
+            >
+              <i class='material-icons'>play_circle_filled</i>
+            </Icon>
+          </div>
+        </span>
+      </div>
+
+      <br />
+      <div style={{ paddingTop: 20 }}>
+        <Typography
+          paragraph
+          style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 15 }}
+          variant='headline'
+        >
+          {video.title}
+        </Typography>
+
+        <Typography style={{ fontSize: '2.3em' }} variant='body2'>
+          {video.description}
+        </Typography>
+      </div>
+    </div>
+  ) : isMobile && !isIOS ? (
+    <div
+      className={classes.mobileCard}
+      onClick={() => toggleMovie(video.videoPath)}
+    >
+      <div style={{ width: '100%', height: 600 }}>
+        <Card
+          style={{
+            backgroundImage: `url(${returnImage(video.imagePath)})`,
+            display: 'block',
+
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '50% 50%',
+            width: '100%',
+            height: 600
+          }}
+        />
+        <span
+          // className={classes.mobileSkin}
+          style={{
+            left: 0,
+            borderRadius: 5,
+            opacity: 0.8,
+            position: 'relative',
+            display: 'block',
+            width: '100%',
+            height: 600,
+            top: -600
+          }}
+        >
+          <div>
+            <Icon
+              // className={classes.mobileIcon}
+              style={{
+                display: 'block',
+                margin: 'auto',
+                color: '#fff',
+                height: 450,
+                width: 250
+              }}
+            >
+              <i class='material-icons'>play_circle_filled</i>
+            </Icon>
+          </div>
+        </span>
+      </div>
+
+      <br />
+      <div style={{ paddingTop: 20 }}>
+        <Typography
+          paragraph
+          style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 15 }}
+          variant='headline'
+        >
+          {video.title}
+        </Typography>
+
+        <Typography style={{ fontSize: '2.3em' }} variant='body2'>
+          {video.description}
+        </Typography>
+      </div>
+    </div>
   ) : (
     <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
       <div className={classes.innerCard}>
