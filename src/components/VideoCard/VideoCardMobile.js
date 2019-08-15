@@ -203,7 +203,9 @@ const styles = theme => ({
   }
 });
 
-const VideoCardMobile = ({ video, focusedVideo, classes, toggleMovie }) => {
+const videoPath = `https://youtu.be/A0WBNze3oFY`;
+
+const VideoCardMobile = ({}) => {
   const videoPlayer = useRef();
   const [isPlaying, setPlaying] = useState(false);
 
@@ -212,143 +214,18 @@ const VideoCardMobile = ({ video, focusedVideo, classes, toggleMovie }) => {
     videoPlayer.play();
   };
 
-  return !isIOS ? (
-    <div
-      className={classes.mobileCard}
-      onClick={() => toggleMovie(video.videoPath)}
+  return (
+    <video
+      poster={Nanook}
+      ref={videoPlayer}
+      style={{
+        // visibility: isPlaying ? 'visible' : 'hidden',
+        zIndex: 1800
+      }}
+      controls={isPlaying ? true : false}
     >
-      <div style={{ width: '100%', height: 600 }}>
-        <Card
-          style={{
-            backgroundImage: `url(${returnImage(video.imagePath)})`,
-            display: 'block',
-
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: '50% 50%',
-            width: '100%',
-            height: 600
-          }}
-        />
-        <span
-          // className={classes.mobileSkin}
-          style={{
-            left: 0,
-            borderRadius: 5,
-            opacity: 0.8,
-            position: 'relative',
-            display: 'block',
-            width: '100%',
-            height: 600,
-            top: -600
-          }}
-        >
-          <div>
-            <Icon
-              // className={classes.mobileIcon}
-              style={{
-                display: 'block',
-                margin: 'auto',
-                color: '#fff',
-                height: 450,
-                width: 250
-              }}
-            >
-              <i class='material-icons'>play_circle_filled</i>
-            </Icon>
-          </div>
-        </span>
-      </div>
-
-      <br />
-      <div style={{ paddingTop: 20 }}>
-        <Typography
-          paragraph
-          style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 15 }}
-          variant='headline'
-        >
-          {video.title}
-        </Typography>
-
-        <Typography style={{ fontSize: '2.3em' }} variant='body2'>
-          {video.description}
-        </Typography>
-      </div>
-    </div>
-  ) : (
-    <div
-      className={classes.mobileCard}
-      onClick={() => toggleMovie(video.videoPath)}
-    >
-      <div style={{ width: '100%', height: 600 }}>
-        <Card
-          style={{
-            backgroundImage: `url(${returnImage(video.imagePath)})`,
-            display: 'block',
-
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: '50% 50%',
-            width: '100%',
-            height: 600
-          }}
-        />
-        <span
-          // className={classes.mobileSkin}
-          style={{
-            left: 0,
-            borderRadius: 5,
-            opacity: 0.8,
-            position: 'relative',
-            display: 'block',
-            width: '100%',
-            height: 600,
-            top: -600
-          }}
-        >
-          <video
-            ref={videoPlayer}
-            style={{
-              visibility: isPlaying ? 'visible' : 'hidden',
-              zIndex: 1800
-            }}
-            controls
-            width='100%'
-          >
-            <source src={focusedVideo} />
-          </video>
-          <div>
-            <Icon
-              // className={classes.mobileIcon}
-              style={{
-                display: 'block',
-                margin: 'auto',
-                color: '#fff',
-                height: 450,
-                width: 250
-              }}
-            >
-              <i class='material-icons'>play_circle_filled</i>
-            </Icon>
-          </div>
-        </span>
-      </div>
-
-      <br />
-      <div style={{ paddingTop: 20 }}>
-        <Typography
-          paragraph
-          style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 15 }}
-          variant='headline'
-        >
-          {video.title}
-        </Typography>
-
-        <Typography style={{ fontSize: '2.3em' }} variant='body2'>
-          {video.description}
-        </Typography>
-      </div>
-    </div>
+      <source src={focusedVideo} />
+    </video>
   );
 };
 
