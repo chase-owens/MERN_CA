@@ -7,7 +7,7 @@ import HowTo from '../HowTo/HowTo';
 // import Videos from '../Videos/Videos';
 const Videos = React.lazy(() => import('../Videos/Videos'));
 // import MovieModal from '../MovieModal/MovieModal';
-const MovieModal = React.lazy(() => import('../MovieModal/MovieModal'));
+const MovieModal2 = React.lazy(() => import('../MovieModal/MovieModal'));
 import Footer from '../Footer/Footer';
 
 import { isMobile } from 'react-device-detect';
@@ -50,7 +50,7 @@ const Main = () => {
             <Videos />
           </React.Suspense>
           <React.Suspense fallback={<div />}>
-            <MovieModal />
+            <MovieModal2 />
           </React.Suspense>
         </main>
         <Footer />

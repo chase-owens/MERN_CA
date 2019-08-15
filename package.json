@@ -69,6 +69,7 @@
     "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-pace-progress": "^2.0.0",
     "react-player": "^1.11.1",
     "react-redux": "^7.0.2",
     "react-router-dom": "^5.0.0",
