@@ -213,7 +213,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
   };
 
   return isMobile && isIOS ? (
-    <div className={classes.mobileCard} onClick={videoPlayer.play}>
+    <div className={classes.mobileCard} onClick={playVideo}>
       <div style={{ width: '100%', height: 600 }}>
         <Card
           style={{
@@ -248,7 +248,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
               zIndex: 1800
             }}
             controls={isPlaying ? true : false}
-            width='100%'
+            height={0}
           >
             <source src={focusedVideo} />
           </video>
