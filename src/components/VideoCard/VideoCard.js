@@ -213,10 +213,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
   };
 
   return isMobile && isIOS ? (
-    <div
-      className={classes.mobileCard}
-      onClick={() => toggleMovie(video.videoPath)}
-    >
+    <div className={classes.mobileCard} onClick={videoPlayer.play}>
       <div style={{ width: '100%', height: 600 }}>
         <Card
           style={{
@@ -243,6 +240,18 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
             top: -600
           }}
         >
+          <video
+            poster={returnImage(video.imagePath)}
+            ref={videoPlayer}
+            style={{
+              // visibility: isPlaying ? 'visible' : 'hidden',
+              zIndex: 1800
+            }}
+            controls={isPlaying ? true : false}
+            width='100%'
+          >
+            <source src={focusedVideo} />
+          </video>
           <div>
             <Icon
               // className={classes.mobileIcon}
@@ -348,13 +357,13 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
           }}
         >
           <video
-            // poster={returnImage(video.imagePath)}
+            poster={returnImage(video.imagePath)}
             ref={videoPlayer}
             style={{
-              visibility: isPlaying ? 'visible' : 'hidden',
+              // visibility: isPlaying ? 'visible' : 'hidden',
               zIndex: 1800
             }}
-            controls
+            controls={isPlaying ? true : false}
             width='100%'
           >
             <source src={focusedVideo} />
