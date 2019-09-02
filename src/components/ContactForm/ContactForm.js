@@ -22,12 +22,28 @@ const styles = theme => ({
   formContainer: {
     height: '100%',
     margin: 'auto',
-    paddingBottom: 30
+    paddingBottom: 30,
+    width: !isMobile && 400
   },
   formInputs: {
+    color: '#000',
+    width: 400,
+    margin: 'auto'
+  },
+  formInputsMobile: {
     color: '#000'
   },
   formInput: {
+    marginBottom: 13,
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    color: 'transparent',
+    '& label': {
+      fontSize: isMobile ? '2.7em' : null
+    }
+  },
+  formInputMobile: {
     marginBottom: 13,
     display: 'flex',
     flexDirection: 'column',
@@ -282,8 +298,8 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
       {isMobile && (
         <Grid container justify='center'>
           <Grid item>
-            <div className={classes.formInputs}>
-              <div className={classes.formInput}>
+            <div className={classes.formInputsMobile}>
+              <div className={classes.formInputMobile}>
                 {name !== '' && (
                   <label
                     style={{ color: '#fff', fontSize: '1.9em' }}

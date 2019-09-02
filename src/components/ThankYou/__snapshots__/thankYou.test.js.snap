@@ -2,7 +2,7 @@
 
 exports[`ThankYou renders without crashing 1`] = `
 <div>
-  <ContactNav />
+  <Connect(ContactNav) />
   <WithStyles(Typography)
     align="center"
     paragraph={true}

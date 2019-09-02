@@ -248,8 +248,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
               zIndex: 1800
             }}
             controls={isPlaying ? true : false}
-            height={0}
-            fullscreen={isPlaying ? true : false}
+            height={isPlaying ? true : '100%'}
           >
             <source src={focusedVideo} />
           </video>

@@ -9,7 +9,7 @@ exports[`Contact renders without crashing 1`] = `
     }
   }
 >
-  <ContactNav />
+  <Connect(ContactNav) />
   <WithStyles(Typography)
     align="center"
     paragraph={true}
