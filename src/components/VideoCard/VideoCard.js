@@ -207,11 +207,13 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
   const videoPlayer = useRef();
   const [isPlaying, setPlaying] = useState(false);
 
-  const playVideo = () => {
-    videoPlayer.current
-      .play()
-      .then(res => setPlaying(true))
-      .catch(err => console.log(err));
+  const playVideo = async () => {
+    try {
+      await videoPlayer.current.play();
+      setPlaying(true);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return isMobile ? (
