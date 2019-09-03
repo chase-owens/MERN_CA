@@ -23,7 +23,7 @@ const styles = theme => ({
     height: '100%',
     margin: 'auto',
     paddingBottom: 30,
-    width: !isMobile && 400
+    width: !isMobile ? 400 : '95%'
   },
   formInputs: {
     color: '#000',
@@ -31,7 +31,8 @@ const styles = theme => ({
     margin: 'auto'
   },
   formInputsMobile: {
-    color: '#000'
+    color: '#000',
+    width: '100%'
   },
   formInput: {
     marginBottom: 13,

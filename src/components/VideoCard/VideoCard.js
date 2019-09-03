@@ -240,7 +240,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
             top: -600
           }}
         >
-          <video
+          {/* <video
             poster={returnImage(video.imagePath)}
             ref={videoPlayer}
             style={{
@@ -251,7 +251,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
             height={isPlaying ? true : '100%'}
           >
             <source src={focusedVideo} />
-          </video>
+          </video> */}
           <div>
             <Icon
               // className={classes.mobileIcon}
