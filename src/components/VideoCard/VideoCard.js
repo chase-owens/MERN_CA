@@ -234,10 +234,12 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
           <video
             poster={returnImage(video.imagePath)}
             ref={videoPlayer}
-            style={{
-              // visibility: isPlaying ? 'visible' : 'hidden',
-              zIndex: 1800
-            }}
+            playsInline={false}
+            style={
+              {
+                // visibility: isPlaying ? 'visible' : 'hidden',
+              }
+            }
             controls={isPlaying ? true : false}
             width='100%'
           >
