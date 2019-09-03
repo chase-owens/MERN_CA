@@ -206,22 +206,16 @@ const styles = theme => ({
 const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
   const videoPlayer = useRef();
   const [isPlaying, setPlaying] = useState(false);
-  const vidPlayer = document.getElementById('video-player');
 
   async function playVideo() {
     console.log('hihihi');
     try {
-      let didPlay = await videoPlayer.current.play();
-      console.log(didPlay);
+      console.log('trying');
+      await videoPlayer.current.requestFullscreen();
+      await videoPlayer.current.play();
       setPlaying(true);
     } catch (err) {
       console.log('E1: ', err);
-    }
-    try {
-      await vidPlayer.play();
-      setPlaying(true);
-    } catch (err) {
-      console.log('E2: ', err);
     }
   }
 
