@@ -206,15 +206,22 @@ const styles = theme => ({
 const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
   const videoPlayer = useRef();
   const [isPlaying, setPlaying] = useState(false);
+  const vidPlayer = document.getElementById('video-player');
 
-  const playVideo = async () => {
+  async function playVideo() {
     try {
       await videoPlayer.current.play();
       setPlaying(true);
     } catch (err) {
-      console.log(err);
+      console.log('E1: ', err);
     }
-  };
+    try {
+      await vidPlayer.play();
+      setPlaying(true);
+    } catch (err) {
+      console.log('E2: ', err);
+    }
+  }
 
   return isMobile ? (
     <div
@@ -236,6 +243,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
         >
           {' '}
           <video
+            id='video-player'
             poster={returnImage(video.imagePath)}
             ref={videoPlayer}
             playsInline={false}
