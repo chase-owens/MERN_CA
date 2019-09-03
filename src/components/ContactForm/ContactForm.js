@@ -22,12 +22,13 @@ const styles = theme => ({
   formContainer: {
     height: '100%',
     margin: 'auto',
-    paddingBottom: 30,
-    width: !isMobile ? 400 : '95%'
+    paddingBottom: 30
+    // width: !isMobile ? 400 : '95%'
   },
   formInputs: {
     color: '#000',
     width: 400,
+    display: 'block',
     margin: 'auto'
   },
   formInputsMobile: {
@@ -412,50 +413,48 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
       {!isMobile && (
         <Grid
           container
-          justify='space-around'
+          justify='center'
           alignItems='center'
           spacing={40}
           style={{ maxWidth: '100vw' }}
         >
           <Grid item sm={12} md={6}>
-            <div>
-              <Grid container justify='center'>
-                <Grid item>
-                  <div className={classes.formInputs}>
-                    <div className={classes.formInput}>
-                      <TextField
-                        style={{ width: '100%' }}
-                        label='Name'
-                        placeholder='Name'
-                        onChange={e => setName(e.target.value)}
-                        value={name}
-                      />
-                    </div>
-                    <div className={classes.formInput}>
-                      <TextField
-                        style={{ width: '100%' }}
-                        label='Email'
-                        placeholder='Email'
-                        onChange={e => setEmail(e.target.value)}
-                        value={email}
-                        type='email'
-                      />
-                    </div>
-                    <div className={classes.formInput}>
-                      <TextField
-                        style={{ width: '100%' }}
-                        label='Message'
-                        multiline
-                        rowsMax='4'
-                        placeholder='Message'
-                        onChange={e => setMessage(e.target.value)}
-                        value={message}
-                      />
-                    </div>
+            <Grid container justify='center'>
+              <Grid item>
+                <div className={classes.formInputs}>
+                  <div className={classes.formInput}>
+                    <TextField
+                      style={{ width: '100%' }}
+                      label='Name'
+                      placeholder='Name'
+                      onChange={e => setName(e.target.value)}
+                      value={name}
+                    />
                   </div>
-                </Grid>
+                  <div className={classes.formInput}>
+                    <TextField
+                      style={{ width: '100%' }}
+                      label='Email'
+                      placeholder='Email'
+                      onChange={e => setEmail(e.target.value)}
+                      value={email}
+                      type='email'
+                    />
+                  </div>
+                  <div className={classes.formInput}>
+                    <TextField
+                      style={{ width: '100%' }}
+                      label='Message'
+                      multiline
+                      rowsMax='4'
+                      placeholder='Message'
+                      onChange={e => setMessage(e.target.value)}
+                      value={message}
+                    />
+                  </div>
+                </div>
               </Grid>
-            </div>
+            </Grid>
           </Grid>
           {isAuthenticating && (
             <Grid item sm={12} md={6}>

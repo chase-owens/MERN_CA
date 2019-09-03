@@ -14,9 +14,8 @@ const Contact = () => {
       <ContactNav />
       <Typography
         style={{
-          fontSize: isMobile ? '3.8em' : null,
-          padding: '20px 0',
-          fontSize: '2em'
+          fontSize: isMobile ? '3.8em' : '2em',
+          padding: '20px 28px 20px 0'
         }}
         align='center'
         paragraph

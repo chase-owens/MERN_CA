@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { connect } from 'react-redux';
 import { theme } from '../../styles/theme';
 
 import withWidth from '@material-ui/core/withWidth';
@@ -10,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 
 import videos from './videos.config';
 import VideoCard from '../VideoCard/VideoCard';
-import { isMobile } from 'react-device-detect';
+import { isMobile, isIOS } from 'react-device-detect';
 
 const styles = theme => ({
   videoCard: {
@@ -26,8 +27,12 @@ const styles = theme => ({
   }
 });
 
-const Videos = ({ classes }) => {
-  return isMobile ? (
+const mapStateToProps = state => ({
+  focusedVideo: state.videoState.video
+});
+
+const Videos = ({ classes, focusedVideo }) => {
+  return isMobile && isIOS ? (
     <div id='videos' style={{ marginTop: 50 }}>
       <Typography
         paragraph
@@ -43,6 +48,16 @@ const Videos = ({ classes }) => {
       >
         Videos
       </Typography>
+      <video
+        ref={videoPlayer}
+        style={{
+          // visibility: isPlaying ? 'visible' : 'hidden',
+          zIndex: 1800
+        }}
+        controls={isPlaying ? true : false}
+      >
+        <source src={focusedVideo} />
+      </video>
       <Grid
         container
         spacing={0}
@@ -88,4 +103,11 @@ const Videos = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(withWidth({ withTheme: true })(Videos));
+export default withStyles(styles)(
+  withWidth({ withTheme: true })(
+    connect(
+      mapStateToProps,
+      null
+    )(Videos)
+  )
+);

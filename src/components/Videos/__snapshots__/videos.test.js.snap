@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Videos renders without crashing 1`] = `
-<WithTheme(WithWidth(Videos))
+<WithTheme(WithWidth(Connect(Videos)))
   classes={
     Object {
-      "videoCard": "WithTheme-WithWidth-Videos---videoCard-1",
+      "videoCard": "WithTheme-WithWidth-Connect-Videos----videoCard-1",
     }
   }
 />
