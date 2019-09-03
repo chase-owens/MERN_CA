@@ -48,7 +48,7 @@ const Videos = ({ classes, focusedVideo }) => {
       >
         Videos
       </Typography>
-      <video
+      {/* <video
         ref={videoPlayer}
         style={{
           // visibility: isPlaying ? 'visible' : 'hidden',
@@ -57,7 +57,7 @@ const Videos = ({ classes, focusedVideo }) => {
         controls={isPlaying ? true : false}
       >
         <source src={focusedVideo} />
-      </video>
+      </video> */}
       <Grid
         container
         spacing={0}
