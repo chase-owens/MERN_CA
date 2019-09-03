@@ -209,8 +209,10 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
   const vidPlayer = document.getElementById('video-player');
 
   async function playVideo() {
+    console.log('hihihi');
     try {
-      await videoPlayer.current.play();
+      let didPlay = await videoPlayer.current.play();
+      console.log(didPlay);
       setPlaying(true);
     } catch (err) {
       console.log('E1: ', err);
@@ -241,12 +243,9 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
             height: 600
           }}
         >
-          {' '}
           <video
             id='video-player'
-            poster={returnImage(video.imagePath)}
             ref={videoPlayer}
-            playsInline={false}
             style={
               {
                 // visibility: isPlaying ? 'visible' : 'hidden',
