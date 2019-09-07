@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import Pace from 'react-pace-progress';
 
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
@@ -23,31 +24,51 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleMovie }, dispatch);
 
 const MovieModal = ({ focusedVideo, toggleMovie }) => {
-  const iframe = (
-    <video
-      width='100%'
-      controls
-      autoPlay
-      muted
-      onClick={() => toggleMovie(null)}
-    >
-      <source src={focusedVideo} />
-    </video>
-  );
   return isMobile && focusedVideo !== null ? (
-    <ReactPlayer
+    <div
       style={{
-        marginTop: 0,
-        padding: 0,
-        zIndex: 1800
+        width: '100vw',
+        height: '100vh',
+        position: 'fixed',
+        top: 0
       }}
-      url={focusedVideo}
-      playing
-      loop
-      width='100%'
-      height='100%'
-      controls
-    />
+    >
+      <div
+        style={{
+          width: '100vw',
+          height: '100vh',
+          opacity: 0.7,
+          background: theme.palette.ternary.main,
+          position: 'relative',
+          top: 0
+        }}
+      />
+      <div
+        style={{
+          width: '90vw',
+          height: '80vh',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+
+          marginTop: '5vh',
+          marginLeft: '5vw'
+        }}
+      >
+        <ReactPlayer
+          style={{
+            marginTop: 0,
+            padding: 0,
+            zIndex: 1800
+          }}
+          url={focusedVideo}
+          playing
+          loop
+          width='100%'
+          height='100%'
+        />
+      </div>
+    </div>
   ) : (
     !isMobile && focusedVideo !== null && (
       <div
@@ -124,7 +145,6 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
             loop
             width='100%'
             height='100%'
-            controls
           />
         </div>
       </div>
