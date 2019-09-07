@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 
 import Icon from '@material-ui/core/Icon';
@@ -35,7 +35,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
     setLoop(true);
     setUrl(focusedVideo);
     setPoster(introVideoPoster);
-  }, []);
+  }, [focusedVideo]);
 
   const iframe = (
     <video
