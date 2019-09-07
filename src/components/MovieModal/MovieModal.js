@@ -43,7 +43,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           top: 0
         }}
       />
-      <div
+      {/* <div
         style={{
           width: '90vw',
           height: '80vh',
@@ -54,8 +54,8 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           marginTop: '5vh',
           marginLeft: '5vw'
         }}
-      >
-        {/* <ReactPlayer
+      > */}
+      {/* <ReactPlayer
           style={{
             marginTop: 0,
             padding: 0,
@@ -67,10 +67,10 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           width='100%'
           height='100%'
         /> */}
-        <video controls width='100%'>
-          <source src={focusedVideo} />
-        </video>
-      </div>
+      <video controls width='100%'>
+        <source src={focusedVideo} />
+      </video>
+      {/* </div> */}
     </div>
   ) : (
     !isMobile && focusedVideo !== null && (
