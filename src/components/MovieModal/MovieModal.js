@@ -24,7 +24,13 @@ const mapDispatchToProps = dispatch =>
 
 const MovieModal = ({ focusedVideo, toggleMovie }) => {
   const iframe = (
-    <video width='100%' autoPlay muted onClick={() => toggleMovie(null)}>
+    <video
+      width='100%'
+      controls
+      autoPlay
+      muted
+      onClick={() => toggleMovie(null)}
+    >
       <source src={focusedVideo} />
     </video>
   );
@@ -105,6 +111,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
               loop
               width='100%'
               height='100%'
+              controls
             />
           </div>
         </div>
