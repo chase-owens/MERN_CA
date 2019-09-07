@@ -29,11 +29,10 @@ class App extends Component {
   }
 
   componentDidCatch(err, info) {
-    console.log(err, info);
+    alert(err, info);
   }
 
   render() {
-    console.log('Error', this.state.hasError);
     return this.state.hasError ? (
       <Error />
     ) : (
