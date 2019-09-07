@@ -55,7 +55,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           marginLeft: '5vw'
         }}
       >
-        <ReactPlayer
+        {/* <ReactPlayer
           style={{
             marginTop: 0,
             padding: 0,
@@ -66,7 +66,10 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           loop
           width='100%'
           height='100%'
-        />
+        /> */}
+        <video controls width='100%'>
+          <source src={url} />
+        </video>
       </div>
     </div>
   ) : (
