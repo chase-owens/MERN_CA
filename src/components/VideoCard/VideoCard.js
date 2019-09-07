@@ -207,11 +207,12 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
   const videoPlayer = useRef();
   const [isPlaying, setPlaying] = useState(false);
 
+  console.log(focusedVideo);
+
   async function playVideo() {
-    console.log('hihihi');
     try {
       console.log('trying');
-      await videoPlayer.current.requestFullscreen();
+      console.log(videoPlayer.current);
       await videoPlayer.current.play();
       setPlaying(true);
     } catch (err) {
@@ -240,6 +241,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
           <video
             id='video-player'
             ref={videoPlayer}
+            autoplay
             style={
               {
                 // visibility: isPlaying ? 'visible' : 'hidden',
