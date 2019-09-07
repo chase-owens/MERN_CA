@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactPlayer from 'react-player';
 
 import Icon from '@material-ui/core/Icon';
@@ -30,43 +30,13 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
         width: '100vw',
         height: '100vh',
         position: 'fixed',
-        top: 0
+        top: 0,
+        left: 0
       }}
     >
-      <div
-        style={{
-          width: '100vw',
-          height: '100vh',
-          opacity: 0.7,
-          background: theme.palette.ternary.main,
-          position: 'relative',
-          top: 0
-        }}
-      />
-      <div
-        style={{
-          width: '90vw',
-          height: '80vh',
-          position: 'fixed',
-          top: 0,
-          left: 0,
-
-          marginTop: '5vh',
-          marginLeft: '5vw'
-        }}
-      >
-        <video
-          id='video-player'
-          autoplay
-          style={
-            {
-              // visibility: isPlaying ? 'visible' : 'hidden',
-            }
-          }
-        >
-          <source src={focusedVideo} />
-        </video>
-      </div>
+      <video id='video-player' autoplay width='100%' muted>
+        <source src={focusedVideo} />
+      </video>
     </div>
   ) : (
     !isMobile && focusedVideo !== null && (
