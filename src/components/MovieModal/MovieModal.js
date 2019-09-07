@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ReactPlayer from 'react-player';
 
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import Pace from 'react-pace-progress';
 
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
@@ -24,27 +23,8 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleMovie }, dispatch);
 
 const MovieModal = ({ focusedVideo, toggleMovie }) => {
-  // const [muted, setMuted] = useState(true);
-  // const [autoplay, setAutoplay] = useState(true);
-  // const [loop, setLoop] = useState(false);
-  // const [url, setUrl] = useState(focusedVideo);
-
-  // isMobile &&
-  //   useEffect(() => {
-  //     setMuted(true);
-  //     setAutoplay(true);
-  //     setLoop(true);
-  //     setUrl(focusedVideo);
-  //   }, [focusedVideo]);
-
   const iframe = (
-    <video
-      width='100%'
-      autoPlay={true}
-      muted={true}
-      loop={false}
-      onClick={() => toggleMovie(null)}
-    >
+    <video width='100%' autoPlay muted onClick={() => toggleMovie(null)}>
       <source src={focusedVideo} />
     </video>
   );
