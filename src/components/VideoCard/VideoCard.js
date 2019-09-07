@@ -211,7 +211,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
 
   async function playVideo() {
     try {
-      console.log('trying');
+      alert('trying');
       console.log(videoPlayer.current);
       await videoPlayer.current.play();
       setPlaying(true);
