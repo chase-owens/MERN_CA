@@ -55,18 +55,17 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           marginLeft: '5vw'
         }}
       >
-        <ReactPlayer
-          style={{
-            marginTop: 0,
-            padding: 0,
-            zIndex: 1800
-          }}
-          url={focusedVideo}
-          playing
-          loop
-          width='100%'
-          height='100%'
-        />
+        <video
+          id='video-player'
+          autoplay
+          style={
+            {
+              // visibility: isPlaying ? 'visible' : 'hidden',
+            }
+          }
+        >
+          <source src={focusedVideo} />
+        </video>
       </div>
     </div>
   ) : (

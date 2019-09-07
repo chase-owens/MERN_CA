@@ -204,26 +204,10 @@ const styles = theme => ({
 });
 
 const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
-  const videoPlayer = useRef();
-  const [isPlaying, setPlaying] = useState(false);
-
-  console.log(focusedVideo);
-
-  async function playVideo() {
-    try {
-      alert(videoPlayer.current);
-      console.log(videoPlayer.current);
-      await videoPlayer.current.play();
-      setPlaying(true);
-    } catch (err) {
-      console.log('E1: ', err);
-    }
-  }
-
   return isMobile ? (
     <div
       className={classes.mobileCard}
-      onClick={() => playVideo(video.videoPath)}
+      onClick={() => toggleMovie(video.videoPath)}
     >
       <div style={{ width: '100%', height: 600 }}>
         <Card
@@ -237,22 +221,7 @@ const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
             width: '100%',
             height: 600
           }}
-        >
-          <video
-            id='video-player'
-            ref={videoPlayer}
-            autoplay
-            style={
-              {
-                // visibility: isPlaying ? 'visible' : 'hidden',
-              }
-            }
-            controls={isPlaying ? true : false}
-            width='100%'
-          >
-            <source src={focusedVideo} />
-          </video>
-        </Card>
+        ></Card>
         <span
           // className={classes.mobileSkin}
           style={{
