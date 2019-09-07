@@ -24,101 +24,111 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleMovie }, dispatch);
 
 const MovieModal = ({ focusedVideo, toggleMovie }) => {
-  return isMobile && focusedVideo !== null ? (
-    <div
-      style={{
-        width: '100vw',
-        height: '100vh',
-        position: 'fixed',
-        top: 0,
-        left: 0
-      }}
+  const [muted, setMuted] = useState(true);
+  const [autoplay, setAutoplay] = useState(true);
+  const [loop, setLoop] = useState(false);
+  const [url, setUrl] = useState(focusedVideo);
+
+  useEffect(() => {
+    setMuted(true);
+    setAutoplay(true);
+    setLoop(true);
+    setUrl(focusedVideo);
+    setPoster(introVideoPoster);
+  }, []);
+
+  const iframe = (
+    <video
+      width='100%'
+      autoPlay={autoplay}
+      muted={muted}
+      loop={loop}
+      onClick={() => toggleMovie(null)}
     >
-      <video id='video-player' autoplay width='100%' muted>
-        <source src={focusedVideo} />
-      </video>
-    </div>
-  ) : (
-    !isMobile && focusedVideo !== null && (
-      <div
-        style={{
-          width: '100vw',
-          height: '100vh',
-          // opacity: 0.7,
-          // background: theme.palette.ternary.main,
-          position: 'fixed',
-          top: 0
-        }}
-      >
+      <source src={url} />
+    </video>
+  );
+  return isMobile && focusedVideo !== null
+    ? { iframe }
+    : !isMobile && focusedVideo !== null && (
         <div
           style={{
             width: '100vw',
             height: '100vh',
-            opacity: 0.7,
-            background: theme.palette.ternary.main,
-            position: 'relative',
+            // opacity: 0.7,
+            // background: theme.palette.ternary.main,
+            position: 'fixed',
             top: 0
           }}
         >
-          {useMediaQuery(theme.breakpoints.up(740)) && (
-            <Grid container justify='flex-end'>
-              <Grid item>
-                <Button
-                  style={{
-                    position: 'fixed',
-                    color: '#fff',
-                    zIndex: 999,
-                    top: 3,
-                    right: 3
-                  }}
-                  onClick={() => toggleMovie(null)}
-                >
-                  <Icon
-                    style={{
-                      paddingBottom: 15,
-                      paddingTop: -15,
-                      paddingRight: 20,
-                      marginRight: -12,
-                      marginLeft: -5
-                    }}
-                  >
-                    <i style={{ fontSize: 40 }} class='material-icons'>
-                      close
-                    </i>
-                  </Icon>
-                </Button>
-              </Grid>
-            </Grid>
-          )}
-        </div>
-        <div
-          style={{
-            width: '90vw',
-            height: '90vh',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-
-            marginTop: '5vh',
-            marginLeft: '5vh'
-          }}
-        >
-          <ReactPlayer
+          <div
             style={{
-              marginTop: 0,
-              padding: 0,
-              zIndex: 1800
+              width: '100vw',
+              height: '100vh',
+              opacity: 0.7,
+              background: theme.palette.ternary.main,
+              position: 'relative',
+              top: 0
             }}
-            url={focusedVideo}
-            playing
-            loop
-            width='100%'
-            height='100%'
-          />
+          >
+            {useMediaQuery(theme.breakpoints.up(740)) && (
+              <Grid container justify='flex-end'>
+                <Grid item>
+                  <Button
+                    style={{
+                      position: 'fixed',
+                      color: '#fff',
+                      zIndex: 999,
+                      top: 3,
+                      right: 3
+                    }}
+                    onClick={() => toggleMovie(null)}
+                  >
+                    <Icon
+                      style={{
+                        paddingBottom: 15,
+                        paddingTop: -15,
+                        paddingRight: 20,
+                        marginRight: -12,
+                        marginLeft: -5
+                      }}
+                    >
+                      <i style={{ fontSize: 40 }} class='material-icons'>
+                        close
+                      </i>
+                    </Icon>
+                  </Button>
+                </Grid>
+              </Grid>
+            )}
+          </div>
+          <div
+            style={{
+              width: '90vw',
+              height: '90vh',
+              position: 'fixed',
+              top: 0,
+              left: 0,
+
+              marginTop: '5vh',
+              marginLeft: '5vh'
+            }}
+          >
+            <ReactPlayer
+              style={{
+                marginTop: 0,
+                padding: 0,
+                zIndex: 1800
+              }}
+              url={focusedVideo}
+              playing
+              loop
+              width='100%'
+              height='100%'
+            />
+          </div>
         </div>
-      </div>
-    )
-  );
+      );
 };
 
 export default withWidth({ withTheme: true })(
