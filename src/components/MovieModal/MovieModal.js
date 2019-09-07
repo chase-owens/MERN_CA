@@ -24,28 +24,28 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleMovie }, dispatch);
 
 const MovieModal = ({ focusedVideo, toggleMovie }) => {
-  const [muted, setMuted] = useState(true);
-  const [autoplay, setAutoplay] = useState(true);
-  const [loop, setLoop] = useState(false);
-  const [url, setUrl] = useState(focusedVideo);
+  // const [muted, setMuted] = useState(true);
+  // const [autoplay, setAutoplay] = useState(true);
+  // const [loop, setLoop] = useState(false);
+  // const [url, setUrl] = useState(focusedVideo);
 
-  useEffect(() => {
-    setMuted(true);
-    setAutoplay(true);
-    setLoop(true);
-    setUrl(focusedVideo);
-    setPoster(introVideoPoster);
-  }, [focusedVideo]);
+  // isMobile &&
+  //   useEffect(() => {
+  //     setMuted(true);
+  //     setAutoplay(true);
+  //     setLoop(true);
+  //     setUrl(focusedVideo);
+  //   }, [focusedVideo]);
 
   const iframe = (
     <video
       width='100%'
-      autoPlay={autoplay}
-      muted={muted}
-      loop={loop}
+      autoPlay={true}
+      muted={true}
+      loop={false}
       onClick={() => toggleMovie(null)}
     >
-      <source src={url} />
+      <source src={focusedVideo} />
     </video>
   );
   return isMobile && focusedVideo !== null
