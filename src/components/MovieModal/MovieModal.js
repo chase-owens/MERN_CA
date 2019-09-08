@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactPlayer from 'react-player';
 
 import Icon from '@material-ui/core/Icon';
@@ -67,7 +67,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
           width='100%'
           height='100%'
         /> */}
-      <video controls width='100%'>
+      <video autoPlay controls width='100%'>
         <source src={focusedVideo} />
       </video>
       {/* </div> */}

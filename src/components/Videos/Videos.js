@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { theme } from '../../styles/theme';
 
@@ -32,6 +32,14 @@ const mapStateToProps = state => ({
 });
 
 const Videos = ({ classes, focusedVideo }) => {
+  const videoPlayer = useRef();
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  function playVideo() {
+    videoPlayer.current.play();
+    setIsPlaying(true);
+  }
+
   return isMobile && isIOS ? (
     <div id='videos' style={{ marginTop: 50 }}>
       <Typography
@@ -48,16 +56,16 @@ const Videos = ({ classes, focusedVideo }) => {
       >
         Videos
       </Typography>
-      {/* <video
+      <video
         ref={videoPlayer}
         style={{
-          // visibility: isPlaying ? 'visible' : 'hidden',
+          visibility: isPlaying ? 'visible' : 'hidden',
           zIndex: 1800
         }}
         controls={isPlaying ? true : false}
       >
         <source src={focusedVideo} />
-      </video> */}
+      </video>
       <Grid
         container
         spacing={0}
@@ -76,7 +84,7 @@ const Videos = ({ classes, focusedVideo }) => {
               marginBottom: 50
             }}
           >
-            <VideoCard video={video} />
+            <VideoCard video={video} playVideo={playVideo} />
           </Grid>
         ))}
       </Grid>

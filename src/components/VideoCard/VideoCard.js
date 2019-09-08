@@ -203,12 +203,15 @@ const styles = theme => ({
   }
 });
 
-const VideoCard = ({ video, focusedVideo, classes, toggleMovie }) => {
+const VideoCard = ({
+  video,
+  focusedVideo,
+  classes,
+  toggleMovie,
+  playVideo
+}) => {
   return isMobile ? (
-    <div
-      className={classes.mobileCard}
-      onClick={() => toggleMovie(video.videoPath)}
-    >
+    <div className={classes.mobileCard} onClick={() => playVideo()}>
       <div style={{ width: '100%', height: 600 }}>
         <Card
           style={{
