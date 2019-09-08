@@ -64,7 +64,7 @@ const Videos = ({ classes, focusedVideo }) => {
         }}
         controls={isPlaying ? true : false}
       >
-        <source playsInline={false} src={focusedVideo} />
+        <source playsInline={false} autoplay width='100%' src={focusedVideo} />
       </video>
       <Grid
         container
