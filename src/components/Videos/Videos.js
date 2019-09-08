@@ -59,12 +59,15 @@ const Videos = ({ classes, focusedVideo }) => {
       <video
         ref={videoPlayer}
         style={{
-          visibility: isPlaying ? 'visible' : 'hidden',
+          visibility: 'hidden',
           zIndex: 1800
         }}
-        controls={isPlaying ? true : false}
+        controls={true}
+        playsInline={false}
+        autoplay
+        width='100%'
       >
-        <source playsInline={false} autoplay width='100%' src={focusedVideo} />
+        <source src={focusedVideo} />
       </video>
       <Grid
         container
