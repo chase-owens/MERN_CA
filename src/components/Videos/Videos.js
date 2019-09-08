@@ -37,7 +37,6 @@ const Videos = ({ classes, focusedVideo }) => {
 
   function playVideo() {
     videoPlayer.current.play();
-    setIsPlaying(true);
   }
 
   return isMobile && isIOS ? (
@@ -58,10 +57,6 @@ const Videos = ({ classes, focusedVideo }) => {
       </Typography>
       <video
         ref={videoPlayer}
-        style={{
-          visibility: 'hidden',
-          zIndex: 1800
-        }}
         controls={true}
         playsInline={false}
         autoplay
