@@ -64,7 +64,7 @@ const Videos = ({ classes, focusedVideo }) => {
         }}
         controls={isPlaying ? true : false}
       >
-        <source src={focusedVideo} />
+        <source playsInline={false} src={focusedVideo} />
       </video>
       <Grid
         container
