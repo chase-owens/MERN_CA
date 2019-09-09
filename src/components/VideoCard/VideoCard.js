@@ -211,7 +211,10 @@ const VideoCard = ({
   playVideo
 }) => {
   return isMobile ? (
-    <div className={classes.mobileCard} onClick={() => playVideo()}>
+    <div
+      className={classes.mobileCard}
+      onClick={() => playVideo(video.videoPath)}
+    >
       <div style={{ width: '100%', height: 600 }}>
         <Card
           style={{

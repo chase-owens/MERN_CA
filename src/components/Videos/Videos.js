@@ -33,9 +33,10 @@ const mapStateToProps = state => ({
 
 const Videos = ({ classes, focusedVideo }) => {
   const videoPlayer = useRef();
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [url, setURL] = useState('false');
 
-  function playVideo() {
+  function playVideo(path) {
+    setURL(path);
     videoPlayer.current.play();
   }
 
@@ -58,11 +59,11 @@ const Videos = ({ classes, focusedVideo }) => {
       <video
         ref={videoPlayer}
         controls={true}
-        playsInline={true}
+        playsInline={false}
         autoplay
         width='100%'
       >
-        <source src={focusedVideo} />
+        <source src={url} />
       </video>
       <Grid
         container
