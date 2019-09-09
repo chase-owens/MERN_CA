@@ -58,7 +58,7 @@ const Videos = ({ classes, focusedVideo }) => {
       <video
         ref={videoPlayer}
         controls={true}
-        playsInline={false}
+        playsInline={true}
         autoplay
         width='100%'
       >
