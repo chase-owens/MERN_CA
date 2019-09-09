@@ -56,7 +56,7 @@ const Videos = ({ classes, focusedVideo }) => {
       >
         Videos
       </Typography>
-      <video
+      {/* <video
         ref={videoPlayer}
         controls={true}
         playsInline={false}
@@ -64,7 +64,7 @@ const Videos = ({ classes, focusedVideo }) => {
         width='100%'
       >
         <source src={url} />
-      </video>
+      </video> */}
       <Grid
         container
         spacing={0}
@@ -83,7 +83,7 @@ const Videos = ({ classes, focusedVideo }) => {
               marginBottom: 50
             }}
           >
-            <VideoCard video={video} playVideo={playVideo} />
+            <VideoCard video={video} />
           </Grid>
         ))}
       </Grid>
