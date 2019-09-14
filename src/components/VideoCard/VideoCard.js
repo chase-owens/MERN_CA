@@ -227,8 +227,12 @@ const VideoCard = ({
             width: '100%',
             height: 600
           }}
-        ></Card>
-        <span
+        >
+          <div style={{ width: '100%' }}>
+            <iframe src={video.videoPath} allowfullscreen></iframe>
+          </div>
+        </Card>
+        {/* <span
           // className={classes.mobileSkin}
           style={{
             left: 0,
@@ -255,7 +259,7 @@ const VideoCard = ({
               <i class='material-icons'>play_circle_filled</i>
             </Icon>
           </div>
-        </span>
+        </span> */}
       </div>
 
       <br />
