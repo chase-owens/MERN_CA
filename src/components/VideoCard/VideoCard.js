@@ -213,7 +213,7 @@ const VideoCard = ({
   return isMobile ? (
     <div
       className={classes.mobileCard}
-      onClick={() => toggleMovie(video.videoPath)}
+      // onClick={() => toggleMovie(video.videoPath)}
     >
       <div style={{ width: '100%', height: 600 }}>
         <Card
@@ -228,7 +228,12 @@ const VideoCard = ({
             height: 600
           }}
         >
-          <div style={{ width: '100%' }}>
+          <div
+            style={{
+              width: '100%',
+              backgroundImage: `url(${returnImage(video.imagePath)})`
+            }}
+          >
             <iframe src={video.videoPath} allowfullscreen></iframe>
           </div>
         </Card>
