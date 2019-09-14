@@ -213,9 +213,9 @@ const VideoCard = ({
   return isMobile ? (
     <div
       className={classes.mobileCard}
-      onClick={() => toggleMovie(video.videoPath)}
+      // onClick={() => toggleMovie(video.videoPath)}
     >
-      <div
+      {/* <div
         style={{
           width: '100%',
           height: 600,
@@ -261,7 +261,15 @@ const VideoCard = ({
               <i class='material-icons'>play_circle_filled</i>
             </Icon>
           </div>
-        </span>
+        </span> */}
+        <iframe
+          width='100%'
+          height='600px'
+          src={video.videoPath}
+          frameborder='0'
+          allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
+          allowfullscreen
+        ></iframe>
       </div>
 
       <br />
