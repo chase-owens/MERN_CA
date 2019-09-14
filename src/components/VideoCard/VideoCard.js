@@ -280,7 +280,7 @@ const VideoCard = ({
     //   </div>
     // </div>
     <iframe
-      width='100%'
+      width='500px'
       height='600px'
       src={video.videoPath}
       frameborder='0'
