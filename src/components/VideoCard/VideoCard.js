@@ -215,8 +215,14 @@ const VideoCard = ({
       className={classes.mobileCard}
       // onClick={() => toggleMovie(video.videoPath)}
     >
-      <div style={{ width: '100%', height: 600 }}>
-        <Card
+      <div
+        style={{
+          width: '100%',
+          height: 600,
+          backgroundImage: `url(${returnImage(video.imagePath)})`
+        }}
+      >
+        {/* <Card
           style={{
             backgroundImage: `url(${returnImage(video.imagePath)})`,
             display: 'block',
@@ -227,16 +233,16 @@ const VideoCard = ({
             width: '100%',
             height: 600
           }}
-        >
-          <iframe
-            width='100%'
-            height='600'
-            src={video.videoPath}
-            frameborder='0'
-            allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
-            allowfullscreen
-          />
-        </Card>
+        > */}
+        <iframe
+          width='100%'
+          height='600'
+          src={video.videoPath}
+          frameborder='0'
+          allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
+          allowfullscreen
+        />
+        {/* </Card> */}
         {/* <span
           // className={classes.mobileSkin}
           style={{
