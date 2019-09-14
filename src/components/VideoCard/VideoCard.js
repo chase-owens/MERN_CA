@@ -228,14 +228,14 @@ const VideoCard = ({
             height: 600
           }}
         >
-          <div
-            style={{
-              width: '100%',
-              backgroundImage: `url(${returnImage(video.imagePath)})`
-            }}
-          >
-            <iframe src={video.videoPath} allowfullscreen></iframe>
-          </div>
+          <iframe
+            width='100%'
+            height='600'
+            src={video.videoPath}
+            frameborder='0'
+            allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
+            allowfullscreen
+          />
         </Card>
         {/* <span
           // className={classes.mobileSkin}
