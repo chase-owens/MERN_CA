@@ -279,14 +279,6 @@ const VideoCard = ({
       </div>
     </div>
   ) : (
-    // <iframe
-    //   width='500px'
-    //   height='600px'
-    //   src={video.videoPath}
-    //   frameborder='0'
-    //   allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
-    //   allowfullscreen
-    // ></iframe>
     <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
       <div className={classes.innerCard}>
         <Card
