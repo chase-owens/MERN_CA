@@ -211,83 +211,82 @@ const VideoCard = ({
   playVideo
 }) => {
   return isMobile ? (
-    // <div
-    //   className={classes.mobileCard}
-    //   onClick={() => toggleMovie(video.videoPath)}
-    // >
-    //   <div
-    //     style={{
-    //       width: '100%',
-    //       height: 600,
-    //       backgroundImage: `url(${returnImage(video.imagePath)})`
-    //     }}
-    //   >
-    //     <Card
-    //       style={{
-    //         backgroundImage: `url(${returnImage(video.imagePath)})`,
-    //         display: 'block',
+    <div
+      className={classes.mobileCard}
+      onClick={() => toggleMovie(video.videoPath)}
+    >
+      <div
+        style={{
+          width: '100%',
+          height: 600
+        }}
+      >
+        <Card
+          style={{
+            backgroundImage: `url(${returnImage(video.imagePath)})`,
+            display: 'block',
 
-    //         backgroundSize: 'cover',
-    //         backgroundRepeat: 'no-repeat',
-    //         backgroundPosition: '50% 50%',
-    //         width: '100%',
-    //         height: 600
-    //       }}
-    //     ></Card>
-    //     <span
-    //       // className={classes.mobileSkin}
-    //       style={{
-    //         left: 0,
-    //         borderRadius: 5,
-    //         opacity: 0.8,
-    //         position: 'relative',
-    //         display: 'block',
-    //         width: '100%',
-    //         height: 600,
-    //         top: -600
-    //       }}
-    //     >
-    //       <div>
-    //         <Icon
-    //           // className={classes.mobileIcon}
-    //           style={{
-    //             display: 'block',
-    //             margin: 'auto',
-    //             color: '#fff',
-    //             height: 450,
-    //             width: 250
-    //           }}
-    //         >
-    //           <i class='material-icons'>play_circle_filled</i>
-    //         </Icon>
-    //       </div>
-    //     </span>
-    //   </div>
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '50% 50%',
+            width: '100%',
+            height: 600
+          }}
+        ></Card>
+        <span
+          // className={classes.mobileSkin}
+          style={{
+            left: 0,
+            borderRadius: 5,
+            opacity: 0.8,
+            position: 'relative',
+            display: 'block',
+            width: '100%',
+            height: 600,
+            top: -600
+          }}
+        >
+          <div>
+            <Icon
+              // className={classes.mobileIcon}
+              style={{
+                display: 'block',
+                margin: 'auto',
+                color: '#fff',
+                height: 450,
+                width: 250
+              }}
+            >
+              <i class='material-icons'>play_circle_filled</i>
+            </Icon>
+          </div>
+        </span>
+      </div>
 
-    //   <br />
-    //   <div style={{ paddingTop: 20 }}>
-    //     <Typography
-    //       paragraph
-    //       style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 15 }}
-    //       variant='headline'
-    //     >
-    //       {video.title}
-    //     </Typography>
+      <br />
+      <div style={{ paddingTop: 20 }}>
+        <Typography
+          paragraph
+          style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 15 }}
+          variant='headline'
+        >
+          {video.title}
+        </Typography>
 
-    //     <Typography style={{ fontSize: '2.3em' }} variant='body2'>
-    //       {video.description}
-    //     </Typography>
-    //   </div>
-    // </div>
-    <iframe
-      width='500px'
-      height='600px'
-      src={video.videoPath}
-      frameborder='0'
-      allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
-      allowfullscreen
-    ></iframe>
+        <Typography style={{ fontSize: '2.3em' }} variant='body2'>
+          {video.description}
+        </Typography>
+      </div>
+    </div>
   ) : (
+    // <iframe
+    //   width='500px'
+    //   height='600px'
+    //   src={video.videoPath}
+    //   frameborder='0'
+    //   allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
+    //   allowfullscreen
+    // ></iframe>
     <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
       <div className={classes.innerCard}>
         <Card
