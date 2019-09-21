@@ -29,7 +29,8 @@ const styles = theme => ({
     color: '#000',
     width: isMobile ? '90vw' : 400,
     display: 'block',
-    margin: 'auto'
+    margin: 'auto',
+    marginLeft: isMobile && '5vw'
   },
   // formInputsMobile: {
   //   color: '#000',
