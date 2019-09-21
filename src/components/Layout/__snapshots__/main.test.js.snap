@@ -5,7 +5,6 @@ exports[`Main it did not change visually 1`] = `
   style={
     Object {
       "margin": 0,
-      "marginRight": 0,
       "padding": 0,
     }
   }
@@ -16,6 +15,10 @@ exports[`Main it did not change visually 1`] = `
   >
     <meta
       charset="UTF-8"
+    />
+    <meta
+      content="width=device-width, initial-scale=1"
+      name="viewport"
     />
     <title>
       Constructional Affection

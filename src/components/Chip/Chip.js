@@ -36,7 +36,6 @@ const Chip = ({ label, value, audience, changeAudience }) => {
       <Button
         value={value}
         onClick={() => changeAudience(value)}
-        // size={isMobile ? 'large' : null}
         style={{
           border: useMediaQuery(theme.breakpoints.down(740))
             ? `thin solid ${theme.palette.text.secondary}`
@@ -52,27 +51,12 @@ const Chip = ({ label, value, audience, changeAudience }) => {
           style={{
             padding: '0 5px',
             color: `${color}`,
-            fontSize: isMobile ? '2em' : null
+            fontSize: null
           }}
         >
           {label}
         </Typography>
       </Button>
-      {/* <Fab
-        value={value}
-        onClick={() => changeAudience(value)}
-        variant='extended'
-        // color={fab}
-        style={{
-          background: background,
-          color: color,
-          border: useMediaQuery(theme.breakpoints.down(740))
-            ? `thin solid ${theme.palette.text.secondary}`
-            : `thin solid ${theme.palette.text.primary}`
-        }}
-      >
-        {label}
-      </Fab> */}
     </div>
   );
 };

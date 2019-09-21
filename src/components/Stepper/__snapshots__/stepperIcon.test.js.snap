@@ -5,7 +5,6 @@ exports[`StepperIcon renders without crashing 1`] = `
   style={
     Object {
       "color": "#fff",
-      "fontSize": null,
       "height": "100%",
       "lineHeight": "30px",
       "textAlign": "center",
