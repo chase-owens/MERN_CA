@@ -29,13 +29,13 @@ const Translation = ({ classes }) => {
       </Typography>
       <Grid container spacing={8} direction='row' wrap='nowrap'>
         <Grid item>
-          <Chip value='gen' label='General' />
+          <Chip className={classes.chip} value='gen' label='General' />
         </Grid>
         <Grid item>
-          <Chip value='ba' label='Behavior Analysts' />
+          <Chip className={classes.chip} value='ba' label='Behavior Analysts' />
         </Grid>
         <Grid item>
-          <Chip value='robo' label='Canine' />
+          <Chip className={classes.chip} value='robo' label='Canine' />
         </Grid>
       </Grid>
     </div>
