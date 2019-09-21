@@ -9,12 +9,11 @@ import Grid from '@material-ui/core/Grid';
 
 import Typography from '@material-ui/core/Typography';
 import Chip from '../Chip/Chip';
-import Fab from '@material-ui/core/Fab';
 
 const styles = theme => ({
   chip: {
     '& span': {
-      fontSize: 60
+      fontSize: !isMobile && 60
     }
   }
 });
@@ -28,7 +27,7 @@ const Translation = ({ classes }) => {
       <Typography color={color} paragraph variant='subtitle2'>
         Translation
       </Typography>
-      <Grid container spacing={isMobile ? 16 : 8} direction='row' wrap='nowrap'>
+      <Grid container spacing={8} direction='row' wrap='nowrap'>
         <Grid item>
           <Chip value='gen' label='General' />
         </Grid>

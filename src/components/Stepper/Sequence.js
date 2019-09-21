@@ -21,22 +21,15 @@ const Sequence = ({ steps }) => {
           <div
             key={i}
             style={{
-              width:
-                i < steps.length - 1
-                  ? isMobile
-                    ? `calc(20% + 60px)`
-                    : `calc(20% + 45px)`
-                  : isMobile
-                  ? 70
-                  : 30
+              width: i < steps.length - 1 ? `calc(20% + 45px)` : 30
             }}
           >
             <Grid container alignItems='center' wrap='nowrap'>
               <Grid
                 item
                 style={{
-                  width: isMobile ? 70 : 30,
-                  height: isMobile ? 70 : 30,
+                  width: 30,
+                  height: 30,
                   borderRadius: '50%',
                   background: theme.palette.ternary.main
                 }}
@@ -71,11 +64,7 @@ const Sequence = ({ steps }) => {
               margin: i === 1 ? '0 15px' : 0
             }}
           >
-            <Typography
-              variant='body2'
-              align='center'
-              style={{ fontSize: isMobile ? '2em' : null }}
-            >
+            <Typography variant='body2' align='center'>
               {step.description}
             </Typography>
           </Grid>
