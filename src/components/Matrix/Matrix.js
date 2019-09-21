@@ -84,7 +84,7 @@ const Matrix = ({ matrix }) => {
                 <CustomTableCell>
                   <ul>
                     {alternative.consequences.map(q => (
-                      <li>
+                      <li key={q}>
                         <Typography>{q}</Typography>
                       </li>
                     ))}

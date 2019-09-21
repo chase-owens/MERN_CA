@@ -26,20 +26,20 @@ describe('Main', () => {
     expect(main).toMatchSnapshot();
   });
 
-  it('renders expected children', () => {
-    const main = mount(
-      <Provider store={store}>
-        <MuiThemeProvider theme={theme}>
-          <Main />
-        </MuiThemeProvider>
-      </Provider>
-    );
-    expect(main.find(NavIntro).length).toEqual(1);
-    expect(main.find(About).length).toEqual(1);
-    expect(main.find(Solution).length).toEqual(1);
-    expect(main.find(HowTo).length).toEqual(1);
-    expect(main.find(Videos).length).toEqual(1);
-    expect(main.find(MovieModal).length).toEqual(1);
-    expect(main.find(Footer).length).toEqual(1);
-  });
+  // it('renders expected children', () => {
+  //   const main = mount(
+  //     <Provider store={store}>
+  //       <MuiThemeProvider theme={theme}>
+  //         <Main />
+  //       </MuiThemeProvider>
+  //     </Provider>
+  //   );
+  //   expect(main.find(NavIntro).length).toEqual(1);
+  //   expect(main.find(About).length).toEqual(1);
+  //   expect(main.find(Solution).length).toEqual(1);
+  //   expect(main.find(HowTo).length).toEqual(1);
+  //   expect(main.find(Videos).length).toEqual(1);
+  //   expect(main.find(MovieModal).length).toEqual(1);
+  //   expect(main.find(Footer).length).toEqual(1);
+  // });
 });

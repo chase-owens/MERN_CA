@@ -205,26 +205,25 @@ const styles = theme => ({
 
 const videoPath = `https://youtu.be/A0WBNze3oFY`;
 
-const VideoCardMobile = ({}) => {
+const VideoCardMobile = ({video}) => {
   const videoPlayer = useRef();
   const [isPlaying, setPlaying] = useState(false);
 
-  const playVideo = () => {
-    setPlaying(true);
-    videoPlayer.play();
-  };
+  // const playVideo = () => {
+  //   videoPlayer.play();
+  // };
 
   return (
     <video
-      poster={Nanook}
-      ref={videoPlayer}
+      // onClick={playVideo()}
+      poster={`${returnImage(video.imagePath)}`}
       style={{
         // visibility: isPlaying ? 'visible' : 'hidden',
         zIndex: 1800
       }}
-      controls={isPlaying ? true : false}
+      controls={true}
     >
-      <source src={focusedVideo} />
+      <source src={video.videoPath)} />
     </video>
   );
 };

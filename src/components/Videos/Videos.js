@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import videos from './videos.config';
 import VideoCard from '../VideoCard/VideoCard';
 import { isMobile, isIOS } from 'react-device-detect';
+import VideoCardMobile from '../VideoCard/VideoCardMobile';
 
 const styles = theme => ({
   videoCard: {
@@ -40,7 +41,7 @@ const Videos = ({ classes, focusedVideo }) => {
     videoPlayer.current.play();
   }
 
-  return isMobile && isIOS ? (
+  return isMobile ? (
     <div id='videos' style={{ marginTop: 50 }}>
       <Typography
         paragraph
@@ -83,7 +84,7 @@ const Videos = ({ classes, focusedVideo }) => {
               marginBottom: 50
             }}
           >
-            <VideoCard video={video} />
+            <VideoCardMobile video={video} />
           </Grid>
         ))}
       </Grid>

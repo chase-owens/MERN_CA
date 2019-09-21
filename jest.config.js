@@ -72,7 +72,7 @@ module.exports = {
       '<rootDir>/mocks/fileMock.js',
     '\\.(css|less|scss)$': '<rootDir>/mocks/styleMock.js',
     '^styles(.*)$': '<rootDir>/styles/$1',
-    '^store(.*)$': '<rootDir>/store/'
+    '^store(.*)$': '<rootDir>/app/'
     // '^images(.*)$': '<rootDir>/images/$1'
   },
 
