@@ -58,7 +58,7 @@ const styles = theme => ({
   button: {
     background: theme.palette.ternary.main,
     color: '#fff',
-    margin: isMobile ? '15px 0 15px 25px' : '15px 0',
+    margin: '15px 0',
     '&:hover': {
       background: theme.palette.ternary.main
     }
@@ -397,10 +397,10 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
           style={{ maxWidth: '100vw' }}
           container
           justify='center'
-          spacing={40}
+          spacing={isMobile ? 16 : 40}
         >
           {isAuthenticating && (
-            <Grid item>
+            <Grid item style={{ display: 'block', textAlign: 'center' }}>
               <Button
                 className={classes.button}
                 onClick={cancelTuringTest}
