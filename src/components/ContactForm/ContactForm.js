@@ -27,10 +27,10 @@ const styles = theme => ({
   },
   formInputs: {
     color: '#000',
-    width: isMobile ? '90vw' : 400,
+    width: isMobile ? '90%' : 400,
     display: 'block',
     margin: 'auto',
-    marginLeft: isMobile && '10vw'
+    marginLeft: isMobile && '10%'
   },
   // formInputsMobile: {
   //   color: '#000',
@@ -58,7 +58,7 @@ const styles = theme => ({
   button: {
     background: theme.palette.ternary.main,
     color: '#fff',
-    margin: '15px 0',
+    margin: isMobile ? '15px 0 15px  15px' : '15px 0',
     '&:hover': {
       background: theme.palette.ternary.main
     }
