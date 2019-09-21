@@ -48,9 +48,9 @@ const Main = () => {
         <NavIntro />
         <main style={{ margin: 0, padding: 0 }}>
           <About />
-          {/* <Solution />
+          <Solution />
           <HowTo />
-          <React.Suspense fallback={<div />}>
+          {/* <React.Suspense fallback={<div />}>
             <Videos />
           </React.Suspense> */}
           {!isMobile && (
