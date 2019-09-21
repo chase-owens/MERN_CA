@@ -214,17 +214,36 @@ const VideoCardMobile = ({ video }) => {
   // };
 
   return (
-    <video
-      // onClick={playVideo()}
-      poster={`${returnImage(video.imagePath)}`}
-      style={{
-        // visibility: isPlaying ? 'visible' : 'hidden',
-        zIndex: 1800
-      }}
-      controls={true}
-    >
-      <source src={video.videoPath} />
-    </video>
+    <div style={{ width: '100%' }}>
+      <div style={{ width: '95%', margin: 'auto' }}>
+        <video
+          // onClick={playVideo()}
+          poster={`${returnImage(video.imagePath)}`}
+          style={{
+            // visibility: isPlaying ? 'visible' : 'hidden',
+            zIndex: 1800,
+            width: '100%'
+          }}
+          controls={true}
+        >
+          <source src={video.videoPath} />
+        </video>
+        <br />
+        <div style={{ paddingTop: 20 }}>
+          <Typography
+            paragraph
+            style={{ fontSize: '2.3em', fontWeight: 'bold', marginBottom: 15 }}
+            variant='headline'
+          >
+            {video.title}
+          </Typography>
+
+          <Typography style={{ fontSize: '2.3em' }} variant='body2'>
+            {video.description}
+          </Typography>
+        </div>
+      </div>
+    </div>
   );
 };
 

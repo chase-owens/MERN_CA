@@ -84,7 +84,7 @@ const Videos = ({ classes, focusedVideo }) => {
               marginBottom: 50
             }}
           >
-            <VideoCard video={video} />
+            <VideoCardMobile video={video} />
           </Grid>
         ))}
       </Grid>
