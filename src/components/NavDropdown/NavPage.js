@@ -34,7 +34,7 @@ const NavDropdown = ({ language, open, theme }) => {
           background: theme.palette.ternary.main,
           width: '80%',
           padding: '0 10%',
-          paddingTop: isMobile ? 150 : 80
+          paddingTop: 80
         }}
       >
         {open && <NavButtons direction='column' />}

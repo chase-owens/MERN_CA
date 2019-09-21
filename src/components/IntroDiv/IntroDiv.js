@@ -31,49 +31,6 @@ const styles = theme => ({
 });
 
 const IntroDiv = ({ theme, classes, open }) => {
-  // return isMobile ? (
-  //   <div style={{ width: '100vw' }}>
-  //     <Grid
-  //       container
-  //       direction='row'
-  //       style={{
-  //         position: 'relative',
-  //         marginBottom: 575,
-  //         width: '100%'
-  //       }}
-  //     >
-  //       <Grid
-  //         item
-  //         style={{
-  //           transition: 'all .18s ease-in-out',
-  //           width: '100%',
-  //           margin: 0
-  //         }}
-  //       >
-  //         <IntroVideo />
-  //       </Grid>
-  //       <Grid
-  //         item
-  //         style={{
-  //           width: '88%',
-  //           margin: 'auto',
-  //           padding: '120px 40px 100px 50px',
-  //           position: 'absolute',
-  //           background: `${theme.palette.primary.main}`,
-  //           bottom: -500
-  //         }}
-  //       >
-  //         <Typography variant={'h1'}>Constructional Affection</Typography>
-  //         <Typography
-  //           variant='body1'
-  //           style={{ paddingTop: 50, fontSize: '2.5em' }}
-  //         >
-  //           Establish desired interactions using affection as a reinforcer.
-  //         </Typography>
-  //       </Grid>
-  //     </Grid>
-  //   </div>
-  // ) : (
   return (
     <div>
       <Grid

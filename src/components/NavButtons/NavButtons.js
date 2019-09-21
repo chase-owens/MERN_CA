@@ -62,7 +62,7 @@ const NavButtons = ({ direction, toggleSidebar }) => {
                 style={{
                   color:
                     direction === 'column' ? theme.palette.text.light : null,
-                  fontSize: direction === 'column' ? '3.5em' : null,
+                  fontSize: direction === 'column' ? '2.5em' : null,
                   display: 'block',
                   margin: 'auto'
                 }}
