@@ -217,7 +217,7 @@ const VideoCardMobile = ({ video }) => {
     <div style={{ width: '100%' }}>
       <div style={{ width: '97%', margin: 'auto' }}>
         <video
-          onClick={playVideo()}
+          onClick={playVideo}
           poster={`${returnImage(video.imagePath)}`}
           style={{
             // visibility: isPlaying ? 'visible' : 'hidden',
@@ -226,7 +226,7 @@ const VideoCardMobile = ({ video }) => {
           }}
           controls={true}
         >
-          <source src={source} />
+          <source src={video.videoPath} />
         </video>
         <br />
         <div style={{ paddingTop: 20 }}>
