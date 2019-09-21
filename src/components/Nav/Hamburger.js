@@ -25,101 +25,6 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleSidebar, toggleMovie }, dispatch);
 
 const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
-  // return isMobile ? (
-  //   <div>
-  //     {!open && focusedVideo == null && (
-  //       <Button
-  //         onClick={toggleSidebar}
-  //         style={{
-  //           position: 'fixed',
-  //           zIndex: 999,
-  //           top: 35,
-  //           right: 30
-  //         }}
-  //       >
-  //         <div>
-  //           <hr
-  //             style={{
-  //               width: 90,
-  //               marginBottom: '20px',
-  //               borderColor: theme.palette.secondary.main
-  //             }}
-  //           />
-  //           <hr
-  //             style={{
-  //               width: 90,
-  //               margin: '20px 0',
-  //               borderColor: theme.palette.secondary.main
-  //             }}
-  //           />
-  //           <hr
-  //             style={{
-  //               width: 90,
-  //               marginTop: '20px',
-  //               borderColor: theme.palette.secondary.main
-  //             }}
-  //           />
-  //         </div>
-  //       </Button>
-  //     )}
-  //     {!open && focusedVideo !== null && (
-  //       <Button
-  //         style={{
-  //           position: 'fixed',
-  //           color: '#fff',
-  //           zIndex: 999,
-  //           top: 3,
-  //           right: 3,
-  //           height: 100,
-  //           width: 100
-  //         }}
-  //         onClick={() => toggleMovie(null)}
-  //       >
-  //         <Icon
-  //           style={{
-  //             paddingBottom: 150,
-  //             paddingTop: -150,
-  //             paddingRight: 120,
-  //             marginRight: -120,
-  //             marginLeft: -50
-  //           }}
-  //         >
-  //           <i style={{ fontSize: 90 }} class='material-icons'>
-  //             close
-  //           </i>
-  //         </Icon>
-  //       </Button>
-  //     )}
-  //     {open && (
-  //       <Button
-  //         style={{
-  //           position: 'fixed',
-  //           color: '#fff',
-  //           zIndex: 999,
-  //           top: 10,
-  //           right: 10,
-  //           width: 100,
-  //           height: 100
-  //         }}
-  //         onClick={toggleSidebar}
-  //       >
-  //         <Icon
-  //           style={{
-  //             paddingBottom: 150,
-  //             paddingTop: -150,
-  //             paddingRight: 120,
-  //             marginRight: -120,
-  //             marginLeft: -50
-  //           }}
-  //         >
-  //           <i style={{ fontSize: 90 }} class='material-icons'>
-  //             close
-  //           </i>
-  //         </Icon>
-  //       </Button>
-  //     )}
-  //   </div>
-  // ) : (
   return (
     <div>
       {!open && focusedVideo == null && (
@@ -128,7 +33,7 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
           style={{
             position: 'fixed',
             zIndex: 999,
-            top: 10,
+            top: isMobile ? 9 : 10,
             right: 10
           }}
         >
