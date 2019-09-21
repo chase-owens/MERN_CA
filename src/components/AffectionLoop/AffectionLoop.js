@@ -36,7 +36,7 @@ const AffectionLoop = ({ classes }) => {
           marginBottom: 5
         }}
       >
-        <p
+        {/* <p
           style={{
             lineHeight: 1,
             width: '100%',
@@ -45,7 +45,8 @@ const AffectionLoop = ({ classes }) => {
           }}
         >
           1
-        </p>
+        </p> */}
+        <br />
       </div>
       <Typography
         className={classes.text}
@@ -69,7 +70,7 @@ const AffectionLoop = ({ classes }) => {
           marginBottom: 5
         }}
       >
-        <p
+        {/* <p
           style={{
             lineHeight: 1,
             width: '100%',
@@ -78,7 +79,8 @@ const AffectionLoop = ({ classes }) => {
           }}
         >
           2
-        </p>
+        </p> */}
+        <br />
       </div>
       <Typography
         className={classes.text}
@@ -101,7 +103,7 @@ const AffectionLoop = ({ classes }) => {
           marginBottom: 5
         }}
       >
-        <p
+        {/* <p
           style={{
             lineHeight: 1,
             width: '100%',
@@ -110,7 +112,8 @@ const AffectionLoop = ({ classes }) => {
           }}
         >
           3
-        </p>
+        </p> */}
+        <br />
       </div>
       <Typography
         className={classes.text}
