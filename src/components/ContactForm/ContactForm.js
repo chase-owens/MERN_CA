@@ -22,15 +22,15 @@ const styles = theme => ({
   formContainer: {
     height: '100%',
     margin: 'auto',
-    paddingBottom: 30,
-    width: '100%'
+    paddingBottom: 30
+    // width: !isMobile ? 400 : '95%'
   },
   formInputs: {
     color: '#000',
-    width: isMobile ? '90%' : 400,
+    width: isMobile ? '90vw' : 400,
     display: 'block',
     margin: 'auto',
-    marginLeft: isMobile && '10%'
+    marginLeft: isMobile && '10vw'
   },
   // formInputsMobile: {
   //   color: '#000',
