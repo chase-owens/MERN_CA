@@ -40,149 +40,150 @@ const About = ({ theme }) => {
     // bottomScrollContainer.scrollLeft += 30;
   }, []);
 
-  return isMobile ? (
-    <div
-      style={{
-        paddingBottom: 70,
-        paddingTop: 100
-      }}
-    >
-      <div>
-        <div
-          style={{
-            margin: '0 100px 100px 100px'
-          }}
-        >
-          <Typography
-            paragraph
-            style={{ fontSize: '2em', marginBottom: 45 }}
-            variant='caption'
-          >
-            <span style={{ fontWeight: 'bold' }}>CA</span> / About
-          </Typography>
-          <Typography style={{ fontSize: '3em' }} paragraph variant='h4'>
-            The plan: Create calm connections with affection, love, and praise
-          </Typography>
-        </div>
-        <br />
-        <Grid
-          container
-          className='scrollContainer'
-          wrap='nowrap'
-          style={{
-            overflowX: 'auto',
-            WebkitOverflowScrolling: 'touch',
-            flex: '0 1 auto'
-          }}
-          spacing={40}
-        >
-          {aboutPoints !== undefined &&
-            aboutPoints.map((point, i) => {
-              let background = getBackground(i);
-              let color = 'textSecondary';
-              return (
-                <Grid
-                  item
-                  key={point.title}
-                  style={{
-                    flexShrink: 0,
-                    width: '65%',
-                    height: '65vw',
-                    minHeight: 450,
-                    minWidth: 400
-                    // background: background,
-                  }}
-                >
-                  <Card
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      background: background
-                    }}
-                  >
-                    <AboutCardSmall point={point} color={color} />
-                  </Card>
-                </Grid>
-              );
-            })}
-        </Grid>
-        <br />
-        <Grid
-          container
-          className='scrollContainer'
-          wrap='nowrap'
-          style={{
-            overflowX: 'auto',
-            WebkitOverflowScrolling: 'touch',
-            marginTop: 20,
-            marginBottom: 20
-          }}
-          spacing={40}
-        >
-          {targetOutcomes !== undefined &&
-            targetOutcomes.map(target => (
-              <Grid
-                item
-                key={target.title}
-                style={{
-                  flexShrink: 0,
-                  width: '65%',
-                  height: '65vw',
-                  minHeight: 400,
-                  minWidth: 400
-                }}
-              >
-                <Card
-                  style={{
-                    width: '100%',
-                    height: '100%'
-                  }}
-                >
-                  <TargetOutcomesSmall target={target} />
-                </Card>
-              </Grid>
-            ))}
-        </Grid>
-        <br />
-        <Typography
-          variant='h4'
-          style={{
-            margin: '70px 100px 20px 100px',
-            fontSize: '3em'
-          }}
-        >
-          Traditional training approaches often fail to solve the problem.
-        </Typography>
-        <div style={{ margin: '0 100px' }}>
-          <Typography
-            paragraph
-            variant='body1'
-            style={{
-              paddingTop: 30,
-              paddingBottom: 5,
-              fontSize: '2.5em'
-            }}
-          >
-            They momentarily reduce excited behavior.
-          </Typography>
-          <Typography
-            paragraph
-            variant='body1'
-            style={{ paddingBottom: 5, fontSize: '2.5em' }}
-          >
-            They establish calm behaviors in training sessions.
-          </Typography>
-          <Typography
-            paragraph
-            variant='body1'
-            style={{ paddingBottom: 5, fontSize: '2.5em' }}
-          >
-            They struggle to maintain calm behaviors in the natural environment.
-          </Typography>
-        </div>
-      </div>
-    </div>
-  ) : (
+  // return isMobile ? (
+  //   <div
+  //     style={{
+  //       paddingBottom: 70,
+  //       paddingTop: 100
+  //     }}
+  //   >
+  //     <div>
+  //       <div
+  //         style={{
+  //           margin: '0 100px 100px 100px'
+  //         }}
+  //       >
+  //         <Typography
+  //           paragraph
+  //           style={{ fontSize: '2em', marginBottom: 45 }}
+  //           variant='caption'
+  //         >
+  //           <span style={{ fontWeight: 'bold' }}>CA</span> / About
+  //         </Typography>
+  //         <Typography style={{ fontSize: '3em' }} paragraph variant='h4'>
+  //           The plan: Create calm connections with affection, love, and praise
+  //         </Typography>
+  //       </div>
+  //       <br />
+  //       <Grid
+  //         container
+  //         className='scrollContainer'
+  //         wrap='nowrap'
+  //         style={{
+  //           overflowX: 'auto',
+  //           WebkitOverflowScrolling: 'touch',
+  //           flex: '0 1 auto'
+  //         }}
+  //         spacing={40}
+  //       >
+  //         {aboutPoints !== undefined &&
+  //           aboutPoints.map((point, i) => {
+  //             let background = getBackground(i);
+  //             let color = 'textSecondary';
+  //             return (
+  //               <Grid
+  //                 item
+  //                 key={point.title}
+  //                 style={{
+  //                   flexShrink: 0,
+  //                   width: '65%',
+  //                   height: '65vw',
+  //                   minHeight: 450,
+  //                   minWidth: 400
+  //                   // background: background,
+  //                 }}
+  //               >
+  //                 <Card
+  //                   style={{
+  //                     width: '100%',
+  //                     height: '100%',
+  //                     background: background
+  //                   }}
+  //                 >
+  //                   <AboutCardSmall point={point} color={color} />
+  //                 </Card>
+  //               </Grid>
+  //             );
+  //           })}
+  //       </Grid>
+  //       <br />
+  //       <Grid
+  //         container
+  //         className='scrollContainer'
+  //         wrap='nowrap'
+  //         style={{
+  //           overflowX: 'auto',
+  //           WebkitOverflowScrolling: 'touch',
+  //           marginTop: 20,
+  //           marginBottom: 20
+  //         }}
+  //         spacing={40}
+  //       >
+  //         {targetOutcomes !== undefined &&
+  //           targetOutcomes.map(target => (
+  //             <Grid
+  //               item
+  //               key={target.title}
+  //               style={{
+  //                 flexShrink: 0,
+  //                 width: '65%',
+  //                 height: '65vw',
+  //                 minHeight: 400,
+  //                 minWidth: 400
+  //               }}
+  //             >
+  //               <Card
+  //                 style={{
+  //                   width: '100%',
+  //                   height: '100%'
+  //                 }}
+  //               >
+  //                 <TargetOutcomesSmall target={target} />
+  //               </Card>
+  //             </Grid>
+  //           ))}
+  //       </Grid>
+  //       <br />
+  //       <Typography
+  //         variant='h4'
+  //         style={{
+  //           margin: '70px 100px 20px 100px',
+  //           fontSize: '3em'
+  //         }}
+  //       >
+  //         Traditional training approaches often fail to solve the problem.
+  //       </Typography>
+  //       <div style={{ margin: '0 100px' }}>
+  //         <Typography
+  //           paragraph
+  //           variant='body1'
+  //           style={{
+  //             paddingTop: 30,
+  //             paddingBottom: 5,
+  //             fontSize: '2.5em'
+  //           }}
+  //         >
+  //           They momentarily reduce excited behavior.
+  //         </Typography>
+  //         <Typography
+  //           paragraph
+  //           variant='body1'
+  //           style={{ paddingBottom: 5, fontSize: '2.5em' }}
+  //         >
+  //           They establish calm behaviors in training sessions.
+  //         </Typography>
+  //         <Typography
+  //           paragraph
+  //           variant='body1'
+  //           style={{ paddingBottom: 5, fontSize: '2.5em' }}
+  //         >
+  //           They struggle to maintain calm behaviors in the natural environment.
+  //         </Typography>
+  //       </div>
+  //     </div>
+  //   </div>
+  // ) : (
+  return (
     <div
       style={{
         paddingBottom: 70,
@@ -190,7 +191,7 @@ const About = ({ theme }) => {
       }}
     >
       {useMediaQuery(theme.breakpoints.down(740)) && (
-        <div style={{ maxWidth: 'calc(100vw - 35px)' }}>
+        <div style={{ maxWidth: isMobile ? '100vw' : 'calc(100vw - 35px)' }}>
           <div
             style={{
               margin: '0 40px 60px 40px'
@@ -232,10 +233,10 @@ const About = ({ theme }) => {
                     key={point.title}
                     style={{
                       flexShrink: 0,
-                      width: '65%',
+                      width: isMobile ? '85vw' : '65%',
                       height: '65vw',
                       minHeight: 450,
-                      minWidth: 400
+                      minWidth: isMobile ? '85vw' : 400
                       // background: background,
                     }}
                   >
