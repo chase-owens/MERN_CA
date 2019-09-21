@@ -191,7 +191,11 @@ const About = ({ theme }) => {
       }}
     >
       {useMediaQuery(theme.breakpoints.down(740)) && (
-        <div style={{ maxWidth: isMobile ? '100vw' : 'calc(100vw - 35px)' }}>
+        <div
+          style={{
+            maxWidth: isMobile ? 'calc(100vw - 20px)' : 'calc(100vw - 35px)'
+          }}
+        >
           <div
             style={{
               margin: '0 40px 60px 40px'
