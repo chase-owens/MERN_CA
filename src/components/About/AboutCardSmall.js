@@ -9,37 +9,38 @@ import { theme } from '../../styles/theme';
 import { isMobile } from 'react-device-detect';
 
 const AboutCardSmall = ({ point, color }) => {
-  return isMobile ? (
-    <div style={{ padding: '30px 30px 0 28px' }}>
-      <Typography
-        style={{ fontSize: '2.5em', paddingBotton: 25 }}
-        color={color}
-        paragraph
-        variant='h5'
-      >
-        {point.question}
-      </Typography>
-      <Typography
-        style={{ fontSize: '2.0em' }}
-        color={color}
-        paragraph
-        variant='subtitle1'
-      >
-        {point.answer}
-      </Typography>
-      <br />
-      {point.citation !== undefined && (
-        <Typography
-          color={color}
-          style={{ fontSize: '1.5em' }}
-          paragraph
-          variant='overline'
-        >
-          {point.citation}
-        </Typography>
-      )}
-    </div>
-  ) : (
+  // return isMobile ? (
+  //   <div style={{ padding: '30px 30px 0 28px' }}>
+  //     <Typography
+  //       style={{ fontSize: '2.5em', paddingBotton: 25 }}
+  //       color={color}
+  //       paragraph
+  //       variant='h5'
+  //     >
+  //       {point.question}
+  //     </Typography>
+  //     <Typography
+  //       style={{ fontSize: '2.0em' }}
+  //       color={color}
+  //       paragraph
+  //       variant='subtitle1'
+  //     >
+  //       {point.answer}
+  //     </Typography>
+  //     <br />
+  //     {point.citation !== undefined && (
+  //       <Typography
+  //         color={color}
+  //         style={{ fontSize: '1.5em' }}
+  //         paragraph
+  //         variant='overline'
+  //       >
+  //         {point.citation}
+  //       </Typography>
+  //     )}
+  //   </div>
+  // ) : (
+  return (
     <div style={{ padding: '30px 30px 0 28px' }}>
       <Typography color={color} paragraph variant='title'>
         {point.question}

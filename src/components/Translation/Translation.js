@@ -25,15 +25,10 @@ const Translation = ({ classes }) => {
     : 'default';
   return (
     <div>
-      <Typography
-        style={{ fontSize: isMobile ? '2.1em' : null }}
-        color={color}
-        paragraph
-        variant='subtitle2'
-      >
+      <Typography color={color} paragraph variant='subtitle2'>
         Translation
       </Typography>
-      <Grid container spacing={isMobile ? 24 : 8} direction='row' wrap='nowrap'>
+      <Grid container spacing={isMobile ? 16 : 8} direction='row' wrap='nowrap'>
         <Grid item>
           <Chip value='gen' label='General' />
         </Grid>

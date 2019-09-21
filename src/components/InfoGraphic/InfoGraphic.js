@@ -10,77 +10,78 @@ import logoPath from 'images/Logo.png';
 
 const InfoGraphic = ({ info }) => {
   const color = theme.palette.primary.main;
-  return isMobile ? (
-    <Paper
-      style={{
-        width: 400,
-        height: 600,
-        border: `10px solid ${color}`,
-        borderRadius: 8,
-        background: '#fff'
-      }}
-    >
-      <div
-        style={{
-          margin: 'auto',
-          width: 280,
-          height: 150
-        }}
-      >
-        <div style={{ height: 100, width: '100%', background: color }}>
-          <Typography
-            align='center'
-            variant='body1'
-            style={{ lineHeight: 3.1, fontSize: '2em' }}
-          >
-            {info.ribbonTitle}
-          </Typography>
-        </div>
-        <div
-          style={{
-            width: 0,
-            borderLeft: `140px solid ${color}`,
-            borderRight: `140px solid ${color}`,
-            borderBottom: `30px solid transparent`
-          }}
-        />
-      </div>
-      <div
-        style={{
-          width: 120,
-          height: 120,
-          borderRadius: '50%',
-          background: color,
-          margin: 'auto'
-        }}
-      >
-        <img
-          src={logoPath}
-          alt=''
-          style={{
-            height: 80,
-            marginLeft: 26,
-            marginTop: 19
-          }}
-        />
-      </div>
-      <Typography
-        paragraph
-        align='center'
-        variant='h1'
-        style={{ margin: '50px 0 30px 0', fontSize: '2em', fontWeight: 'bold' }}
-      >
-        {info.title}
-      </Typography>
-      <Typography
-        paragraph
-        align='center'
-        style={{ margin: '0 30px', fontSize: '2em' }}
-      >
-        {info.description}
-      </Typography>
-    </Paper>
-  ) : (
+  // return isMobile ? (
+  //   <Paper
+  //     style={{
+  //       width: 400,
+  //       height: 600,
+  //       border: `10px solid ${color}`,
+  //       borderRadius: 8,
+  //       background: '#fff'
+  //     }}
+  //   >
+  //     <div
+  //       style={{
+  //         margin: 'auto',
+  //         width: 280,
+  //         height: 150
+  //       }}
+  //     >
+  //       <div style={{ height: 100, width: '100%', background: color }}>
+  //         <Typography
+  //           align='center'
+  //           variant='body1'
+  //           style={{ lineHeight: 3.1, fontSize: '2em' }}
+  //         >
+  //           {info.ribbonTitle}
+  //         </Typography>
+  //       </div>
+  //       <div
+  //         style={{
+  //           width: 0,
+  //           borderLeft: `140px solid ${color}`,
+  //           borderRight: `140px solid ${color}`,
+  //           borderBottom: `30px solid transparent`
+  //         }}
+  //       />
+  //     </div>
+  //     <div
+  //       style={{
+  //         width: 120,
+  //         height: 120,
+  //         borderRadius: '50%',
+  //         background: color,
+  //         margin: 'auto'
+  //       }}
+  //     >
+  //       <img
+  //         src={logoPath}
+  //         alt=''
+  //         style={{
+  //           height: 80,
+  //           marginLeft: 26,
+  //           marginTop: 19
+  //         }}
+  //       />
+  //     </div>
+  //     <Typography
+  //       paragraph
+  //       align='center'
+  //       variant='h1'
+  //       style={{ margin: '50px 0 30px 0', fontSize: '2em', fontWeight: 'bold' }}
+  //     >
+  //       {info.title}
+  //     </Typography>
+  //     <Typography
+  //       paragraph
+  //       align='center'
+  //       style={{ margin: '0 30px', fontSize: '2em' }}
+  //     >
+  //       {info.description}
+  //     </Typography>
+  //   </Paper>
+  // ) : (
+  return (
     <Paper
       style={{
         width: 250,
