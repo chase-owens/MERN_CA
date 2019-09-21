@@ -58,7 +58,7 @@ const styles = theme => ({
   button: {
     background: theme.palette.ternary.main,
     color: '#fff',
-    margin: isMobile ? '15px 0 15px  15px' : '15px 0',
+    margin: isMobile ? '15px 0 15px 25px' : '15px 0',
     '&:hover': {
       background: theme.palette.ternary.main
     }
@@ -413,7 +413,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
               </Button>
             </Grid>
           )}
-          <Grid item>
+          <Grid item style={{ display: 'block', textAlign: 'center' }}>
             <Button
               className={classes.button}
               onClick={sendData}
