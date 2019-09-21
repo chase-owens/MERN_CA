@@ -210,24 +210,23 @@ const VideoCardMobile = ({ video }) => {
   const [source, setSource] = useState(video.videoPath);
 
   const playVideo = () => {
+    console.log(video.videoPath);
     setSource(video.videoPath);
   };
 
   return (
     <div style={{ width: '100%' }}>
       <div style={{ width: '97%', margin: 'auto' }}>
-        <video
-          onClick={playVideo}
-          poster={`${returnImage(video.imagePath)}`}
-          style={{
-            // visibility: isPlaying ? 'visible' : 'hidden',
-            zIndex: 1800,
-            width: '100%'
-          }}
-          controls={true}
-        >
-          <source src={video.videoPath} />
-        </video>
+        <iframe
+          width='100%'
+          height='400px'
+          src={
+            video.embedPath === undefined ? video.videoPath : video.embedPath
+          }
+          frameborder='0'
+          allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
+          allowFullScreen
+        ></iframe>
         <br />
         <div style={{ paddingTop: 20 }}>
           <Typography
