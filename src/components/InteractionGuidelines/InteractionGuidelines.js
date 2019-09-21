@@ -31,7 +31,8 @@ const InteractionGuidelines = ({ classes }) => {
       >
         Interaction Guidelines
       </Typography>
-      <div
+      <br />
+      {/* <div
         style={{
           width: 40,
           height: 40,
@@ -52,7 +53,7 @@ const InteractionGuidelines = ({ classes }) => {
         >
           1
         </p>
-      </div>
+      </div> */}
       <Typography
         className={classes.text}
         color='textSecondary'
@@ -62,7 +63,8 @@ const InteractionGuidelines = ({ classes }) => {
         When the dog approachees, pet the dog with one hand as long as all four
         feet are on the ground
       </Typography>
-      <div
+      <br />
+      {/* <div
         style={{
           width: 40,
           height: 40,
@@ -83,7 +85,7 @@ const InteractionGuidelines = ({ classes }) => {
         >
           2
         </p>
-      </div>
+      </div> */}
       <Typography
         className={classes.text}
         color='textSecondary'
@@ -92,7 +94,7 @@ const InteractionGuidelines = ({ classes }) => {
       >
         If any excited behaviors occur or the dog leaves, discontinue petting
       </Typography>
-      <div
+      {/* <div
         style={{
           width: 40,
           height: 40,
@@ -113,7 +115,8 @@ const InteractionGuidelines = ({ classes }) => {
         >
           3
         </p>
-      </div>
+      </div> */}
+      <br />
       <Typography
         className={classes.text}
         color='textSecondary'
@@ -123,7 +126,7 @@ const InteractionGuidelines = ({ classes }) => {
         When the dog returns or the excited behaviors are no longer occurring,
         resume petting
       </Typography>
-      <div
+      {/* <div
         style={{
           width: 40,
           height: 40,
@@ -144,7 +147,9 @@ const InteractionGuidelines = ({ classes }) => {
         >
           4
         </p>
-      </div>
+        
+      </div> */}
+      <br />
       <Typography className={classes.text} color='textSecondary' align='center'>
         If sitting or lying down occurs, pet with two hands
       </Typography>

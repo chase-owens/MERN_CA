@@ -25,7 +25,8 @@ const AffectionLoop = ({ classes }) => {
       >
         Affection Loop
       </Typography>
-      <div
+      <br />
+      {/* <div
         style={{
           width: 40,
           height: 40,
@@ -36,7 +37,7 @@ const AffectionLoop = ({ classes }) => {
           marginBottom: 5
         }}
       >
-        {/* <p
+        <p
           style={{
             lineHeight: 1,
             width: '100%',
@@ -45,9 +46,8 @@ const AffectionLoop = ({ classes }) => {
           }}
         >
           1
-        </p> */}
-        <br />
-      </div>
+        </p>
+      </div> */}
       <Typography
         className={classes.text}
         color='textSecondary'
@@ -59,7 +59,8 @@ const AffectionLoop = ({ classes }) => {
         occurring. Begin with very short intervals and gradually increase the
         duration of the loop to 10 seconds.
       </Typography>
-      <div
+      <br />
+      {/* <div
         style={{
           width: 40,
           height: 40,
@@ -70,7 +71,7 @@ const AffectionLoop = ({ classes }) => {
           marginBottom: 5
         }}
       >
-        {/* <p
+        <p
           style={{
             lineHeight: 1,
             width: '100%',
@@ -79,9 +80,8 @@ const AffectionLoop = ({ classes }) => {
           }}
         >
           2
-        </p> */}
-        <br />
-      </div>
+        </p>
+      </div> */}
       <Typography
         className={classes.text}
         color='textSecondary'
@@ -92,7 +92,8 @@ const AffectionLoop = ({ classes }) => {
         can alter the environment to more closely resemble the context of your
         goal.
       </Typography>
-      <div
+      <br />
+      {/* <div
         style={{
           width: 40,
           height: 40,
@@ -103,7 +104,7 @@ const AffectionLoop = ({ classes }) => {
           marginBottom: 5
         }}
       >
-        {/* <p
+        <p
           style={{
             lineHeight: 1,
             width: '100%',
@@ -112,9 +113,8 @@ const AffectionLoop = ({ classes }) => {
           }}
         >
           3
-        </p> */}
-        <br />
-      </div>
+        </p>
+      </div> */}
       <Typography
         className={classes.text}
         color='textSecondary'
