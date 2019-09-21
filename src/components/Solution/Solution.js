@@ -53,6 +53,7 @@ const Solution = ({ audience }) => {
             }}
           />
         </div>
+        <Translation style={{ paddingLeft: 40 }} />
         {audience === 'gen' ? (
           <div style={{ padding: '0 40px' }}>
             <Typography
@@ -68,7 +69,6 @@ const Solution = ({ audience }) => {
               maintain the calm behaviors. The result is a spoiled companion
               that now finds being calm more reinforcing than getting excited.
             </Typography>
-            <Translation />
           </div>
         ) : audience === 'ba' ? (
           <div>
@@ -90,7 +90,6 @@ const Solution = ({ audience }) => {
                 consequences are provided contingent upon the occurrence of the
                 occasion-behavior relation defined by the target outcome.
               </Typography>
-              <Translation style={{ paddingLeft: 40 }} />
             </div>
             <Matricies />
           </div>
@@ -110,7 +109,6 @@ const Solution = ({ audience }) => {
               bark, bark, bark, bark. Grrrrr ruff ruff. Grrrrr ruff ruff ruff
               ruff.
             </Typography>
-            <Translation />
           </div>
         )}
 
