@@ -37,7 +37,7 @@ const About = ({ theme }) => {
 
   useEffect(() => {
     console.log('scroll container');
-    // bottomScrollContainer.scrollLeft += 30;
+    bottomScrollContainer.scrollLeft += 30;
   }, []);
 
   // return isMobile ? (
