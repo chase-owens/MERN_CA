@@ -297,7 +297,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
 
   return !authenticated ? (
     <div className={classes.formContainer}>
-      {isMobile && (
+      {/* {isMobile && (
         <Grid container justify='center'>
           <Grid item>
             <div className={classes.formInputsMobile}>
@@ -410,103 +410,102 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
           )}
         </Grid>
       )}
-      {!isMobile && (
-        <Grid
-          container
-          justify='center'
-          alignItems='center'
-          spacing={40}
-          style={{ maxWidth: '100vw' }}
-        >
-          <Grid item sm={12} md={6}>
-            <Grid container justify='center'>
-              <Grid item>
-                <div className={classes.formInputs}>
-                  <div className={classes.formInput}>
-                    <TextField
-                      style={{ width: '100%' }}
-                      label='Name'
-                      placeholder='Name'
-                      onChange={e => setName(e.target.value)}
-                      value={name}
-                    />
-                  </div>
-                  <div className={classes.formInput}>
-                    <TextField
-                      style={{ width: '100%' }}
-                      label='Email'
-                      placeholder='Email'
-                      onChange={e => setEmail(e.target.value)}
-                      value={email}
-                      type='email'
-                    />
-                  </div>
-                  <div className={classes.formInput}>
-                    <TextField
-                      style={{ width: '100%' }}
-                      label='Message'
-                      multiline
-                      rowsMax='4'
-                      placeholder='Message'
-                      onChange={e => setMessage(e.target.value)}
-                      value={message}
-                    />
-                  </div>
+      {!isMobile && ( */}
+      <Grid
+        container
+        justify='center'
+        alignItems='center'
+        spacing={40}
+        style={{ maxWidth: '100vw' }}
+      >
+        <Grid item sm={12} md={6}>
+          <Grid container justify='center'>
+            <Grid item>
+              <div className={classes.formInputs}>
+                <div className={classes.formInput}>
+                  <TextField
+                    style={{ width: '100%' }}
+                    label='Name'
+                    placeholder='Name'
+                    onChange={e => setName(e.target.value)}
+                    value={name}
+                  />
                 </div>
-              </Grid>
+                <div className={classes.formInput}>
+                  <TextField
+                    style={{ width: '100%' }}
+                    label='Email'
+                    placeholder='Email'
+                    onChange={e => setEmail(e.target.value)}
+                    value={email}
+                    type='email'
+                  />
+                </div>
+                <div className={classes.formInput}>
+                  <TextField
+                    style={{ width: '100%' }}
+                    label='Message'
+                    multiline
+                    rowsMax='4'
+                    placeholder='Message'
+                    onChange={e => setMessage(e.target.value)}
+                    value={message}
+                  />
+                </div>
+              </div>
             </Grid>
           </Grid>
-          {isAuthenticating && (
-            <Grid item sm={12} md={6}>
-              <Grid container style={{ width: '100%' }} justify='center'>
-                <Grid item sm={8} md={12}>
-                  {unknownError && (
-                    <Typography
-                      style={{ fontSize: '1.2em', color: '#f00' }}
-                      align='center'
-                      variant='subheading'
-                    >
-                      Let's try that again
-                    </Typography>
-                  )}
+        </Grid>
+        {isAuthenticating && (
+          <Grid item sm={12} md={6}>
+            <Grid container style={{ width: '100%' }} justify='center'>
+              <Grid item sm={8} md={12}>
+                {unknownError && (
                   <Typography
-                    style={{ fontSize: '1.5em' }}
+                    style={{ fontSize: '1.2em', color: '#f00' }}
+                    align='center'
+                    variant='subheading'
+                  >
+                    Let's try that again
+                  </Typography>
+                )}
+                <Typography
+                  style={{ fontSize: '1.5em' }}
+                  align='center'
+                  paragraph
+                  variant='subheading'
+                >
+                  Before we send the message, please select the boxes {relation}{' '}
+                  the logo.
+                </Typography>
+                {committedErrorOnlySelectOneBoxDirectlyToSide && (
+                  <Typography
+                    style={{ fontSize: '1em' }}
                     align='center'
                     paragraph
                     variant='subheading'
                   >
-                    Before we send the message, please select the boxes{' '}
-                    {relation} the logo.
+                    <span style={{ color: '#f00' }}>Hint:</span> On your last
+                    attempt, there were 3 boxes {prevRelation} the logo
                   </Typography>
-                  {committedErrorOnlySelectOneBoxDirectlyToSide && (
-                    <Typography
-                      style={{ fontSize: '1em' }}
-                      align='center'
-                      paragraph
-                      variant='subheading'
-                    >
-                      <span style={{ color: '#f00' }}>Hint:</span> On your last
-                      attempt, there were 3 boxes {prevRelation} the logo
-                    </Typography>
-                  )}
+                )}
 
-                  <Grid item>
-                    <Grid container justify='center'>
-                      <Grid item>
-                        <Captcha
-                          selected={selected}
-                          handleChange={handleChange}
-                        />
-                      </Grid>
+                <Grid item>
+                  <Grid container justify='center'>
+                    <Grid item>
+                      <Captcha
+                        selected={selected}
+                        handleChange={handleChange}
+                      />
                     </Grid>
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
-          )}
-        </Grid>
-      )}
-
+          </Grid>
+        )}
+      </Grid>
+      )
       <div>
         <Grid
           style={{ maxWidth: '100vw' }}

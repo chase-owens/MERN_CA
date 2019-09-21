@@ -25,19 +25,16 @@ const ContactNav = ({ authorized }) => {
         <Grid
           item
           style={{
-            marginTop: isMobile ? 25 : 5,
+            marginTop: 5,
             marginLeft: 20,
-            marginRight: isMobile ? 25 : 5
+            marginRight: 5
           }}
         >
-          <img height={isMobile ? 100 : 50} src={logoPath} alt='logo' />
+          <img height={50} src={logoPath} alt='logo' />
         </Grid>
         <Grid item style={{ margin: '10px 15px' }}>
           <Link style={{ textDecoration: 'none' }} to='/'>
-            <Button
-              onClick={authorized ? authenticateUser() : null}
-              style={{ fontSize: isMobile ? '2.1em' : null }}
-            >
+            <Button onClick={authorized ? authenticateUser() : null}>
               Home
             </Button>
           </Link>
