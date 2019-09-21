@@ -101,7 +101,7 @@ const IntroDiv = ({ theme, classes, open }) => {
           style={{
             width: !useMediaQuery(theme.breakpoints.up(740)) ? '88%' : '45%',
             margin: 'auto',
-            padding: '50px 30px 0 50px',
+            padding: isMobile ? '50px 30px 0 30px' : '50px 30px 0 50px',
             position: !useMediaQuery(theme.breakpoints.up(740))
               ? 'absolute'
               : 'static',

@@ -233,7 +233,7 @@ const About = ({ theme }) => {
                     key={point.title}
                     style={{
                       flexShrink: 0,
-                      width: '65%',
+                      width: isMobile ? '85vw' : '65%',
                       height: '65vw',
                       minHeight: 450,
                       minWidth: 400
@@ -276,7 +276,7 @@ const About = ({ theme }) => {
                   key={target.title}
                   style={{
                     flexShrink: 0,
-                    width: '65%',
+                    width: isMobile ? '90vw' : '65%',
                     height: '65vw',
                     minHeight: 400,
                     minWidth: 400
