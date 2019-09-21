@@ -26,24 +26,25 @@ const mapStateToProps = state => {
 const Nav = ({ theme, language, open, audience, focusedVideo }) => {
   console.log(language, open, audience);
 
-  return isMobile ? (
-    <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
-      <Grid
-        container
-        justify='space-between'
-        alignItems='center'
-        style={{ height: 140, lineHeight: 1 }}
-      >
-        <Grid item style={{ marginTop: 10, marginLeft: 20 }}>
-          <img height={100} src={logoPath} alt='logo' />
-        </Grid>
-        <Grid item>
-          <Hamburger />
-        </Grid>
-      </Grid>
-      <NavPage />
-    </div>
-  ) : (
+  // return isMobile ? (
+  //   <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
+  //     <Grid
+  //       container
+  //       justify='space-between'
+  //       alignItems='center'
+  //       style={{ height: 140, lineHeight: 1 }}
+  //     >
+  //       <Grid item style={{ marginTop: 10, marginLeft: 20 }}>
+  //         <img height={100} src={logoPath} alt='logo' />
+  //       </Grid>
+  //       <Grid item>
+  //         <Hamburger />
+  //       </Grid>
+  //     </Grid>
+  //     <NavPage />
+  //   </div>
+  // ) : (
+  return (
     <div
       style={{
         background: 'transparent',

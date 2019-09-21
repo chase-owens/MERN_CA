@@ -34,7 +34,7 @@ const record = (
 
 const Main = () => {
   return (
-    <div style={{ margin: 0, padding: 0, marginRight: isMobile ? 20 : 0 }}>
+    <div style={{ margin: 0, padding: 0 }}>
       <Helmet>
         <meta charset='UTF-8' />
         <meta
