@@ -207,26 +207,27 @@ const videoPath = `https://youtu.be/A0WBNze3oFY`;
 
 const VideoCardMobile = ({ video }) => {
   const videoPlayer = useRef();
-  const [isPlaying, setPlaying] = useState(false);
+  const [source, setSource] = useState(video.videoPath);
 
-  // const playVideo = () => {
-  //   videoPlayer.play();
-  // };
+  const playVideo = () => {
+    setSource(video.videoPath);
+  };
 
   return (
     <div style={{ width: '100%' }}>
-      <div style={{ width: '95%', margin: 'auto' }}>
+      <div style={{ width: '97%', margin: 'auto' }}>
         <video
-          // onClick={playVideo()}
+          onClick={playVideo()}
           poster={`${returnImage(video.imagePath)}`}
           style={{
             // visibility: isPlaying ? 'visible' : 'hidden',
             zIndex: 1800,
             width: '100%'
           }}
+          autoPlay
           controls={true}
         >
-          <source src={video.videoPath} />
+          <source src={source} />
         </video>
         <br />
         <div style={{ paddingTop: 20 }}>
