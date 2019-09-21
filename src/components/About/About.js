@@ -237,15 +237,12 @@ const About = ({ theme }) => {
                       height: '65vw',
                       minHeight: 450,
                       minWidth: isMobile ? '85vw' : 400
-                      // background: background,
                     }}
                   >
                     <Card
                       style={{
                         width: '100%',
                         height: '100%',
-                        // minHeight: 400,
-                        // minWidth: 400,
                         background: background
                       }}
                     >
@@ -276,10 +273,10 @@ const About = ({ theme }) => {
                   key={target.title}
                   style={{
                     flexShrink: 0,
-                    width: '65%',
+                    width: isMobile ? '90vw' : '65%',
                     height: '65vw',
-                    minHeight: 400,
-                    minWidth: 400
+                    minHeight: 450,
+                    minWidth: isMobile ? '90vw' : 400
                   }}
                 >
                   <Card
