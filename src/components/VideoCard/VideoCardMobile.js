@@ -224,7 +224,6 @@ const VideoCardMobile = ({ video }) => {
             zIndex: 1800,
             width: '100%'
           }}
-          autoPlay
           controls={true}
         >
           <source src={source} />
