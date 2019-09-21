@@ -205,7 +205,7 @@ const styles = theme => ({
 
 const videoPath = `https://youtu.be/A0WBNze3oFY`;
 
-const VideoCardMobile = ({video}) => {
+const VideoCardMobile = ({ video }) => {
   const videoPlayer = useRef();
   const [isPlaying, setPlaying] = useState(false);
 
@@ -223,7 +223,7 @@ const VideoCardMobile = ({video}) => {
       }}
       controls={true}
     >
-      <source src={video.videoPath)} />
+      <source src={video.videoPath} />
     </video>
   );
 };
