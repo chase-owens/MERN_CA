@@ -4,16 +4,15 @@ import { isMobile } from 'react-device-detect';
 import { withStyles } from '@material-ui/core/styles';
 import withWidth from '@material-ui/core/withWidth';
 import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
-
 import Grid from '@material-ui/core/Grid';
-
 import Typography from '@material-ui/core/Typography';
 import Chip from '../Chip/Chip';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   chip: {
     '& span': {
-      fontSize: isMobile && 20
+      fontSize: isMobile && 5
     }
   }
 });

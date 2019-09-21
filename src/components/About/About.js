@@ -66,7 +66,7 @@ const About = ({ theme }) => {
             </Typography>
             <Typography variant='body1'>
               If your dog is always jumping on you, nipping your hands, or
-              biting your clothes to get your attention, don’t worry - That’s a
+              biting your clothes to get your attention, don’t worry - that’s a
               good thing! That means your dog loves you, that your affection has
               already been established as a reinforcer, and that you’re ready to
               begin Constructional Affection.{' '}
