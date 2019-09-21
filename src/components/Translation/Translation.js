@@ -13,7 +13,7 @@ import Chip from '../Chip/Chip';
 const styles = theme => ({
   chip: {
     '& span': {
-      fontSize: !isMobile && 60
+      fontSize: isMobile && 20
     }
   }
 });
