@@ -219,7 +219,7 @@ const VideoCardMobile = ({ video }) => {
       <div style={{ width: '97%', margin: 'auto' }}>
         <iframe
           width='100%'
-          height='400px'
+          height='600px'
           src={
             video.embedPath === undefined ? video.videoPath : video.embedPath
           }
