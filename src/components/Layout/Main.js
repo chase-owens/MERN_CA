@@ -48,8 +48,8 @@ const Main = () => {
         <NavIntro />
         <main style={{ margin: 0, padding: 0 }}>
           <About />
-          {/* <Solution />
-          <HowTo /> */}
+          {/* <Solution /> */}
+          <HowTo />
           <React.Suspense fallback={<div />}>
             <Videos />
           </React.Suspense>
