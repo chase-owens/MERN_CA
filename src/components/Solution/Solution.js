@@ -161,7 +161,7 @@ const Solution = ({ audience }) => {
               maintain the calm behaviors. The result is a spoiled companion
               that now finds being calm more reinforcing than getting excited.
             </Typography>
-            <Translation />
+            {/* <Translation /> */}
           </div>
         ) : audience === 'ba' ? (
           <div>
