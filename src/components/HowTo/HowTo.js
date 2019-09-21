@@ -28,7 +28,7 @@ const HowTo = () => {
           WebkitOverflowScrolling: 'touch',
           flex: '0 1 auto',
           paddingLeft: isMobile
-            ? 200
+            ? 250
             : useMediaQuery(theme.breakpoints.down('xs'))
             ? 100
             : null,
