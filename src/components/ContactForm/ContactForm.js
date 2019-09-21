@@ -42,7 +42,7 @@ const styles = theme => ({
     flexDirection: 'column',
     color: 'transparent',
     '& label': {
-      fontSize: isMobile ? '2.7em' : null
+      // fontSize: isMobile ? '2.7em' : null
     }
   },
   formInputMobile: {
@@ -505,7 +505,6 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
           </Grid>
         )}
       </Grid>
-      )
       <div>
         <Grid
           style={{ maxWidth: '100vw' }}
