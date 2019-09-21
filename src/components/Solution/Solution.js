@@ -53,7 +53,10 @@ const Solution = ({ audience }) => {
             }}
           />
         </div>
-        <Translation style={{ paddingLeft: 40 }} />
+        <div style={{ padding: '0 40px' }}>
+          <Translation />
+        </div>
+
         {audience === 'gen' ? (
           <div style={{ padding: '0 40px' }}>
             <Typography
