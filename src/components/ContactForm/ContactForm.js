@@ -22,8 +22,8 @@ const styles = theme => ({
   formContainer: {
     height: '100%',
     margin: 'auto',
-    paddingBottom: 30
-    // width: !isMobile ? 400 : '95%'
+    paddingBottom: 30,
+    width: '100%'
   },
   formInputs: {
     color: '#000',
