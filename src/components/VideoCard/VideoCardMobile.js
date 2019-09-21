@@ -217,16 +217,18 @@ const VideoCardMobile = ({ video }) => {
   return (
     <div style={{ width: '100%' }}>
       <div style={{ width: '97%', margin: 'auto' }}>
-        <iframe
-          width='100%'
-          height='600px'
-          src={
-            video.embedPath === undefined ? video.videoPath : video.embedPath
-          }
-          frameborder='0'
-          allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
-          allowFullScreen
-        ></iframe>
+        <Card style={{ width: '100%' }}>
+          <iframe
+            width='100%'
+            height='600px'
+            src={
+              video.embedPath === undefined ? video.videoPath : video.embedPath
+            }
+            frameborder='0'
+            allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+          ></iframe>
+        </Card>
         <br />
         <div style={{ paddingTop: 20 }}>
           <Typography

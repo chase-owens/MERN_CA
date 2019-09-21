@@ -37,6 +37,10 @@ const Main = () => {
     <div style={{ margin: 0, padding: 0, marginRight: isMobile ? 20 : 0 }}>
       <Helmet>
         <meta charset='UTF-8' />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1'
+        ></meta>
         <title>Constructional Affection</title>
         <meta name='description' content='Constructional Affection' />
       </Helmet>
