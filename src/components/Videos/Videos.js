@@ -41,55 +41,47 @@ const Videos = ({ classes, focusedVideo }) => {
     videoPlayer.current.play();
   }
 
-  return isMobile ? (
-    <div id='videos' style={{ marginTop: 50 }}>
-      <Typography
-        paragraph
-        variant='caption'
-        style={{ marginLeft: 100, fontSize: '2em', marginBottom: 45 }}
-      >
-        <span style={{ fontWeight: 'bold' }}>CA</span> / Videos
-      </Typography>
-      <Typography
-        style={{ marginLeft: 100, marginBottom: 45, fontSize: '3em' }}
-        paragraph
-        variant='headline'
-      >
-        Videos
-      </Typography>
-      {/* <video
-        ref={videoPlayer}
-        controls={true}
-        playsInline={false}
-        autoplay
-        width='100%'
-      >
-        <source src={url} />
-      </video> */}
-      <Grid
-        container
-        spacing={0}
-        justify='space-between'
-        style={{
-          width: '100%'
-        }}
-      >
-        {videos.map(video => (
-          <Grid
-            item
-            key={video.title}
-            style={{
-              width: 'calc(100vw - 200px)',
-              margin: 'auto',
-              marginBottom: 50
-            }}
-          >
-            <VideoCardMobile video={video} />
-          </Grid>
-        ))}
-      </Grid>
-    </div>
-  ) : (
+  // return isMobile ? (
+  //   <div id='videos' style={{ marginTop: 50 }}>
+  //     <Typography
+  //       paragraph
+  //       variant='caption'
+  //       style={{ marginLeft: 100, fontSize: '2em', marginBottom: 45 }}
+  //     >
+  //       <span style={{ fontWeight: 'bold' }}>CA</span> / Videos
+  //     </Typography>
+  //     <Typography
+  //       style={{ marginLeft: 100, marginBottom: 45, fontSize: '3em' }}
+  //       paragraph
+  //       variant='headline'
+  //     >
+  //       Videos
+  //     </Typography>
+  //     <Grid
+  //       container
+  //       spacing={0}
+  //       justify='space-between'
+  //       style={{
+  //         width: '100%'
+  //       }}
+  //     >
+  //       {videos.map(video => (
+  //         <Grid
+  //           item
+  //           key={video.title}
+  //           style={{
+  //             width: 'calc(100vw - 200px)',
+  //             margin: 'auto',
+  //             marginBottom: 50
+  //           }}
+  //         >
+  //           <VideoCardMobile video={video} />
+  //         </Grid>
+  //       ))}
+  //     </Grid>
+  //   </div>
+  // ) : (
+  return (
     <div
       id='videos'
       style={{ padding: 40, margin: 'auto', overflow: 'hidden' }}

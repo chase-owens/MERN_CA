@@ -53,9 +53,11 @@ const Main = () => {
           <React.Suspense fallback={<div />}>
             <Videos />
           </React.Suspense>
-          <React.Suspense fallback={<div />}>
-            <MovieModal2 />
-          </React.Suspense>
+          {!isMobile && (
+            <React.Suspense fallback={<div />}>
+              <MovieModal2 />
+            </React.Suspense>
+          )}
         </main>
         <Footer />
       </Profiler>

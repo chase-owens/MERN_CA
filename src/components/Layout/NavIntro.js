@@ -18,23 +18,22 @@ const mapStateToProps = state => {
 };
 
 const NavIntro = ({ theme }) => {
-  return isMobile ? (
-    <div>
-      <nav>
-        <Nav />
-      </nav>
-      <IntroDiv />
-    </div>
-  ) : (
+  // return isMobile ? (
+  //   <div>
+  //     <nav>
+  //       <Nav />
+  //     </nav>
+  //     <IntroDiv />
+  //   </div>
+  // ) : (
+  return (
     <div
       style={{
         marginLeft: 0,
         paddingLeft: 0,
         background: !useMediaQuery(theme.breakpoints.up(740))
           ? '#fff'
-          : `linear-gradient(90deg, #fff 40%, ${
-              theme.palette.primary.main
-            } 40%)`
+          : `linear-gradient(90deg, #fff 40%, ${theme.palette.primary.main} 40%)`
       }}
     >
       <nav>
