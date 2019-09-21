@@ -77,7 +77,7 @@ const Solution = ({ audience }) => {
           <div>
             <div style={{ padding: '0 40px' }}>
               <Typography
-                style={{ padding: '20px 40px 40px 40px', fontSize: '1.2em' }}
+                style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
                 color={color}
                 variant='body1'
               >
