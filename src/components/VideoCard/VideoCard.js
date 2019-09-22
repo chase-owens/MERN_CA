@@ -113,7 +113,7 @@ const styles = theme => ({
       top: -400
     },
     borderRadius: 5,
-    opacity: 0.8,
+    opacity: 0,
     zIndex: 9999
   },
   skin: {
