@@ -23,7 +23,6 @@ const styles = theme => ({
     height: '100%',
     margin: 'auto',
     paddingBottom: 30
-    // width: !isMobile ? 400 : '95%'
   },
   formInputs: {
     color: '#000',
@@ -32,29 +31,14 @@ const styles = theme => ({
     margin: 'auto',
     marginLeft: isMobile && '10vw'
   },
-  // formInputsMobile: {
-  //   color: '#000',
-  //   width: '100%'
-  // },
   formInput: {
     marginBottom: 13,
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     color: 'transparent',
-    '& label': {
-      // fontSize: isMobile ? '2.7em' : null
-    }
+    '& label': {}
   },
-  // formInputMobile: {
-  //   marginBottom: 13,
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   color: 'transparent',
-  //   '& label': {
-  //     fontSize: isMobile ? '2.7em' : null
-  //   }
-  // },
   button: {
     background: theme.palette.ternary.main,
     color: '#fff',
@@ -346,7 +330,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
         {isAuthenticating && (
           <Grid item sm={12} md={6}>
             <Grid container style={{ width: '100%' }} justify='center'>
-              <Grid item sm={8} md={12}>
+              <Grid item>
                 {unknownError && (
                   <Typography
                     style={{ fontSize: '1.2em', color: '#f00' }}
