@@ -99,18 +99,8 @@ const styles = theme => ({
     position: 'relative',
     display: 'block',
     width: '100%',
-    [theme.breakpoints.down(740)]: {
-      height: 350,
-      top: -350
-    },
-    [theme.breakpoints.up(740)]: {
-      height: 240,
-      top: -240
-    },
-    [theme.breakpoints.up('md')]: {
-      height: 200,
-      top: -200
-    },
+    height: 350,
+    top: -350,
     left: 0,
     borderRadius: 5,
     opacity: 0.8,
@@ -118,7 +108,7 @@ const styles = theme => ({
   },
   skin: {
     position: 'relative',
-    display: 'block',
+    // display: 'block',
     width: '100%',
     [theme.breakpoints.down(740)]: {
       height: 350,
