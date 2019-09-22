@@ -26,7 +26,7 @@ const Captcha = ({ selected, handleChange, classes }) => {
       {useMediaQuery(theme.breakpoints.down(675)) && (
         <Card
           style={{
-            width: isMobile ? '80vw' : '30vw',
+            width: isMobile ? '90vw' : '30vw',
             background: theme.palette.primary.main
           }}
         >
@@ -35,7 +35,7 @@ const Captcha = ({ selected, handleChange, classes }) => {
             justify='space-around'
             container
             style={{
-              height: '30vw',
+              height: isMobile ? '90vw' : '30vw',
               width: '100%',
               margin: 'auto',
               background: theme.palette.ternary.main,
@@ -73,7 +73,7 @@ const Captcha = ({ selected, handleChange, classes }) => {
                     src={logoPath}
                     alt=''
                     style={{
-                      height: '8vw',
+                      height: isMobile ? '25vw' : '8vw',
                       marginTop: selected.includes(4) ? -3.8 : -2,
                       marginLeft: selected.includes(4) ? -0.2 : 2
                     }}
