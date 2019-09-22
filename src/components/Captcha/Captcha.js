@@ -78,15 +78,15 @@ const Captcha = ({ selected, handleChange, classes }) => {
                       height: isMobile ? '25vw' : '8vw',
                       marginTop: isMobile
                         ? selected.includes(4)
-                          ? 7
-                          : 8
+                          ? 3
+                          : 5
                         : selected.includes(4)
                         ? -3.8
                         : -2,
                       marginLeft: isMobile
                         ? selected.includes(4)
-                          ? 12
-                          : 13
+                          ? 10
+                          : 12
                         : selected.includes(4)
                         ? -0.2
                         : 2
