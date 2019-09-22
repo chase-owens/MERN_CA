@@ -5,19 +5,19 @@ const twoXtwo = [
       {
         alternative: 'Excited Behaviors',
         consequences: [
-          'possible affection',
-          'certain interaction',
-          'unlikely talked to nicely',
-          'likely yelled at'
+          { outcome: 'certain interaction', value: 4 },
+          { outcome: 'possible affection', value: 4 },
+          { outcome: 'unlikely talked to nicely', value: 4 },
+          { outcome: 'likely yelled at ', value: 4 }
         ]
       },
       {
         alternative: 'Calm Behaviors',
         consequences: [
-          'likely ignored',
-          'scratches unlikely',
-          'possible people saying good dog',
-          'possible smiles'
+          { outcome: 'likely ignored', value: 4 },
+          { outcome: 'scratches unlikely', value: 4 },
+          { outcome: 'possible people saying good dog', value: 4 },
+          { outcome: 'possible smiles', value: 4 }
         ]
       }
     ]
@@ -28,19 +28,19 @@ const twoXtwo = [
       {
         alternative: 'Excited Behaviors',
         consequences: [
-          'possible affection',
-          'certain interaction',
-          'unlikely talked to nicely',
-          'likely yelled at'
+          { outcome: 'possible affection', value: 4 },
+          { outcome: 'certain interaction', value: 4 },
+          { outcome: 'unlikely talked to nicely', value: 4 },
+          { outcome: 'likely yelled at', value: 4 }
         ]
       },
       {
         alternative: 'Calm Behaviors',
         consequences: [
-          'certain interaction',
-          'lots of scratches',
-          'lots of smiles',
-          'possible people saying good dog'
+          { outcome: 'certain interaction', value: 4 },
+          { outcome: 'lots of scratches', value: 4 },
+          { outcome: 'lots of smiles', value: 4 },
+          { outcome: 'possible people saying good dog', value: 4 }
         ]
       }
     ]

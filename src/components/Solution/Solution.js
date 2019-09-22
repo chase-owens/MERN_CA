@@ -80,27 +80,23 @@ const Solution = ({ audience }) => {
                 color={color}
                 variant='body1'
               >
-                We followed the Constructional Approach (Goldiamond, 1974) in
-                the development of Constructional Affection. We first identified
-                target outcomes by asking what behaviors under what conditions
-                make up calm interactions. After making explicit the target
-                outcomes we turned to identifying current relevant repertoires
-                and other assets. Since approaching for affection is a member of
-                both excited and calm behaviors and because it was the
-                consequence specified in the target outcome, affection was
-                selected as the reinforcer. Approaching, sitting, and lying down
-                are responses aready in the repertoire, and all are good
-                candidates as entry repertoire. Approaching for affection is
-                then necessary. Response shaping is used to shape sitting or
-                lying down. Stimulus fading is used to maintain sitting or lying
-                down under the stimulus conditions defined by the target
-                objective. Then, if the target objective specifies consequences
-                other than petting and scratching, those consequences are
-                provided contingent upon the occurrence of the occasion-behavior
-                relation declared in the objective.
+                Constructional Affection is the artifact of following the
+                Constructional Approach (Goldiamond, 1974) to create calm
+                interactions with dogs. The first step was to define calm
+                behaviors and specify under what conditions they would occur.
+                Then current relevant repertoire (approaching, sitting, lying
+                down) and other assets (affection as a reinforcer) were
+                identified. The steps of the program were then defined. The
+                first step uses response shaping to expand on the entry
+                repertoire and establish calm behaviors. The second step uses
+                stimulus fading to maintain calm behaviors under the target
+                conditions. Then, if the target objective specifies consequences
+                other than petting and scratching, the final step brings the
+                target occasion-behavior relation in contact with the target
+                consequence.
               </Typography>
             </div>
-            <Matricies />
+            {/* <Matricies /> */}
           </div>
         ) : (
           <div style={{ padding: '0 40px' }}>

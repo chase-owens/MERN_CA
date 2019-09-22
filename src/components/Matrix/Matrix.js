@@ -82,13 +82,19 @@ const Matrix = ({ matrix }) => {
                   <Typography>{alternative.alternative}</Typography>
                 </CustomTableCell>
                 <CustomTableCell>
-                  <ul>
-                    {alternative.consequences.map(q => (
-                      <li key={q}>
-                        <Typography>{q}</Typography>
-                      </li>
-                    ))}
-                  </ul>
+                  {isMobile ? (
+                    alternative.consequences.map(q => (
+                      <Typography key={q.outcome}>{q.outcome}</Typography>
+                    ))
+                  ) : (
+                    <ul>
+                      {alternative.consequences.map(q => (
+                        <li key={q.outcome}>
+                          <Typography>{q.outcome}</Typography>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </CustomTableCell>
               </TableRow>
             ))}
