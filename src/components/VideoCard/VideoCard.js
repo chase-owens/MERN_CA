@@ -98,6 +98,26 @@ const styles = theme => ({
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '50% 50%'
   },
+  mobileVideo: {
+    position: 'relative',
+    display: 'block',
+    width: '100%',
+    [theme.breakpoints.down(740)]: {
+      height: 350,
+      top: -350
+    },
+    [theme.breakpoints.up(740)]: {
+      height: 240,
+      top: -240
+    },
+    [theme.breakpoints.up('md')]: {
+      height: 200,
+      top: -200
+    },
+    left: 0,
+    borderRadius: 5,
+    opacity: 0
+  },
   skin: {
     position: 'relative',
     display: 'block',
@@ -134,20 +154,6 @@ const styles = theme => ({
       height: 200
     }
   },
-  // text: {
-  //   [theme.breakpoints.down(740)]: {
-  //     paddingTop: 350,
-  //     paddingBottom: -350
-  //   },
-  //   [theme.breakpoints.up(740)]: {
-  //     paddingTop: 240,
-  //     paddingBottom: -240
-  //   },
-  //   [theme.breakpoints.up('md')]: {
-  //     paddingTop: 200,
-  //     paddingBottom: -240
-  //   }
-  // },
   mobileCard: {
     width: '100%',
     '&:hover': {
@@ -211,7 +217,10 @@ const VideoCard = ({
   playVideo
 }) => {
   return (
-    <div className={classes.card} onClick={() => toggleMovie(video.videoPath)}>
+    <div
+      className={classes.card}
+      onClick={!isMobile && (() => toggleMovie(video.videoPath))}
+    >
       <div className={classes.innerCard}>
         <Card
           className={classes.image}
@@ -226,6 +235,19 @@ const VideoCard = ({
             </Icon>
           </div>
         </span>
+        {isMobile && (
+          <iframe
+            width='100%'
+            height='100%'
+            className={classes.mobileVideo}
+            src={
+              video.embedPath === undefined ? video.videoPath : video.embedPath
+            }
+            frameborder='0'
+            allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+          ></iframe>
+        )}
       </div>
 
       <br />
