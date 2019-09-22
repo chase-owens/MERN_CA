@@ -116,7 +116,8 @@ const styles = theme => ({
     },
     left: 0,
     borderRadius: 5,
-    opacity: 0
+    opacity: 0,
+    zIndex: 9999
   },
   skin: {
     position: 'relative',
