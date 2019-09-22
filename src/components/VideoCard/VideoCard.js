@@ -240,9 +240,7 @@ const VideoCard = ({
             width='100%'
             height='100%'
             className={classes.mobileVideo}
-            src={
-              video.embedPath === undefined ? video.videoPath : video.embedPath
-            }
+            src={video.embedPath}
             frameborder='0'
             allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
