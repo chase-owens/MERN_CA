@@ -21,93 +21,12 @@ const styles = theme => ({
 });
 
 const Captcha = ({ selected, handleChange, classes }) => {
-  return isMobile ? (
-    <div style={{ margin: 'auto', dispay: 'block' }}>
-      <Card
-        style={{
-          width: '30vw',
-          background: theme.palette.primary.main
-        }}
-      >
-        <Grid
-          spacing={8}
-          justify='space-around'
-          container
-          style={{
-            height: '30vw',
-            width: '100%',
-            margin: 'auto',
-            background: theme.palette.ternary.main,
-            overflow: 'hidden',
-            padding: 4
-          }}
-        >
-          {boxes.map((box, i) => (
-            <Grid
-              className={classes.box}
-              key={box}
-              value={i}
-              item
-              style={{
-                height: '33%',
-                width: '33%',
-                borderRadius: '5px',
-                border:
-                  i === 4
-                    ? selected.includes(4)
-                      ? `8px solid ${theme.palette.primary.dark}`
-                      : `4px solid ${theme.palette.ternary.main}`
-                    : `4px solid ${theme.palette.ternary.main}`,
-                background:
-                  i !== 4
-                    ? selected.includes(i)
-                      ? theme.palette.secondary.dark
-                      : theme.palette.secondary.light
-                    : theme.palette.primary.main
-              }}
-            >
-              <Button
-                onClick={e => handleChange(i)}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  border:
-                    i === 4
-                      ? selected.includes(4)
-                        ? `8px solid ${theme.palette.primary.dark}`
-                        : `4px solid ${theme.palette.ternary.main}`
-                      : `4px solid ${theme.palette.ternary.main}`,
-                  background:
-                    i !== 4
-                      ? selected.includes(i)
-                        ? theme.palette.secondary.dark
-                        : theme.palette.secondary.light
-                      : theme.palette.primary.main
-                }}
-              >
-                {i === 4 && (
-                  <img
-                    src={logoPath}
-                    alt=''
-                    style={{
-                      height: '8vw',
-                      marginTop: selected.includes(4) ? 0 : '0.2vw',
-                      marginLeft: selected.includes(4) ? '0.65vw' : '0.9vw'
-                    }}
-                  />
-                )}
-              </Button>
-            </Grid>
-          ))}
-        </Grid>
-      </Card>
-    </div>
-  ) : (
+  return (
     <div style={{ margin: 'auto' }}>
       {useMediaQuery(theme.breakpoints.down(675)) && (
         <Card
           style={{
-            width: '30vw',
+            width: isMobile ? '80vw' : '30vw',
             background: theme.palette.primary.main
           }}
         >
