@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { isMobile } from 'react-device-detect';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -36,7 +36,7 @@ const Matrix = ({ matrix }) => {
     <div
       style={{
         margin: '30px 0',
-        width: 420,
+        width: isMobile ? '90vw' : 420,
         height: '100%'
       }}
     >
