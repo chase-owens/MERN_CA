@@ -141,49 +141,51 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
     switch (relation) {
       case 'above':
         if (selected.length !== 3) {
-          return passed;
+          break;
         }
         selected.includes(0) &&
           selected.includes(1) &&
           selected.includes(2) &&
           (passed = true);
+        break;
       case 'below':
         if (selected.length !== 3) {
-          return passed;
+          break;
         }
         selected.includes(6) &&
           selected.includes(7) &&
           selected.includes(8) &&
           (passed = true);
+        break;
       case 'on the left of':
         if (selected.length !== 3) {
-          return passed;
+          break;
         }
         selected.includes(0) &&
           selected.includes(3) &&
           selected.includes(6) &&
           (passed = true);
+        break;
       case 'on the right of':
         if (selected.length !== 3) {
-          return passed;
+          break;
         }
         selected.includes(2) &&
           selected.includes(5) &&
           selected.includes(8) &&
           (passed = true);
+        break;
       case 'with an edge touching':
         if (selected.length !== 4) {
-          return passed;
+          break;
         }
         selected.includes(1) &&
           selected.includes(3) &&
           selected.includes(5) &&
           selected.includes(7) &&
           (passed = true);
-    }
-    console.log('PASSED: ', passed);
-    if (!passed) {
-      administerTuringTest();
+
+        break;
     }
     return passed;
   };
