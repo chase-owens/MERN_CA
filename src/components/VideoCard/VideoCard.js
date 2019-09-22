@@ -221,17 +221,6 @@ const VideoCard = ({
       className={classes.card}
       onClick={!isMobile && (() => toggleMovie(video.videoPath))}
     >
-      {isMobile && (
-        <iframe
-          width='100%'
-          height='100%'
-          className={classes.mobileVideo}
-          src={video.embedPath}
-          frameborder='0'
-          allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
-          allowFullScreen
-        ></iframe>
-      )}
       <div className={classes.innerCard}>
         <Card
           className={classes.image}
@@ -246,6 +235,15 @@ const VideoCard = ({
             </Icon>
           </div>
         </span>
+        {isMobile && (
+          <iframe
+            className={classes.mobileVideo}
+            src={video.embedPath}
+            frameborder='0'
+            allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+          ></iframe>
+        )}
       </div>
 
       <br />
