@@ -100,8 +100,18 @@ const styles = theme => ({
     display: 'block',
     width: '100%',
     height: 350,
-    top: -650,
-    left: 0,
+    [theme.breakpoints.down(740)]: {
+      height: 350,
+      top: -700
+    },
+    [theme.breakpoints.up(740)]: {
+      height: 240,
+      top: -480
+    },
+    [theme.breakpoints.up('md')]: {
+      height: 200,
+      top: -400
+    },
     borderRadius: 5,
     opacity: 0.8,
     zIndex: 9999
