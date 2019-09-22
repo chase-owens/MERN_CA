@@ -48,7 +48,6 @@ const styles = theme => ({
       [theme.breakpoints.up('md')]: {
         paddingTop: 70
       },
-      // paddingTop: theme.breakpoints.down('sm') ? 90 : 70,
       paddingLeft: 10
     },
     '&:hover i': {
@@ -66,9 +65,7 @@ const styles = theme => ({
       },
       paddingLeft: 0
     },
-    '&:hover i span': {
-      // height: 200
-    }
+    '&:hover i span': {}
   },
   innerCard: {
     [theme.breakpoints.down(740)]: {
@@ -116,7 +113,7 @@ const styles = theme => ({
     },
     left: 0,
     borderRadius: 5,
-    opacity: 0,
+    opacity: 0.8,
     zIndex: 9999
   },
   skin: {
