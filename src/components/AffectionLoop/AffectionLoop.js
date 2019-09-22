@@ -17,7 +17,6 @@ const AffectionLoop = ({ classes }) => {
   return (
     <div style={{ padding: 30, background: theme.palette.secondary.main }}>
       <Typography
-        className={classes.text}
         color='textSecondary'
         paragraph
         variant='headline'
