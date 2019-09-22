@@ -24,6 +24,12 @@ const styles = theme => ({
     margin: 'auto',
     paddingBottom: 30
   },
+  innerContainer: {
+    width: isMobile && '90vw',
+    display: isMobile && 'block',
+    margin: isMobile && 'auto',
+    marginLeft: isMobile && '10vw'
+  },
   formInputs: {
     color: '#000',
     width: isMobile ? '90vw' : 400,
@@ -331,46 +337,48 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
           <Grid item sm={12} md={6}>
             <Grid container style={{ width: '100%' }} justify='center'>
               <Grid item>
-                {unknownError && (
+                <div className={classes.innerContainer}>
+                  {unknownError && (
+                    <Typography
+                      style={{ fontSize: '1.2em', color: '#f00' }}
+                      align='center'
+                      variant='subheading'
+                    >
+                      Let's try that again
+                    </Typography>
+                  )}
                   <Typography
-                    style={{ fontSize: '1.2em', color: '#f00' }}
-                    align='center'
-                    variant='subheading'
-                  >
-                    Let's try that again
-                  </Typography>
-                )}
-                <Typography
-                  style={{ fontSize: '1.5em' }}
-                  align='center'
-                  paragraph
-                  variant='subheading'
-                >
-                  Before we send the message, please select the boxes {relation}{' '}
-                  the logo.
-                </Typography>
-                {committedErrorOnlySelectOneBoxDirectlyToSide && (
-                  <Typography
-                    style={{ fontSize: '1em' }}
+                    style={{ fontSize: '1.5em' }}
                     align='center'
                     paragraph
                     variant='subheading'
                   >
-                    <span style={{ color: '#f00' }}>Hint:</span> On your last
-                    attempt, there were 3 boxes {prevRelation} the logo
+                    Before we send the message, please select the boxes{' '}
+                    {relation} the logo.
                   </Typography>
-                )}
+                  {committedErrorOnlySelectOneBoxDirectlyToSide && (
+                    <Typography
+                      style={{ fontSize: '1em' }}
+                      align='center'
+                      paragraph
+                      variant='subheading'
+                    >
+                      <span style={{ color: '#f00' }}>Hint:</span> On your last
+                      attempt, there were 3 boxes {prevRelation} the logo
+                    </Typography>
+                  )}
 
-                <Grid item>
-                  <Grid container justify='center'>
-                    <Grid item>
-                      <Captcha
-                        selected={selected}
-                        handleChange={handleChange}
-                      />
+                  <Grid item>
+                    <Grid container justify='center'>
+                      <Grid item>
+                        <Captcha
+                          selected={selected}
+                          handleChange={handleChange}
+                        />
+                      </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
+                </div>
               </Grid>
             </Grid>
           </Grid>
