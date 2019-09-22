@@ -100,7 +100,7 @@ const styles = theme => ({
     display: 'block',
     width: '100%',
     height: 350,
-    top: -350,
+    top: -650,
     left: 0,
     borderRadius: 5,
     opacity: 0.8,
@@ -108,7 +108,7 @@ const styles = theme => ({
   },
   skin: {
     position: 'relative',
-    // display: 'block',
+    display: 'block',
     width: '100%',
     [theme.breakpoints.down(740)]: {
       height: 350,
