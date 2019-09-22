@@ -22,12 +22,14 @@ const styles = theme => ({
 
 const Captcha = ({ selected, handleChange, classes }) => {
   return (
-    <div style={{ margin: 'auto' }}>
+    <div style={{ width: '100%' }}>
       {useMediaQuery(theme.breakpoints.down(675)) && (
         <Card
           style={{
             width: isMobile ? '90vw' : '30vw',
-            background: theme.palette.primary.main
+            background: theme.palette.primary.main,
+            display: 'block',
+            margin: 'auto'
           }}
         >
           <Grid
