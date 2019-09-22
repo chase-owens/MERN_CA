@@ -20,7 +20,7 @@ const AffectionLoop = ({ classes }) => {
         className={classes.text}
         color='textSecondary'
         paragraph
-        variant='h3'
+        variant='headline'
         align='center'
       >
         Affection Loop
@@ -55,9 +55,9 @@ const AffectionLoop = ({ classes }) => {
         align='center'
       >
         Start by petting the dog for sitting or lying down. Then withdraw
-        afection momentarily, and return provided sitting or lying down is still
-        occurring. Begin with very short intervals and gradually increase the
-        duration of the loop to 10 seconds.
+        affection momentarily, and return provided sitting or lying down is
+        still occurring. Begin with very short intervals and gradually increase
+        the duration of the loop to 10 seconds.
       </Typography>
       <br />
       {/* <div

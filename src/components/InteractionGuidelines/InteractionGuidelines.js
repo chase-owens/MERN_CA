@@ -26,7 +26,7 @@ const InteractionGuidelines = ({ classes }) => {
         className={classes.text}
         color='textSecondary'
         paragraph
-        variant='h3'
+        variant='headline'
         align='center'
       >
         Interaction Guidelines
