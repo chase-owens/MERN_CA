@@ -287,7 +287,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
         justify='center'
         alignItems='center'
         spacing={40}
-        style={{ maxWidth: '100vw' }}
+        style={{ width: '100%' }}
       >
         <Grid item sm={12} md={6}>
           <Grid container justify='center'>
@@ -376,7 +376,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
           </Grid>
         )}
       </Grid>
-      <div>
+      <div style={{ width: isMobile ? '100vw' : '100%' }}>
         <Grid
           style={{ maxWidth: '100vw' }}
           container
@@ -425,120 +425,3 @@ export default withStyles(styles)(
     )(ContactForm)
   )
 );
-
-{
-  /* {isMobile && (
-        <Grid container justify='center'>
-          <Grid item>
-            <div className={classes.formInputsMobile}>
-              <div className={classes.formInputMobile}>
-                {name !== '' && (
-                  <label
-                    style={{ color: '#fff', fontSize: '1.9em' }}
-                    htmlFor='name'
-                  >
-                    Name
-                  </label>
-                )}
-                <input
-                  className={classes.input}
-                  id='name'
-                  type='text'
-                  placeholder='Name'
-                  onChange={e => setName(e.target.value)}
-                  value={name}
-                  style={{ lineHeight: name == '' ? '2.7em' : '1em' }}
-                />
-              </div>
-              <div className={classes.formInput}>
-                {email !== '' && (
-                  <label
-                    style={{ color: '#fff', fontSize: '1.9em' }}
-                    htmlFor='email'
-                  >
-                    Email
-                  </label>
-                )}
-                <input
-                  className={classes.input}
-                  id='email'
-                  type='email'
-                  placeholder='Email'
-                  onChange={e => setEmail(e.target.value)}
-                  value={email}
-                  style={{ lineHeight: email == '' ? '2.7em' : '1em' }}
-                />
-              </div>
-              <div className={classes.formInput}>
-                {message !== '' && (
-                  <label
-                    style={{ color: '#fff', fontSize: '1.9em' }}
-                    htmlFor='message'
-                  >
-                    Message
-                  </label>
-                )}
-                <textarea
-                  rows={Math.round(message.length / 28 + 0.5)}
-                  className={classes.input}
-                  id='message'
-                  placeholder='Message'
-                  onChange={e => setMessage(e.target.value)}
-                  value={message}
-                  style={{ lineHeight: message == '' ? '2.7em' : '1em' }}
-                />
-              </div>
-            </div>
-          </Grid>
-          {isAuthenticating && (
-            <Grid item>
-              <Grid container style={{ width: '100%' }} justify='center'>
-                <Grid item>
-                  {unknownError && (
-                    <Typography
-                      style={{ fontSize: '1.2em', color: '#f00' }}
-                      align='center'
-                      variant='subheading'
-                    >
-                      Let's try that again
-                    </Typography>
-                  )}
-                  <Typography
-                    style={{ fontSize: '1.5em' }}
-                    align='center'
-                    paragraph
-                    variant='subheading'
-                  >
-                    Before we send the message, please select the boxes{' '}
-                    {relation} the logo.
-                  </Typography>
-                  {committedErrorOnlySelectOneBoxDirectlyToSide && (
-                    <Typography
-                      style={{ fontSize: '1em' }}
-                      align='center'
-                      paragraph
-                      variant='subheading'
-                    >
-                      <span style={{ color: '#f00' }}>Hint:</span> On your last
-                      attempt, there were 3 boxes {prevRelation} the logo
-                    </Typography>
-                  )}
-
-                  <Grid item>
-                    <Grid container justify='center'>
-                      <Grid item>
-                        <Captcha
-                          selected={selected}
-                          handleChange={handleChange}
-                        />
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-          )}
-        </Grid>
-      )}
-      {!isMobile && ( */
-}
