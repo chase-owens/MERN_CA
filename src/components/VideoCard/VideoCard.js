@@ -214,14 +214,14 @@ const VideoCard = ({
   toggleMovie,
   playVideo
 }) => {
-  const [wasSelected, markSelected] = useState(true);
+  const [wasSelected, markSelected] = useState(false);
   function select() {
     markSelected(true);
   }
   return (
     <div
       className={classes.card}
-      onClick={isMobile ? select : () => toggleMovie(video.videoPath)}
+      onClick={isMobile ? select() : () => toggleMovie(video.videoPath)}
     >
       <div className={classes.innerCard}>
         <Card
