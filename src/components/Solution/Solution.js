@@ -82,18 +82,17 @@ const Solution = ({ audience }) => {
               >
                 Constructional Affection is the artifact of following the
                 Constructional Approach (Goldiamond, 1974) to create calm
-                interactions with dogs. The first step was to define calm
-                behaviors and specify under what conditions they would occur.
-                Then current relevant repertoire (approaching, sitting, lying
-                down) and other assets (affection as a reinforcer) were
-                identified. The steps of the program were then defined. The
-                first step uses response shaping to expand on the entry
-                repertoire and establish calm behaviors. The second step uses
-                stimulus fading to maintain calm behaviors under the target
-                conditions. Then, if the target objective specifies consequences
-                other than petting and scratching, the final step brings the
-                target occasion-behavior relation in contact with the target
-                consequence.
+                interactions with dogs. Calm behaviors and the conditions under
+                which they would occur were specified. Then current relevant
+                repertoire (approaching, sitting, lying down) and other assets
+                (affection as a reinforcer) were identified. The program was
+                then constructed. The first step uses response shaping to expand
+                on the entry repertoire and establish calm behaviors. The second
+                step uses stimulus fading to maintain calm behaviors under the
+                target conditions. Then, if the target objective specifies
+                consequences other than petting and scratching, the final step
+                brings the target occasion-behavior relation in contact with the
+                target consequence.
               </Typography>
             </div>
             {/* <Matricies /> */}
