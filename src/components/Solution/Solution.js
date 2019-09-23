@@ -82,17 +82,27 @@ const Solution = ({ audience }) => {
               >
                 Constructional Affection is the artifact of following the
                 Constructional Approach (Goldiamond, 1974) to create calm
-                interactions with dogs. Calm behaviors and the conditions under
-                which they would occur were specified. Then current relevant
-                repertoire (approaching, sitting, lying down) and other assets
-                (affection as a reinforcer) were identified. The program was
-                then constructed. The first step uses response shaping to expand
-                on the entry repertoire and establish calm behaviors. The second
-                step uses stimulus fading to maintain calm behaviors under the
-                target conditions. Then, if the target objective specifies
-                consequences other than petting and scratching, the final step
-                brings the target occasion-behavior relation in contact with the
-                target consequence.
+                interactions with dogs. Excited patterns of behavior are viewed,
+                not as a byproduct of some pent-up state of excitement, nor as
+                an intinstric aspect of being a puppy, but as an operant, being
+                maintained by its consequences. When looking at excited patterns
+                of behavior as an operant, it becomes clear how that becomes the
+                alternative of choice.
+              </Typography>
+
+              <Typography>
+                Target outcomes were specified and they were contrasted against
+                excited patterns to determine if they were viable alternatvies.
+                Then current relevant repertoire (approaching, sitting, lying
+                down) and other assets (affection as a reinforcer) were
+                identified. The program was then constructed. The first step
+                uses response shaping to expand on the entry repertoire and
+                establish calm behaviors. The second step uses stimulus fading
+                to maintain calm behaviors under the target conditions. Then, if
+                the target objective specifies consequences other than petting
+                and scratching, the final step brings the target
+                occasion-behavior relation in contact with the target
+                consequence.
               </Typography>
             </div>
             {/* <Matricies /> */}

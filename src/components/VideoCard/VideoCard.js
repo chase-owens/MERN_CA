@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { theme } from '../../styles/theme';
 import withWidth from '@material-ui/core/withWidth';
 import { isMobile } from 'react-device-detect';
@@ -113,7 +113,7 @@ const styles = theme => ({
       top: -400
     },
     borderRadius: 5,
-    opacity: 0,
+    // opacity: 0,
     zIndex: 9999
   },
   skin: {
@@ -214,10 +214,13 @@ const VideoCard = ({
   toggleMovie,
   playVideo
 }) => {
+  const [wasSelected, markSelected] = useState(false);
   return (
     <div
       className={classes.card}
-      onClick={!isMobile && (() => toggleMovie(video.videoPath))}
+      onClick={
+        isMobile ? markSelected(true) : () => toggleMovie(video.videoPath)
+      }
     >
       <div className={classes.innerCard}>
         <Card
@@ -235,6 +238,7 @@ const VideoCard = ({
         </span>
         {isMobile && (
           <iframe
+            style={{ opacity: wasSelected ? 1 : 0 }}
             className={classes.mobileVideo}
             src={video.embedPath}
             frameborder='0'
