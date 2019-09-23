@@ -11,12 +11,21 @@ const styles = theme => ({
     // width: '100%',
     minHeight: 350,
     background: theme.palette.primary.main,
-    padding: 25
+    padding: 40
   }
 });
 
 const Footer = ({ classes }) => {
-  return <footer className={classes.footer} />;
+  return (
+    <footer className={classes.footer}>
+      <Typography>Our Mission</Typography>
+      <Typography>
+        Our mission to improve the lives of dogs and the amazing people who
+        spoil them. We hope Constructional Affection helps to keep you and your
+        dog happy!
+      </Typography>
+    </footer>
+  );
 };
 
 export default withStyles(styles)(Footer);
