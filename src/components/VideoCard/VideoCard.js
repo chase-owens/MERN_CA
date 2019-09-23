@@ -218,9 +218,7 @@ const VideoCard = ({
   return (
     <div
       className={classes.card}
-      onClick={
-        isMobile ? markSelected(true) : () => toggleMovie(video.videoPath)
-      }
+      onClick={isMobile && (() => toggleMovie(video.videoPath))}
     >
       <div className={classes.innerCard}>
         <Card
