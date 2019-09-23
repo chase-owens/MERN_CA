@@ -90,7 +90,20 @@ const Solution = ({ audience }) => {
                 alternative of choice.
               </Typography>
 
-              <Typography>
+              <Typography
+                style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
+                color={color}
+                variant='body1'
+              >
+                Place holder for matrix of excited patterns and that of calm
+                patterns
+              </Typography>
+
+              <Typography
+                style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
+                color={color}
+                variant='body1'
+              >
                 Target outcomes were specified and they were contrasted against
                 excited patterns to determine if they were viable alternatvies.
                 Then current relevant repertoire (approaching, sitting, lying

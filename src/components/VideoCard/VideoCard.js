@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { theme } from '../../styles/theme';
 import withWidth from '@material-ui/core/withWidth';
 import { isMobile } from 'react-device-detect';
@@ -215,9 +215,9 @@ const VideoCard = ({
   playVideo
 }) => {
   const [wasSelected, markSelected] = useState(false);
-  const select = () => {
-    markSelected(true);
-  };
+  useEffect(() => {
+    focusedVideo === video.videoPath && isMobile && markSelected(true);
+  }, [focusedVideo]);
   return (
     <div
       className={classes.card}
