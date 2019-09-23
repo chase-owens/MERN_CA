@@ -71,7 +71,8 @@ const About = ({ theme }) => {
               already been established as a reinforcer, and that you’re ready to
               begin Constructional Affection.
             </Typography>
-            <Typography>
+            <br />
+            <Typography variant='body1'>
               With Constructional Affection, your dog will calmly solicit your
               attention, politely greet other people, and patiently wait for the
               rest of life's delights.
