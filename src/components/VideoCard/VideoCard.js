@@ -214,7 +214,7 @@ const VideoCard = ({
   toggleMovie,
   playVideo
 }) => {
-  const [wasSelected, markSelected] = useState(false);
+  const [wasSelected, markSelected] = useState(true);
   function select() {
     markSelected(true);
   }
