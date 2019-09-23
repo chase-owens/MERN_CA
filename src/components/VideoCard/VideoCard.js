@@ -225,7 +225,6 @@ const VideoCard = ({
     >
       <div className={classes.innerCard}>
         <Card
-          onClick={isMobile && select}
           className={classes.image}
           style={{
             backgroundImage: `url(${returnImage(video.imagePath)})`
