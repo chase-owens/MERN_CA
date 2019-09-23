@@ -221,7 +221,7 @@ const VideoCard = ({
   return (
     <div
       className={classes.card}
-      onClick={isMobile ? select : () => toggleMovie(video.videoPath)}
+      onClick={isMobile ? select() : () => toggleMovie(video.videoPath)}
     >
       <div className={classes.innerCard}>
         <Card
