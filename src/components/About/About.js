@@ -69,9 +69,12 @@ const About = ({ theme }) => {
               biting your clothes to get your attention, don’t worry - that’s a
               good thing! That means your dog loves you, that your affection has
               already been established as a reinforcer, and that you’re ready to
-              begin Constructional Affection. With Constructional Affection,
-              your dog will calmly solicit your attention, politely greet other
-              people, and patiently wait for the rest of life's delights.
+              begin Constructional Affection.
+            </Typography>
+            <Typography>
+              With Constructional Affection, your dog will calmly solicit your
+              attention, politely greet other people, and patiently wait for the
+              rest of life's delights.
             </Typography>
           </div>
           <br />
