@@ -1,99 +1,99 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { authenticateUser } from '../../app/app.actions';
-import { bindActionCreators } from 'redux';
-import { theme } from 'styles/theme';
-import { isMobile } from 'react-device-detect';
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { authenticateUser } from "../../app/app.actions";
+import { bindActionCreators } from "redux";
+import { theme } from "styles/theme";
+import { isMobile } from "react-device-detect";
 
-import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
-import { withStyles } from '@material-ui/core/styles';
-import { sendContactMessage } from '../../server/httpRequests';
+import withWidth from "@material-ui/core/withWidth";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { withStyles } from "@material-ui/core/styles";
+import { sendContactMessage } from "../../server/httpRequests";
 
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
 
-import Captcha from '../Captcha/Captcha';
+import Captcha from "../Captcha/Captcha";
 
-const styles = theme => ({
+const styles = (theme) => ({
   formContainer: {
-    height: '100%',
-    margin: 'auto',
-    paddingBottom: 30
+    height: "100%",
+    margin: "auto",
+    paddingBottom: 30,
   },
   innerContainer: {
-    width: isMobile && '90vw',
-    display: isMobile && 'block',
-    margin: isMobile && 'auto',
-    marginLeft: isMobile && '10vw'
+    width: isMobile && "90vw",
+    display: isMobile && "block",
+    margin: isMobile && "auto",
+    marginLeft: isMobile && "10vw",
   },
   formInputs: {
-    color: '#000',
-    width: isMobile ? '90vw' : 400,
-    display: 'block',
-    margin: 'auto',
-    marginLeft: isMobile && '10vw'
+    color: "#000",
+    width: isMobile ? "90vw" : 400,
+    display: "block",
+    margin: "auto",
+    marginLeft: isMobile && "10vw",
   },
   formInput: {
     marginBottom: 13,
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    color: 'transparent',
-    '& label': {}
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    color: "transparent",
+    "& label": {},
   },
   button: {
     background: theme.palette.ternary.main,
-    color: '#fff',
-    margin: '15px 0',
-    '&:hover': {
-      background: theme.palette.ternary.main
-    }
+    color: "#fff",
+    margin: "15px 0",
+    "&:hover": {
+      background: theme.palette.ternary.main,
+    },
   },
   input: {
-    fontSize: '1.8em',
-    border: 'none',
-    outline: 'none',
-    borderBottom: 'thin solid #000',
+    fontSize: "1.8em",
+    border: "none",
+    outline: "none",
+    borderBottom: "thin solid #000",
     background: theme.palette.primary.main,
-    overflow: 'visible',
-    '&::placeholder': {
-      color: '#fff',
-      fontSize: '2.7em'
+    overflow: "visible",
+    "&::placeholder": {
+      color: "#fff",
+      fontSize: "2.7em",
     },
-    '&:focus input': {
-      border: 'none',
-      outline: 'none',
-      background: theme.palette.primary.main
-    }
-  }
+    "&:focus input": {
+      border: "none",
+      outline: "none",
+      background: theme.palette.primary.main,
+    },
+  },
 });
 
 const relations = [
-  'above',
-  'below',
-  'on the left of',
-  'on the right of',
-  'with an edge touching'
+  "above",
+  "below",
+  "on the left of",
+  "on the right of",
+  "with an edge touching",
 ];
 
-const mapStateToProps = state => ({
-  authenticated: state.authState.authenticated
+const mapStateToProps = (state) => ({
+  authenticated: state.authState.authenticated,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ authenticateUser }, dispatch);
 
 // Provide feedback pass/fail Turing Test
 // arrange for protected route
 
 const ContactForm = ({ classes, authenticated, authenticateUser }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const [isAuthenticating, setAuthenticating] = useState(false);
 
@@ -105,7 +105,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
   const [prevRelation, setPrevRelation] = useState(null);
   const [
     committedErrorOnlySelectOneBoxDirectlyToSide,
-    setErrorOnlySelectOneBoxDirectlyToSide
+    setErrorOnlySelectOneBoxDirectlyToSide,
   ] = useState(false);
   const [unknownError, setUnknownError] = useState(false);
 
@@ -130,16 +130,16 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
   const getDurationOfAttempt = () => {
     const timeEnd = new Date();
     const duration = timeEnd.getTime() - timeBegin.getTime();
-    console.log('DurationMiliSeconds: ', duration);
+    console.log("DurationMiliSeconds: ", duration);
   };
 
   const turingTest = () => {
     let passed = false;
 
-    setAttempts(prevAttempts => prevAttempts + 1);
+    setAttempts((prevAttempts) => prevAttempts + 1);
 
     switch (relation) {
-      case 'above':
+      case "above":
         if (selected.length !== 3) {
           break;
         }
@@ -148,7 +148,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
           selected.includes(2) &&
           (passed = true);
         break;
-      case 'below':
+      case "below":
         if (selected.length !== 3) {
           break;
         }
@@ -157,7 +157,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
           selected.includes(8) &&
           (passed = true);
         break;
-      case 'on the left of':
+      case "on the left of":
         if (selected.length !== 3) {
           break;
         }
@@ -166,7 +166,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
           selected.includes(6) &&
           (passed = true);
         break;
-      case 'on the right of':
+      case "on the right of":
         if (selected.length !== 3) {
           break;
         }
@@ -175,7 +175,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
           selected.includes(8) &&
           (passed = true);
         break;
-      case 'with an edge touching':
+      case "with an edge touching":
         if (selected.length !== 4) {
           break;
         }
@@ -214,7 +214,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
         setAuthenticating(false);
       } else {
         if (checkErrorOnlySelectOneBoxDirectlyToSide()) {
-          console.log('DirectBox Error');
+          console.log("DirectBox Error");
           setPrevRelation(relation);
           setErrorOnlySelectOneBoxDirectlyToSide(true);
           setUnknownError(false);
@@ -231,25 +231,25 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
     let committedError = false;
     if (selected.length === 1 && attempts < 5) {
       switch (relation) {
-        case 'above':
+        case "above":
           if (selected[0] === 1) {
             committedError = true;
             return committedError;
           }
 
-        case 'below':
+        case "below":
           if (selected[0] === 7) {
             committedError = true;
             return committedError;
           }
 
-        case 'on the left of':
+        case "on the left of":
           if (selected[0] === 3) {
             committedError = true;
             return committedError;
           }
 
-        case 'on the right of':
+        case "on the right of":
           if (selected[0] === 5) {
             committedError = true;
             return committedError;
@@ -262,12 +262,12 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
   };
 
   const resetForm = () => {
-    setName('');
-    setEmail('');
-    setMessage('');
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
-  const handleChange = i => {
+  const handleChange = (i) => {
     if (selected.includes(i)) {
       unSelectBox(i);
     } else {
@@ -275,16 +275,16 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
     }
   };
 
-  const selectBox = i => {
-    console.log('Select: ', i);
+  const selectBox = (i) => {
+    console.log("Select: ", i);
     let input = [i];
     let nowSelected = selected.concat(input);
-    console.log('NowSelected: ', nowSelected);
+    console.log("NowSelected: ", nowSelected);
     setSelected(nowSelected);
   };
 
-  const unSelectBox = i => {
-    let nowSelected = selected.filter(n => n !== i);
+  const unSelectBox = (i) => {
+    let nowSelected = selected.filter((n) => n !== i);
     setSelected(nowSelected);
   };
 
@@ -292,42 +292,42 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
     <div className={classes.formContainer}>
       <Grid
         container
-        justify='center'
-        alignItems='center'
-        spacing={40}
-        style={{ width: '100%' }}
+        justifyContent="center"
+        alignItems="center"
+        spacing={5}
+        style={{ width: "100%" }}
       >
         <Grid item sm={12} md={6}>
-          <Grid container justify='center'>
+          <Grid container justifyContent="center">
             <Grid item>
               <div className={classes.formInputs}>
                 <div className={classes.formInput}>
                   <TextField
-                    style={{ width: '100%' }}
-                    label='Name'
-                    placeholder='Name'
-                    onChange={e => setName(e.target.value)}
+                    style={{ width: "100%" }}
+                    label="Name"
+                    placeholder="Name"
+                    onChange={(e) => setName(e.target.value)}
                     value={name}
                   />
                 </div>
                 <div className={classes.formInput}>
                   <TextField
-                    style={{ width: '100%' }}
-                    label='Email'
-                    placeholder='Email'
-                    onChange={e => setEmail(e.target.value)}
+                    style={{ width: "100%" }}
+                    label="Email"
+                    placeholder="Email"
+                    onChange={(e) => setEmail(e.target.value)}
                     value={email}
-                    type='email'
+                    type="email"
                   />
                 </div>
                 <div className={classes.formInput}>
                   <TextField
-                    style={{ width: '100%' }}
-                    label='Message'
+                    style={{ width: "100%" }}
+                    label="Message"
                     multiline
-                    rowsMax='4'
-                    placeholder='Message'
-                    onChange={e => setMessage(e.target.value)}
+                    rowsMax="4"
+                    placeholder="Message"
+                    onChange={(e) => setMessage(e.target.value)}
                     value={message}
                   />
                 </div>
@@ -337,41 +337,41 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
         </Grid>
         {isAuthenticating && (
           <Grid item sm={12} md={6}>
-            <Grid container style={{ width: '100%' }} justify='center'>
+            <Grid container style={{ width: "100%" }} justifyContent="center">
               <Grid item>
                 <div className={classes.innerContainer}>
                   {unknownError && (
                     <Typography
-                      style={{ fontSize: '1.2em', color: '#f00' }}
-                      align='center'
-                      variant='subheading'
+                      style={{ fontSize: "1.2em", color: "#f00" }}
+                      align="center"
+                      variant="subheading"
                     >
                       Let's try that again
                     </Typography>
                   )}
                   <Typography
-                    style={{ fontSize: '1.5em' }}
-                    align='center'
+                    style={{ fontSize: "1.5em" }}
+                    align="center"
                     paragraph
-                    variant='subheading'
+                    variant="subheading"
                   >
-                    Before we send the message, please select the boxes{' '}
+                    Before we send the message, please select the boxes{" "}
                     {relation} the logo.
                   </Typography>
                   {committedErrorOnlySelectOneBoxDirectlyToSide && (
                     <Typography
-                      style={{ fontSize: '1em' }}
-                      align='center'
+                      style={{ fontSize: "1em" }}
+                      align="center"
                       paragraph
-                      variant='subheading'
+                      variant="subheading"
                     >
-                      <span style={{ color: '#f00' }}>Hint:</span> On your last
+                      <span style={{ color: "#f00" }}>Hint:</span> On your last
                       attempt, there were 3 boxes {prevRelation} the logo
                     </Typography>
                   )}
 
                   <Grid item>
-                    <Grid container justify='center'>
+                    <Grid container justifyContent="center">
                       <Grid item>
                         <Captcha
                           selected={selected}
@@ -386,34 +386,34 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
           </Grid>
         )}
       </Grid>
-      <div style={{ width: isMobile ? '100vw' : '100%' }}>
+      <div style={{ width: isMobile ? "100vw" : "100%" }}>
         <Grid
-          style={{ maxWidth: '100vw' }}
+          style={{ maxWidth: "100vw" }}
           container
-          justify='center'
-          spacing={isMobile ? 16 : 40}
+          justifyContent="center"
+          spacing={isMobile ? 2 : 5}
         >
           {isAuthenticating && (
-            <Grid item style={{ display: 'block', textAlign: 'center' }}>
+            <Grid item style={{ display: "block", textAlign: "center" }}>
               <Button
                 className={classes.button}
                 onClick={cancelTuringTest}
-                variant='contained'
+                variant="contained"
                 style={{
-                  fontSize: '1em'
+                  fontSize: "1em",
                 }}
               >
                 Cancel
               </Button>
             </Grid>
           )}
-          <Grid item style={{ display: 'block', textAlign: 'center' }}>
+          <Grid item style={{ display: "block", textAlign: "center" }}>
             <Button
               className={classes.button}
               onClick={sendData}
-              variant='contained'
+              variant="contained"
               style={{
-                fontSize: '1em'
+                fontSize: "1em",
               }}
             >
               Submit
@@ -423,15 +423,12 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
       </div>
     </div>
   ) : (
-    <Redirect to='/thankyou' />
+    <Redirect to="/thankyou" />
   );
 };
 
 export default withStyles(styles)(
   withWidth({ withTheme: true })(
-    connect(
-      mapStateToProps,
-      mapDispatchToProps
-    )(ContactForm)
+    connect(mapStateToProps, mapDispatchToProps)(ContactForm)
   )
 );

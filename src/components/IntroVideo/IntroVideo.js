@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
-import introVideoPoster from 'images/introVideoPoster.png';
+import React, { useState, useEffect } from "react";
+import withWidth from "@material-ui/core/withWidth";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import introVideoPoster from "images/introVideoPoster.png";
 
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 
-const MEDIA_URL = 'http://dpx1ioq3tyc5t.cloudfront.net/intro3.mp4';
+const MEDIA_URL = "http://dpx1ioq3tyc5t.cloudfront.net/intro3.mp4";
 
 const IntroVideo = ({ theme }) => {
   const [muted, setMuted] = useState(true);
@@ -24,7 +24,7 @@ const IntroVideo = ({ theme }) => {
 
   const iframe = (
     <video
-      width='100%'
+      width="100%"
       autoPlay={autoplay}
       muted={muted}
       playsInline
@@ -50,9 +50,9 @@ const IntroVideo = ({ theme }) => {
   return (
     <div
       style={{
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden'
+        width: "100%",
+        height: "100%",
+        overflow: "hidden",
       }}
     >
       {iframe}

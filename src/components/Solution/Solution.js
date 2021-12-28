@@ -1,46 +1,47 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { theme } from '../../styles/theme';
+import React from "react";
+import { connect } from "react-redux";
+import { theme } from "../../styles/theme";
 
-import Matricies from '../Matricies/Matricies';
-import Typography from '@material-ui/core/Typography';
-import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import Matricies from "../Matricies/Matricies";
+import Typography from "@material-ui/core/Typography";
+import withWidth from "@material-ui/core/withWidth";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-import Translation from '../Translation/Translation';
-import { isMobile } from 'react-device-detect';
+import Translation from "../Translation/Translation";
+import { isMobile } from "react-device-detect";
 
-const mapStateToProps = state => ({
-  audience: state.audienceState.audience
+const mapStateToProps = (state) => ({
+  audience: state.audienceState.audience,
 });
 
 const Solution = ({ audience }) => {
   const color = useMediaQuery(theme.breakpoints.down(740))
-    ? 'textSecondary'
-    : 'default';
+    ? "textSecondary"
+    : "inherit";
+
   return (
     <div
       style={{
         background: useMediaQuery(theme.breakpoints.down(740))
           ? theme.palette.ternary.main
-          : '#fff'
+          : "#fff",
       }}
     >
       <div style={{ paddingTop: 20 }}>
-        <div style={{ padding: '0 40px' }}>
+        <div style={{ padding: "0 40px" }}>
           <Typography
             style={{ paddingBottom: 10 }}
             color={color}
             paragraph
-            variant='caption'
+            variant="caption"
           >
-            <span style={{ fontWeight: 'bold' }}>CA</span> / Solution
+            <span style={{ fontWeight: "bold" }}>CA</span> / Solution
           </Typography>
           <Typography
-            style={{ fontSize: '2em' }}
+            style={{ fontSize: "2em" }}
             color={color}
             paragraph
-            variant='h2'
+            variant="h2"
           >
             Scientific approach to establishing calm behaviors
           </Typography>
@@ -49,20 +50,20 @@ const Solution = ({ audience }) => {
               borderColor: useMediaQuery(theme.breakpoints.down(740))
                 ? theme.palette.secondary.dark
                 : theme.palette.ternary.main,
-              marginBottom: 10
+              marginBottom: 10,
             }}
           />
         </div>
-        <div style={{ padding: '0 40px' }}>
+        <div style={{ padding: "0 40px" }}>
           <Translation />
         </div>
 
-        {audience === 'gen' ? (
-          <div style={{ padding: '0 40px' }}>
+        {audience === "gen" ? (
+          <div style={{ padding: "0 40px" }}>
             <Typography
-              style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
+              style={{ padding: "20px 0 40px 0", fontSize: "1.2em" }}
               color={color}
-              variant='body1'
+              variant="body1"
             >
               We applied state-of-the-art learning science to the development of
               Constructional Affection. Since approaching for affection is a
@@ -72,13 +73,13 @@ const Solution = ({ audience }) => {
               calm more reinforcing than getting excited.
             </Typography>
           </div>
-        ) : audience === 'ba' ? (
+        ) : audience === "ba" ? (
           <div>
-            <div style={{ padding: '0 40px' }}>
+            <div style={{ padding: "0 40px" }}>
               <Typography
-                style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
+                style={{ padding: "20px 0 40px 0", fontSize: "1.2em" }}
                 color={color}
-                variant='body1'
+                variant="body1"
               >
                 Constructional Affection is the artifact of following the
                 Constructional Approach (Goldiamond, 1974) to create calm
@@ -89,20 +90,11 @@ const Solution = ({ audience }) => {
                 of behavior as an operant, it becomes clear how that becomes the
                 alternative of choice.
               </Typography>
-
+              <Matricies />
               <Typography
-                style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
+                style={{ padding: "20px 0 40px 0", fontSize: "1.2em" }}
                 color={color}
-                variant='body1'
-              >
-                Place holder for matrix of excited patterns and that of calm
-                patterns
-              </Typography>
-
-              <Typography
-                style={{ padding: '20px 0 40px 0', fontSize: '1.2em' }}
-                color={color}
-                variant='body1'
+                variant="body1"
               >
                 Target outcomes were specified and they were contrasted against
                 excited patterns to determine if they were viable alternatvies.
@@ -118,18 +110,17 @@ const Solution = ({ audience }) => {
                 consequence.
               </Typography>
             </div>
-            {/* <Matricies /> */}
           </div>
         ) : (
-          <div style={{ padding: '0 40px' }}>
+          <div style={{ padding: "0 40px" }}>
             <Typography
               style={{
-                padding: '20px 0 40px 0',
-                fontSize: '1.2em',
-                overflow: 'hidden'
+                padding: "20px 0 40px 0",
+                fontSize: "1.2em",
+                overflow: "hidden",
               }}
               color={color}
-              variant='body1'
+              variant="body1"
             >
               Woof woof. Grrrrr ruff ruff. Bark wiggle yawn bark, bark, bark.
               Woof woof. Grrrrr ruff ruff. Bark, bark-bark-bark, bark-bark-bark,

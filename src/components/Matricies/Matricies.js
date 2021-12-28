@@ -1,18 +1,18 @@
-import React from 'react';
-import { theme } from '../../styles/theme';
+import React from "react";
+import { theme } from "../../styles/theme";
 
-import Grid from '@material-ui/core/Grid';
-import twoXtwo from '../Matrix/2x2.config';
-import Matrix from '../Matrix/Matrix';
-import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import Grid from "@material-ui/core/Grid";
+import twoXtwo from "../Matrix/2x2.config";
+import Matrix from "../Matrix/Matrix";
+import withWidth from "@material-ui/core/withWidth";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const Matricies = () => {
   const color = useMediaQuery(theme.breakpoints.down(740))
-    ? 'textSecondary'
-    : 'default';
+    ? "textSecondary"
+    : "inherit";
   return (
-    <Grid container spacing={8} justify='space-around'>
+    <Grid container spacing={8} justifyContent="space-around">
       {twoXtwo.map((matrix, i) => (
         <Grid key={i} item>
           <Matrix matrix={matrix} />

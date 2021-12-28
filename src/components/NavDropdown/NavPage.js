@@ -1,17 +1,17 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import NavButtons from '../NavButtons/NavButtons.js';
+import React from "react";
+import { connect } from "react-redux";
+import NavButtons from "../NavButtons/NavButtons.js";
 
-import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
-import Slide from '@material-ui/core/Slide';
-import { isMobile } from 'react-device-detect';
+import withWidth from "@material-ui/core/withWidth";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Slide from "@material-ui/core/Slide";
+import { isMobile } from "react-device-detect";
 
-import { theme } from '../../styles/theme';
+import { theme } from "../../styles/theme";
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   language: state.languageState.language,
-  open: state.sideBarState.open
+  open: state.sideBarState.open,
 });
 
 const NavDropdown = ({ language, open, theme }) => {
@@ -19,25 +19,25 @@ const NavDropdown = ({ language, open, theme }) => {
   return (
     <Slide
       in={open}
-      direction='left'
+      direction="left"
       style={{
-        position: 'fixed',
+        position: "fixed",
         top: 0,
-        width: '100%',
-        height: '100%',
+        width: "100%",
+        height: "100%",
         zIndex: open ? 500 : 5,
-        transition: 'all .18s ease-in-out'
+        transition: "all .18s ease-in-out",
       }}
     >
       <div
         style={{
           background: theme.palette.ternary.main,
-          width: '80%',
-          padding: '0 10%',
-          paddingTop: 80
+          width: "80%",
+          padding: "0 10%",
+          paddingTop: 80,
         }}
       >
-        {open && <NavButtons direction='column' />}
+        {open && <NavButtons direction="column" />}
       </div>
     </Slide>
   );

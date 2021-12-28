@@ -1,24 +1,24 @@
-import React from 'react';
-import withWidth from '@material-ui/core/withWidth';
+import React from "react";
+import withWidth from "@material-ui/core/withWidth";
 
-import Typography from '@material-ui/core/Typography';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import Typography from "@material-ui/core/Typography";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-import { theme } from '../../styles/theme';
+import { theme } from "../../styles/theme";
 
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 
 const AboutCardSmall = ({ point, color }) => {
   return (
-    <div style={{ padding: '30px 30px 0 28px' }}>
-      <Typography color={color} paragraph variant='title'>
+    <div style={{ padding: "30px 30px 0 28px" }}>
+      <Typography color={color} paragraph variant="h2">
         {point.question}
       </Typography>
-      <Typography color={color} paragraph variant='body2'>
+      <Typography color={color} paragraph variant="body2">
         {point.answer}
       </Typography>
       {point.citation !== undefined && (
-        <Typography color={color} paragraph variant='overline'>
+        <Typography color={color} paragraph variant="overline">
           {point.citation}
         </Typography>
       )}

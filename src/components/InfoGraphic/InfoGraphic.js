@@ -1,12 +1,12 @@
-import React from 'react';
-import { theme } from '../../styles/theme';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
-import { isMobile } from 'react-device-detect';
+import React from "react";
+import { theme } from "../../styles/theme";
+import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
+import withWidth from "@material-ui/core/withWidth";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { isMobile } from "react-device-detect";
 
-import logoPath from 'images/Logo.png';
+import logoPath from "images/Logo.png";
 
 const InfoGraphic = ({ info }) => {
   const color = theme.palette.primary.main;
@@ -88,22 +88,22 @@ const InfoGraphic = ({ info }) => {
         height: 390,
         border: `10px solid ${color}`,
         borderRadius: 8,
-        background: '#fff',
-        marginRight: useMediaQuery(theme.breakpoints.down('xs')) ? 20 : 0
+        background: "#fff",
+        marginRight: useMediaQuery(theme.breakpoints.down("xs")) ? 20 : 0,
       }}
     >
       <div
         style={{
-          margin: 'auto',
+          margin: "auto",
           width: 170,
-          height: 100
+          height: 100,
         }}
       >
-        <div style={{ height: 70, width: '100%', background: color }}>
+        <div style={{ height: 70, width: "100%", background: color }}>
           <Typography
-            align='center'
-            variant='body1'
-            style={{ lineHeight: 3.1, fontSize: '1.5em' }}
+            align="center"
+            variant="body1"
+            style={{ lineHeight: 3.1, fontSize: "1.5em" }}
           >
             {info.ribbonTitle}
           </Typography>
@@ -113,7 +113,7 @@ const InfoGraphic = ({ info }) => {
             width: 0,
             borderLeft: `85px solid ${color}`,
             borderRight: `85px solid ${color}`,
-            borderBottom: `20px solid transparent`
+            borderBottom: `20px solid transparent`,
           }}
         />
       </div>
@@ -121,30 +121,30 @@ const InfoGraphic = ({ info }) => {
         style={{
           width: 120,
           height: 120,
-          borderRadius: '50%',
+          borderRadius: "50%",
           background: color,
-          margin: 'auto'
+          margin: "auto",
         }}
       >
         <img
           src={logoPath}
-          alt=''
+          alt=""
           style={{
             height: 80,
             marginLeft: 26,
-            marginTop: 19
+            marginTop: 19,
           }}
         />
       </div>
       <Typography
         paragraph
-        align='center'
-        variant='h1'
-        style={{ marginTop: 40, fontSize: '1.2em', fontWeight: 'bold' }}
+        align="center"
+        variant="h1"
+        style={{ marginTop: 40, fontSize: "1.2em", fontWeight: "bold" }}
       >
         {info.title}
       </Typography>
-      <Typography paragraph align='center' style={{ margin: '0 30px' }}>
+      <Typography paragraph align="center" style={{ margin: "0 30px" }}>
         {info.description}
       </Typography>
     </Paper>

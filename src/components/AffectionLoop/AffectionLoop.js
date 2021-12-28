@@ -1,27 +1,22 @@
-import React from 'react';
-import { theme } from '../../styles/theme';
+import React from "react";
+import { theme } from "../../styles/theme";
 
-import withWidth from '@material-ui/core/withWidth';
-import { isMobile } from 'react-device-detect';
+import withWidth from "@material-ui/core/withWidth";
+import { isMobile } from "react-device-detect";
 
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography";
 
-import { withStyles } from '@material-ui/core/styles';
-const styles = theme => ({
+import { withStyles } from "@material-ui/core/styles";
+const styles = (theme) => ({
   text: {
-    fontSize: '1em'
-  }
+    fontSize: "1em",
+  },
 });
 
 const AffectionLoop = ({ classes }) => {
   return (
     <div style={{ padding: 30, background: theme.palette.secondary.main }}>
-      <Typography
-        color='textSecondary'
-        paragraph
-        variant='headline'
-        align='center'
-      >
+      <Typography color="textSecondary" paragraph variant="h4" align="center">
         Affection Loop
       </Typography>
       <br />
@@ -49,9 +44,9 @@ const AffectionLoop = ({ classes }) => {
       </div> */}
       <Typography
         className={classes.text}
-        color='textSecondary'
+        color="textSecondary"
         paragraph
-        align='center'
+        align="center"
       >
         Start by petting the dog for sitting or lying down. Then withdraw
         affection momentarily, and return provided sitting or lying down is
@@ -83,9 +78,9 @@ const AffectionLoop = ({ classes }) => {
       </div> */}
       <Typography
         className={classes.text}
-        color='textSecondary'
+        color="textSecondary"
         paragraph
-        align='center'
+        align="center"
       >
         Once your dog is sitting and waiting patiently for your affection, you
         can alter the environment to more closely resemble the context of your
@@ -116,9 +111,9 @@ const AffectionLoop = ({ classes }) => {
       </div> */}
       <Typography
         className={classes.text}
-        color='textSecondary'
+        color="textSecondary"
         paragraph
-        align='center'
+        align="center"
       >
         Gradual increases reduce the liklihood that any excited outbursts will
         occur along the way. But don't be alarmed if any do occur. It's usually

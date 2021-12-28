@@ -1,48 +1,48 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import Button from '@material-ui/core/Button';
-import { theme } from '../../styles/theme';
-import { isMobile } from 'react-device-detect';
-import { withStyles } from '@material-ui/core/styles';
+import React from "react";
+import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import Button from "@material-ui/core/Button";
+import { theme } from "../../styles/theme";
+import { isMobile } from "react-device-detect";
+import { withStyles } from "@material-ui/core/styles";
 
-import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import withWidth from "@material-ui/core/withWidth";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const boxes = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-const logoPath = require('images/Logo.png');
+const logoPath = require("images/Logo.png");
 
-const styles = theme => ({
+const styles = (theme) => ({
   box: {
-    '&:hover': {
-      cursor: 'pointer'
-    }
-  }
+    "&:hover": {
+      cursor: "pointer",
+    },
+  },
 });
 
 const Captcha = ({ selected, handleChange, classes }) => {
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: "100%" }}>
       {useMediaQuery(theme.breakpoints.down(675)) && (
         <Card
           style={{
-            width: isMobile ? '90vw' : '30vw',
+            width: isMobile ? "90vw" : "30vw",
             background: theme.palette.primary.main,
-            display: 'block',
-            margin: 'auto'
+            display: "block",
+            margin: "auto",
           }}
         >
           <Grid
             spacing={8}
-            justify='space-around'
+            justifyContent="space-around"
             container
             style={{
-              height: isMobile ? '90vw' : '30vw',
-              width: '100%',
-              margin: 'auto',
+              height: isMobile ? "90vw" : "30vw",
+              width: "100%",
+              margin: "auto",
               background: theme.palette.ternary.main,
-              overflow: 'hidden',
-              padding: 4
+              overflow: "hidden",
+              padding: 4,
             }}
           >
             {boxes.map((box, i) => (
@@ -51,11 +51,11 @@ const Captcha = ({ selected, handleChange, classes }) => {
                 key={box}
                 value={i}
                 item
-                onClick={e => handleChange(i)}
+                onClick={(e) => handleChange(i)}
                 style={{
-                  height: '33%',
-                  width: '33%',
-                  borderRadius: '5px',
+                  height: "33%",
+                  width: "33%",
+                  borderRadius: "5px",
                   border:
                     i === 4
                       ? selected.includes(4)
@@ -67,15 +67,15 @@ const Captcha = ({ selected, handleChange, classes }) => {
                       ? selected.includes(i)
                         ? theme.palette.secondary.dark
                         : theme.palette.secondary.light
-                      : theme.palette.primary.main
+                      : theme.palette.primary.main,
                 }}
               >
                 {i === 4 && (
                   <img
                     src={logoPath}
-                    alt=''
+                    alt=""
                     style={{
-                      height: isMobile ? '25vw' : '8vw',
+                      height: isMobile ? "25vw" : "8vw",
                       marginTop: isMobile
                         ? selected.includes(4)
                           ? 1
@@ -89,7 +89,7 @@ const Captcha = ({ selected, handleChange, classes }) => {
                           : 10
                         : selected.includes(4)
                         ? -0.2
-                        : 2
+                        : 2,
                     }}
                   />
                 )}
@@ -101,21 +101,21 @@ const Captcha = ({ selected, handleChange, classes }) => {
       {useMediaQuery(theme.breakpoints.up(675)) && (
         <Card
           style={{
-            width: '30vw',
-            background: theme.palette.primary.main
+            width: "30vw",
+            background: theme.palette.primary.main,
           }}
         >
           <Grid
             spacing={8}
-            justify='space-around'
+            justifyContent="space-around"
             container
             style={{
-              height: '30vw',
-              width: '100%',
-              margin: 'auto',
+              height: "30vw",
+              width: "100%",
+              margin: "auto",
               background: theme.palette.ternary.main,
-              overflow: 'hidden',
-              padding: 4
+              overflow: "hidden",
+              padding: 4,
             }}
           >
             {boxes.map((box, i) => (
@@ -124,11 +124,11 @@ const Captcha = ({ selected, handleChange, classes }) => {
                 key={box}
                 value={i}
                 item
-                onClick={e => handleChange(i)}
+                onClick={(e) => handleChange(i)}
                 style={{
-                  height: '33%',
-                  width: '33%',
-                  borderRadius: '5px',
+                  height: "33%",
+                  width: "33%",
+                  borderRadius: "5px",
                   border:
                     i === 4
                       ? selected.includes(4)
@@ -140,17 +140,17 @@ const Captcha = ({ selected, handleChange, classes }) => {
                       ? selected.includes(i)
                         ? theme.palette.secondary.dark
                         : theme.palette.secondary.light
-                      : theme.palette.primary.main
+                      : theme.palette.primary.main,
                 }}
               >
                 {i === 4 && (
                   <img
                     src={logoPath}
-                    alt=''
+                    alt=""
                     style={{
-                      height: '8vw',
-                      marginTop: selected.includes(4) ? 0 : '0.2vw',
-                      marginLeft: selected.includes(4) ? '0.65vw' : '0.9vw'
+                      height: "8vw",
+                      marginTop: selected.includes(4) ? 0 : "0.2vw",
+                      marginLeft: selected.includes(4) ? "0.65vw" : "0.9vw",
                     }}
                   />
                 )}

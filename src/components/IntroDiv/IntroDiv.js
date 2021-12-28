@@ -1,33 +1,33 @@
-import React, { Fragment } from 'react';
-import { connect } from 'react-redux';
+import React, { Fragment } from "react";
+import { connect } from "react-redux";
 
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
-import { withStyles } from '@material-ui/core/styles';
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import withWidth from "@material-ui/core/withWidth";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { withStyles } from "@material-ui/core/styles";
 
-import IntroVideo from '../IntroVideo/IntroVideo';
+import IntroVideo from "../IntroVideo/IntroVideo";
 
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   language: state.languageState.language,
-  open: state.sideBarState.open
+  open: state.sideBarState.open,
 });
 
-const styles = theme => ({
+const styles = (theme) => ({
   title: {
-    fontSize: '2.6em'
+    fontSize: "3em",
   },
   introDiv: {
-    [theme.breakpoints.down('sm')]: {
-      bottom: -230
+    [theme.breakpoints.down("sm")]: {
+      bottom: -230,
     },
-    [theme.breakpoints.up('sm')]: {
-      bottom: -180
-    }
-  }
+    [theme.breakpoints.up("sm")]: {
+      bottom: -180,
+    },
+  },
 });
 
 const IntroDiv = ({ theme, classes, open }) => {
@@ -35,20 +35,20 @@ const IntroDiv = ({ theme, classes, open }) => {
     <div>
       <Grid
         container
-        direction='row'
+        direction="row"
         style={{
-          position: 'relative',
-          marginBottom: !useMediaQuery(theme.breakpoints.up(740)) ? 280 : null
+          position: "relative",
+          marginBottom: !useMediaQuery(theme.breakpoints.up(740)) ? 280 : null,
         }}
       >
         <Grid
           item
           style={{
-            transition: 'all .18s ease-in-out',
-            width: !useMediaQuery(theme.breakpoints.up(740)) ? '100%' : '55%',
+            transition: "all .18s ease-in-out",
+            width: !useMediaQuery(theme.breakpoints.up(740)) ? "100%" : "55%",
             margin: !useMediaQuery(theme.breakpoints.up(740))
               ? 0
-              : '70px 0 130px 0'
+              : "70px 0 130px 0",
           }}
         >
           <IntroVideo />
@@ -56,22 +56,22 @@ const IntroDiv = ({ theme, classes, open }) => {
         <Grid
           item
           style={{
-            width: !useMediaQuery(theme.breakpoints.up(740)) ? '88%' : '45%',
-            margin: 'auto',
-            padding: isMobile ? '50px 30px 0 30px' : '50px 30px 0 50px',
+            width: !useMediaQuery(theme.breakpoints.up(740)) ? "88%" : "45%",
+            margin: "auto",
+            padding: isMobile ? "50px 30px 0 30px" : "50px 30px 0 50px",
             position: !useMediaQuery(theme.breakpoints.up(740))
-              ? 'absolute'
-              : 'static',
-            background: `${theme.palette.primary.main}`
+              ? "absolute"
+              : "static",
+            background: `${theme.palette.primary.main}`,
           }}
           className={classes.introDiv}
         >
-          <Typography variant={'h2'} className={classes.title}>
+          <Typography variant={"h1"} className={classes.title}>
             Constructional Affection
           </Typography>
           <Typography
-            variant='body1'
-            style={{ paddingTop: 25, paddingBottom: 60 }}
+            variant="body1"
+            style={{ paddingTop: 25, paddingBottom: 60, fontSize: "1.2rem" }}
           >
             Establish desired interactions using affection as a reinforcer.
           </Typography>

@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Typography from '@material-ui/core/Typography';
-import Sequence from '../Stepper/Sequence';
+import Typography from "@material-ui/core/Typography";
+import Sequence from "../Stepper/Sequence";
 
-import { theme } from '../../styles/theme';
-import { isMobile } from 'react-device-detect';
+import { theme } from "../../styles/theme";
+import { isMobile } from "react-device-detect";
 
 const TargetOutcomesSmall = ({ target }) => {
   // return isMobile ? (
@@ -28,15 +28,15 @@ const TargetOutcomesSmall = ({ target }) => {
   return (
     <div
       style={{
-        width: '100%',
-        height: '100%',
-        background: theme.palette.primary.main
+        width: "100%",
+        height: "100%",
+        background: theme.palette.primary.main,
       }}
     >
       <Typography
         style={{ padding: `40px 0 30px 0` }}
-        align='center'
-        variant='title'
+        align="center"
+        variant="h5"
       >
         {target.title}
       </Typography>

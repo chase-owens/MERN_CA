@@ -1,19 +1,19 @@
-import React from 'react';
-import Nav from '../Nav/Nav';
-import IntroDiv from '../IntroDiv/IntroDiv';
-import { connect } from 'react-redux';
+import React from "react";
+import Nav from "../Nav/Nav";
+import IntroDiv from "../IntroDiv/IntroDiv";
+import { connect } from "react-redux";
 
-import withWidth from '@material-ui/core/withWidth';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import withWidth from "@material-ui/core/withWidth";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-import { theme } from '../../styles/theme';
+import { theme } from "../../styles/theme";
 
-import { isMobile } from 'react-device-detect';
+import { isMobile } from "react-device-detect";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     language: state.languageState.language,
-    open: state.sideBarState.open
+    open: state.sideBarState.open,
   };
 };
 
@@ -32,8 +32,8 @@ const NavIntro = ({ theme }) => {
         marginLeft: 0,
         paddingLeft: 0,
         background: !useMediaQuery(theme.breakpoints.up(740))
-          ? '#fff'
-          : `linear-gradient(90deg, #fff 40%, ${theme.palette.primary.main} 40%)`
+          ? "#fff"
+          : `linear-gradient(90deg, #fff 40%, ${theme.palette.primary.main} 40%)`,
       }}
     >
       <nav>
