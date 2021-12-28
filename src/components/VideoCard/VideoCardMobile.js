@@ -210,7 +210,6 @@ const VideoCardMobile = ({ video }) => {
   const [source, setSource] = useState(video.videoPath);
 
   const playVideo = () => {
-    console.log(video.videoPath);
     setSource(video.videoPath);
   };
 

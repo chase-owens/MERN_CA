@@ -130,7 +130,6 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
   const getDurationOfAttempt = () => {
     const timeEnd = new Date();
     const duration = timeEnd.getTime() - timeBegin.getTime();
-    console.log("DurationMiliSeconds: ", duration);
   };
 
   const turingTest = () => {
@@ -214,7 +213,6 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
         setAuthenticating(false);
       } else {
         if (checkErrorOnlySelectOneBoxDirectlyToSide()) {
-          console.log("DirectBox Error");
           setPrevRelation(relation);
           setErrorOnlySelectOneBoxDirectlyToSide(true);
           setUnknownError(false);
@@ -276,10 +274,8 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
   };
 
   const selectBox = (i) => {
-    console.log("Select: ", i);
     let input = [i];
     let nowSelected = selected.concat(input);
-    console.log("NowSelected: ", nowSelected);
     setSelected(nowSelected);
   };
 

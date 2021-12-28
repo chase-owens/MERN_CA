@@ -23,60 +23,38 @@ const mapStateToProps = (state) => {
   };
 };
 
-const Nav = ({ theme, language, open, audience, focusedVideo }) => {
-  console.log(language, open, audience);
-
-  // return isMobile ? (
-  //   <div style={{ background: 'transparent', width: '100%', margin: 'auto' }}>
-  //     <Grid
-  //       container
-  //       justifyContent='space-between'
-  //       alignItems='center'
-  //       style={{ height: 140, lineHeight: 1 }}
-  //     >
-  //       <Grid item style={{ marginTop: 10, marginLeft: 20 }}>
-  //         <img height={100} src={logoPath} alt='logo' />
-  //       </Grid>
-  //       <Grid item>
-  //         <Hamburger />
-  //       </Grid>
-  //     </Grid>
-  //     <NavPage />
-  //   </div>
-  // ) : (
-  return (
-    <div
+const Nav = ({ theme, language, open, audience, focusedVideo }) => (
+  <div
+    style={{
+      background: "transparent",
+      width: "100%",
+      margin: "auto",
+    }}
+  >
+    <Grid
+      container
+      justifyContent="space-between"
+      alignItems="center"
       style={{
-        background: "transparent",
-        width: "100%",
+        height: 88,
+        lineHeight: 1,
+        width: "calc(100% - 40px)",
         margin: "auto",
       }}
     >
-      <Grid
-        container
-        justifyContent="space-between"
-        alignItems="center"
-        style={{
-          height: 88,
-          lineHeight: 1,
-          width: "calc(100% - 40px)",
-          margin: "auto",
-        }}
-      >
-        <Grid item style={{ marginTop: 5 }}>
-          <img height={50} src={logoPath} alt="logo" />
-        </Grid>
-        <Grid item>
-          {useMediaQuery(theme.breakpoints.up("md")) ? (
-            <NavButtons direction="row" />
-          ) : (
-            <Hamburger />
-          )}
-        </Grid>
+      <Grid item style={{ marginTop: 5 }}>
+        <img height={50} src={logoPath} alt="logo" />
       </Grid>
-      <NavPage />
-    </div>
-  );
-};
+      <Grid item>
+        {useMediaQuery(theme.breakpoints.up("md")) ? (
+          <NavButtons direction="row" />
+        ) : (
+          <Hamburger />
+        )}
+      </Grid>
+    </Grid>
+    <NavPage />
+  </div>
+);
 
 export default withWidth({ withTheme: true })(connect(mapStateToProps)(Nav));

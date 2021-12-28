@@ -21,7 +21,6 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ changeAudience }, dispatch);
 
 const Chip = ({ label, value, audience, changeAudience }) => {
-  console.log(audience);
   const background =
     value === audience ? theme.palette.secondary.main : "transparent";
   const fab = value === audience ? "secondary" : null;

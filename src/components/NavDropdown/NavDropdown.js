@@ -23,33 +23,30 @@ const mapStateToProps = (state) => {
   };
 };
 
-const NavDropdown = ({ language, open, theme }) => {
-  console.log(language, open);
-  return (
-    <Popper
-      style={{ width: "100%", background: "translucent" }}
-      open={open}
-      transition
-      disablePortal
-    >
-      {({ TransitionProps }) => (
-        <Grow
-          {...TransitionProps}
-          id="menu-list-grow"
-          style={{
-            transformOrigin: "center top",
-          }}
-        >
-          <Grid container justifyContent="center">
-            <Grid item>
-              <NavButtons />
-            </Grid>
+const NavDropdown = ({ language, open, theme }) => (
+  <Popper
+    style={{ width: "100%", background: "translucent" }}
+    open={open}
+    transition
+    disablePortal
+  >
+    {({ TransitionProps }) => (
+      <Grow
+        {...TransitionProps}
+        id="menu-list-grow"
+        style={{
+          transformOrigin: "center top",
+        }}
+      >
+        <Grid container justifyContent="center">
+          <Grid item>
+            <NavButtons />
           </Grid>
-        </Grow>
-      )}
-    </Popper>
-  );
-};
+        </Grid>
+      </Grow>
+    )}
+  </Popper>
+);
 
 export default withWidth({ withTheme: true })(
   connect(mapStateToProps)(NavDropdown)

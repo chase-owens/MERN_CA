@@ -31,14 +31,7 @@ const getBackground = (i) => {
 };
 
 const About = ({ theme }) => {
-  console.log(aboutPoints);
-
   const bottomScrollContainer = useRef();
-
-  useEffect(() => {
-    console.log("scroll container");
-    // bottomScrollContainer.scrollLeft += 30;
-  }, []);
 
   return (
     <div

@@ -1,9 +1,7 @@
 import React from "react";
 import { isMobile } from "react-device-detect";
-import { connect } from "react-redux";
 import { withStyles } from "@material-ui/core/styles";
 
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 import Paper from "@material-ui/core/Paper";

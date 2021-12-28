@@ -15,7 +15,6 @@ const mapStateToProps = (state) => ({
 });
 
 const NavDropdown = ({ language, open, theme }) => {
-  console.log(open);
   return (
     <Slide
       in={open}

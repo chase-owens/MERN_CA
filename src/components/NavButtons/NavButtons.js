@@ -19,7 +19,6 @@ const mapStateToProps = (state) => ({
 });
 
 const scrollToRef = () => {
-  console.log(ref.current);
   ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
