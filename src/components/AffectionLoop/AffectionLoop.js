@@ -15,7 +15,7 @@ const styles = (theme) => ({
 
 const AffectionLoop = ({ classes }) => {
   return (
-    <div style={{ padding: 30, background: theme.palette.secondary.dark }}>
+    <div style={{ padding: 30, background: theme.palette.secondary.main }}>
       <Typography color="textSecondary" paragraph variant="h4" align="center">
         Affection Loop
       </Typography>

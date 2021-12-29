@@ -53,7 +53,7 @@ const HowTo = () => {
         justifyContent="space-between"
         style={{
           background: useMediaQuery(theme.breakpoints.up("740"))
-            ? `linear-gradient(90deg, ${theme.palette.ternary.dark} 50%, ${theme.palette.secondary.dark} 50%)`
+            ? `linear-gradient(90deg, ${theme.palette.ternary.main} 50%, ${theme.palette.secondary.main} 50%)`
             : null,
           width: "100%",
         }}

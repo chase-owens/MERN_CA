@@ -19,7 +19,7 @@ const InteractionGuidelines = ({ classes }) => {
     <div
       style={{
         padding: 30,
-        background: theme.palette.ternary.dark,
+        background: theme.palette.ternary.main,
       }}
     >
       <Typography color="textSecondary" paragraph variant="h4" align="center">

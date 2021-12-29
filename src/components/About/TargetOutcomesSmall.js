@@ -7,24 +7,6 @@ import { theme } from "../../styles/theme";
 import { isMobile } from "react-device-detect";
 
 const TargetOutcomesSmall = ({ target }) => {
-  // return isMobile ? (
-  //   <div
-  //     style={{
-  //       width: '100%',
-  //       height: '100%',
-  //       background: theme.palette.primary.main
-  //     }}
-  //   >
-  //     <Typography
-  //       style={{ padding: `40px 0 30px 0`, fontSize: '2.5em' }}
-  //       align='center'
-  //       variant='title'
-  //     >
-  //       {target.title}
-  //     </Typography>
-  //     <Sequence steps={target.steps} />
-  //   </div>
-  // ) : (
   return (
     <div
       style={{
@@ -36,7 +18,7 @@ const TargetOutcomesSmall = ({ target }) => {
       <Typography
         style={{ padding: `40px 0 30px 0` }}
         align="center"
-        variant="h5"
+        variant="h6"
       >
         {target.title}
       </Typography>

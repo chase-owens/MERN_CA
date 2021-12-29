@@ -12,9 +12,6 @@ const styles = (theme) => ({
     "&:hover span": {
       width: "100%",
     },
-    "&:first-child": {
-      // display: 'block'
-    },
   },
   answer: {
     width: 0,
@@ -72,7 +69,7 @@ const AboutCardBig = ({ point, color, classes }) => {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "50% 50%",
           overflow: "hidden",
-          transition: "all .18s ease-in-out",
+          transition: "all .22s ease-in-out",
         }}
       >
         <Grid
@@ -107,7 +104,7 @@ const AboutCardBig = ({ point, color, classes }) => {
               style={{
                 fontSize: "0.9em",
                 fontWeight: "bold",
-                // textShadow: '0 1px black'
+                maxHeight: 100,
               }}
               variant="body1"
             >

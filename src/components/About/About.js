@@ -132,16 +132,17 @@ const About = ({ theme }) => {
             }}
             spacing={5}
           >
-            {targetOutcomes?.map((target) => (
+            {targetOutcomes?.map((target, index) => (
               <Grid
                 item
                 key={target.title}
                 style={{
                   flexShrink: 0,
-                  width: isMobile ? "94vw" : "65%",
+                  width: isMobile ? "91vw" : "65%",
                   height: "65vw",
                   minHeight: 450,
-                  minWidth: isMobile ? "94vw" : 400,
+                  minWidth: isMobile ? "91vw" : 400,
+                  paddingRight: index === targetOutcomes.length - 1 ? 0 : 20,
                 }}
               >
                 <Card
@@ -246,7 +247,6 @@ const About = ({ theme }) => {
           <Grid
             item
             sm={8}
-            lg={6}
             style={{
               padding: "40px 25px 0 50px",
             }}

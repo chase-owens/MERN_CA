@@ -91,7 +91,7 @@ export const theme = createTheme({
   spacing: (unit) => unit * 8,
   breakpoints: {
     sm: 600,
-    smmd: 740,
+    smmd: 768,
     lg: 1280,
   },
   transitions: {

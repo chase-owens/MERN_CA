@@ -18,11 +18,14 @@ const mapStateToProps = (state) => ({
 
 const styles = (theme) => ({
   title: {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2rem",
+    },
     fontSize: "3em",
   },
   introDiv: {
     [theme.breakpoints.down("sm")]: {
-      bottom: -230,
+      bottom: -210,
     },
     [theme.breakpoints.up("sm")]: {
       bottom: -180,

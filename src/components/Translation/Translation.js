@@ -27,7 +27,7 @@ const Translation = ({ classes }) => {
       <Typography color={color} paragraph variant="subtitle2">
         Translation
       </Typography>
-      <Grid container spacing={8} direction="row" wrap="nowrap">
+      <Grid container spacing={1} direction="row" wrap="wrap">
         <Grid item>
           <Chip className={classes.chip} value="gen" label="General" />
         </Grid>

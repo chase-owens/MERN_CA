@@ -59,7 +59,7 @@ const Matrix = ({ matrix }) => {
             <TableRow>
               <CustomTableCell>
                 <Typography color="textPrimary" align="center">
-                  Alternative
+                  Alternatives
                 </Typography>
               </CustomTableCell>
               <CustomTableCell>
@@ -76,19 +76,21 @@ const Matrix = ({ matrix }) => {
           </TableHead>
           <TableBody>
             {matrix.alternatives.map((alternative) => (
-              <TableRow key={alternative.title}>
+              <TableRow key={alternative.alternative}>
                 <CustomTableCell>
                   <Typography>{alternative.alternative}</Typography>
                 </CustomTableCell>
                 <CustomTableCell>
                   {isMobile ? (
                     alternative.consequences.map((q) => (
-                      <Typography key={q.outcome}>{q.outcome}</Typography>
+                      <Typography gutterBottom key={q.outcome}>
+                        {q.outcome} ({q.value})
+                      </Typography>
                     ))
                   ) : (
                     <ul>
                       {alternative.consequences.map((q) => (
-                        <li key={q.outcome}>
+                        <li key={q.outcome + matrix.title}>
                           <Typography>
                             {q.outcome} ({q.value})
                           </Typography>
