@@ -30,7 +30,7 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
           style={{
             position: "fixed",
             zIndex: 999,
-            top: isMobile ? 9 : 10,
+            top: 22,
             right: 10,
           }}
         >
@@ -91,7 +91,7 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
             position: "fixed",
             color: "#fff",
             zIndex: 999,
-            top: 10,
+            top: 22,
             right: 10,
           }}
           onClick={toggleSidebar}
