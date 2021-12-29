@@ -33,8 +33,7 @@ const Captcha = ({ selected, handleChange, classes }) => {
           }}
         >
           <Grid
-            spacing={8}
-            justifyContent="space-around"
+            justify="space-around"
             container
             style={{
               height: isMobile ? "90vw" : "30vw",
@@ -53,6 +52,9 @@ const Captcha = ({ selected, handleChange, classes }) => {
                 item
                 onClick={(e) => handleChange(i)}
                 style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                   height: "33%",
                   width: "33%",
                   borderRadius: "5px",
@@ -76,20 +78,6 @@ const Captcha = ({ selected, handleChange, classes }) => {
                     alt=""
                     style={{
                       height: isMobile ? "25vw" : "8vw",
-                      marginTop: isMobile
-                        ? selected.includes(4)
-                          ? 1
-                          : 3
-                        : selected.includes(4)
-                        ? -3.8
-                        : -2,
-                      marginLeft: isMobile
-                        ? selected.includes(4)
-                          ? 8
-                          : 10
-                        : selected.includes(4)
-                        ? -0.2
-                        : 2,
                     }}
                   />
                 )}
@@ -106,7 +94,6 @@ const Captcha = ({ selected, handleChange, classes }) => {
           }}
         >
           <Grid
-            spacing={8}
             justifyContent="space-around"
             container
             style={{
@@ -126,6 +113,9 @@ const Captcha = ({ selected, handleChange, classes }) => {
                 item
                 onClick={(e) => handleChange(i)}
                 style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                   height: "33%",
                   width: "33%",
                   borderRadius: "5px",
@@ -146,11 +136,9 @@ const Captcha = ({ selected, handleChange, classes }) => {
                 {i === 4 && (
                   <img
                     src={logoPath}
-                    alt=""
+                    alt="logo"
                     style={{
                       height: "8vw",
-                      marginTop: selected.includes(4) ? 0 : "0.2vw",
-                      marginLeft: selected.includes(4) ? "0.65vw" : "0.9vw",
                     }}
                   />
                 )}

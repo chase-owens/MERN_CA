@@ -13,13 +13,10 @@ import { theme } from "../../styles/theme";
 
 import { isMobile } from "react-device-detect";
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return {
-    open: state.sideBarState.open,
-    focusedVideo: state.videoState.video,
-  };
-};
+const mapStateToProps = (state) => ({
+  open: state.sideBarState.open,
+  focusedVideo: state.videoState.video,
+});
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ toggleSidebar, toggleMovie }, dispatch);
@@ -82,7 +79,7 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
               marginLeft: -5,
             }}
           >
-            <i style={{ fontSize: 40 }} class="material-icons">
+            <i style={{ fontSize: 40 }} className="material-icons">
               close
             </i>
           </Icon>
@@ -108,7 +105,7 @@ const Hamburger = ({ open, toggleSidebar, toggleMovie, focusedVideo }) => {
               marginLeft: -5,
             }}
           >
-            <i style={{ fontSize: 40 }} class="material-icons">
+            <i style={{ fontSize: 40 }} className="material-icons">
               close
             </i>
           </Icon>

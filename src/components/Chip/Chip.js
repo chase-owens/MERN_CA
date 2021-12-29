@@ -23,12 +23,7 @@ const mapDispatchToProps = (dispatch) =>
 const Chip = ({ label, value, audience, changeAudience }) => {
   const background =
     value === audience ? theme.palette.secondary.main : "transparent";
-  const fab = value === audience ? "secondary" : null;
-  const color = useMediaQuery(theme.breakpoints.up(740))
-    ? value == audience
-      ? theme.palette.text.light
-      : theme.palette.text.primary
-    : theme.palette.text.light;
+  const color = theme.palette.text.primary;
 
   return (
     <div>

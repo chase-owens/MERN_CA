@@ -116,7 +116,7 @@ const MovieModal = ({ focusedVideo, toggleMovie }) => {
                       marginLeft: -5,
                     }}
                   >
-                    <i style={{ fontSize: 40 }} class="material-icons">
+                    <i style={{ fontSize: 40 }} className="material-icons">
                       close
                     </i>
                   </Icon>

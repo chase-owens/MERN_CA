@@ -30,7 +30,9 @@ const ContactNav = ({ authorized }) => (
       </Grid>
       <Grid item style={{ margin: "10px 15px" }}>
         <Link style={{ textDecoration: "none" }} to="/">
-          <Button onClick={authorized ? authenticateUser() : null}>Home</Button>
+          <Button onClick={authorized ? authenticateUser : undefined}>
+            Home
+          </Button>
         </Link>
       </Grid>
     </Grid>

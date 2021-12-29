@@ -28,10 +28,13 @@ const Sequence = ({ steps }) => {
               <Grid
                 item
                 style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                   width: 30,
                   height: 30,
                   borderRadius: "50%",
-                  background: theme.palette.ternary.main,
+                  background: theme.palette.warning.main,
                 }}
               >
                 <StepperIcon content={step.icon} />

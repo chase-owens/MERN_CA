@@ -19,67 +19,23 @@ const InteractionGuidelines = ({ classes }) => {
     <div
       style={{
         padding: 30,
-        background: theme.palette.ternary.main,
+        background: theme.palette.ternary.dark,
       }}
     >
       <Typography color="textSecondary" paragraph variant="h4" align="center">
         Interaction Guidelines
       </Typography>
       <br />
-      {/* <div
-        style={{
-          width: 40,
-          height: 40,
-          borderRadius: '50%',
-          background: theme.palette.primary.main,
-          margin: 'auto',
-          marginTop: 5,
-          marginBottom: 5
-        }}
-      >
-        <p
-          style={{
-            lineHeight: 1,
-            width: '100%',
-            textAlign: 'center',
-            lineHeight: 2.5
-          }}
-        >
-          1
-        </p>
-      </div> */}
       <Typography
         className={classes.text}
         color="textSecondary"
         paragraph
         align="center"
       >
-        When the dog approachees, pet the dog with one hand as long as all four
+        When the dog approaches, pet the dog with one hand as long as all four
         feet are on the ground
       </Typography>
       <br />
-      {/* <div
-        style={{
-          width: 40,
-          height: 40,
-          borderRadius: '50%',
-          background: theme.palette.primary.main,
-          margin: 'auto',
-          marginTop: 5,
-          marginBottom: 5
-        }}
-      >
-        <p
-          style={{
-            lineHeight: 1,
-            width: '100%',
-            textAlign: 'center',
-            lineHeight: 2.5
-          }}
-        >
-          2
-        </p>
-      </div> */}
       <Typography
         className={classes.text}
         color="textSecondary"
@@ -88,28 +44,6 @@ const InteractionGuidelines = ({ classes }) => {
       >
         If any excited behaviors occur or the dog leaves, discontinue petting
       </Typography>
-      {/* <div
-        style={{
-          width: 40,
-          height: 40,
-          borderRadius: '50%',
-          background: theme.palette.primary.main,
-          margin: 'auto',
-          marginTop: 5,
-          marginBottom: 5
-        }}
-      >
-        <p
-          style={{
-            lineHeight: 1,
-            width: '100%',
-            textAlign: 'center',
-            lineHeight: 2.5
-          }}
-        >
-          3
-        </p>
-      </div> */}
       <br />
       <Typography
         className={classes.text}
@@ -120,29 +54,6 @@ const InteractionGuidelines = ({ classes }) => {
         When the dog returns or the excited behaviors are no longer occurring,
         resume petting
       </Typography>
-      {/* <div
-        style={{
-          width: 40,
-          height: 40,
-          borderRadius: '50%',
-          background: theme.palette.primary.main,
-          margin: 'auto',
-          marginTop: 5,
-          marginBottom: 5
-        }}
-      >
-        <p
-          style={{
-            lineHeight: 1,
-            width: '100%',
-            textAlign: 'center',
-            lineHeight: 2.5
-          }}
-        >
-          4
-        </p>
-        
-      </div> */}
       <br />
       <Typography className={classes.text} color="textSecondary" align="center">
         If sitting or lying down occurs, pet with two hands

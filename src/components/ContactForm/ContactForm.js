@@ -46,11 +46,19 @@ const styles = (theme) => ({
     "& label": {},
   },
   button: {
-    background: theme.palette.ternary.main,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background: theme.palette.warning.main,
     color: "#fff",
     margin: "15px 0",
     "&:hover": {
-      background: theme.palette.ternary.main,
+      background: theme.palette.warning.main,
+    },
+    "& span": {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
     },
   },
   input: {
@@ -63,11 +71,6 @@ const styles = (theme) => ({
     "&::placeholder": {
       color: "#fff",
       fontSize: "2.7em",
-    },
-    "&:focus input": {
-      border: "none",
-      outline: "none",
-      background: theme.palette.primary.main,
     },
   },
 });
@@ -321,7 +324,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
                     style={{ width: "100%" }}
                     label="Message"
                     multiline
-                    rowsMax="4"
+                    maxRows={4}
                     placeholder="Message"
                     onChange={(e) => setMessage(e.target.value)}
                     value={message}
@@ -340,7 +343,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
                     <Typography
                       style={{ fontSize: "1.2em", color: "#f00" }}
                       align="center"
-                      variant="subheading"
+                      variant="body1"
                     >
                       Let's try that again
                     </Typography>
@@ -349,7 +352,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
                     style={{ fontSize: "1.5em" }}
                     align="center"
                     paragraph
-                    variant="subheading"
+                    variant="body1"
                   >
                     Before we send the message, please select the boxes{" "}
                     {relation} the logo.
@@ -359,7 +362,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
                       style={{ fontSize: "1em" }}
                       align="center"
                       paragraph
-                      variant="subheading"
+                      variant="body1"
                     >
                       <span style={{ color: "#f00" }}>Hint:</span> On your last
                       attempt, there were 3 boxes {prevRelation} the logo
@@ -397,6 +400,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
                 variant="contained"
                 style={{
                   fontSize: "1em",
+                  paddingTop: 8,
                 }}
               >
                 Cancel
@@ -410,6 +414,7 @@ const ContactForm = ({ classes, authenticated, authenticateUser }) => {
               variant="contained"
               style={{
                 fontSize: "1em",
+                paddingTop: 8,
               }}
             >
               Submit

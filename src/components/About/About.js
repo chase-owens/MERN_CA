@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { createRef, useEffect } from "react";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -31,7 +31,14 @@ const getBackground = (i) => {
 };
 
 const About = ({ theme }) => {
-  const bottomScrollContainer = useRef();
+  const bottomScrollContainer = createRef(null);
+
+  useEffect(() => {
+    const scrollContainer = bottomScrollContainer.current;
+    if (scrollContainer) {
+      scrollContainer.scrollLeft = scrollContainer.scrollWidth;
+    }
+  }, [bottomScrollContainer]);
 
   return (
     <div
@@ -54,7 +61,7 @@ const About = ({ theme }) => {
             <Typography paragraph variant="caption">
               <span style={{ fontWeight: "bold" }}>CA</span> / About
             </Typography>
-            <Typography paragraph variant="h1">
+            <Typography paragraph variant="h4">
               The plan: Create calm connections with affection, love, and praise
             </Typography>
             <Typography variant="body1">
@@ -150,7 +157,7 @@ const About = ({ theme }) => {
           </Grid>
           <br />
           <Typography
-            variant="h1"
+            variant="h4"
             style={{
               margin: "0 40px",
             }}
@@ -204,7 +211,7 @@ const About = ({ theme }) => {
             aboutPoints.map((point, i) => {
               let background = getBackground(i);
 
-              let color = theme.palette.text.secondary;
+              let color = theme.palette.text.primary;
               return (
                 <Grid
                   item

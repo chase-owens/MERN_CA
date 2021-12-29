@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { createRef } from "react";
 import { theme } from "../../styles/theme";
 import caSteps from "./caSteps.config";
 import { isMobile } from "react-device-detect";
@@ -11,11 +11,11 @@ import InteractionGuidelines from "../InteractionGuidelines/InteractionGuideline
 import AffectionLoop from "../AffectionLoop/AffectionLoop";
 import InfoGraphic from "../InfoGraphic/InfoGraphic";
 
-const HowTo = () => {
-  const howTo = useRef(null);
+export const howToRef = createRef(null);
 
+const HowTo = () => {
   return (
-    <div id="howTo" ref={howTo} style={{ paddingTop: 20 }}>
+    <div id="howTo" ref={howToRef} style={{ paddingTop: 20 }}>
       <Typography paragraph variant="caption" style={{ paddingLeft: 40 }}>
         <span style={{ fontWeight: "bold" }}>CA</span> / How To
       </Typography>
@@ -53,7 +53,7 @@ const HowTo = () => {
         justifyContent="space-between"
         style={{
           background: useMediaQuery(theme.breakpoints.up("740"))
-            ? `linear-gradient(90deg, ${theme.palette.ternary.main} 50%, ${theme.palette.secondary.main} 50%)`
+            ? `linear-gradient(90deg, ${theme.palette.ternary.dark} 50%, ${theme.palette.secondary.dark} 50%)`
             : null,
           width: "100%",
         }}

@@ -1,25 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import { theme } from 'styles/theme';
+import { theme } from "styles/theme";
 
-import { isMobile } from 'react-device-detect';
-import Nav from '../Nav/Nav';
-import ContactForm from '../ContactForm/ContactForm';
-import ContactNav from '../ContactNav/ContactNav';
-import Typography from '@material-ui/core/Typography';
+import { isMobile } from "react-device-detect";
+import Nav from "../Nav/Nav";
+import ContactForm from "../ContactForm/ContactForm";
+import ContactNav from "../ContactNav/ContactNav";
+import Typography from "@material-ui/core/Typography";
 
 const Contact = () => {
   return (
-    <div style={{ background: theme.palette.primary.main, minHeight: '100vh' }}>
+    <div style={{ background: theme.palette.primary.main, minHeight: "100vh" }}>
       <ContactNav />
       <Typography
         style={{
-          fontSize: isMobile ? '2.5em' : '2em',
-          padding: 20
+          fontSize: isMobile ? "2.5em" : "2em",
+          padding: 20,
         }}
-        align='center'
+        align="center"
         paragraph
-        variant='display4'
+        variant="h1"
       >
         Contact Us
       </Typography>

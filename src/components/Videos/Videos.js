@@ -1,9 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { createRef, useRef, useState } from "react";
 import { connect } from "react-redux";
-import { theme } from "../../styles/theme";
 
 import withWidth from "@material-ui/core/withWidth";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { withStyles } from "@material-ui/core/styles";
 
 import Grid from "@material-ui/core/Grid";
@@ -11,7 +9,6 @@ import Typography from "@material-ui/core/Typography";
 
 import videos from "./videos.config";
 import VideoCard from "../VideoCard/VideoCard";
-import { isMobile, isIOS } from "react-device-detect";
 
 const styles = (theme) => ({
   videoCard: {
@@ -31,6 +28,8 @@ const mapStateToProps = (state) => ({
   focusedVideo: state.videoState.video,
 });
 
+export const videoRef = createRef(null);
+
 const Videos = ({ classes, focusedVideo }) => {
   const videoPlayer = useRef();
   const [url, setURL] = useState("false");
@@ -43,6 +42,7 @@ const Videos = ({ classes, focusedVideo }) => {
   return (
     <div
       id="videos"
+      ref={videoRef}
       style={{ padding: 40, margin: "auto", overflow: "hidden" }}
     >
       <Typography paragraph variant="caption">
