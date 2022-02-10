@@ -63,7 +63,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "match-media": "^0.2.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nodemailer": "^6.2.1",
     "player.js": "^0.1.0",
     "react": "^16.8.6",
